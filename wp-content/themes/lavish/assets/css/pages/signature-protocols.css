@@ -1,0 +1,355 @@
+/* Signature Protocols Page Styles */
+
+/* =========================================================
+   01 HERO SECTION (Figma 1:4849)
+   ========================================================= */
+
+.lv-shero {
+  background: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u)) calc(64 * var(--lv-u));
+}
+
+.lv-shero__grid {
+  display: flex;
+  flex-direction: column;
+  gap: calc(32 * var(--lv-u));
+  align-items: stretch;
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-shero__img-wrap {
+  order: 1;
+  width: 100%;
+  aspect-ratio: 328 / 319;
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+}
+
+.lv-shero__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-shero__copy {
+  order: 2;
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-shero__title {
+  margin-top: calc(20 * var(--lv-u));
+  font-size: calc(36 * var(--lv-u));
+  color: var(--lv-espresso);
+  line-height: 1.08;
+  font-weight: 200;
+}
+
+.lv-shero__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  color: var(--lv-terracotta);
+  font-weight: 300;
+}
+
+.lv-shero__sub {
+  margin-top: calc(16 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-espresso);
+  max-width: calc(444 * var(--lv-u));
+}
+
+.lv-shero__cta {
+  margin-top: calc(24 * var(--lv-u));
+  display: flex;
+  flex-wrap: nowrap;
+  gap: calc(8 * var(--lv-u));
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .lv-shero {
+    padding: calc(72 * var(--lv-u)) calc(48 * var(--lv-u)) calc(96 * var(--lv-u));
+  }
+
+  .lv-shero__grid {
+    display: grid;
+    grid-template-columns: calc(520 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+    align-items: center;
+  }
+
+  .lv-shero__copy {
+    order: 1;
+  }
+
+  .lv-shero__img-wrap {
+    order: 2;
+    aspect-ratio: 672 / 510;
+  }
+
+  .lv-shero__title {
+    font-size: calc(64 * var(--lv-u));
+  }
+
+  .lv-shero__sub {
+    margin-top: calc(24 * var(--lv-u));
+    font-size: calc(16 * var(--lv-u));
+  }
+
+  .lv-shero__cta {
+    margin-top: calc(40 * var(--lv-u));
+    gap: calc(14 * var(--lv-u));
+    flex-wrap: wrap;
+  }
+}
+
+/* =========================================================
+   02 PROTOCOLS CAROUSEL (Figma 1:4850 — Dark Umber 1440x1027)
+   ========================================================= */
+
+.lv-protocols {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u)) calc(72 * var(--lv-u));
+}
+
+.lv-protocols .lv-proto {
+  margin-top: 0;
+}
+
+.lv-protocols .lv-progress {
+  background: rgba(250, 248, 245, 0.20);
+}
+
+.lv-protocols .lv-progress__bar {
+  background: var(--lv-cream);
+}
+
+.lv-protocols .lv-circle--outline {
+  border-color: rgba(250, 248, 245, 0.40);
+  color: var(--lv-cream);
+  background: transparent;
+}
+
+.lv-protocols .lv-circle--outline:hover {
+  background: rgba(250, 248, 245, 0.12);
+  border-color: var(--lv-cream);
+}
+
+@media (min-width: 1024px) {
+  .lv-protocols {
+    padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u));
+  }
+
+  .lv-protocols .lv-proto__track {
+    margin-inline: calc(-48 * var(--lv-u));
+    padding-inline: calc(48 * var(--lv-u));
+    scroll-padding-inline: calc(48 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   03 FAQ SECTION (Figma 1:4868)
+   ========================================================= */
+
+.lv-faq {
+  background: var(--lv-cream);
+  padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u));
+}
+
+.lv-faq__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(40 * var(--lv-u));
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-faq__img-wrap {
+  width: 100%;
+  aspect-ratio: 582 / 789;
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+}
+
+.lv-faq__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-faq__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-faq__title {
+  margin-top: calc(20 * var(--lv-u));
+  font-size: calc(36 * var(--lv-u));
+  color: var(--lv-espresso);
+  line-height: 1.1;
+  font-weight: 200;
+}
+
+.lv-faq__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  color: var(--lv-terracotta);
+  font-weight: 300;
+}
+
+.lv-faq__acc {
+  margin-top: calc(36 * var(--lv-u));
+}
+
+/* rules sit between questions only: none above the first or below the last */
+.lv-faq__item {
+  border-bottom: 1px solid rgba(36, 29, 26, 0.15);
+}
+
+.lv-faq__item:last-child {
+  border-bottom: none;
+}
+
+.lv-faq__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 * var(--lv-u));
+  padding: calc(24 * var(--lv-u)) 0;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.lv-faq__trigger-title {
+  font-family: var(--lv-font-display);
+  font-size: calc(20 * var(--lv-u));
+  font-weight: 200;
+  color: var(--lv-espresso);
+  line-height: 1.25;
+}
+
+.lv-faq__icon {
+  width: calc(40 * var(--lv-u));
+  height: calc(40 * var(--lv-u));
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--lv-umber);
+  transition: transform var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-faq__trigger:hover .lv-faq__icon {
+  transform: scale(1.06);
+}
+
+.lv-faq__icon svg {
+  width: calc(40 * var(--lv-u));
+  height: calc(40 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+}
+
+.lv-faq__icon .lv-icon--minus {
+  display: none;
+}
+
+.lv-faq__item.is-open .lv-faq__icon .lv-icon--plus {
+  display: none;
+}
+
+.lv-faq__item.is-open .lv-faq__icon .lv-icon--minus {
+  display: block;
+}
+
+/* grid 0fr -> 1fr animates the height; `hidden` (set by main.js) must not cut it short */
+.lv-faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  padding-bottom: 0;
+  font-family: var(--lv-font-body);
+  font-size: calc(15 * var(--lv-u));
+  line-height: 1.55;
+  color: var(--lv-espresso);
+  opacity: 0;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1), padding-bottom 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, visibility 0.45s;
+}
+
+.lv-faq__panel > p {
+  min-height: 0;
+  margin: 0;
+}
+
+.lv-faq__item.is-open .lv-faq__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+  padding-bottom: calc(24 * var(--lv-u));
+  opacity: 0.85;
+}
+
+@media (min-width: 1024px) {
+  .lv-faq {
+    padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-faq__grid {
+    grid-template-columns: calc(582 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+  }
+
+  .lv-faq__title {
+    font-size: calc(64 * var(--lv-u));
+  }
+
+  .lv-faq__trigger-title {
+    font-size: calc(30 * var(--lv-u));
+    /* Figma 1:4871: "...booking" / "single treatments?" breaks onto two lines */
+    max-width: calc(520 * var(--lv-u));
+  }
+
+  /* Figma: rows are 118px apart (1:4873 -> 1:4872) */
+  .lv-faq__trigger {
+    padding: calc(38.5 * var(--lv-u)) 0;
+  }
+
+  .lv-faq__panel {
+    max-width: calc(569 * var(--lv-u));
+  }
+
+  .lv-faq__item.is-open .lv-faq__panel {
+    padding-bottom: calc(40 * var(--lv-u));
+  }
+
+  /* FAQ -> Instagram: about 104px from the photo to the heading in the comp */
+  .lv-faq {
+    padding-bottom: calc(48 * var(--lv-u));
+  }
+
+  .lv-faq + .lv-insta {
+    padding-top: calc(25 * var(--lv-u));
+  }
+}
+
+/* mobile review round (Figma 2009:12): tighter FAQ, smaller toggles, closer Instagram */
+@media (max-width: 1023.98px) {
+  .lv-faq__acc { margin-top: calc(18 * var(--lv-u)); }
+  .lv-faq__trigger { padding: calc(31 * var(--lv-u)) 0; }
+  .lv-faq__icon, .lv-faq__icon svg { width: calc(28 * var(--lv-u)); height: calc(28 * var(--lv-u)); }
+  .lv-faq__trigger-title { line-height: 1.1; }
+  .lv-faq { padding-bottom: calc(14 * var(--lv-u)); }
+  .lv-faq + .lv-insta { padding-top: calc(23 * var(--lv-u)); }
+}

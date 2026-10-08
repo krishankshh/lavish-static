@@ -1,0 +1,653 @@
+/* All Treatments — Figma 1:6 (1440x8618)
+   Five category sections, each a card rail with a progress bar.
+   Backgrounds alternate: cream / umber / cream / blush / cream. */
+
+/* =========================================================
+   CATEGORY SECTION
+   ========================================================= */
+
+.lv-cat {
+  padding-block: calc(60 * var(--lv-u));
+  --lv-cat-ink: var(--lv-espresso);
+  --lv-cat-card: #ECE2D9;          /* terracotta @15 over cream */
+  --lv-cat-cta: var(--lv-umber);
+  --lv-cat-rule: rgba(36, 29, 26, 0.20);
+  color: var(--lv-cat-ink);
+}
+
+.lv-cat--cream { background: var(--lv-cream); }
+
+.lv-cat--umber {
+  background: var(--lv-umber);
+  --lv-cat-ink: var(--lv-cream);
+  --lv-cat-card: #56402F;          /* cream @5 over umber */
+  --lv-cat-cta: var(--lv-terracotta);
+  --lv-cat-rule: rgba(250, 248, 245, 0.20);
+}
+
+.lv-cat--blush {
+  background: #ECE2D9;             /* terracotta @15 over cream */
+  --lv-cat-card: #E0CFC2;
+}
+
+.lv-cat__head { padding-inline: calc(16 * var(--lv-u)); }
+
+.lv-cat .lv-eyebrow {
+  color: var(--lv-terracotta);
+  text-transform: uppercase;
+}
+
+.lv-cat--umber .lv-eyebrow {
+  color: var(--lv-cream);
+}
+
+.lv-cat__titlerow {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(16 * var(--lv-u));
+  margin-top: calc(20 * var(--lv-u));
+  padding-bottom: calc(20 * var(--lv-u));
+  border-bottom: 1px solid var(--lv-cat-rule);
+}
+
+.lv-cat__title { font-size: calc(36 * var(--lv-u)); }
+
+.lv-cat__title em {
+  font-style: italic;
+  font-family: var(--lv-font-display);
+  color: var(--lv-terracotta);
+}
+
+.lv-cat--umber .lv-cat__title em {
+  color: var(--lv-cream);
+}
+
+.lv-cat__count {
+  flex: none;
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+}
+
+/* =========================================================
+   CARD RAIL
+   ========================================================= */
+
+.lv-cat__rail { margin-top: calc(20 * var(--lv-u)); }
+
+.lv-cat__track {
+  display: flex;
+  gap: calc(16 * var(--lv-u));
+  padding-inline: calc(16 * var(--lv-u));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.lv-cat__track::-webkit-scrollbar { display: none; }
+
+/* Card: 434x611, 12px radius on desktop (280x494, 8px radius on mobile),
+   CTA bar flush to the bottom edge (Figma Group 1707478957 / Group 1707479061) */
+.lv-tcard {
+  flex: none;
+  width: calc(280 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  background: var(--lv-cat-card);
+  border-radius: calc(8 * var(--lv-u));
+  overflow: hidden;
+  scroll-snap-align: start;
+  transition: transform var(--lv-dur-fast) var(--lv-ease), box-shadow var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-tcard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 calc(12 * var(--lv-u)) calc(28 * var(--lv-u)) rgba(36, 29, 26, 0.09);
+}
+
+.lv-tcard > img {
+  width: 100%;
+  aspect-ratio: 280 / 180;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s var(--lv-ease);
+}
+
+.lv-tcard:hover > img {
+  transform: scale(1.03);
+}
+
+.lv-tcard__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: calc(20 * var(--lv-u)) calc(16 * var(--lv-u)) calc(20 * var(--lv-u));
+}
+
+.lv-tcard__tag {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(11 * var(--lv-u));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-cat--umber .lv-tcard__tag { color: var(--lv-cream); }
+
+.lv-tcard__tag .lv-icon--sparkle {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+  flex-shrink: 0;
+  fill: none;
+  stroke: currentColor;
+}
+
+
+
+
+.lv-tcard__name {
+  margin-top: calc(12 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(24 * var(--lv-u));
+  line-height: 1.1;
+}
+
+.lv-tcard__desc {
+  margin-top: calc(10 * var(--lv-u));
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1.4;
+  text-wrap: pretty;
+}
+
+/* Full-bleed bar flush to the card's bottom edge */
+.lv-tcard .lv-tcard__cta,
+.lv-tcard .lv-btn.lv-tcard__cta,
+.lv-tcard .lv-btn--umber.lv-tcard__cta {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: calc(41 * var(--lv-u));
+  min-height: calc(41 * var(--lv-u));
+  max-height: calc(41 * var(--lv-u));
+  padding: 0;
+  margin-top: auto;
+  border-radius: 0;
+  border: none;
+  background: var(--lv-cat-cta);
+  color: var(--lv-cream);
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.4;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-tcard .lv-tcard__cta:hover,
+.lv-tcard .lv-btn.lv-tcard__cta:hover,
+.lv-tcard .lv-btn--umber.lv-tcard__cta:hover {
+  background: var(--lv-espresso);
+  color: var(--lv-cream);
+}
+
+/* If CTA is inside .lv-tcard__body, stretch full bleed */
+.lv-tcard__body:has(> .lv-tcard__cta) {
+  padding-bottom: 0;
+}
+.lv-tcard__body > .lv-tcard__cta {
+  margin-inline: calc(-16 * var(--lv-u));
+  width: calc(100% + calc(32 * var(--lv-u)));
+}
+
+/* Progress bar & navigation */
+.lv-progress {
+  position: relative;
+  width: calc(100% - 32px);
+  max-width: calc(328 * var(--lv-u));
+  height: 1px;
+  background: rgba(36, 29, 26, 0.20);
+  margin: calc(24 * var(--lv-u)) auto 0;
+}
+
+.lv-cat--umber .lv-progress {
+  background: rgba(250, 248, 245, 0.20);
+}
+
+.lv-progress__bar {
+  display: block;
+  height: 100%;
+  width: calc(100 * var(--lv-u));
+  background: var(--lv-terracotta);
+}
+
+.lv-cat--umber .lv-progress__bar {
+  background: var(--lv-cream);
+}
+
+.lv-rail-nav {
+  display: flex;
+  justify-content: center;
+  gap: calc(8 * var(--lv-u));
+  margin-top: calc(16 * var(--lv-u));
+}
+
+.lv-rail-nav .lv-circle {
+  width: calc(36 * var(--lv-u));
+  height: calc(36 * var(--lv-u));
+  background: transparent;
+  border: 1px solid rgba(36, 29, 26, 0.40);
+  color: var(--lv-espresso);
+}
+
+.lv-cat--umber .lv-rail-nav .lv-circle {
+  border-color: rgba(250, 248, 245, 0.40);
+  color: var(--lv-cream);
+}
+
+.lv-rail-nav .lv-circle .lv-icon {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+}
+
+/* =========================================================
+   CLOSING CTA
+   ========================================================= */
+
+.lv-cta {
+  position: relative;
+  overflow: hidden;
+  padding: calc(60 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: center;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(480 * var(--lv-u));
+}
+
+.lv-cta__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.lv-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(78, 55, 37, 0.45);
+  z-index: 1;
+}
+
+.lv-cta__inner {
+  position: relative;
+  z-index: 2;
+  max-width: calc(640 * var(--lv-u));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lv-cta__eyebrow {
+  font-family: var(--lv-font-ui);
+  font-size: calc(12 * var(--lv-u));
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  margin-bottom: calc(8 * var(--lv-u));
+}
+
+.lv-cta__title {
+  font-size: calc(36 * var(--lv-u));
+  line-height: 1.1;
+  color: #ffffff;
+}
+
+.lv-cta__title em {
+  font-style: italic;
+  font-family: var(--lv-font-display);
+  color: #ffffff;
+}
+
+.lv-cta__sub {
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  margin-top: calc(20 * var(--lv-u));
+  max-width: calc(480 * var(--lv-u));
+  color: #ffffff;
+  text-wrap: pretty;
+}
+
+.lv-cta__btn {
+  margin-top: calc(28 * var(--lv-u));
+}
+
+.lv-cta__points {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(16 * var(--lv-u));
+  margin-top: calc(24 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-size: calc(11 * var(--lv-u));
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  list-style: none;
+  padding: 0;
+}
+
+.lv-cta__points li {
+  display: flex;
+  align-items: center;
+  color: #ffffff;
+}
+
+.lv-cta__points li + li::before {
+  content: '';
+  display: inline-block;
+  width: calc(3 * var(--lv-u));
+  height: calc(3 * var(--lv-u));
+  border-radius: 50%;
+  background: #ffffff;
+  margin-right: calc(16 * var(--lv-u));
+  flex-shrink: 0;
+}
+
+/* =========================================================
+   INSTAGRAM SECTION
+   ========================================================= */
+
+.lv-insta {
+  background: var(--lv-cream);
+  padding: calc(60 * var(--lv-u)) 0;
+}
+
+.lv-insta__inner {
+  width: 100%;
+  max-width: calc(1440 * var(--lv-u));
+  margin-inline: auto;
+}
+
+.lv-insta__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding-inline: calc(16 * var(--lv-u));
+  margin-bottom: calc(28 * var(--lv-u));
+}
+
+.lv-insta__title {
+  font-size: calc(36 * var(--lv-u));
+}
+
+.lv-insta__handle {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(20 * var(--lv-u));
+  color: var(--lv-terracotta);
+  text-decoration: none;
+  margin-top: calc(24 * var(--lv-u));
+  padding-inline: calc(16 * var(--lv-u));
+  display: block;
+}
+
+/* page's display:block above outranks .lv-desk-only / .lv-mob-only; restate them */
+.lv-insta__handle.lv-desk-only { display: none; }
+.lv-insta__handle.lv-mob-only { text-align: center; }
+
+.lv-insta__track {
+  display: flex;
+  gap: calc(12 * var(--lv-u));
+  padding-inline: calc(16 * var(--lv-u));
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lv-insta__track::-webkit-scrollbar { display: none; }
+
+.lv-insta__item {
+  flex: 0 0 calc(180 * var(--lv-u));
+  height: calc(180 * var(--lv-u));
+  border-radius: calc(8 * var(--lv-u));
+  overflow: hidden;
+  position: relative;
+}
+
+.lv-insta__item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* hover state as on every other page (components.css .lv-insta__play) */
+.lv-insta__item { display: block; }
+.lv-insta__item img { transition: transform 0.35s var(--lv-ease); }
+.lv-insta__item:hover img,
+.lv-insta__item:focus-visible img { transform: scale(1.04); }
+.lv-insta__item:hover .lv-insta__play,
+.lv-insta__item:focus-visible .lv-insta__play { opacity: 1; transform: scale(1); }
+
+.lv-insta__cta {
+  display: flex;
+  justify-content: center;
+  margin-top: calc(32 * var(--lv-u));
+  width: 100%;
+}
+
+.lv-btn--pill-dark {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  border: 1px solid transparent;
+}
+
+.lv-btn--pill-dark:hover {
+  background: var(--lv-espresso);
+}
+
+/* =========================================================
+   DESKTOP (1024px+)
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  .lv-cat { padding-block: calc(100 * var(--lv-u)); }
+  .lv-cat__head { padding-inline: calc(48 * var(--lv-u)); }
+  .lv-cat__titlerow { margin-top: calc(16 * var(--lv-u)); padding-bottom: calc(24 * var(--lv-u)); }
+  .lv-cat__title { font-size: calc(64 * var(--lv-u)); }
+  .lv-cat__count { font-size: calc(18 * var(--lv-u)); }
+  .lv-cat__rail { margin-top: calc(48 * var(--lv-u)); }
+  .lv-cat__track { padding-inline: calc(48 * var(--lv-u)); gap: calc(20 * var(--lv-u)); }
+  .lv-tcard {
+    width: calc(434 * var(--lv-u));
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-tcard > img {
+    aspect-ratio: 434 / 280;
+  }
+  .lv-tcard__body {
+    padding: calc(28 * var(--lv-u)) calc(28 * var(--lv-u)) calc(28 * var(--lv-u));
+  }
+  .lv-tcard__tag { font-size: calc(12 * var(--lv-u)); letter-spacing: 0.1em; }
+  
+  .lv-tcard__name { font-size: calc(28 * var(--lv-u)); margin-top: calc(12 * var(--lv-u)); }
+  .lv-tcard__desc { font-size: calc(16 * var(--lv-u)); margin-top: calc(8 * var(--lv-u)); padding-bottom: 0; }
+  .lv-tcard .lv-tcard__cta,
+  .lv-tcard .lv-btn.lv-tcard__cta,
+  .lv-tcard .lv-btn--umber.lv-tcard__cta {
+    height: calc(46 * var(--lv-u));
+    min-height: calc(46 * var(--lv-u));
+    max-height: calc(46 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+  }
+  .lv-tcard__body > .lv-tcard__cta {
+    margin-inline: calc(-28 * var(--lv-u));
+    width: calc(100% + calc(56 * var(--lv-u)));
+  }
+
+  .lv-progress {
+    display: block;
+    width: 100%;
+    max-width: calc(534 * var(--lv-u));
+    height: 1px;
+    margin: calc(48 * var(--lv-u)) auto 0;
+    background: rgba(36, 29, 26, 0.20);
+  }
+  .lv-cat--umber .lv-progress {
+    background: rgba(250, 248, 245, 0.20);
+  }
+  .lv-progress__bar {
+    background: var(--lv-terracotta);
+  }
+  .lv-cat--umber .lv-progress__bar {
+    background: var(--lv-cream);
+  }
+  .lv-rail-nav {
+    display: flex;
+    justify-content: center;
+    gap: calc(12 * var(--lv-u));
+    margin-top: calc(38 * var(--lv-u));
+  }
+  .lv-rail-nav .lv-circle {
+    width: calc(40 * var(--lv-u));
+    height: calc(40 * var(--lv-u));
+    transition: background-color var(--lv-dur-fast) var(--lv-ease), color var(--lv-dur-fast) var(--lv-ease), border-color var(--lv-dur-fast) var(--lv-ease);
+  }
+  .lv-rail-nav .lv-circle:hover {
+    background: var(--lv-espresso);
+    color: var(--lv-cream);
+    border-color: var(--lv-espresso);
+  }
+  .lv-cat--umber .lv-rail-nav .lv-circle:hover {
+    background: var(--lv-cream);
+    color: var(--lv-espresso);
+    border-color: var(--lv-cream);
+  }
+  .lv-rail-nav .lv-circle .lv-icon {
+    width: calc(16 * var(--lv-u));
+    height: calc(16 * var(--lv-u));
+  }
+
+  /* Non-scrolling sections on desktop (all cards fit in viewport) */
+  #injectables .lv-progress,
+  #injectables .lv-rail-nav,
+  #hair-scalp .lv-progress,
+  #hair-scalp .lv-rail-nav,
+  #wellness .lv-progress,
+  #wellness .lv-rail-nav {
+    display: none;
+  }
+  #injectables .lv-cat__track,
+  #hair-scalp .lv-cat__track,
+  #wellness .lv-cat__track {
+    overflow-x: visible;
+  }
+
+  .lv-cta {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+    min-height: calc(608 * var(--lv-u));
+    color: #ffffff;
+  }
+  .lv-cta__eyebrow {
+    font-size: calc(14 * var(--lv-u));
+    letter-spacing: 0.1em;
+    margin-bottom: calc(10 * var(--lv-u));
+    color: #ffffff;
+  }
+  .lv-cta__title {
+    font-size: calc(64 * var(--lv-u));
+    color: #ffffff;
+  }
+  .lv-cta__sub {
+    font-size: calc(18 * var(--lv-u));
+    margin-top: calc(28 * var(--lv-u));
+    max-width: calc(640 * var(--lv-u));
+    color: #ffffff;
+  }
+  .lv-cta__btn {
+    margin-top: calc(36 * var(--lv-u));
+  }
+  .lv-cta__points {
+    font-size: calc(12 * var(--lv-u));
+    letter-spacing: 0.1em;
+    gap: calc(24 * var(--lv-u));
+    margin-top: calc(32 * var(--lv-u));
+    color: #ffffff;
+  }
+  .lv-cta__points li {
+    color: #ffffff;
+  }
+  .lv-cta__points li + li::before {
+    width: calc(3 * var(--lv-u));
+    height: calc(3 * var(--lv-u));
+    margin-right: calc(24 * var(--lv-u));
+    background: #ffffff;
+  }
+
+  .lv-insta {
+    padding: calc(100 * var(--lv-u)) 0;
+  }
+  .lv-insta__head {
+    padding-inline: calc(48 * var(--lv-u));
+    margin-bottom: calc(40 * var(--lv-u));
+  }
+  .lv-insta__title {
+    font-size: calc(64 * var(--lv-u));
+  }
+  .lv-insta__handle.lv-desk-only { display: block; }
+  .lv-insta__handle.lv-mob-only { display: none; }
+  .lv-insta__handle {
+    font-size: calc(28 * var(--lv-u));
+    margin-top: 0;
+    padding-inline: 0;
+  }
+  .lv-insta__track {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(20 * var(--lv-u));
+    padding-inline: calc(48 * var(--lv-u));
+    overflow: visible;
+  }
+  .lv-insta__item {
+    flex: auto;
+    height: auto;
+    aspect-ratio: 1 / 1;
+  }
+  .lv-insta__cta {
+    margin-top: calc(48 * var(--lv-u));
+  }
+}
+
+/* snap the first card to the content edge (line + headline), not the scroller edge */
+.lv-cat__track { scroll-padding-inline: calc(16 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-cat__track { scroll-padding-inline: calc(48 * var(--lv-u)); }
+}
+
+/* closing CTA: lighter wash, eyebrow hugs the headline, more air above the three points */
+.lv-cta::after { background: rgba(78, 55, 37, 0.22); }
+@media (min-width: 1024px) {
+  .lv-cta__eyebrow { margin-bottom: calc(-17 * var(--lv-u)); }
+  .lv-cta__points { margin-top: calc(44 * var(--lv-u)); }
+}
+
+/* mobile review: hero photo sits further left (ear and eye shield in frame); closing CTA points
+   share one line, evenly spaced, with solid dots */
+@media (max-width: 1023px) {
+  .lv-cta__points { width: calc(328 * var(--lv-u)); flex: none; flex-wrap: nowrap; white-space: nowrap; gap: calc(12 * var(--lv-u)); }
+  .lv-cta__points li { flex: none; }
+  .lv-cta__points li + li::before { left: calc(-7.5 * var(--lv-u)); margin: 0; opacity: 1; }
+}

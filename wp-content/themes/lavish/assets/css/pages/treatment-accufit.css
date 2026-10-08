@@ -1,0 +1,264 @@
+/* Accufit — page overrides against Figma 1:1609 (1440) / 1:11778 (360). */
+
+.lv-accufit .lv-btn { font-size: calc(14 * var(--lv-u)); }
+.lv-accufit .lv-phero__sub { line-height: 1.4; margin-top: calc(19 * var(--lv-u)); }
+
+/* 01 intro */
+.lv-accufit .lv-intro__grid { gap: calc(27 * var(--lv-u)); }
+.lv-accufit .lv-intro__title { padding-right: calc(39 * var(--lv-u)); }
+.lv-accufit .lv-intro__title {
+  padding-bottom: calc(24 * var(--lv-u));
+  border-bottom: 1px solid rgba(36, 29, 26, 0.2);
+}
+.lv-accufit .lv-intro__body { margin-top: calc(22 * var(--lv-u)); }
+.lv-accufit .lv-intro__copy .lv-btn { margin-top: calc(42 * var(--lv-u)); }
+
+/* 02 technology */
+.lv-accufit .lv-accu-tech__title { margin-top: calc(17 * var(--lv-u)); }
+.lv-accufit .lv-accu-tech__sub { margin-top: calc(19 * var(--lv-u)); max-width: calc(290 * var(--lv-u)); }
+.lv-accufit .lv-accu-tech__grid { margin-top: calc(30 * var(--lv-u)); gap: calc(12 * var(--lv-u)); }
+.lv-accufit .lv-accu-card {
+  flex-basis: calc(300 * var(--lv-u));
+  height: calc(221 * var(--lv-u));
+  padding: calc(28 * var(--lv-u)) calc(26 * var(--lv-u)) 0;
+  border-radius: calc(8 * var(--lv-u));
+  background: #F8F2EB;
+}
+.lv-accufit .lv-accu-card__icon { width: calc(54 * var(--lv-u)); height: calc(54 * var(--lv-u)); margin-bottom: calc(24 * var(--lv-u)); }
+.lv-accufit .lv-accu-card__icon svg { width: calc(24 * var(--lv-u)); height: calc(24 * var(--lv-u)); }
+.lv-accufit .lv-accu-card h3 { margin-bottom: calc(15 * var(--lv-u)); }
+.lv-accufit .lv-accu-card p { line-height: 1.6; color: var(--lv-espresso); }
+.lv-accufit .lv-accu-tech__nav { margin-top: calc(16 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-accufit .lv-accu-tech__nav .lv-circle { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); border-color: rgba(36, 29, 26, 0.4); }
+
+/* 03 team */
+.lv-accufit .lv-accu-team { padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(69 * var(--lv-u)); }
+.lv-accufit .lv-accu-team__grid { gap: calc(29 * var(--lv-u)); }
+.lv-accufit .lv-accu-team__media img { aspect-ratio: 1; border-radius: calc(8 * var(--lv-u)); }
+.lv-accufit .lv-accu-team__title { margin-top: calc(17 * var(--lv-u)); }
+.lv-accufit .lv-accu-team__body { margin-top: calc(19 * var(--lv-u)); }
+.lv-accufit .lv-accu-team__cta { margin-top: calc(34 * var(--lv-u)); }
+.lv-accufit .lv-team-author { margin-top: calc(36 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-accufit .lv-team-author__avatar { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); }
+.lv-accufit .lv-team-author__name {
+  font-family: var(--lv-font-display); font-weight: 200;
+  font-size: calc(16 * var(--lv-u)); line-height: 1.1;
+}
+.lv-accufit .lv-team-author__role {
+  margin-top: calc(5 * var(--lv-u)); font-weight: 600;
+  font-size: calc(10 * var(--lv-u)); line-height: 1.4;
+}
+
+/* 04 experience */
+.lv-accufit .lv-accu-exp__title { margin-top: calc(17 * var(--lv-u)); }
+.lv-accufit .lv-accu-exp__media { margin-top: calc(33 * var(--lv-u)); }
+.lv-accufit .lv-accu-exp__media img { aspect-ratio: 328 / 185; }
+
+/* 05 results */
+.lv-accufit .lv-results { padding-bottom: calc(72 * var(--lv-u)); }
+.lv-accufit .lv-results__top { text-align: left; }
+.lv-accufit .lv-results__title { margin-top: calc(17 * var(--lv-u)); }
+.lv-accufit .lv-results .lv-results__grid { margin-top: calc(36 * var(--lv-u)); }
+.lv-accufit .lv-ba__tag { padding: calc(4.5 * var(--lv-u)) calc(8 * var(--lv-u)); line-height: 1.4; background: #F2E9DF; }
+.lv-accufit .lv-ba__label { margin-top: calc(13 * var(--lv-u)); line-height: 1.4; }
+.lv-accufit .lv-results__cta-wrap { margin-top: calc(36 * var(--lv-u)); }
+.lv-accufit .lv-results__cta-wrap .lv-btn { font-size: calc(12 * var(--lv-u)); }
+.lv-accufit .lv-results__top .lv-btn { white-space: nowrap; flex: none; }
+
+/* 06 benefits */
+.lv-accufit .lv-accu-benefits { background: #26160F; }
+.lv-accufit .lv-accu-benefits__title { margin-top: calc(21 * var(--lv-u)); }
+.lv-accufit .lv-accu-benefits__sub { margin-top: calc(20 * var(--lv-u)); color: var(--lv-cream); }
+.lv-accufit .lv-accu-benefits__grid {
+  margin-top: calc(34 * var(--lv-u)); gap: 0;
+  border: 1px solid rgba(250, 248, 245, 0.2); border-radius: calc(12 * var(--lv-u));
+}
+.lv-accufit .lv-accu-stat {
+  height: calc(227.3 * var(--lv-u)); margin: 0; background: none;
+  padding: calc(14 * var(--lv-u)) calc(12 * var(--lv-u)) 0;
+  border: 0; border-radius: 0;
+  border-right: 1px solid rgba(250, 248, 245, 0.2);
+  border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+}
+.lv-accufit .lv-accu-stat:nth-child(2n) { border-right: 0; }
+.lv-accufit .lv-accu-stat:nth-child(n+5) { border-bottom: 0; }
+.lv-accufit .lv-accu-stat__k { font-size: calc(32 * var(--lv-u)); font-weight: 200; line-height: 1.1; }
+.lv-accufit .lv-accu-stat__t { margin-top: calc(28 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); min-height: 2.2em; max-width: calc(125 * var(--lv-u)); }
+.lv-accufit .lv-accu-stat__d { margin-top: calc(9.5 * var(--lv-u)); color: var(--lv-cream); }
+
+/* pull-quote */
+.lv-accufit .lv-pullquote { padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(68 * var(--lv-u)); }
+.lv-accufit .lv-pullquote__stars { gap: calc(-1 * var(--lv-u)); margin-bottom: calc(25 * var(--lv-u)); }
+.lv-accufit .lv-pullquote__text { font-size: calc(24 * var(--lv-u)); line-height: 1.3; margin-bottom: calc(29 * var(--lv-u)); }
+.lv-accufit .lv-pullquote__author {
+  display: block; font-style: normal; font-size: calc(12 * var(--lv-u)); line-height: 1.4;
+  letter-spacing: 0.1em; color: var(--lv-espresso);
+}
+
+/* 07 faq */
+.lv-accufit .lv-faq { background: #ECE2D9; padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(46 * var(--lv-u)); }
+.lv-accufit .lv-faq__grid { padding-top: calc(132 * var(--lv-u)); }
+.lv-accufit .lv-faq__img { border-radius: calc(12 * var(--lv-u)); }
+.lv-accufit .lv-faq__title { margin-top: calc(21 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc { margin-top: calc(31 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc__item { border-bottom-color: rgba(36, 29, 26, 0.2); }
+.lv-accufit .lv-faq .lv-acc__item:last-child { border-bottom: 0; }
+.lv-accufit .lv-faq .lv-acc__trigger { line-height: 1.2; padding: calc(27 * var(--lv-u)) 0 calc(28 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc__item:first-child .lv-acc__trigger { line-height: 1.1; padding-block: calc(21 * var(--lv-u)); gap: calc(40 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc__item.is-open .lv-acc__trigger { padding-bottom: calc(19 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc__panel p { line-height: 1.6; color: rgba(36, 29, 26, 0.6); }
+.lv-accufit .lv-faq .lv-acc__item.is-open .lv-acc__panel > * { padding-bottom: calc(25 * var(--lv-u)); }
+.lv-accufit .lv-faq .lv-acc__trigger::after { width: calc(21 * var(--lv-u)); height: calc(21 * var(--lv-u)); margin-right: calc(3.5 * var(--lv-u)); }
+
+/* 08 related */
+.lv-accufit .lv-accu-related { padding: calc(66 * var(--lv-u)) calc(16 * var(--lv-u)) 0; }
+.lv-accufit .lv-accu-related__title { text-align: left; }
+.lv-accufit .lv-accu-related__grid { margin-top: calc(36 * var(--lv-u)); }
+.lv-accufit .lv-accu-rcard__bar { padding: calc(24 * var(--lv-u)) calc(24 * var(--lv-u)) calc(20 * var(--lv-u)); }
+.lv-accufit .lv-accu-rcard h3 { font-size: calc(28 * var(--lv-u)); max-width: calc(200 * var(--lv-u)); }
+.lv-accufit .lv-accu-rcard__btn { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); margin-bottom: calc(4 * var(--lv-u)); }
+.lv-accufit .lv-accu-related__cta-wrap { margin-top: calc(36 * var(--lv-u)); }
+.lv-accufit .lv-accu-related__cta-wrap .lv-btn,
+.lv-accufit .lv-insta__cta { font-size: calc(12 * var(--lv-u)); }
+
+/* instagram */
+.lv-accufit .lv-insta { padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u)) calc(73 * var(--lv-u)); }
+.lv-accufit .lv-insta__grid { margin-top: calc(32 * var(--lv-u)); }
+.lv-accufit .lv-insta__handle { margin-top: calc(21 * var(--lv-u)); }
+.lv-accufit .lv-insta__cta { margin-top: calc(31 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-accufit .lv-eyebrow { font-size: calc(12 * var(--lv-u)); letter-spacing: 0.1em; }
+  .lv-accufit .lv-phero__sub { line-height: 1.5; margin-top: calc(26 * var(--lv-u)); }
+  .lv-accufit .lv-intro__grid { gap: calc(80 * var(--lv-u)); }
+  .lv-accufit .lv-intro__img { margin-top: calc(43 * var(--lv-u)); aspect-ratio: 456 / 273; }
+  .lv-accufit .lv-intro__title {
+    margin-top: calc(34 * var(--lv-u));
+    font-size: calc(48 * var(--lv-u));
+    padding-right: calc(29 * var(--lv-u));
+    padding-bottom: calc(31 * var(--lv-u));
+  }
+  .lv-accufit .lv-intro__body { margin-top: calc(29 * var(--lv-u)); }
+  .lv-accufit .lv-intro__copy .lv-btn { margin-top: calc(49 * var(--lv-u)); }
+
+  .lv-accufit .lv-accu-tech__head { margin-top: calc(26 * var(--lv-u)); align-items: flex-start; }
+  .lv-accufit .lv-accu-tech__title { margin-top: 0; }
+  .lv-accufit .lv-accu-tech__sub { margin-top: calc(19 * var(--lv-u)); max-width: none; }
+  .lv-accufit .lv-accu-tech__grid { margin-top: calc(38 * var(--lv-u)); gap: calc(21 * var(--lv-u)); }
+  .lv-accufit .lv-accu-card { height: calc(311 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(36 * var(--lv-u)) 0; border-radius: calc(12 * var(--lv-u)); }
+  .lv-accufit .lv-accu-card__icon { width: calc(74 * var(--lv-u)); height: calc(74 * var(--lv-u)); margin-bottom: calc(35 * var(--lv-u)); }
+  .lv-accufit .lv-accu-card__icon svg { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); }
+  .lv-accufit .lv-accu-card h3 { margin-bottom: calc(17 * var(--lv-u)); }
+  .lv-accufit .lv-accu-card p { font-size: calc(16 * var(--lv-u)); }
+
+  .lv-accufit .lv-accu-team { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)); }
+  .lv-accufit .lv-accu-team__grid { grid-template-columns: calc(479 * var(--lv-u)) 1fr; gap: calc(76 * var(--lv-u)); align-items: start; }
+  .lv-accufit .lv-accu-team__media img { border-radius: calc(12 * var(--lv-u)); }
+  .lv-accufit .lv-accu-team__copy { margin-top: calc(35 * var(--lv-u)); }
+  .lv-accufit .lv-accu-team__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-accufit .lv-accu-team__body { margin-top: calc(24 * var(--lv-u)); max-width: calc(519 * var(--lv-u)); }
+  .lv-accufit .lv-accu-team__cta { margin-top: calc(41 * var(--lv-u)); }
+  .lv-accufit .lv-team-author { margin-top: calc(48 * var(--lv-u)); gap: calc(12 * var(--lv-u)); }
+  .lv-accufit .lv-team-author__avatar { width: calc(60 * var(--lv-u)); height: calc(60 * var(--lv-u)); }
+  .lv-accufit .lv-team-author__name { font-size: calc(20 * var(--lv-u)); }
+  .lv-accufit .lv-team-author__role { margin-top: calc(6 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+
+  .lv-accufit .lv-accu-exp { padding: calc(96 * var(--lv-u)) calc(120 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-accufit .lv-accu-exp__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-accufit .lv-accu-exp__media { margin-top: calc(37 * var(--lv-u)); border-radius: calc(22 * var(--lv-u)); }
+  .lv-accufit .lv-accu-exp__media img { aspect-ratio: 1200 / 550; border-radius: calc(22 * var(--lv-u)); }
+
+  .lv-accufit .lv-results { padding: calc(116 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-accufit .lv-results__top .lv-btn { display: inline-flex; }
+  .lv-accufit .lv-results__top { margin-bottom: calc(50 * var(--lv-u)); }
+  .lv-accufit .lv-results__top .lv-results__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-accufit .lv-results .lv-results__grid { margin-top: 0; }
+  .lv-accufit .lv-ba { padding-bottom: calc(20 * var(--lv-u)); }
+  .lv-accufit .lv-ba__label { margin-top: calc(21 * var(--lv-u)); }
+  .lv-accufit .lv-results__cta-wrap { display: none; }
+
+  .lv-accufit .lv-accu-benefits { padding-top: calc(96 * var(--lv-u)); }
+  .lv-accufit .lv-accu-benefits__head { align-items: flex-start; margin-bottom: calc(49 * var(--lv-u)); }
+  .lv-accufit .lv-accu-benefits__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-accufit .lv-accu-benefits__sub { margin-top: calc(109 * var(--lv-u)); max-width: calc(402 * var(--lv-u)); }
+  .lv-accufit .lv-accu-benefits__grid { margin-top: 0; border-radius: calc(20 * var(--lv-u)); }
+  .lv-accufit .lv-accu-stat { height: calc(234 * var(--lv-u)); padding: calc(33 * var(--lv-u)) calc(42 * var(--lv-u)) 0; margin: 0; border: 0; border-right: 1px solid rgba(250, 248, 245, 0.2); border-bottom: 1px solid rgba(250, 248, 245, 0.2); }
+  .lv-accufit .lv-accu-stat:nth-child(2n) { border-right: 1px solid rgba(250, 248, 245, 0.2); }
+  .lv-accufit .lv-accu-stat:nth-child(3n) { border-right: 0; }
+  .lv-accufit .lv-accu-stat:nth-child(n+4) { border-bottom: 0; }
+  .lv-accufit .lv-accu-stat__k { font-size: calc(48 * var(--lv-u)); }
+  .lv-accufit .lv-accu-stat__t { margin-top: calc(31 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); min-height: 0; max-width: none; }
+  .lv-accufit .lv-accu-stat__d { margin-top: calc(9 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); max-width: calc(348 * var(--lv-u)); }
+  /* ponytail: Figma text boxes carry per-card widths, which set the wraps */
+  .lv-accufit .lv-accu-stat:nth-child(1) .lv-accu-stat__d { max-width: calc(294 * var(--lv-u)); }
+  .lv-accufit .lv-accu-stat:nth-child(2) .lv-accu-stat__d { max-width: calc(316 * var(--lv-u)); }
+  .lv-accufit .lv-accu-stat:nth-child(3) .lv-accu-stat__d { max-width: calc(318 * var(--lv-u)); }
+  .lv-accufit .lv-accu-stat:nth-child(4) .lv-accu-stat__d,
+  .lv-accufit .lv-accu-stat:nth-child(6) .lv-accu-stat__d { max-width: calc(328 * var(--lv-u)); }
+
+  .lv-accufit .lv-pullquote { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(95 * var(--lv-u)); }
+  .lv-accufit .lv-pullquote__stars { margin-bottom: calc(32 * var(--lv-u)); }
+  .lv-accufit .lv-pullquote__stars svg { width: calc(28 * var(--lv-u)); height: calc(28 * var(--lv-u)); }
+  .lv-accufit .lv-pullquote__text { font-size: calc(28 * var(--lv-u)); max-width: calc(942 * var(--lv-u)); margin-bottom: calc(48 * var(--lv-u)); }
+  .lv-accufit .lv-pullquote__author { font-size: calc(14 * var(--lv-u)); }
+
+  .lv-accufit .lv-faq { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(62 * var(--lv-u)); }
+  .lv-accufit .lv-faq__grid { padding-top: 0; }
+  .lv-accufit .lv-faq__copy { margin-top: calc(-4 * var(--lv-u)); }
+  .lv-accufit .lv-faq__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc { margin-top: calc(10 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__trigger,
+  .lv-accufit .lv-faq .lv-acc__item:first-child .lv-acc__trigger { line-height: 1.1; padding-block: calc(43 * var(--lv-u)); gap: calc(16 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__item.is-open .lv-acc__trigger { padding-bottom: calc(25 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__panel p { max-width: calc(600 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__item.is-open .lv-acc__panel > * { padding-bottom: calc(41 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__trigger::after { width: calc(30 * var(--lv-u)); height: calc(30 * var(--lv-u)); margin-right: calc(5 * var(--lv-u)); background-size: calc(13 * var(--lv-u)) calc(1.5 * var(--lv-u)), calc(1.5 * var(--lv-u)) calc(13 * var(--lv-u)); }
+  .lv-accufit .lv-faq .lv-acc__item.is-open .lv-acc__trigger::after { background-size: calc(13 * var(--lv-u)) calc(1.5 * var(--lv-u)), 0 0; }
+
+  .lv-accufit .lv-accu-related { padding: calc(91 * var(--lv-u)) calc(48 * var(--lv-u)) 0; }
+  .lv-accufit .lv-accu-related__top .lv-btn { display: inline-flex; white-space: nowrap; flex: none; align-self: flex-start; margin-top: calc(16 * var(--lv-u)); }
+  .lv-accufit .lv-accu-related__grid { margin-top: calc(50 * var(--lv-u)); gap: calc(31.5 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard { border-radius: calc(24 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard__bar { padding: calc(32 * var(--lv-u)) calc(32 * var(--lv-u)) calc(25 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard h3 { font-size: calc(36 * var(--lv-u)); max-width: calc(226 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard__btn { width: calc(48 * var(--lv-u)); height: calc(48 * var(--lv-u)); margin-bottom: calc(7 * var(--lv-u)); }
+
+  .lv-accufit .lv-insta { padding: calc(111 * var(--lv-u)) calc(48 * var(--lv-u)) calc(120 * var(--lv-u)); }
+  .lv-accufit .lv-insta__grid { margin-top: calc(46 * var(--lv-u)); }
+  .lv-accufit .lv-insta__handle { margin-top: 0; }
+  .lv-accufit .lv-insta__cta { margin-top: calc(48 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+}
+
+/* ===== accufit-reviews fixes ===== */
+/* 02: right-hand sub copy reads left-aligned; all four card icons one thin stroke */
+.lv-accufit .lv-accu-tech__sub { text-align: left; }
+.lv-accufit .lv-accu-card__icon svg { stroke-width: 1px; }
+
+/* 03 / 04: videos replace the stills */
+.lv-accufit .lv-accu-team__media video { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border-radius: calc(8 * var(--lv-u)); }
+.lv-accufit .lv-accu-exp__media video { display: block; width: 100%; aspect-ratio: 328 / 185; object-fit: cover; border-radius: calc(16 * var(--lv-u)); background: #000; }
+
+/* 05: eyebrow sits flush left with the title */
+.lv-accufit .lv-results__top .lv-eyebrow { justify-content: flex-start; }
+
+/* 07: plus / minus disc is coffee brown */
+.lv-accufit .lv-faq .lv-acc__trigger::after { background-color: var(--lv-umber); }
+
+/* 08: bigger arrow inside the card button */
+.lv-accufit .lv-accu-rcard__btn svg { width: calc(10 * var(--lv-u)); height: calc(10 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  /* 01: photo runs down to the bottom of the button */
+  .lv-accufit .lv-intro__img { aspect-ratio: auto; height: calc(377 * var(--lv-u)); object-fit: cover; }
+  .lv-accufit .lv-accu-team__media video { border-radius: calc(12 * var(--lv-u)); }
+  .lv-accufit .lv-accu-exp__media video { aspect-ratio: 1200 / 550; border-radius: calc(22 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard__btn svg { width: calc(13 * var(--lv-u)); height: calc(13 * var(--lv-u)); }
+}
+
+/* mobile review: arrows scroll the rail, which never moves vertically; stat cells breathe;
+   related-card button carries the comp's 16px arrow box */
+@media (max-width: 1023px) {
+  .lv-accufit .lv-accu-tech__grid { overflow-y: hidden; overscroll-behavior-x: contain; }
+  .lv-accufit .lv-accu-stat { height: auto; min-height: calc(217 * var(--lv-u)); padding: calc(26 * var(--lv-u)) calc(20 * var(--lv-u)) calc(24 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard__btn .lv-icon { width: calc(19 * var(--lv-u)); height: calc(19 * var(--lv-u)); }
+}

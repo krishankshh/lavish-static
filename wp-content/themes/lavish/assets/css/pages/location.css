@@ -1,0 +1,841 @@
+/* =========================================================
+   Lavish — Location Pages (Coconut Grove & Midtown Miami)
+   Figma 1:5937 (Coconut Grove) & 1:5720 (Midtown Miami)
+   Every dimension scaled with var(--lv-u)
+   ========================================================= */
+
+/* ---------------------------------------------------------
+   01. HERO & INTRO
+   --------------------------------------------------------- */
+.lv-lochero {
+  position: relative;
+  background: var(--lv-cream);
+  padding: calc(8 * var(--lv-u)) calc(16 * var(--lv-u)) 0;
+}
+
+.lv-lochero__card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 328 / 486;
+  border-radius: calc(8 * var(--lv-u));
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.lv-lochero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lv-lochero__overlay {
+  position: absolute;
+  inset: 0;
+  background: var(--lv-espresso-40);
+  z-index: 1;
+}
+
+.lv-lochero__content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: calc(24 * var(--lv-u));
+  color: var(--lv-cream);
+}
+
+.lv-lochero__rating {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+  margin-bottom: calc(16 * var(--lv-u));
+}
+
+.lv-lochero__stars {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(3 * var(--lv-u));
+}
+
+.lv-lochero__star {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+  fill: var(--lv-cream);
+  color: var(--lv-cream);
+}
+
+.lv-lochero__rating-text {
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 500;
+  color: var(--lv-cream);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.lv-lochero__title {
+  font-family: var(--lv-font-display);
+  font-size: calc(44 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.05;
+  color: var(--lv-cream);
+  text-align: center;
+  max-width: calc(300 * var(--lv-u));
+  margin-inline: auto;
+}
+
+/* Statement / Intro Section */
+.lv-locintro {
+  background: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: center;
+}
+
+.lv-locintro__eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: calc(8 * var(--lv-u));
+  color: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lv-locintro__eyebrow .lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+  position: relative;
+  bottom: 0;
+}
+
+.lv-locintro__text {
+  font-family: var(--lv-font-display);
+  font-size: calc(28 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.2;
+  color: var(--lv-espresso);
+  max-width: calc(1100 * var(--lv-u)); /* the <br>s set the breaks; "center" must fit on line 2 */
+  margin: calc(24 * var(--lv-u)) auto 0;
+  text-align: center;
+}
+
+.lv-locintro__text em {
+  font-style: italic;
+  color: var(--lv-terracotta);
+}
+
+.lv-locintro__cta {
+  margin-top: calc(32 * var(--lv-u));
+  display: inline-flex;
+}
+
+@media (min-width: 1024px) {
+  .lv-lochero {
+    padding: calc(68 * var(--lv-u)) calc(48 * var(--lv-u)) 0;
+  }
+  .lv-lochero__card {
+    aspect-ratio: 1344 / 579;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-lochero__rating {
+    margin-bottom: calc(20 * var(--lv-u));
+  }
+  .lv-lochero__star {
+    width: calc(16 * var(--lv-u));
+    height: calc(16 * var(--lv-u));
+  }
+  .lv-lochero__rating-text {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-lochero__title {
+    font-size: calc(64 * var(--lv-u));
+    max-width: calc(760 * var(--lv-u));
+  }
+  .lv-locintro {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u));
+  }
+  .lv-locintro__eyebrow {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-locintro__text {
+    font-size: calc(48 * var(--lv-u));
+    line-height: 1.1;
+    margin-top: calc(32 * var(--lv-u));
+  }
+  .lv-locintro__cta {
+    margin-top: calc(48 * var(--lv-u));
+  }
+}
+
+/* ---------------------------------------------------------
+   02. GALLERY
+   --------------------------------------------------------- */
+.lv-locgal {
+  background: var(--lv-sand-4);
+  padding: calc(60 * var(--lv-u)) calc(16 * var(--lv-u));
+}
+
+.lv-locgal__eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: calc(8 * var(--lv-u));
+  color: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lv-locgal__eyebrow .lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+  position: relative;
+  bottom: 0;
+}
+
+.lv-locgal__title {
+  font-family: var(--lv-font-display);
+  font-size: calc(36 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.1;
+  color: var(--lv-espresso);
+  margin-top: calc(16 * var(--lv-u));
+  margin-bottom: calc(32 * var(--lv-u));
+}
+
+.lv-locgal__title em {
+  font-style: italic;
+  color: var(--lv-terracotta);
+}
+
+.lv-locgal__grid {
+  display: grid;
+  gap: calc(12 * var(--lv-u));
+}
+
+.lv-locgal__grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: calc(8 * var(--lv-u));
+}
+
+/* Mobile Gallery Layouts */
+.lv-locgal__mosaic {
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--lv-u));
+  grid-column: span 2;
+  width: 100%;
+}
+
+.lv-locgal__grid--cg {
+  grid-template-columns: 1fr 1fr;
+}
+.lv-locgal__grid--cg .lv-locgal__main {
+  grid-column: span 2;
+  aspect-ratio: 328 / 308;
+}
+.lv-locgal__grid--cg .lv-locgal__row-top {
+  display: grid;
+  grid-template-columns: 110fr 206fr;
+  gap: calc(12 * var(--lv-u));
+  height: calc(148 * var(--lv-u));
+}
+.lv-locgal__grid--cg .lv-locgal__row-btm {
+  display: grid;
+  grid-template-columns: 206fr 110fr;
+  gap: calc(12 * var(--lv-u));
+  height: calc(148 * var(--lv-u));
+}
+
+.lv-locgal__grid--mm {
+  grid-template-columns: 1fr 1fr;
+}
+.lv-locgal__grid--mm .lv-locgal__main {
+  grid-column: span 2;
+  aspect-ratio: 328 / 308;
+}
+.lv-locgal__grid--mm .lv-locgal__wide {
+  grid-column: span 2;
+  aspect-ratio: 328 / 148;
+}
+.lv-locgal__grid--mm .lv-locgal__row-btm {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(12 * var(--lv-u));
+  grid-column: span 2;
+  height: calc(148 * var(--lv-u));
+}
+
+/* Desktop Gallery Layouts */
+@media (min-width: 1024px) {
+  .lv-locgal {
+    background: var(--lv-sand-4);
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+  .lv-locgal__eyebrow {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__title {
+    font-size: calc(64 * var(--lv-u));
+    margin-top: calc(24 * var(--lv-u));
+    margin-bottom: calc(42 * var(--lv-u));
+  }
+
+  /* Coconut Grove (5 images) */
+  .lv-locgal__grid--cg {
+    display: grid;
+    grid-template-columns: calc(662 * var(--lv-u)) calc(662 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: calc(624 * var(--lv-u));
+  }
+  .lv-locgal__grid--cg .lv-locgal__main {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__grid--cg .lv-locgal__mosaic {
+    display: grid;
+    grid-template-rows: calc(302 * var(--lv-u)) calc(302 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: 100%;
+    width: 100%;
+    grid-column: 2 / 3;
+  }
+  .lv-locgal__grid--cg .lv-locgal__row-top {
+    display: grid;
+    grid-template-columns: calc(222 * var(--lv-u)) calc(420 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: 100%;
+    width: 100%;
+  }
+  .lv-locgal__grid--cg .lv-locgal__row-btm {
+    display: grid;
+    grid-template-columns: calc(420 * var(--lv-u)) calc(222 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: 100%;
+    width: 100%;
+  }
+  .lv-locgal__grid--cg .lv-locgal__tile {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__grid--cg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: auto;
+    border-radius: calc(12 * var(--lv-u));
+  }
+
+  /* Midtown Miami (4 images) */
+  .lv-locgal__grid--mm {
+    display: grid;
+    grid-template-columns: calc(662 * var(--lv-u)) calc(662 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: calc(624 * var(--lv-u));
+  }
+  .lv-locgal__grid--mm .lv-locgal__main {
+    grid-column: 1 / 2;
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__grid--mm .lv-locgal__mosaic {
+    display: grid;
+    grid-template-rows: calc(302 * var(--lv-u)) calc(302 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: 100%;
+    width: 100%;
+    grid-column: 2 / 3;
+  }
+  .lv-locgal__grid--mm .lv-locgal__wide {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__grid--mm .lv-locgal__row-btm {
+    display: grid;
+    grid-template-columns: calc(321 * var(--lv-u)) calc(321 * var(--lv-u));
+    gap: calc(20 * var(--lv-u));
+    height: 100%;
+    width: 100%;
+  }
+  .lv-locgal__grid--mm .lv-locgal__tile {
+    width: 100%;
+    height: 100%;
+    aspect-ratio: auto;
+    object-fit: cover;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locgal__grid--mm img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: auto;
+    border-radius: calc(12 * var(--lv-u));
+  }
+}
+
+/* ---------------------------------------------------------
+   03. WHY CHOOSE LAVISH / WHAT SETS US APART
+   --------------------------------------------------------- */
+.lv-locwhy {
+  background: var(--lv-cream);
+  padding: calc(60 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: center;
+}
+
+.lv-locwhy__eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: calc(8 * var(--lv-u));
+  color: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lv-locwhy__eyebrow .lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+  position: relative;
+  bottom: 0;
+}
+
+.lv-locwhy__title {
+  font-family: var(--lv-font-display);
+  font-size: calc(36 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.1;
+  color: var(--lv-espresso);
+  margin-top: calc(16 * var(--lv-u));
+}
+
+.lv-locwhy__title em {
+  font-style: italic;
+  color: var(--lv-terracotta);
+}
+
+.lv-locwhy__grid {
+  margin-top: calc(32 * var(--lv-u));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: calc(24 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: left;
+}
+
+.lv-locwhy__item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-locwhy__item:nth-child(even) {
+  border-left: 1px solid rgba(36, 29, 26, 0.15);
+  padding-left: calc(12 * var(--lv-u));
+}
+
+.lv-locwhy__num {
+  width: calc(32 * var(--lv-u));
+  height: calc(32 * var(--lv-u));
+  border-radius: 50%;
+  border: 1px solid rgba(155, 99, 63, 0.4);
+  background: var(--lv-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--lv-font-display);
+  font-style: italic;
+  font-weight: 200;
+  font-size: calc(12 * var(--lv-u));
+  color: var(--lv-terracotta);
+  margin-bottom: calc(20 * var(--lv-u));
+  flex-shrink: 0;
+}
+
+.lv-locwhy__heading {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1.15;
+  color: var(--lv-espresso);
+}
+
+.lv-locwhy__desc {
+  font-family: var(--lv-font-body);
+  font-size: calc(10 * var(--lv-u));
+  line-height: 1.5;
+  color: var(--lv-espresso);
+  margin-top: calc(12 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-locwhy {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+  .lv-locwhy__eyebrow {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-locwhy__title {
+    font-size: calc(64 * var(--lv-u));
+    margin-top: calc(24 * var(--lv-u));
+  }
+  .lv-locwhy__grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: calc(60 * var(--lv-u));
+    margin-top: calc(42 * var(--lv-u));
+  }
+  .lv-locwhy__item:nth-child(even) {
+    border-left: none;
+    padding-left: 0;
+  }
+  .lv-locwhy__item:not(:first-child) {
+    border-left: 1px solid rgba(36, 29, 26, 0.15);
+    padding-left: calc(30 * var(--lv-u));
+  }
+  .lv-locwhy__num {
+    width: calc(40 * var(--lv-u));
+    height: calc(40 * var(--lv-u));
+    font-size: calc(16 * var(--lv-u));
+    margin-bottom: calc(100 * var(--lv-u));
+  }
+  .lv-locwhy__heading {
+    font-size: calc(28 * var(--lv-u));
+  }
+  .lv-locwhy__desc {
+    font-size: calc(16 * var(--lv-u));
+    line-height: 1.4;
+    margin-top: calc(15 * var(--lv-u));
+  }
+  /* numerals sit a hair high in the italic face: nudge to the circle's centre */
+  .lv-locwhy__num {
+    padding-top: calc(4 * var(--lv-u));
+  }
+}
+
+/* ---------------------------------------------------------
+   04. SERVICES SPOTLIGHT BAND
+   --------------------------------------------------------- */
+.lv-locservices {
+  background: var(--lv-terracotta);
+  color: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u));
+}
+
+.lv-locservices__grid {
+  display: flex;
+  flex-direction: column;
+  gap: calc(24 * var(--lv-u));
+}
+
+.lv-locservices__content {
+  display: contents;
+}
+
+.lv-locservices__title {
+  order: 1;
+  font-family: var(--lv-font-display);
+  font-size: calc(32 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.1;
+  color: var(--lv-cream);
+}
+
+.lv-locservices__title em {
+  font-style: italic;
+  color: inherit;
+}
+
+.lv-locservices__media {
+  order: 2;
+  width: 100%;
+  aspect-ratio: 328 / 394;
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+}
+
+.lv-locservices__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lv-locservices__body {
+  order: 3;
+}
+
+.lv-locservices__list {
+  margin-top: calc(20 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+}
+
+.lv-locservices__list li {
+  padding: calc(12 * var(--lv-u)) 0;
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(24 * var(--lv-u));
+  line-height: 1.1;
+  color: var(--lv-cream);
+}
+
+.lv-locservices__tab {
+  background: transparent;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity var(--lv-dur-fast) var(--lv-ease), text-decoration var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-locservices__tab:hover {
+  opacity: 0.9;
+}
+
+.lv-locservices__tab.is-active,
+.lv-locservices__list li.is-active .lv-locservices__tab {
+  opacity: 1;
+  text-decoration: underline;
+  text-underline-offset: 6px;
+}
+
+.lv-locservices__spotlight {
+  margin-top: calc(20 * var(--lv-u));
+}
+
+.lv-locservices__spotlight-title {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1.1;
+  color: var(--lv-cream);
+  transition: opacity 0.18s ease;
+}
+
+.lv-locservices__spotlight-desc {
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-cream);
+  margin-top: calc(14 * var(--lv-u));
+  transition: opacity 0.18s ease;
+}
+
+.lv-locservices__cta {
+  margin-top: calc(24 * var(--lv-u));
+  display: inline-flex;
+}
+
+@media (min-width: 1024px) {
+  .lv-locservices {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+  .lv-locservices__grid {
+    display: grid;
+    grid-template-columns: calc(434 * var(--lv-u)) 1fr;
+    gap: calc(61 * var(--lv-u));
+    align-items: start;
+  }
+  .lv-locservices__content {
+    display: block;
+    padding-top: calc(42 * var(--lv-u));
+  }
+  .lv-locservices__title,
+  .lv-locservices__media,
+  .lv-locservices__body {
+    order: 0;
+  }
+  .lv-locservices__media {
+    aspect-ratio: 434 / 578;
+    border-radius: calc(12 * var(--lv-u));
+  }
+  .lv-locservices__title {
+    font-size: calc(64 * var(--lv-u));
+    line-height: 1.05;
+  }
+  .lv-locservices__body {
+    display: grid;
+    grid-template-columns: calc(380 * var(--lv-u)) 1fr;
+    gap: calc(35 * var(--lv-u));
+    margin-top: calc(43 * var(--lv-u));
+    align-items: start;
+  }
+  .lv-locservices__list {
+    margin-top: 0;
+  }
+  .lv-locservices__list li {
+    padding: calc(25.5 * var(--lv-u)) 0;
+    font-size: calc(28 * var(--lv-u));
+  }
+  .lv-locservices__spotlight {
+    margin-top: calc(13 * var(--lv-u));
+    border-left: 1px solid rgba(250, 248, 245, 0.3);
+    padding-left: calc(40 * var(--lv-u));
+    padding-top: calc(36 * var(--lv-u));
+    min-height: calc(308 * var(--lv-u));
+  }
+  .lv-locservices__spotlight-title {
+    font-size: calc(36 * var(--lv-u));
+  }
+  .lv-locservices__spotlight-desc {
+    font-size: calc(16 * var(--lv-u));
+    line-height: 1.4;
+    margin-top: calc(18 * var(--lv-u));
+    max-width: calc(353 * var(--lv-u));
+  }
+  .lv-locservices__cta {
+    margin-top: calc(32 * var(--lv-u));
+  }
+}
+
+/* ---------------------------------------------------------
+   05. VIRTUAL TOUR / WALKTHROUGH
+   --------------------------------------------------------- */
+.lv-loctour {
+  background: var(--lv-cream);
+  padding: calc(60 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: center;
+}
+
+.lv-loctour__eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: calc(8 * var(--lv-u));
+  color: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lv-loctour__eyebrow .lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+  position: relative;
+  bottom: 0;
+}
+
+.lv-loctour__title {
+  font-family: var(--lv-font-display);
+  font-size: calc(36 * var(--lv-u));
+  font-weight: 200;
+  line-height: 1.1;
+  color: var(--lv-espresso);
+  margin-top: calc(16 * var(--lv-u));
+  text-align: center;
+}
+
+.lv-loctour__title em {
+  font-style: italic;
+  color: var(--lv-terracotta);
+}
+
+.lv-loctour__frame {
+  margin-top: calc(32 * var(--lv-u));
+  position: relative;
+  border-radius: calc(8 * var(--lv-u));
+  overflow: hidden;
+  aspect-ratio: 328 / 230;
+  width: 100%;
+}
+
+.lv-loctour__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (min-width: 1024px) {
+  .lv-loctour {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(40 * var(--lv-u));
+  }
+  .lv-loctour__eyebrow {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-loctour__title {
+    font-size: calc(64 * var(--lv-u));
+    margin-top: calc(24 * var(--lv-u));
+  }
+  .lv-loctour__frame {
+    margin-top: calc(42 * var(--lv-u));
+    aspect-ratio: 1344 / 514;
+    border-radius: calc(12 * var(--lv-u));
+  }
+}
+
+/* walkthrough -> Instagram: ~100px from the photo to the heading in the comp */
+@media (min-width: 1024px) {
+  .lv-loctour + .lv-insta {
+    padding-top: calc(60 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   Mobile review round (Figma 2012:17)
+   ========================================================= */
+@media (max-width: 1023.98px) {
+  .lv-lochero__content { padding-inline: calc(10 * var(--lv-u)); }
+  .lv-lochero__title { font-size: calc(36 * var(--lv-u)); line-height: 1.1; max-width: calc(309 * var(--lv-u)); }
+
+  /* what sets us apart: divider centred between the columns, numerals centred in their rings */
+  .lv-locwhy__grid { gap: calc(32 * var(--lv-u)); }
+  .lv-locwhy__item:nth-child(even) { border-left: 0; padding-left: 0; }
+  .lv-locwhy__item:nth-child(even)::before { content: ''; position: absolute; left: calc(-16 * var(--lv-u)); top: 0; bottom: 0; width: 1px; background: rgba(36, 29, 26, 0.15); }
+  .lv-locwhy__num { margin-bottom: calc(51 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1; padding: 0; text-indent: 0; }
+  .lv-locwhy__desc { margin-top: calc(20 * var(--lv-u)); }
+
+  /* services: the open description sits right under its own tab */
+  .lv-locservices__spotlight-title { display: none; }
+  .lv-locservices__list li { padding: calc(14.5 * var(--lv-u)) 0; }
+  .lv-locservices__list li .lv-locservices__spotlight { margin-top: calc(16 * var(--lv-u)); }
+  .lv-locservices__list li.is-active { padding-bottom: calc(36 * var(--lv-u)); }
+  .lv-locservices__spotlight-desc { margin-top: 0; }
+
+  /* tour -> Instagram */
+  .lv-loctour { padding-bottom: 0; }
+}

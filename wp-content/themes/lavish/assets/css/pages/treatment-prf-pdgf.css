@@ -1,0 +1,251 @@
+/* PRF / PDGF page overrides (Figma 1:2876 desktop, 1:11244 mobile).
+   Loaded after treatment.css; .lv-prf-* classes are unique to this page. */
+
+/* ---------- 01 intro ---------- */
+.lv-prf-intro { background: var(--lv-cream); padding: calc(69 * var(--lv-u)) calc(16 * var(--lv-u)) calc(72 * var(--lv-u)); }
+.lv-prf-intro__split { margin-top: calc(28 * var(--lv-u)); }
+.lv-prf-intro__lead { border-radius: calc(8 * var(--lv-u)); }
+.lv-prf-intro__copy { margin-top: calc(32 * var(--lv-u)); }
+.lv-prf-intro__line { margin-top: calc(18 * var(--lv-u)); background: rgba(36, 29, 26, 0.2); }
+.lv-prf-intro__text { margin-top: calc(22 * var(--lv-u)); }
+.lv-prf-intro__cta { margin-top: calc(34 * var(--lv-u)); }
+
+.lv-prf-cards { margin-top: calc(72 * var(--lv-u)); gap: calc(12 * var(--lv-u)); padding-bottom: 0; }
+.lv-prf-card { flex: 0 0 calc(300 * var(--lv-u)); height: calc(576 * var(--lv-u)); background: rgba(155, 99, 63, 0.15); }
+.lv-prf-card__pic img { aspect-ratio: auto; height: calc(233 * var(--lv-u)); }
+.lv-prf-card__body { padding: calc(24 * var(--lv-u)) calc(16 * var(--lv-u)) 0; }
+.lv-prf-card__tag { gap: calc(8 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); line-height: 1.4; letter-spacing: 0.1em; font-weight: 500; }
+.lv-prf-card__tag svg { width: calc(12 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
+.lv-prf-card h3 { margin-top: calc(13 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); line-height: 1.1; }
+.lv-prf-card__desc { margin-top: calc(4 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; }
+.lv-prf-card__lbl { margin-top: calc(22 * var(--lv-u)); line-height: 1.4; }
+.lv-prf-card__list { margin-top: calc(16 * var(--lv-u)); gap: calc(18 * var(--lv-u)); }
+.lv-prf-card__list li { gap: calc(8 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: calc(20 * var(--lv-u)); }
+.lv-prf-card__list svg { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+.lv-prf-cards__nav { margin-top: calc(28 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-prf-cards__cta { margin-top: calc(40 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-prf-intro { padding: calc(97 * var(--lv-u)) calc(48 * var(--lv-u)) calc(99 * var(--lv-u)); }
+  .lv-prf-intro__split { margin-top: 0; grid-template-columns: calc(456 * var(--lv-u)) 1fr; gap: calc(80 * var(--lv-u)); }
+  .lv-prf-intro__lead { border-radius: calc(12 * var(--lv-u)); margin-top: calc(44 * var(--lv-u)); }
+  .lv-prf-intro__copy { margin-top: calc(2 * var(--lv-u)); }
+  .lv-prf-intro__line { display: block; margin-top: calc(29 * var(--lv-u)); }
+  .lv-prf-intro__text { margin-top: calc(29 * var(--lv-u)); max-width: calc(684 * var(--lv-u)); }
+  .lv-prf-intro__cta { margin-top: calc(26 * var(--lv-u)); }
+
+  .lv-prf-cards { margin-top: calc(73 * var(--lv-u)); grid-template-columns: repeat(3, calc(434 * var(--lv-u))); gap: calc(21 * var(--lv-u)); }
+  .lv-prf-card { height: calc(698 * var(--lv-u)); }
+  .lv-prf-card__pic img { height: calc(280 * var(--lv-u)); }
+  .lv-prf-card__body { padding: calc(36 * var(--lv-u)) calc(28 * var(--lv-u)) 0; }
+  .lv-prf-card__tag { font-size: calc(12 * var(--lv-u)); }
+  .lv-prf-card__tag svg { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); }
+  .lv-prf-card h3 { margin-top: calc(16 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+  .lv-prf-card__desc { margin-top: calc(15 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.6; max-width: calc(358 * var(--lv-u)); }
+  .lv-prf-card__lbl { margin-top: calc(30 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+  .lv-prf-card__list { margin-top: calc(24 * var(--lv-u)); gap: calc(24 * var(--lv-u)); }
+  .lv-prf-card__list li { gap: calc(10 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: calc(24 * var(--lv-u)); }
+  .lv-prf-card__list svg { width: calc(24 * var(--lv-u)); height: calc(24 * var(--lv-u)); }
+}
+
+/* ---------- 02 VAMP ---------- */
+.lv-prf-vamp { padding: calc(69 * var(--lv-u)) calc(15 * var(--lv-u)) calc(72 * var(--lv-u)); }
+.lv-prf-vamp__title { color: var(--lv-cream); margin-top: calc(25 * var(--lv-u)); }
+.lv-prf-vamp__title em { color: var(--lv-cream); }
+.lv-prf-vamp__sub { opacity: 1; margin-top: calc(12 * var(--lv-u)); }
+.lv-prf-vamp__card { margin-top: calc(26 * var(--lv-u)); background: none; border-radius: 0; overflow: visible; gap: calc(16 * var(--lv-u)); }
+.lv-prf-vamp__pic img { height: calc(360 * var(--lv-u)); aspect-ratio: auto; border-radius: calc(8 * var(--lv-u)); }
+.lv-prf-vamp__features { height: calc(427 * var(--lv-u)); padding: 0; gap: 0; background: rgba(248, 242, 235, 0.05); border-radius: calc(12 * var(--lv-u)); }
+.lv-prf-vamp__feature { flex: 0 0 calc(128 * var(--lv-u)); padding: calc(28 * var(--lv-u)) calc(20 * var(--lv-u)) 0; gap: calc(16 * var(--lv-u)); border-bottom: 1px solid rgba(250, 248, 245, 0.2); }
+.lv-prf-vamp__feature:last-child { flex: 1 1 auto; padding-bottom: 0; }
+.lv-prf-vamp__icon { width: calc(56 * var(--lv-u)); height: calc(56 * var(--lv-u)); border-radius: calc(6 * var(--lv-u)); }
+.lv-prf-vamp__icon svg { width: calc(28 * var(--lv-u)); height: calc(28 * var(--lv-u)); }
+.lv-prf-vamp__text { max-width: calc(211 * var(--lv-u)); padding-top: calc(1 * var(--lv-u)); }
+.lv-prf-vamp__text h3 { line-height: 1.1; }
+.lv-prf-vamp__text p { margin-top: calc(10 * var(--lv-u)); max-width: calc(205 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); opacity: 1; }
+.lv-prf-vamp__foot { margin-top: calc(49 * var(--lv-u)); }
+.lv-prf-vamp__foot p { max-width: calc(328 * var(--lv-u)); }
+.lv-prf-vamp__foot .lv-btn { margin-top: calc(23 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-prf-vamp { padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) calc(99 * var(--lv-u)); }
+  .lv-prf-vamp__header { grid-template-columns: 1fr calc(637 * var(--lv-u)); gap: 0; }
+  .lv-prf-vamp__sub { max-width: none; margin: 0 0 calc(4 * var(--lv-u)); }
+  .lv-prf-vamp__title { margin-top: calc(28 * var(--lv-u)); }
+  .lv-prf-vamp__card { margin-top: calc(52 * var(--lv-u)); grid-template-columns: calc(448 * var(--lv-u)) 1fr; gap: calc(24 * var(--lv-u)); }
+  .lv-prf-vamp__pic img { height: calc(538 * var(--lv-u)); border-radius: calc(12 * var(--lv-u)); }
+  .lv-prf-vamp__features { height: calc(538 * var(--lv-u)); border-radius: calc(20 * var(--lv-u)); justify-content: flex-start; }
+  .lv-prf-vamp__feature { flex-basis: calc(168 * var(--lv-u)); padding: calc(48 * var(--lv-u)) calc(48 * var(--lv-u)) 0; gap: calc(32 * var(--lv-u)); }
+  .lv-prf-vamp__feature:last-child { padding-bottom: 0; }
+  .lv-prf-vamp__icon { width: calc(72 * var(--lv-u)); height: calc(72 * var(--lv-u)); border-radius: calc(8 * var(--lv-u)); }
+  .lv-prf-vamp__icon svg { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); }
+  .lv-prf-vamp__text { max-width: calc(470 * var(--lv-u)); padding-top: calc(4 * var(--lv-u)); }
+  .lv-prf-vamp__text p { max-width: none; margin-top: calc(14 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.6; }
+  .lv-prf-vamp__foot { margin-top: calc(66 * var(--lv-u)); }
+  .lv-prf-vamp__foot p { max-width: calc(488 * var(--lv-u)); }
+  .lv-prf-vamp__foot .lv-btn { margin-top: calc(33 * var(--lv-u)); }
+}
+
+/* ---------- 03 side by side ---------- */
+.lv-prf-side { background: #ECE2D9; padding: calc(71 * var(--lv-u)) calc(16 * var(--lv-u)) calc(67 * var(--lv-u)); }
+.lv-prf-side__grid { margin-top: calc(26 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-prf-side__card { flex: 0 0 calc(328 * var(--lv-u)); height: calc(726 * var(--lv-u)); border-radius: calc(12 * var(--lv-u)); padding: calc(24 * var(--lv-u)) calc(15 * var(--lv-u)) 0 calc(24 * var(--lv-u)); }
+.lv-prf-side__card--light { background: #F8F2EB; }
+.lv-prf-side__card--dark { background: #3A2618; }
+.lv-prf-side__card-icon { width: calc(48 * var(--lv-u)); height: calc(48 * var(--lv-u)); border-radius: 50%; }
+.lv-prf-side__card--light .lv-prf-side__card-icon { background: #ECE2D9; }
+.lv-prf-side__card--dark .lv-prf-side__card-icon { background: #564437; }
+.lv-prf-side__card-tag { line-height: 1.4; }
+.lv-prf-side__card--dark .lv-prf-side__card-tag,
+.lv-prf-side__card--dark .lv-prf-side__lbl { color: var(--lv-cream); }
+.lv-prf-side__card h3 { margin-top: calc(20 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+.lv-prf-side__card-desc { margin-top: calc(16 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); opacity: 1; height: calc(126 * var(--lv-u)); }
+.lv-prf-side__divider { margin: calc(41 * var(--lv-u)) 0 0; width: calc(280 * var(--lv-u)); opacity: 0.2; flex: none; }
+.lv-prf-side__lbl { margin: calc(29 * var(--lv-u)) 0 calc(20 * var(--lv-u)); line-height: 1.4; }
+.lv-prf-steps { gap: calc(18 * var(--lv-u)); }
+.lv-prf-step { gap: calc(12 * var(--lv-u)); }
+.lv-prf-step__num { width: calc(32 * var(--lv-u)); height: calc(32 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); font-weight: 200; opacity: 1; border-color: rgba(155, 99, 63, 0.6); color: var(--lv-terracotta); }
+.lv-prf-side__card--dark .lv-prf-step__num { border-color: var(--lv-cream); color: var(--lv-cream); }
+.lv-prf-step__body { padding-top: 0; }
+.lv-prf-step__body h4 { font-size: calc(20 * var(--lv-u)); line-height: 1.1; }
+.lv-prf-step__body p { max-width: calc(245 * var(--lv-u)); margin-top: calc(5 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; opacity: 1; }
+.lv-prf-side__nav { margin-top: calc(28 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-prf-side__lead { margin-top: calc(31 * var(--lv-u)); max-width: calc(319 * var(--lv-u)); }
+
+/* banner sits on the cream band between side-by-side and areas */
+.lv-prf-banner-wrap { background: var(--lv-cream); padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)); }
+.lv-prf-banner { margin: 0; border-radius: calc(12 * var(--lv-u)); }
+.lv-prf-banner__left { height: calc(362 * var(--lv-u)); padding: calc(68 * var(--lv-u)) calc(24 * var(--lv-u)) 0; }
+.lv-prf-banner__tag { opacity: 1; line-height: 1.4; }
+.lv-prf-banner__title { margin-top: calc(30 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+.lv-prf-banner__desc { margin-top: calc(20 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); opacity: 1; max-width: calc(289 * var(--lv-u)); }
+.lv-prf-banner__right { height: calc(352 * var(--lv-u)); background: rgba(155, 99, 63, 0.15); padding: calc(54 * var(--lv-u)) calc(16 * var(--lv-u)) 0; gap: calc(28 * var(--lv-u)); }
+.lv-prf-banner__item { gap: calc(12 * var(--lv-u)); }
+.lv-prf-banner__icon { width: calc(32 * var(--lv-u)); height: calc(32 * var(--lv-u)); background: #fff; }
+.lv-prf-banner__icon svg { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); }
+.lv-prf-banner__item h4 { font-size: calc(20 * var(--lv-u)); line-height: 1.1; }
+.lv-prf-banner__item p { margin-top: calc(8 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; opacity: 1; max-width: calc(242 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-prf-side { padding: calc(92 * var(--lv-u)) calc(109 * var(--lv-u)) calc(96 * var(--lv-u)); }
+  .lv-prf-side__grid { margin-top: calc(49 * var(--lv-u)); grid-template-columns: repeat(2, calc(600 * var(--lv-u))); gap: calc(24 * var(--lv-u)); }
+  .lv-prf-side__card { height: calc(727 * var(--lv-u)); border-radius: calc(20 * var(--lv-u)); padding: calc(32 * var(--lv-u)) calc(32 * var(--lv-u)) 0; }
+  .lv-prf-side__card-head { gap: calc(16 * var(--lv-u)); }
+  .lv-prf-side__card-icon { width: calc(64 * var(--lv-u)); height: calc(64 * var(--lv-u)); }
+  .lv-prf-side__card-icon svg { width: calc(32 * var(--lv-u)); height: calc(32 * var(--lv-u)); }
+  .lv-prf-side__card-tag { font-size: calc(12 * var(--lv-u)); }
+  .lv-prf-side__card h3 { margin-top: calc(22 * var(--lv-u)); font-size: calc(36 * var(--lv-u)); }
+  .lv-prf-side__card-desc { margin-top: calc(22 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); max-width: calc(530 * var(--lv-u)); }
+  .lv-prf-side__divider { margin-top: calc(33 * var(--lv-u)); width: calc(536 * var(--lv-u)); }
+  .lv-prf-side__card-desc { height: calc(96 * var(--lv-u)); }
+  .lv-prf-side__lbl { font-size: calc(12 * var(--lv-u)); margin: calc(36 * var(--lv-u)) 0 calc(28 * var(--lv-u)); }
+  .lv-prf-steps { gap: calc(21 * var(--lv-u)); }
+  .lv-prf-step__body { padding-top: calc(3 * var(--lv-u)); }
+  .lv-prf-step__body p { margin-top: calc(7 * var(--lv-u)); }
+  .lv-prf-step { gap: calc(16 * var(--lv-u)); }
+  .lv-prf-step__num { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-prf-step__body h4 { font-size: calc(24 * var(--lv-u)); }
+  .lv-prf-step__body p { font-size: calc(16 * var(--lv-u)); max-width: calc(395 * var(--lv-u)); }
+  .lv-prf-side__lead { margin-top: calc(35 * var(--lv-u)); max-width: calc(528 * var(--lv-u)); }
+
+  .lv-prf-banner-wrap { padding: calc(72 * var(--lv-u)) calc(109 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-prf-banner { grid-template-columns: calc(611 * var(--lv-u)) 1fr; max-width: none; border-radius: calc(20 * var(--lv-u)); }
+  .lv-prf-banner__left { height: calc(401 * var(--lv-u)); padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) 0; }
+  .lv-prf-banner__title { margin-top: calc(28 * var(--lv-u)); font-size: calc(36 * var(--lv-u)); }
+  .lv-prf-banner__desc { margin-top: calc(31 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); max-width: calc(428 * var(--lv-u)); }
+  .lv-prf-banner__right { height: calc(401 * var(--lv-u)); background: #ECE2D9; padding: calc(84 * var(--lv-u)) calc(48 * var(--lv-u)) 0; justify-content: flex-start; gap: calc(32 * var(--lv-u)); }
+  .lv-prf-banner__item { gap: calc(16 * var(--lv-u)); }
+  .lv-prf-banner__icon { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); }
+  .lv-prf-banner__icon svg { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+  .lv-prf-banner__item h4 { font-size: calc(24 * var(--lv-u)); }
+  .lv-prf-banner__item p { font-size: calc(16 * var(--lv-u)); max-width: none; }
+}
+
+/* ---------- 04 areas ---------- */
+.lv-prf-areas { background: #ECE2D9; padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(71 * var(--lv-u)); }
+.lv-prf-areas__title { font-size: calc(32 * var(--lv-u)); }
+.lv-prf-areas__grid { margin-top: calc(28 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-prf-area-card { border-radius: calc(8 * var(--lv-u)); }
+.lv-prf-area-card img { aspect-ratio: auto; height: calc(120 * var(--lv-u)); }
+.lv-prf-area-card__label { height: calc(45 * var(--lv-u)); padding: 0 calc(8 * var(--lv-u)); display: flex; align-items: center; justify-content: center; font-size: calc(16 * var(--lv-u)); line-height: 1.1; }
+
+@media (min-width: 1024px) {
+  .lv-prf-areas { padding: calc(92 * var(--lv-u)) calc(48 * var(--lv-u)) calc(101 * var(--lv-u)); }
+  .lv-prf-areas__title { font-size: calc(48 * var(--lv-u)); }
+  .lv-prf-areas__grid { margin-top: calc(40 * var(--lv-u)); gap: calc(28 * var(--lv-u)) calc(20 * var(--lv-u)); }
+  .lv-prf-area-card { border-radius: calc(12 * var(--lv-u)); }
+  .lv-prf-area-card img { height: calc(272 * var(--lv-u)); }
+  .lv-prf-area-card__label { height: calc(72 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); }
+}
+
+/* Figma mobile CTAs here are 175x46 with 14px text (shared mobile default is 12px). */
+@media (max-width: 1023px) {
+  .lv-phero--prf .lv-btn, .lv-prf-intro .lv-btn, .lv-prf-vamp .lv-btn { font-size: calc(14 * var(--lv-u)); }
+}
+.lv-prf-cards__nav .lv-rail__btn, .lv-prf-side__nav .lv-rail__btn { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); background: none; }
+
+/* ---------- 05 recommended (shared lv-tiles, sized to this comp) ---------- */
+.lv-tiles--prf .lv-tile { height: calc(168 * var(--lv-u)); }
+.lv-tiles--prf .lv-tile:hover { height: calc(230 * var(--lv-u)); }
+.lv-tiles--prf .lv-tile__title { margin-top: calc(12 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); white-space: normal; }
+.lv-tiles--prf .lv-tile__more { margin-top: calc(18 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+.lv-tiles--prf .lv-tiles__cta { width: calc(160 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-tiles--prf { padding-bottom: calc(97 * var(--lv-u)); }
+  .lv-tiles--prf .lv-tiles__grid { align-items: start; min-height: calc(355 * var(--lv-u)); }
+  .lv-tiles--prf .lv-tile { height: calc(285 * var(--lv-u)); }
+  .lv-tiles--prf .lv-tile:hover { height: calc(355 * var(--lv-u)); }
+  .lv-tiles--prf .lv-tile__title { margin-top: calc(22 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); white-space: nowrap; }
+  .lv-tiles--prf .lv-tile__more { margin-top: calc(25 * var(--lv-u)); }
+  .lv-tiles--prf .lv-tiles__cta { width: calc(175 * var(--lv-u)); }
+}
+
+/* ---------- FAQs (360 comp: 72 top, taller rows, 248-wide questions) ---------- */
+@media (max-width: 1023px) {
+  .lv-faqs--prf { padding-top: calc(72 * var(--lv-u)); padding-bottom: calc(65 * var(--lv-u)); }
+  .lv-faqs--prf .lv-faqs__title { margin-top: calc(18 * var(--lv-u)); }
+  .lv-faqs--prf .lv-faqs__list { margin-top: calc(24 * var(--lv-u)); }
+  .lv-faqs--prf .lv-qa__q { padding-block: calc(26 * var(--lv-u)); }
+  .lv-faqs--prf .lv-qa__q > span { max-width: calc(248 * var(--lv-u)); }
+  .lv-marquee { height: calc(36 * var(--lv-u)); }
+}
+.lv-tiles--prf .lv-tiles__title em { color: var(--lv-cream); }
+@media (max-width: 1023px) {
+  .lv-prf-side__card--light .lv-prf-step:nth-child(2) p { max-width: calc(233 * var(--lv-u)); }
+  .lv-prf-side__card--light .lv-prf-step:nth-child(3) p { max-width: calc(226 * var(--lv-u)); }
+}
+.lv-prf-card__list svg { transform: scale(0.82); } /* check glyph is ~80% of its Figma bounding box */
+
+/* prf-pdgf-reviews fixes */
+/* hairline icons: the --hl symbols draw a non-scaling stroke, so this is the real line width */
+.lv-prf-card__tag svg,
+.lv-prf-side__card-icon svg { fill: none; stroke: currentColor; }
+.lv-prf-card__tag svg,
+.lv-prf-vamp__icon svg,
+.lv-prf-side__card-icon svg { stroke-width: 1px; }
+
+/* feature icon tiles at 60% */
+.lv-prf-vamp__icon { background: rgba(155, 99, 63, 0.6); }
+
+@media (min-width: 1024px) {
+  /* photo runs down to the bottom of the button */
+  .lv-prf-intro__lead { aspect-ratio: auto; height: calc(302 * var(--lv-u)); object-fit: cover; }
+}
+
+/* mobile review: rails never scroll vertically; numerals centred; both side cards share one grid
+   (two-line headline slot, five-line text slot) so dividers and steps line up */
+@media (max-width: 1023px) {
+  .lv-prf-cards, .lv-prf-side__grid { overflow-y: hidden; overscroll-behavior-x: contain; }
+  .lv-prf-step__num { box-sizing: border-box; padding-top: calc(3 * var(--lv-u)); }
+  .lv-prf-side__card h3 { min-height: calc(62 * var(--lv-u)); }
+  .lv-prf-side__card-desc { height: calc(126 * var(--lv-u)); }
+  .lv-prf-side__divider { margin-top: calc(31 * var(--lv-u)); }
+}
+
+/* mobile review: recommended tiles open on tap (shared .lv-tiles--inj); open tile is 233 with the
+   button 163 from the top and 24 clear below, whatever the name's line count */
+@media (max-width: 1023px) {
+  .lv-tiles--prf.lv-tiles--inj .lv-tile:hover:not(.is-active) { height: calc(168 * var(--lv-u)); }
+  .lv-tiles--prf.lv-tiles--inj .lv-tile.is-active { height: auto; padding-bottom: calc(24 * var(--lv-u)); }
+  .lv-tiles--prf.lv-tiles--inj .lv-tile.is-active .lv-tile__more { margin-top: calc(25 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+}

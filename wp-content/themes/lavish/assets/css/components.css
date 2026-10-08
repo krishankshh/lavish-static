@@ -1,0 +1,1982 @@
+/* Lavish — shared components
+   Every dimension is the Figma design pixel multiplied by --lv-u.
+   Desktop values come from the 1440 comps, mobile from the 360 comps. */
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.lv-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(10 * var(--lv-u));
+  padding: calc(12 * var(--lv-u)) calc(24 * var(--lv-u));
+  border-radius: calc(60 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.4;
+  white-space: nowrap;
+  transition: background-color var(--lv-dur-fast) var(--lv-ease),
+              color var(--lv-dur-fast) var(--lv-ease),
+              border-color var(--lv-dur-fast) var(--lv-ease);
+}
+
+/* White pill — header "Book now" (Figma 1:953), 42 tall not 46 */
+.lv-nav__group .lv-btn { padding-block: calc(10 * var(--lv-u)); }
+
+.lv-btn--pill-light {
+  background: var(--lv-white);
+  color: var(--lv-espresso);
+  border: 1px solid rgba(250, 248, 245, 0.6);
+}
+
+/* Outline pill — header-alt "Get in touch" (Figma 79:481) */
+.lv-btn--pill-outline {
+  background: transparent;
+  color: var(--lv-espresso);
+  border: 1px solid rgba(36, 29, 26, 0.6);
+}
+
+/* Solid umber — in-page CTAs (Figma Frame 3 / Frame 327) */
+.lv-btn--umber {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  border: 1px solid transparent;
+}
+
+/* Derived states — no hover/active exists in the Figma file.
+   See docs/STATES-DERIVED.md */
+.lv-btn--pill-light:hover   { background: var(--lv-cream); }
+.lv-btn--pill-outline:hover { background: rgba(36, 29, 26, 0.06); }
+.lv-btn--umber:hover        { background: var(--lv-espresso); }
+.lv-btn:active              { transform: translateY(1px); }
+
+
+/* =========================================================
+   SHARED PRIMITIVES (moved out of home.css — used by every page)
+   ========================================================= */
+
+/* Display type: PP Editorial Ultralight, <em> switches to its italic.
+   In the comps the italic clause also changes colour. */
+.lv-display {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.lv-display em {
+  font-style: italic;
+  color: var(--lv-terracotta);
+}
+
+.lv-hero__title em,
+.lv-services__title em { color: inherit; }
+
+/* Eyebrow: "01" + 28px rule + label, Inter Semi Bold 12 (Figma 1:655/665/654) */
+.lv-eyebrow {
+  display: flex;
+  align-items: baseline;
+  gap: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  line-height: 1.4;
+  /* the comps set every eyebrow at 10%, not the 2% the other small caps use */
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+  position: relative;
+  bottom: 0;
+}
+
+.lv-eyebrow--terracotta { color: var(--lv-terracotta); }
+.lv-eyebrow--cream      { color: var(--lv-cream); }
+
+/* Circle affordance inside pills (Figma Group 3: 32x32 ellipse + 14 arrow) */
+.lv-circle {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: calc(32 * var(--lv-u));
+  height: calc(32 * var(--lv-u));
+  border-radius: 50%;
+}
+
+.lv-circle--umber           { background: var(--lv-umber);      color: var(--lv-cream); }
+.lv-circle--cream           { background: var(--lv-cream);      color: var(--lv-umber); }
+.lv-circle--terracotta      { background: var(--lv-terracotta); color: var(--lv-cream); }
+.lv-circle--terracotta-dark { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u));
+                              background: rgba(155, 99, 63, 0.4); border: 1px solid rgba(250, 248, 245, 0.4); color: var(--lv-cream); }
+.lv-circle--outline         { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u));
+                              border: 1px solid rgba(36, 29, 26, 0.4); color: var(--lv-espresso); }
+.lv-circle--flip svg        { rotate: 180deg; }
+
+.lv-icon--arrow { width: calc(14 * var(--lv-u)); height: calc(14 * var(--lv-u)); fill: currentColor; stroke: none; }
+.lv-icon--star  { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); fill: currentColor; stroke: none; }
+.lv-icon--pin   { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); color: var(--lv-terracotta); }
+.lv-icon--ig    { width: calc(24 * var(--lv-u)); height: calc(24 * var(--lv-u)); fill: currentColor; stroke: none; }
+.lv-icon--chev-lg { width: calc(9 * var(--lv-u)); height: calc(16 * var(--lv-u)); fill: currentColor; stroke: none; }
+
+/* Arrow pills carry the circle on the right, 20px inset (Figma padding) */
+.lv-btn--arrow { padding: calc(6 * var(--lv-u)) calc(6 * var(--lv-u)) calc(6 * var(--lv-u)) calc(19 * var(--lv-u)); gap: calc(10 * var(--lv-u)); }
+.lv-btn--pill-cream { background: var(--lv-cream); color: var(--lv-espresso); border: 1px solid transparent; }
+.lv-btn--pill-ghost { background: transparent; color: var(--lv-cream); border: 1px solid rgba(250, 248, 245, 0.6); }
+.lv-btn--pill-cream:hover { background: var(--lv-white); }
+.lv-btn--pill-ghost:hover { background: rgba(250, 248, 245, 0.12); }
+
+/* the comp overlaps the star boxes by a pixel; gap cannot go negative */
+.lv-stars { display: inline-flex; vertical-align: top; color: var(--lv-cream); }
+.lv-stars svg + svg { margin-left: calc(-1 * var(--lv-u)); }
+.lv-stars--google { color: #E2433D; }
+
+/* Rail nav circles (Figma 1:194 / 1:199 — 40x40 espresso, arrow_forward 18) */
+.lv-circle--dark {
+  width: calc(40 * var(--lv-u));
+  height: calc(40 * var(--lv-u));
+  background: var(--lv-espresso);
+  color: var(--lv-cream);
+}
+
+.lv-circle--dark:disabled { opacity: 0.35; }
+
+.lv-icon--caret-rail {
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+}
+
+@media (min-width: 1024px) {
+  .lv-icon--caret-rail {
+    width: calc(28 * var(--lv-u));
+    height: calc(28 * var(--lv-u));
+  }
+}
+
+.lv-icon--fwd {
+  width: calc(18 * var(--lv-u));
+  height: calc(18 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+}
+
+.lv-rail-nav {
+  display: flex;
+  justify-content: center;
+  gap: calc(10 * var(--lv-u));
+  margin-top: calc(36 * var(--lv-u));
+}
+
+.lv-cat--umber .lv-circle--dark { background: var(--lv-cream); color: var(--lv-espresso); }
+
+/* =========================================================
+   HEADER SHELL
+   ========================================================= */
+
+.lv-header {
+  position: relative;
+  z-index: 50;
+  width: 100%;
+}
+
+/* Hero-media pages: the bar sits over the hero video/image.
+   Figma draws no separate solid header on these — the hero's own
+   40% umber overlay provides the contrast. */
+.lv-header--over {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+}
+
+/* =========================================================
+   ANNOUNCEMENT TICKER
+   Desktop: 1440x38, arrows at x=472 / x=954 (Figma 1:948/958/961)
+   Mobile:   360x32, arrows at x=16  / x=332
+   ========================================================= */
+
+.lv-announce {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(32 * var(--lv-u));
+  background: var(--lv-terracotta);
+}
+
+.lv-announce__viewport {
+  position: relative;
+  display: grid;
+}
+
+.lv-announce__item {
+  grid-area: 1 / 1;
+  margin: 0;
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(10 * var(--lv-u));
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--lv-cream);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--lv-dur) var(--lv-ease);
+}
+
+.lv-announce__item.is-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.lv-announce__arrow {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: calc(16 * var(--lv-u));
+  display: grid;
+  place-items: center;
+  width: calc(12 * var(--lv-u));
+  height: calc(12 * var(--lv-u));
+  color: var(--lv-cream);
+}
+
+.lv-announce__arrow--next {
+  left: auto;
+  right: calc(16 * var(--lv-u));
+}
+
+.lv-icon--chev {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+}
+
+.lv-announce__arrow--next .lv-icon--chev {
+  rotate: 180deg;
+}
+
+@media (min-width: 1024px) {
+  .lv-announce {
+    height: calc(38 * var(--lv-u));
+  }
+  .lv-announce__item {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-announce__arrow {
+    width: calc(14 * var(--lv-u));
+    height: calc(14 * var(--lv-u));
+    /* Figma places the arrow boxes at x=472 and x=954 on a 1440 canvas (centered symmetrically) */
+    left: calc(50% - (248 * var(--lv-u)));
+  }
+  .lv-announce__arrow--next {
+    left: calc(50% + (234 * var(--lv-u)));
+    right: auto;
+  }
+  .lv-icon--chev {
+    width: calc(14 * var(--lv-u));
+    height: calc(14 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   NAV
+   Mobile: 360x72 (y 32..104) — burger / logo / phone
+   Desktop: 1440x62 (y 38..100) — rules at x 48..604 and 836..1392,
+            logo centred at x=645 and overhanging the rule by 28px
+   ========================================================= */
+
+.lv-nav {
+  position: relative;
+  height: calc(72 * var(--lv-u));
+}
+
+.lv-nav__burger,
+.lv-nav__phone {
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  display: grid;
+  place-items: center;
+  color: var(--lv-cream);
+}
+
+.lv-nav__burger { left: calc(16 * var(--lv-u)); width: calc(24 * var(--lv-u)); height: calc(24 * var(--lv-u)); }
+.lv-nav__phone  { right: calc(16 * var(--lv-u)); width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+
+.lv-icon--menu  { width: calc(24 * var(--lv-u)); height: calc(24 * var(--lv-u)); fill: currentColor; stroke: none; }
+.lv-icon--phone { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); stroke: currentColor; stroke-width: 1.5; fill: none; }
+
+.lv-nav__logo {
+  position: absolute;
+  left: 50%;
+  top: calc(12 * var(--lv-u));
+  translate: -50% 0;
+  width: calc(97.62 * var(--lv-u));
+}
+
+.lv-nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+/* Groups are desktop-only; the drawer carries them on mobile */
+.lv-nav__group { display: none; }
+
+@media (min-width: 1024px) {
+  .lv-nav {
+    position: relative;
+    max-width: calc(1440 * var(--lv-u));
+    margin-inline: auto;
+    width: 100%;
+    height: calc(62 * var(--lv-u));
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-inline: calc(48 * var(--lv-u));
+  }
+
+  .lv-nav__burger,
+  .lv-nav__phone {
+    display: none;
+  }
+
+  .lv-nav__logo {
+    position: absolute;
+    left: 50%;
+    top: calc(16 * var(--lv-u));      /* 54 on the page, nav starts at 38 */
+    translate: -50% 0;
+    width: calc(150.5 * var(--lv-u));
+    z-index: 2;
+  }
+
+  .lv-nav__group {
+    position: relative;
+    top: 0;
+    left: auto;
+    right: auto;
+    height: calc(62 * var(--lv-u));
+    flex: 1 1 0%;
+    max-width: calc(556 * var(--lv-u));
+    display: flex;
+    align-items: center;
+    gap: calc(48 * var(--lv-u));
+    border-bottom: 1px solid var(--lv-rule);
+  }
+
+  .lv-nav__group--left  {
+    justify-content: flex-start;
+  }
+  .lv-nav__group--right {
+    justify-content: flex-end;
+  }
+
+  .lv-nav__item { position: relative; }
+}
+
+.lv-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-nav-ink);
+  white-space: nowrap;
+  transition: opacity var(--lv-dur-fast) var(--lv-ease);
+}
+
+/* Derived: the file has no hover state for nav links */
+.lv-nav__link:hover { opacity: 0.7; }
+
+.lv-icon--caret {
+  width: calc(12 * var(--lv-u));
+  height: calc(12 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+  rotate: -90deg;               /* arrow_back_ios_new points left; comp points down */
+  transition: rotate var(--lv-dur-fast) var(--lv-ease);
+}
+
+[data-dropdown].is-open .lv-icon--caret { rotate: 90deg; }
+
+/* ---- Variant inks ---- */
+
+.lv-header--main {
+  --lv-nav-ink: var(--lv-cream);
+  --lv-rule: rgba(250, 248, 245, 0.4);
+}
+
+.lv-header--alt {
+  --lv-nav-ink: var(--lv-espresso);
+  --lv-rule: rgba(36, 29, 26, 0.4);
+}
+
+.lv-header--alt .lv-nav__burger,
+.lv-header--alt .lv-nav__phone {
+  color: var(--lv-espresso);
+}
+
+/* The alt CTA sits 8px tighter than the 48 rhythm (Figma: x=1273) */
+@media (min-width: 1024px) {
+  .lv-header--alt .lv-nav__item--cta {
+    margin-inline-start: calc(-8 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   DROPDOWN  (derived — no dropdown exists in the Figma file)
+   ========================================================= */
+
+.lv-dropdown {
+  position: absolute;
+  top: calc(100% + 18 * var(--lv-u));
+  left: calc(-24 * var(--lv-u));
+  min-width: calc(240 * var(--lv-u));
+  padding: calc(20 * var(--lv-u)) calc(24 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(12 * var(--lv-u));
+  box-shadow: 0 calc(12 * var(--lv-u)) calc(32 * var(--lv-u)) rgba(36, 29, 26, 0.16);
+  opacity: 0;
+  translate: 0 calc(-8 * var(--lv-u));
+  transition: opacity var(--lv-dur-fast) var(--lv-ease),
+              translate var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-dropdown::before {
+  content: '';
+  position: absolute;
+  top: calc(-24 * var(--lv-u));
+  left: 0;
+  right: 0;
+  height: calc(24 * var(--lv-u));
+}
+
+.lv-dropdown[hidden] { display: none; }
+
+[data-dropdown].is-open .lv-dropdown {
+  opacity: 1;
+  translate: 0 0;
+}
+
+.lv-nav__group--right .lv-dropdown {
+  left: auto;
+  right: calc(-24 * var(--lv-u));
+}
+
+.lv-dropdown__list a,
+.lv-dropdown__all {
+  display: block;
+  padding-block: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  color: var(--lv-espresso);
+  white-space: nowrap;
+  transition: color var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-dropdown__list a:hover,
+.lv-dropdown__all:hover { color: var(--lv-terracotta); }
+
+.lv-dropdown__all {
+  margin-top: calc(8 * var(--lv-u));
+  padding-top: calc(12 * var(--lv-u));
+  border-top: 1px solid rgba(36, 29, 26, 0.12);
+  color: var(--lv-terracotta);
+}
+
+/* =========================================================
+   MOBILE DRAWER  (derived — no comp exists)
+   Built by main.js from the header's own nav groups.
+   ========================================================= */
+
+.lv-no-scroll { overflow: hidden; }
+
+.lv-drawer {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  padding: calc(16 * var(--lv-u));
+  background: var(--lv-espresso);
+  color: var(--lv-cream);
+  opacity: 0;
+  translate: 0 calc(-12 * var(--lv-u));
+  transition: opacity var(--lv-dur) var(--lv-ease),
+              translate var(--lv-dur) var(--lv-ease);
+}
+
+.lv-drawer[hidden] { display: none; }
+.lv-drawer.is-open { opacity: 1; translate: 0 0; }
+
+.lv-drawer__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: calc(8 * var(--lv-u));
+  border-bottom: 1px solid rgba(250, 248, 245, 0.2);
+}
+
+.lv-drawer__brand {
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+.lv-drawer__close {
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1;
+  color: inherit;
+}
+
+.lv-drawer__nav { flex: 1; overflow-y: auto; padding-top: calc(16 * var(--lv-u)); }
+
+.lv-drawer__item { border-bottom: 1px solid rgba(250, 248, 245, 0.12); }
+
+.lv-drawer__link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding-block: calc(18 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1.2;
+  color: inherit;
+  text-align: left;
+}
+
+.lv-drawer__link--toggle::after {
+  content: '+';
+  font-family: var(--lv-font-body);
+  font-size: calc(20 * var(--lv-u));
+  transition: rotate var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-drawer__link--toggle.is-open::after { rotate: 45deg; }
+
+.lv-drawer__sub { padding-bottom: calc(12 * var(--lv-u)); }
+.lv-drawer__sub[hidden] { display: none; }
+
+.lv-drawer__sub a {
+  display: block;
+  padding-block: calc(10 * var(--lv-u));
+  padding-left: calc(12 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  color: rgba(250, 248, 245, 0.8);
+}
+
+.lv-drawer__item--cta {
+  border: 0;
+  margin-top: calc(24 * var(--lv-u));
+}
+
+.lv-drawer__item--cta .lv-btn {
+  width: 100%;
+  background: var(--lv-terracotta);
+  color: var(--lv-cream);
+  border-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .lv-drawer { display: none !important; }
+}
+
+/* =========================================================
+   TABS / FILTER BAR (derived & comped)
+   ========================================================= */
+
+.lv-tabs {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: calc(8 * var(--lv-u));
+  margin-top: calc(22 * var(--lv-u));
+  padding-inline: calc(18 * var(--lv-u));
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lv-tabs::-webkit-scrollbar { display: none; }
+
+.lv-tab {
+  flex: none;
+  padding: calc(12 * var(--lv-u)) calc(20 * var(--lv-u));
+  border-radius: calc(60 * var(--lv-u));
+  white-space: nowrap;
+  border: 1px solid rgba(250, 248, 245, 0.6);
+  font-family: var(--lv-font-ui);
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1;
+  color: var(--lv-cream);
+  cursor: pointer;
+  background: transparent;
+  transition: all var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-tab.is-active { background: var(--lv-cream); color: var(--lv-espresso); border-color: var(--lv-cream); }
+.lv-tab:hover:not(.is-active) { background: rgba(250, 248, 245, 0.12); }
+
+.lv-tabs--light {
+  justify-content: center;
+  padding-block: calc(16 * var(--lv-u));
+}
+
+.lv-tabs--light .lv-tab {
+  border-color: rgba(36, 29, 26, 0.2);
+  color: var(--lv-espresso);
+}
+
+.lv-tabs--light .lv-tab.is-active {
+  background: var(--lv-terracotta);
+  color: var(--lv-cream);
+  border-color: var(--lv-terracotta);
+}
+
+.lv-tabs--light .lv-tab:hover:not(.is-active) {
+  background: rgba(155, 99, 63, 0.08);
+}
+
+@media (min-width: 1024px) {
+  .lv-tabs {
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: calc(12 * var(--lv-u));
+    margin-top: calc(32 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   SCROLL REVEAL  (derived — see docs/MOTION.md)
+   ========================================================= */
+
+.js .lv-reveal {
+  opacity: 0;
+  translate: 0 calc(16 * var(--lv-u));
+  transition: opacity var(--lv-dur) var(--lv-ease),
+              translate var(--lv-dur) var(--lv-ease);
+}
+
+.js .lv-reveal.is-in { opacity: 1; translate: 0 0; }
+
+.lv-reveal--d1 { transition-delay: 60ms; }
+.lv-reveal--d2 { transition-delay: 120ms; }
+.lv-reveal--d3 { transition-delay: 180ms; }
+.lv-reveal--d4 { transition-delay: 240ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .js .lv-reveal { opacity: 1; translate: none; transition: none; }
+  html { scroll-behavior: auto; }
+}
+
+/* =========================================================
+   ACCORDION
+   ========================================================= */
+
+.lv-acc__item { border-bottom: 1px solid rgba(36, 29, 26, 0.12); }
+
+.lv-acc__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 * var(--lv-u));
+  width: 100%;
+  padding-block: calc(24 * var(--lv-u));
+  text-align: left;
+  font-size: calc(18 * var(--lv-u));
+  cursor: pointer;
+  transition: color var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-acc__trigger:hover {
+  color: var(--lv-terracotta);
+}
+
+.lv-acc__trigger::after {
+  content: '';
+  flex: none;
+  width: calc(12 * var(--lv-u));
+  height: calc(12 * var(--lv-u));
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  rotate: 45deg;
+  transition: rotate var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-acc__item.is-open .lv-acc__trigger::after { rotate: 225deg; }
+
+.lv-acc__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  overflow: hidden;
+  visibility: hidden;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1), visibility 0.45s;
+}
+
+.lv-acc__panel[hidden] {
+  display: grid;
+}
+
+.lv-acc__item.is-open .lv-acc__panel {
+  grid-template-rows: 1fr;
+  visibility: visible;
+}
+
+.lv-acc__panel > * {
+  min-height: 0;
+  overflow: hidden;
+  margin: 0;
+  padding-bottom: 0;
+  opacity: 0;
+  transform: translateY(-6px);
+  transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), padding-bottom 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.lv-acc__item.is-open .lv-acc__panel > * {
+  padding-bottom: calc(24 * var(--lv-u));
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.lv-field {
+  width: 100%;
+  padding: calc(14 * var(--lv-u)) calc(16 * var(--lv-u));
+  background: transparent;
+  border: 1px solid rgba(36, 29, 26, 0.3);
+  border-radius: calc(60 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+}
+
+.lv-field::placeholder { color: rgba(36, 29, 26, 0.5); }
+.lv-field.is-invalid { border-color: #B3402F; }
+
+form[data-wp-form].is-sent .lv-form__success { display: block; }
+.lv-form__success {
+  display: none;
+  margin-top: calc(8 * var(--lv-u));
+  font-size: calc(12 * var(--lv-u));
+  color: var(--lv-terracotta);
+}
+
+/* Hero pages: the header overlays the hero media (Figma draws no solid bar) */
+.lv-body--hero .lv-header {
+  position: absolute;
+  inset-inline: 0;
+  top: 0;
+}
+
+/* =========================================================
+   PAGE HERO — image + 40% umber + gradient, left aligned.
+   Figma: 1440x658 on the inner pages (vs 780 on the homepage).
+   ========================================================= */
+
+.lv-phero {
+  position: relative;
+  /* every treatment comp draws this at 658 tall, both widths */
+  height: calc(658 * var(--lv-u));
+  overflow: hidden;
+}
+
+.lv-phero__pic {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+.lv-phero__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.lv-phero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(36, 29, 26, 0.45) 0%, rgba(36, 29, 26, 0) 40%, rgba(36, 29, 26, 0.55) 100%),
+    rgba(78, 55, 37, 0.40);
+}
+
+/* The comps anchor this block from the bottom: the button sits at a fixed
+   height and a longer heading or sub-heading grows upward. --lv-phero-lift
+   nudges the whole group where a page's comp sits higher or lower. */
+.lv-phero__inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 calc(16 * var(--lv-u))
+           calc((111 + var(--lv-phero-lift-m, 0)) * var(--lv-u));
+  color: var(--lv-cream);
+}
+
+.lv-phero__title {
+  font-size: calc(36 * var(--lv-u));
+  max-width: calc(var(--lv-phero-tw-m, 328) * var(--lv-u));
+}
+
+.lv-phero__title em { color: inherit; }
+
+.lv-phero__sub {
+  margin-top: calc(23 * var(--lv-u));
+  max-width: calc(var(--lv-phero-sw-m, 328) * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.5;
+}
+
+.lv-phero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(12 * var(--lv-u));
+  margin-top: calc(20 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-phero__inner {
+    padding: 0 calc(48 * var(--lv-u))
+             calc((148 + var(--lv-phero-lift, 0)) * var(--lv-u));
+  }
+  .lv-phero__title {
+    font-size: calc(64 * var(--lv-u));
+    max-width: calc(var(--lv-phero-tw, 796) * var(--lv-u));
+  }
+  .lv-phero__sub {
+    margin-top: calc(26 * var(--lv-u));
+    max-width: calc(var(--lv-phero-sw, 686) * var(--lv-u));
+    font-size: calc(16 * var(--lv-u));
+  }
+  .lv-phero__cta { margin-top: calc(29 * var(--lv-u)); }
+}
+
+/* Strip pinned to the bottom of the page hero (Figma 1:25 — 1440x48 @20) */
+.lv-band {
+  position: relative;
+  margin-top: calc(-39 * var(--lv-u));
+  height: calc(39 * var(--lv-u));
+  display: grid;
+  place-items: center;
+  background: rgba(36, 29, 26, 0.20);
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+  z-index: 2;
+}
+
+@media (min-width: 1024px) {
+  .lv-band {
+    margin-top: calc(-48 * var(--lv-u));
+    height: calc(48 * var(--lv-u));
+    font-size: calc(12 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   CAROUSEL PROGRESS BAR (Figma Group 1707478956: 527px track,
+   espresso @20, with a 2px terracotta thumb)
+   ========================================================= */
+
+.lv-progress {
+  position: relative;
+  width: calc(280 * var(--lv-u));
+  height: 2px;
+  margin: calc(36 * var(--lv-u)) auto 0;
+  background: rgba(36, 29, 26, 0.20);
+  align-self: center;
+}
+
+.lv-progress__bar {
+  position: absolute;
+  inset-block: 0;
+  left: 0;
+  width: 40%;
+  background: var(--lv-terracotta);
+  transition: width var(--lv-dur-fast) var(--lv-ease),
+              translate var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-cat--umber .lv-progress { background: rgba(250, 248, 245, 0.20); }
+
+@media (min-width: 1024px) {
+  .lv-progress { width: calc(527 * var(--lv-u)); margin-top: calc(48 * var(--lv-u)); }
+}
+
+/* =========================================================
+   CLOSING CTA BAND — image + 40% terracotta + 20% black
+   Figma: 1440x608, centred
+   ========================================================= */
+
+.lv-cta {
+  position: relative;
+  padding-block: calc(72 * var(--lv-u));
+  background: var(--lv-umber) url('../images/all-treatments-cta.png') center / cover no-repeat;
+  text-align: center;
+  color: var(--lv-cream);
+  overflow: hidden;
+}
+
+.lv-cta__scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(155, 99, 63, 0.40);
+  box-shadow: inset 0 0 0 100vmax rgba(0, 0, 0, 0.20);
+}
+
+.lv-cta__inner { position: relative; padding-inline: calc(16 * var(--lv-u)); }
+
+.lv-cta__eyebrow {
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.lv-cta__title { margin-top: calc(28 * var(--lv-u)); font-size: calc(32 * var(--lv-u)); }
+.lv-cta__sub { margin: calc(24 * var(--lv-u)) auto 0; max-width: calc(328 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.4; }
+.lv-cta__btn { margin-top: calc(28 * var(--lv-u)); }
+
+.lv-cta__points {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: calc(28 * var(--lv-u));
+  margin-top: calc(28 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.lv-cta__points li { position: relative; }
+
+.lv-cta__points li + li::before {
+  content: '';
+  position: absolute;
+  left: calc(-16 * var(--lv-u));
+  top: 50%;
+  width: calc(4 * var(--lv-u));
+  height: calc(4 * var(--lv-u));
+  translate: 0 -50%;
+  border-radius: 50%;
+  background: currentColor;
+  opacity: 0.6;
+}
+
+@media (min-width: 1024px) {
+  .lv-cta { padding-block: calc(100 * var(--lv-u)); }
+  .lv-cta__eyebrow { font-size: calc(12 * var(--lv-u)); }
+  .lv-cta__title { margin-top: calc(49 * var(--lv-u)); font-size: calc(64 * var(--lv-u)); }
+  .lv-cta__sub { margin-top: calc(40 * var(--lv-u)); max-width: calc(491 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-cta__btn { margin-top: calc(40 * var(--lv-u)); }
+  .lv-cta__points { margin-top: calc(40 * var(--lv-u)); gap: calc(48 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+}
+
+/* Inner-page heroes are exported from Figma with the umber overlay already
+   baked into the PNG, so the CSS scrim would double it. */
+.lv-phero--baked .lv-phero__scrim { display: none; }
+
+/* =========================================================
+   FOOTER — umber, 1440x1332 (Figma Group 1707479028)
+   ========================================================= */
+
+.lv-footer {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+}
+
+.lv-footer__inner { padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(19 * var(--lv-u)); }
+
+.lv-footer__top { display: grid; grid-template-columns: 1fr 1fr; column-gap: calc(8 * var(--lv-u)); }
+.lv-footer__signup { grid-column: 1 / -1; }
+
+.lv-footer__title { font-size: calc(36 * var(--lv-u)); max-width: calc(260 * var(--lv-u)); }
+/* "your best skin" stays the title colour on the dark ground (review: white only) */
+.lv-footer__title em { color: inherit; }
+.lv-footer__blurb { margin-top: calc(12 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; max-width: calc(328 * var(--lv-u)); }
+
+.lv-footer__form { margin-top: calc(26 * var(--lv-u)); }
+.lv-footer__row { display: flex; gap: calc(8 * var(--lv-u)); }
+.lv-footer__row + .lv-footer__row { margin-top: calc(8 * var(--lv-u)); }
+.lv-footer__row .lv-field { padding-block: calc(15 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+.lv-footer__row--email { position: relative; display: flex; width: 100%; }
+
+.lv-field--dark {
+  border-color: rgba(250, 248, 245, 0.4);
+  color: var(--lv-cream);
+}
+
+.lv-field--dark::placeholder { color: rgba(250, 248, 245, 0.8); }
+
+.lv-footer__row--email .lv-field {
+  width: 100%;
+  padding-right: calc(48 * var(--lv-u));
+}
+
+.lv-footer__row--email .lv-circle {
+  position: absolute;
+  right: calc(6 * var(--lv-u));
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+}
+
+.lv-footer__note {
+  margin-top: calc(17 * var(--lv-u));
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+  font-size: calc(12 * var(--lv-u));
+  color: rgba(250, 248, 245, 0.8);
+  cursor: pointer;
+  user-select: none;
+}
+
+.lv-footer__note input[type="checkbox"],
+.lv-footer__note .lv-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  border: 1.5px solid rgba(250, 248, 245, 0.4);
+  border-radius: calc(3 * var(--lv-u));
+  background: transparent;
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+  flex: none;
+  margin: 0;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.lv-footer__note input[type="checkbox"]:checked,
+.lv-footer__note .lv-checkbox:checked,
+.lv-checkbox:checked {
+  background-color: transparent !important;
+  border-color: transparent !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M19.5 3H4.5C4.10218 3 3.72064 3.15804 3.43934 3.43934C3.15804 3.72064 3 4.10218 3 4.5V19.5C3 19.8978 3.15804 20.2794 3.43934 20.5607C3.72064 20.842 4.10218 21 4.5 21H19.5C19.8978 21 20.2794 20.842 20.5607 20.5607C20.842 20.2794 21 19.8978 21 19.5V4.5C21 4.10218 20.842 3.72064 20.5607 3.43934C20.2794 3.15804 19.8978 3 19.5 3Z' fill='%239B633F'/%3E%3Cpath d='M16.2806 10.2806L11.0306 15.5306C10.961 15.6004 10.8783 15.6557 10.7872 15.6934C10.6962 15.7312 10.5986 15.7506 10.5 15.7506C10.4014 15.7506 10.3038 15.7312 10.2128 15.6934C10.1217 15.6557 10.039 15.6004 9.96937 15.5306L7.71937 13.2806C7.57864 13.1399 7.49958 12.949 7.49958 12.75C7.49958 12.551 7.57864 12.3601 7.71937 12.2194C7.86011 12.0786 8.05098 11.9996 8.25 11.9996C8.44902 11.9996 8.63989 12.0786 8.78063 12.2194L10.5 13.9397L15.2194 9.21937C15.2891 9.14969 15.3718 9.09442 15.4628 9.0567C15.5539 9.01899 15.6515 8.99958 15.75 8.99958C15.8485 8.99958 15.9461 9.01899 16.0372 9.0567C16.1282 9.09442 16.2109 9.14969 16.2806 9.21937C16.3503 9.28906 16.4056 9.37178 16.4433 9.46283C16.481 9.55387 16.5004 9.65145 16.5004 9.75C16.5004 9.84855 16.481 9.94613 16.4433 10.0372C16.4056 10.1282 16.3503 10.2109 16.2806 10.2806Z' fill='%23FFFFFF'/%3E%3C/svg%3E") !important;
+  background-size: contain !important;
+  background-repeat: no-repeat !important;
+  background-position: center !important;
+}
+
+.lv-footer__note input[type="checkbox"]:checked::before,
+.lv-footer__note .lv-checkbox:checked::before,
+.lv-checkbox:checked::before {
+  display: none !important;
+}
+
+.lv-footer__mark a {
+  display: inline-block;
+  transition: opacity 0.2s ease;
+}
+.lv-footer__mark a:hover {
+  opacity: 0.85;
+}
+
+.lv-footer__col { margin-top: calc(53 * var(--lv-u)); }
+
+.lv-footer__colhead {
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+
+/* Both comps rule off each footer column under its heading. */
+.lv-footer__col .lv-footer__colhead {
+  padding-bottom: calc(12 * var(--lv-u));
+  border-bottom: 1px solid rgba(250, 248, 245, 0.25);
+}
+
+.lv-footer__col ul { margin-top: calc(28 * var(--lv-u)); display: grid; gap: calc(16 * var(--lv-u)); }
+.lv-footer__col li { font-size: calc(12 * var(--lv-u)); line-height: 1.4; }
+.lv-footer__col a { transition: opacity var(--lv-dur-fast) var(--lv-ease); }
+.lv-footer__col a:hover { opacity: 0.7; }
+
+.lv-footer__locations { margin-top: calc(87 * var(--lv-u)); display: grid; gap: calc(36 * var(--lv-u)); }
+
+.lv-loc { min-width: 0; }
+
+.lv-loc__name {
+  display: flex;
+  align-items: center;
+  gap: calc(12 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(20 * var(--lv-u));
+  padding-bottom: calc(18 * var(--lv-u));
+  border-bottom: 1px solid rgba(250, 248, 245, 0.25);
+}
+
+.lv-loc__name .lv-icon--pin {
+  color: var(--lv-terracotta);
+}
+
+/* the comps keep the venue name at full strength and drop the street and
+   telephone to 60% */
+.lv-loc__addr span { color: var(--lv-cream); }
+
+.lv-loc__addr { color: rgba(250, 248, 245, 0.6); margin-top: calc(18 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); line-height: 1.5; max-width: calc(160 * var(--lv-u)); }
+
+.lv-loc__hours {
+  margin-top: calc(18 * var(--lv-u));
+  display: grid;
+  /* the mobile comp reads down each column, the desktop one across the row */
+  grid-auto-flow: column;
+  grid-template-rows: auto auto;
+  grid-template-columns: calc(160 * var(--lv-u)) 1fr;
+  gap: calc(11 * var(--lv-u)) calc(50 * var(--lv-u));
+  font-size: calc(12 * var(--lv-u));
+}
+
+/* the comp sets each hours line on one line; 160px is exactly its width */
+.lv-loc__hours li { white-space: nowrap; }
+
+.lv-loc__map { position: relative; margin-top: calc(19 * var(--lv-u)); }
+
+.lv-loc__map picture { display: block; width: 100%; }
+
+.lv-loc__map img {
+  width: 100%;
+  aspect-ratio: 328 / 240;
+  object-fit: cover;
+  border-radius: calc(12 * var(--lv-u));
+}
+
+.lv-loc__cta {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  padding-right: calc(7 * var(--lv-u));
+}
+
+/* The mark sits between two hairlines that fill the row (Figma Line 690/691) */
+.lv-footer__mark {
+  margin-top: calc(40 * var(--lv-u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(7.5 * var(--lv-u));
+}
+
+.lv-footer__mark::before,
+.lv-footer__mark::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: rgba(250, 248, 245, 0.25);
+}
+
+.lv-footer__mark img { width: calc(130 * var(--lv-u)); height: auto; }
+
+.lv-footer__legal {
+  margin-top: calc(30 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(16 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  color: rgba(250, 248, 245, 0.6);
+}
+
+/* mobile comp centres Terms on the page, whatever the side links' widths */
+.lv-footer__legal nav { display: grid; grid-template-columns: 1fr auto 1fr; width: 100%; }
+.lv-footer__legal nav a:first-child { justify-self: start; }
+.lv-footer__legal nav a:last-child { justify-self: end; }
+.lv-footer__legal a { color: inherit; transition: color var(--lv-dur-fast) var(--lv-ease), opacity var(--lv-dur-fast) var(--lv-ease); }
+.lv-footer__legal a:hover { color: var(--lv-cream); opacity: 1; }
+
+@media (min-width: 1024px) {
+  .lv-btn { font-size: calc(14 * var(--lv-u)); }
+  .lv-footer__inner { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(40 * var(--lv-u)); }
+
+  .lv-footer__top {
+    grid-template-columns: calc(682 * var(--lv-u)) calc(361 * var(--lv-u)) 1fr;
+    column-gap: 0;
+    align-items: start;
+  }
+
+  .lv-footer__signup { grid-column: auto; }
+  .lv-footer__title { font-size: calc(64 * var(--lv-u)); max-width: calc(515 * var(--lv-u)); }
+  .lv-footer__blurb { margin-top: calc(14 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.4; max-width: calc(489 * var(--lv-u)); }
+  .lv-footer__row { gap: calc(12 * var(--lv-u)); }
+  .lv-footer__row + .lv-footer__row { margin-top: calc(12 * var(--lv-u)); }
+  .lv-footer__row .lv-field { padding-block: calc(14 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+  .lv-footer__note { margin-top: calc(22 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+  .lv-footer__colhead { font-size: calc(12 * var(--lv-u)); }
+  .lv-footer__col { max-width: calc(301 * var(--lv-u)); }
+  .lv-footer__col .lv-footer__colhead { padding-bottom: calc(20 * var(--lv-u)); }
+  .lv-footer__col ul { margin-top: calc(30 * var(--lv-u)); gap: calc(22 * var(--lv-u)); }
+  .lv-footer__col li { font-size: calc(14 * var(--lv-u)); }
+  .lv-footer__form { margin-top: calc(36 * var(--lv-u)); max-width: calc(572 * var(--lv-u)); }
+  .lv-footer__row .lv-field { width: calc(256 * var(--lv-u)); }
+  .lv-footer__row--email { width: calc(524 * var(--lv-u)); max-width: calc(524 * var(--lv-u)); }
+  .lv-footer__row--email .lv-field { width: calc(524 * var(--lv-u)); padding-right: calc(54 * var(--lv-u)); }
+  .lv-footer__row--email .lv-circle { right: calc(8 * var(--lv-u)); }
+  .lv-footer__col { margin-top: 0; }
+
+  .lv-footer__locations {
+    margin-top: calc(54 * var(--lv-u));
+    grid-template-columns: 1fr 1fr;
+    gap: calc(20 * var(--lv-u));
+  }
+
+  .lv-loc__name { gap: calc(16 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); padding-bottom: calc(20 * var(--lv-u)); }
+  .lv-icon--pin { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+  .lv-loc__addr { margin-top: calc(20 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); max-width: calc(200 * var(--lv-u)); }
+  .lv-loc__hours { margin-top: calc(21 * var(--lv-u)); grid-auto-flow: row; grid-template-rows: none; grid-template-columns: calc(310 * var(--lv-u)) 1fr; gap: calc(15 * var(--lv-u)) 0; font-size: calc(14 * var(--lv-u)); }
+  .lv-loc__map { margin-top: calc(23 * var(--lv-u)); }
+  .lv-loc__map img { aspect-ratio: 662 / 394; }
+  .lv-footer__mark { margin-top: calc(21 * var(--lv-u)); gap: calc(13.5 * var(--lv-u)); }
+  .lv-footer__mark img { width: calc(205 * var(--lv-u)); }
+
+  .lv-footer__legal {
+    /* the comp's wordmark box is taller than the glyph, so the legal row
+       tucks back up into it */
+    margin-top: calc(-23 * var(--lv-u));
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: calc(16 * var(--lv-u));
+    color: rgba(250, 248, 245, 0.6);
+  }
+
+  .lv-footer__legal nav { display: flex; width: auto; gap: calc(48 * var(--lv-u)); }
+  .lv-footer__locations { gap: calc(20 * var(--lv-u)); }
+}
+
+/* Marquee items carry a 20px icon before the label (Figma Frame 10–13) */
+.lv-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(12 * var(--lv-u));
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+  white-space: nowrap;
+}
+
+.lv-icon--mq {
+  width: calc(20 * var(--lv-u));
+  height: calc(20 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+}
+
+/* ---- footer-alt differences (Figma 79:469) ---- */
+
+.lv-footer__colhead--loc {
+  margin-top: calc(40 * var(--lv-u));
+  text-transform: none;
+  opacity: 1;
+}
+
+.lv-footer__locline { margin-top: calc(10 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.3; }
+.lv-footer__locline a:hover { opacity: 0.7; }
+
+.lv-loc__visit {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1.1;
+}
+
+.lv-loc__blurb { margin-top: calc(14 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.4; }
+.lv-loc--alt .lv-loc__map { margin-top: calc(24 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-footer--alt .lv-footer__top {
+    grid-template-columns: calc(634 * var(--lv-u)) calc(361 * var(--lv-u)) 1fr;
+  }
+  .lv-loc--alt .lv-loc__map { margin-top: calc(42 * var(--lv-u)); }
+}
+
+/* =========================================================
+   UNDER-DEVELOPMENT STUB (no comp — see STATES-DERIVED.md)
+   ========================================================= */
+
+.lv-stub {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(420 * var(--lv-u));
+  padding: calc(80 * var(--lv-u)) calc(16 * var(--lv-u));
+  background: var(--lv-cream);
+  text-align: center;
+}
+
+.lv-stub .lv-eyebrow { justify-content: center; }
+.lv-stub__title { margin-top: calc(24 * var(--lv-u)); font-size: calc(40 * var(--lv-u)); color: var(--lv-espresso); }
+.lv-stub__sub { margin: calc(20 * var(--lv-u)) auto 0; max-width: calc(440 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.5; }
+.lv-stub__cta { display: flex; flex-wrap: wrap; justify-content: center; gap: calc(12 * var(--lv-u)); margin-top: calc(32 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-stub { min-height: calc(560 * var(--lv-u)); padding-block: calc(140 * var(--lv-u)); }
+  .lv-stub__title { font-size: calc(64 * var(--lv-u)); }
+}
+
+/* Every page the comps give header-main also has a media hero, so its cream
+   ink always had contrast. The invented stub pages have no hero, so the bar
+   needs a solid ground to stay legible. */
+.lv-body:not(.lv-body--hero):not(.lv-body--light) .lv-header--main {
+  background: var(--lv-umber);
+  /* the logo overhangs the nav by 28px and is cream, so the ground follows it */
+  padding-bottom: calc(30 * var(--lv-u));
+}
+
+.lv-body:not(.lv-body--hero):not(.lv-body--light) .lv-header--main .lv-announce {
+  background: var(--lv-terracotta);
+}
+
+/* =========================================================
+   INSTAGRAM — cream ground
+   ========================================================= */
+
+.lv-insta {
+  background: var(--lv-cream);
+  padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: left;
+  /* the comp orders this title -> tiles -> handle -> button, so the head
+     dissolves into the section's own column */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.lv-insta__head { display: contents; }
+
+.lv-insta__title { order: 1; font-size: calc(36 * var(--lv-u)); color: var(--lv-espresso); }
+
+.lv-insta__handle {
+  order: 3;
+  margin-top: calc(29 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(20 * var(--lv-u));
+  color: var(--lv-terracotta);
+  align-self: center; /* mobile: centred under the tiles, by request */
+}
+
+.lv-insta__grid {
+  order: 2;
+  display: flex;
+  gap: calc(12 * var(--lv-u));
+  margin-top: calc(26 * var(--lv-u));
+  align-self: stretch;
+  margin-inline: calc(-16 * var(--lv-u));
+  padding-inline: calc(16 * var(--lv-u));
+  scroll-padding-inline: calc(16 * var(--lv-u));
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
+
+.lv-insta__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.lv-insta__grid:active,
+.lv-insta.is-dragging .lv-insta__grid {
+  cursor: grabbing;
+}
+
+.lv-insta__tile {
+  flex: none;
+  width: calc(180 * var(--lv-u));
+  scroll-snap-align: start;
+}
+.lv-insta__tile picture { display: block; width: 100%; }
+.lv-insta__tile { position: relative; display: block; overflow: hidden; border-radius: calc(8 * var(--lv-u)); }
+
+.lv-insta__tile img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: calc(8 * var(--lv-u));
+  transition: transform 0.35s var(--lv-ease);
+}
+
+.lv-insta__tile:hover img,
+.lv-insta__tile:focus-visible img {
+  transform: scale(1.04);
+}
+
+.lv-insta__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  opacity: 0;
+  pointer-events: none;
+  background: rgba(78, 55, 37, 0.8); /* every comp: #4E3725 @ 80% */
+  border-radius: calc(8 * var(--lv-u));
+  transition: opacity 0.25s var(--lv-ease), transform 0.25s var(--lv-ease);
+  transform: scale(0.92);
+}
+
+.lv-insta__tile:hover .lv-insta__play,
+.lv-insta__tile:focus-visible .lv-insta__play {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.lv-insta__play::before {
+  content: '';
+  position: absolute;
+  width: calc(54 * var(--lv-u));
+  height: calc(54 * var(--lv-u));
+  border-radius: 50%;
+  background: var(--lv-terracotta);
+}
+
+.lv-insta__play svg { position: relative; color: var(--lv-cream); }
+
+.lv-insta__cta { order: 4; align-self: center; margin-top: calc(23 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-insta { padding: calc(120 * var(--lv-u)) calc(48 * var(--lv-u)) calc(120 * var(--lv-u)); display: block; text-align: center; }
+  .lv-insta__head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    text-align: left;
+  }
+  .lv-insta__title { order: 0; font-size: calc(64 * var(--lv-u)); }
+  .lv-insta__handle { order: 0; margin-top: 0; font-size: calc(28 * var(--lv-u)); align-self: auto; }
+  /* Figma: 356px tiles from x=48 with a 20 gap — rail / carousel */
+  .lv-insta__grid {
+    order: 0;
+    display: flex;
+    gap: calc(20 * var(--lv-u));
+    margin-top: calc(40 * var(--lv-u));
+    margin-inline: calc(-48 * var(--lv-u));
+    padding-inline: calc(48 * var(--lv-u));
+    scroll-padding-inline: calc(48 * var(--lv-u));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .lv-insta__tile { flex: none; width: calc(356 * var(--lv-u)); scroll-snap-align: start; }
+  .lv-insta__cta { order: 0; align-self: auto; margin-top: calc(48 * var(--lv-u)); }
+}
+
+/* =========================================================
+   03 SIGNATURE PROTOCOLS
+   Ground is terracotta at 15% over cream (Figma 1:667, opacity .15)
+   ========================================================= */
+
+.lv-protocols {
+  background: var(--lv-terracotta-10);
+  background-color: color-mix(in srgb, var(--lv-terracotta) 15%, var(--lv-cream));
+  padding: calc(66 * var(--lv-u)) calc(16 * var(--lv-u)) calc(72 * var(--lv-u));
+  text-align: center;
+  color: var(--lv-espresso);
+}
+
+.lv-protocols .lv-eyebrow { justify-content: center; }
+
+.lv-protocols__title {
+  margin: calc(29 * var(--lv-u)) auto 0;
+  font-size: calc(36 * var(--lv-u));
+  max-width: calc(304 * var(--lv-u));
+}
+
+.lv-protocols__sub {
+  margin: calc(17 * var(--lv-u)) auto 0;
+  max-width: calc(313 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.5;
+}
+
+.lv-proto { position: relative; margin-top: calc(34 * var(--lv-u)); }
+
+.lv-proto__track {
+  display: flex;
+  gap: calc(12 * var(--lv-u));
+  margin-inline: calc(-16 * var(--lv-u));
+  padding-inline: calc(16 * var(--lv-u));
+  scroll-padding-inline: calc(16 * var(--lv-u));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  text-align: left;
+}
+
+.lv-proto__track::-webkit-scrollbar { display: none; }
+
+.lv-proto__card {
+  flex: none;
+  width: calc(280 * var(--lv-u));
+  /* the comp fixes every card at one height, regardless of list length */
+  height: calc(603 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-proto__card > picture { display: block; width: 100%; }
+
+.lv-proto__img {
+  width: 100%;
+  aspect-ratio: 280 / 209;
+  object-fit: cover;
+}
+
+.lv-proto__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: calc(16 * var(--lv-u)) calc(16 * var(--lv-u)) calc(18 * var(--lv-u));
+}
+
+.lv-chip {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(10 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  line-height: 1.4;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-chip strong {
+  font-weight: 600;
+  padding: calc(7 * var(--lv-u)) calc(12 * var(--lv-u));
+  border-radius: calc(60 * var(--lv-u));
+  background: var(--lv-terracotta-15);
+}
+
+.lv-proto__card h3 {
+  margin-top: calc(28 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(20 * var(--lv-u));
+  line-height: 1.1;
+}
+
+.lv-proto__desc { margin-top: calc(12 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; }
+
+.lv-proto__inc {
+  margin-top: calc(14 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-proto__body ul { margin-top: calc(10 * var(--lv-u)); display: grid; gap: calc(11 * var(--lv-u)); }
+
+.lv-proto__body li {
+  position: relative;
+  padding-left: calc(24 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.5;
+}
+
+/* Filled terracotta disc with a white tick (Figma CheckCircle, filled) */
+.lv-proto__body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: calc(-1 * var(--lv-u));
+  width: calc(18 * var(--lv-u));
+  height: calc(18 * var(--lv-u));
+  border-radius: 50%;
+  background: var(--lv-terracotta);
+}
+
+.lv-proto__body li::after {
+  content: '';
+  position: absolute;
+  left: calc(5 * var(--lv-u));
+  top: calc(4 * var(--lv-u));
+  width: calc(8 * var(--lv-u));
+  height: calc(4 * var(--lv-u));
+  border-left: 1.5px solid var(--lv-cream);
+  border-bottom: 1.5px solid var(--lv-cream);
+  rotate: -45deg;
+}
+
+.lv-proto__buy { margin-top: auto; justify-content: space-between; padding-left: calc(20 * var(--lv-u)); }
+.lv-proto__card .lv-proto__buy { margin-top: auto; }
+
+.lv-proto__nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: calc(8 * var(--lv-u));
+  margin-top: calc(20 * var(--lv-u));
+}
+
+/* the rail's progress line shares the nav row, running to its left */
+.lv-proto__nav .lv-progress {
+  flex: 1;
+  width: auto;
+  margin: 0 calc(16 * var(--lv-u)) 0 0;
+}
+
+.lv-protocols__note { margin-top: calc(27 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; }
+.lv-protocols__all { margin-top: calc(30 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-protocols { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(120 * var(--lv-u)); }
+  .lv-protocols__title { margin-top: calc(33 * var(--lv-u)); font-size: calc(64 * var(--lv-u)); }
+  .lv-protocols__sub { margin-top: calc(15 * var(--lv-u)); max-width: calc(600 * var(--lv-u)); }
+  .lv-proto { margin-top: calc(50 * var(--lv-u)); }
+  .lv-protocols__title { max-width: calc(727 * var(--lv-u)); }
+  .lv-protocols__sub { max-width: calc(600 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.4; }
+  .lv-proto__track {
+    gap: calc(20 * var(--lv-u));
+    margin-inline: calc(-48 * var(--lv-u));
+    padding-inline: calc(48 * var(--lv-u));
+    scroll-padding-inline: calc(48 * var(--lv-u));
+  }
+  .lv-proto__card { width: calc(434 * var(--lv-u)); height: calc(739 * var(--lv-u)); }
+  .lv-proto__img { aspect-ratio: 434 / 280; }
+  .lv-proto__body { padding: calc(28 * var(--lv-u)); }
+  .lv-chip { font-size: calc(12 * var(--lv-u)); line-height: 1; }
+  .lv-chip strong { padding: calc(11 * var(--lv-u)) calc(16 * var(--lv-u)); }
+  .lv-proto__card h3 { margin-top: calc(43 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+  .lv-proto__desc { font-size: calc(16 * var(--lv-u)); line-height: 1.6; }
+  .lv-proto__inc { margin-top: calc(19 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
+  .lv-proto__body ul { margin-top: calc(14 * var(--lv-u)); gap: calc(19 * var(--lv-u)); }
+  .lv-proto__body li { padding-left: calc(28 * var(--lv-u)); font-size: calc(15 * var(--lv-u)); line-height: 1.2; white-space: nowrap; }
+  .lv-proto__nav { gap: calc(10 * var(--lv-u)); margin-top: calc(28 * var(--lv-u)); }
+  .lv-proto__nav .lv-progress { margin-right: calc(36 * var(--lv-u)); }
+  .lv-protocols__note { margin-top: calc(34 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.4; }
+  .lv-protocols__all { margin-top: calc(42 * var(--lv-u)); }
+}
+
+/* header-main on a light page (Signature Protocols): the comp keeps the
+   main link set but switches the ink to espresso. */
+.lv-body--light .lv-header--main {
+  --lv-nav-ink: var(--lv-espresso);
+  --lv-rule: rgba(36, 29, 26, 0.4);
+  background: transparent;
+  padding-bottom: 0;
+}
+
+.lv-body--light .lv-header--main .lv-nav__burger,
+.lv-body--light .lv-header--main .lv-nav__phone { color: var(--lv-espresso); }
+.lv-body--light .lv-header--main .lv-btn--pill-light {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  border-color: transparent;
+}
+
+/* Split hero: copy left, image right (Figma 1:4849 — 672x510 at x=720) */
+.lv-shero { background: var(--lv-cream); padding: calc(40 * var(--lv-u)) calc(16 * var(--lv-u)) calc(60 * var(--lv-u)); }
+.lv-shero__grid { display: grid; gap: calc(28 * var(--lv-u)); align-items: center; }
+.lv-shero__img { width: 100%; aspect-ratio: 672 / 510; object-fit: cover; border-radius: calc(12 * var(--lv-u)); }
+.lv-shero__title { margin-top: calc(39 * var(--lv-u)); font-size: calc(36 * var(--lv-u)); color: var(--lv-espresso); }
+.lv-shero__sub { margin-top: calc(24 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.6; }
+.lv-shero__cta { display: flex; flex-wrap: wrap; gap: calc(12 * var(--lv-u)); margin-top: calc(28 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-shero { padding: calc(68 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-shero__grid { grid-template-columns: calc(600 * var(--lv-u)) calc(672 * var(--lv-u)); gap: calc(72 * var(--lv-u)); }
+  .lv-shero__title { margin-top: calc(49 * var(--lv-u)); font-size: calc(64 * var(--lv-u)); }
+  .lv-shero__sub { margin-top: calc(36 * var(--lv-u)); max-width: calc(444 * var(--lv-u)); }
+  .lv-shero__cta { margin-top: calc(36 * var(--lv-u)); }
+}
+
+/* Protocol rail on an umber ground (Signature Protocols page) */
+.lv-protocols--dark {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  padding-block: calc(60 * var(--lv-u));
+}
+
+.lv-protocols--dark .lv-circle--outline { border-color: rgba(250, 248, 245, 0.4); color: var(--lv-cream); }
+
+@media (min-width: 1024px) {
+  .lv-protocols--dark { padding-block: calc(120 * var(--lv-u)); }
+}
+
+/* Cards on the dark rail keep their own ink */
+.lv-protocols--dark .lv-proto__card { color: var(--lv-espresso); }
+
+/* Light cards sitting inside a dark band must not inherit its cream ink.
+   (Hit this on the protocols rail and the memberships hero.) */
+.lv-plan,
+.lv-proto__card,
+.lv-tier,
+.lv-rcard:not(.lv-rcard--feature),
+.lv-review { color: var(--lv-espresso); }
+
+/* A hard line break the desktop comp has and the mobile comp does not. */
+.lv-br-desk { display: none; }
+.lv-br-mob { display: initial; }
+
+@media (min-width: 1024px) {
+  .lv-br-desk { display: initial; }
+  .lv-br-mob { display: none; }
+}
+
+/* Section numbering differs between the two comps (protocols is 03 on
+   desktop, 02 on mobile). */
+.lv-desk-only { display: none; }
+li.lv-mob-only { display: list-item; }
+svg.lv-desk-only { display: none; }
+
+@media (min-width: 1024px) {
+  .lv-desk-only { display: inline; }
+  li.lv-desk-only { display: list-item; }
+  svg.lv-desk-only { display: inline-block; }
+  svg.lv-mob-only { display: none; }
+  .lv-mob-only { display: none; }
+  li.lv-mob-only { display: none; }
+}
+
+/* ---- Rail drag affordance -------------------------------------------- */
+
+[data-carousel] [data-carousel-track] { cursor: grab; }
+[data-carousel].is-dragging [data-carousel-track] { cursor: grabbing; }
+[data-carousel].is-dragging [data-carousel-track] * { pointer-events: none; }
+[data-carousel].is-dragging img { user-select: none; }
+
+/* ---- Tab swap cross-fade -------------------------------------------- */
+
+[data-carousel-track] { transition: opacity var(--lv-dur-fast) var(--lv-ease); }
+[data-carousel-track].is-swapping { opacity: 0; }
+
+/* ---- Form states ----------------------------------------------------- */
+
+.lv-field-error {
+  display: block;
+  margin-top: calc(6 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.4;
+  color: #B3402F;
+}
+
+.lv-field-error:empty { display: none; }
+.lv-field--dark ~ .lv-field-error { color: #F0A79B; }
+
+form[data-wp-form].is-sending [type="submit"],
+form[data-wp-form].is-sending button[type="submit"] {
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+form[data-wp-form].is-failed .lv-form__error { display: block; }
+
+.lv-form__error {
+  display: none;
+  margin-top: calc(8 * var(--lv-u));
+  font-size: calc(12 * var(--lv-u));
+  color: #B3402F;
+}
+
+/* ---- Focus -----------------------------------------------------------
+   No focus treatment exists in the comps; this is the house default and is
+   scoped to :focus-visible so it never shows on a mouse click. */
+
+:focus-visible {
+  outline: 2px solid var(--lv-terracotta);
+  outline-offset: 3px;
+  border-radius: calc(2 * var(--lv-u));
+}
+
+.lv-header :focus-visible,
+.lv-footer :focus-visible,
+.lv-hero :focus-visible,
+.lv-services :focus-visible {
+  outline-color: var(--lv-cream);
+}
+
+/* ---- Marquee Ticker Component (Figma 1:836 / 79:820 / 79:2121) -------- */
+
+.lv-marquee {
+  overflow: hidden;
+  background: var(--lv-umber);
+  padding-block: calc(8 * var(--lv-u));
+}
+
+.lv-marquee__track {
+  display: flex;
+  width: max-content;
+  gap: calc(26 * var(--lv-u));
+  translate: -20.3% 0;
+  animation: lv-marquee-offset 34s linear infinite;
+}
+
+.lv-marquee__track span,
+.lv-marquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 500;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.02em;
+  color: var(--lv-cream);
+  white-space: nowrap;
+}
+
+.lv-icon--mq {
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  fill: currentColor;
+  flex-shrink: 0;
+}
+
+@keyframes lv-marquee {
+  from { translate: 0 0; }
+  to   { translate: -50% 0; }
+}
+
+@keyframes lv-marquee-offset {
+  from { translate: -20.3% 0; }
+  to   { translate: -70.3% 0; }
+}
+
+@media (min-width: 1024px) {
+  .lv-marquee {
+    padding-block: calc(14 * var(--lv-u));
+  }
+  .lv-marquee__track {
+    gap: calc(76 * var(--lv-u));
+    translate: 0 0;
+    animation-name: lv-marquee;
+  }
+  .lv-marquee__track span,
+  .lv-marquee__item {
+    font-size: calc(12 * var(--lv-u));
+  }
+  .lv-icon--mq {
+    width: calc(20 * var(--lv-u));
+    height: calc(20 * var(--lv-u));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lv-marquee__track { animation: none; }
+}
+
+/* ---- Pause continuous motion on hover or focus ------------------------ */
+
+.lv-marquee:hover .lv-marquee__track,
+.lv-marquee:focus-within .lv-marquee__track { animation-play-state: paused; }
+
+/* Footer: newsletter consent checkbox + title/blurb offsets against the comp. */
+.lv-footer--main .lv-footer__title { position: relative; top: calc(-11 * var(--lv-u)); }
+.lv-footer--main .lv-footer__blurb { position: relative; top: calc(-3 * var(--lv-u)); }
+.lv-footer--main .lv-footer__note { gap: calc(10.67 * var(--lv-u)); }
+.lv-footer--main .lv-footer__note .lv-checkbox {
+  width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u));
+  margin-left: 0;
+  border: 1.5px solid rgba(250, 248, 245, 0.4);
+  border-radius: calc(3 * var(--lv-u));
+}
+@media (min-width: 1024px) {
+  .lv-footer--main .lv-footer__title { top: calc(-11 * var(--lv-u)); }
+  .lv-footer--main .lv-footer__note { gap: calc(11.5 * var(--lv-u)); }
+  .lv-footer--main .lv-footer__note .lv-checkbox {
+    width: calc(18 * var(--lv-u)); height: calc(18 * var(--lv-u));
+    margin-left: 0;
+    border: 1.5px solid rgba(250, 248, 245, 0.4);
+    border-radius: calc(3 * var(--lv-u));
+  }
+}
+.lv-footer--main .lv-footer__title em { font-style: normal; color: inherit; }
+@media (min-width: 1024px) {
+  .lv-footer--main .lv-footer__title { top: calc(-9 * var(--lv-u)); }
+  .lv-footer--main .lv-footer__title em { font-style: italic; }
+  .lv-footer--main .lv-footer__blurb { max-width: calc(489 * var(--lv-u)); }
+}
+
+/* FAQ sections (signature protocols, memberships, treatments): the photo stays pinned
+   while the questions scroll past it; the grid row is the travel distance. */
+@media (min-width: 1024px) {
+  .lv-faq__grid > .lv-faq__img-wrap,
+  .lv-faq__grid > picture,
+  .lv-faq__grid > .lv-faq__img {
+    position: sticky;
+    top: calc(32 * var(--lv-u));
+    align-self: start;
+  }
+}
+
+/* ==========================================================================
+   Homepage review fixes
+   ========================================================================== */
+/* protocol "Includes" ticks: one centred check-circle glyph (Material check_circle) */
+.lv-proto__body li::before {
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 2 20 20'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' fill='%239B633F'/%3E%3Cpath d='M10 17l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z' fill='%23FAF8F5'/%3E%3C/svg%3E") center / contain no-repeat;
+  border-radius: 0;
+}
+.lv-proto__body li::after { display: none; }
+
+/* footer tick box a little larger, in every footer */
+.lv-footer__note input[type="checkbox"],
+.lv-footer__note .lv-checkbox { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+
+/* header phone glyph: hairline */
+.lv-icon--phone { stroke-width: 1; }
+
+/* footer "View directions" pills: tighter top and bottom */
+.lv-loc__cta { padding-block: calc(8 * var(--lv-u)); }
+
+/* eyebrow rule a little shorter on mobile */
+@media (max-width: 1023.98px) {
+  .lv-eyebrow__rule { width: calc(20 * var(--lv-u)); }
+}
+
+/* mobile protocol pointers: 14px type, 14px tick, tick centred on the text block */
+@media (max-width: 1023.98px) {
+  .lv-proto__body li { font-size: 14px; line-height: 1.4; padding-left: 24px; }
+  .lv-proto__body li::before { width: 14px; height: 14px; top: 50%; translate: 0 -50%; }
+}
+
+/* light pages that used the alt bar keep its cream ground */
+.lv-body--light-alt .lv-header--main { background: var(--lv-cream); }

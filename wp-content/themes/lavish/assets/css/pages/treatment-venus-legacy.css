@@ -1,0 +1,242 @@
+/* Venus Legacy page-only overrides (loaded after treatment.css). */
+
+/* Common treatment areas: text grid + portrait image, no cards */
+.lv-vl-areas { padding: calc(66 * var(--lv-u)) calc(16 * var(--lv-u)) calc(71 * var(--lv-u)); }
+.lv-vl-areas .lv-areas__title { margin-top: calc(7 * var(--lv-u)); }
+.lv-vl-areas .lv-area:nth-child(1) h3,
+.lv-vl-areas .lv-area:nth-child(5) h3 { max-width: calc(125 * var(--lv-u)); }
+.lv-vl-areas__grid {
+  margin-top: calc(26 * var(--lv-u));
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: calc(10 * var(--lv-u));
+}
+.lv-vl-areas .lv-area {
+  display: grid;
+  grid-row: span 2;
+  grid-template-rows: subgrid;
+  row-gap: 0;
+  padding: 0;
+  background: none;
+  border-radius: 0;
+}
+.lv-vl-areas .lv-area h3 {
+  margin: 0;
+  padding-bottom: calc(13 * var(--lv-u));
+  border-bottom: 1px solid #C4BBB3;
+}
+.lv-vl-areas .lv-area p {
+  margin: 0;
+  padding: calc(10 * var(--lv-u)) 0 calc(35 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+}
+/* mobile reading order differs from desktop */
+.lv-vl-areas .lv-area:nth-child(7) { order: 1; }
+.lv-vl-areas .lv-area:nth-child(6) { order: 2; }
+.lv-vl-areas .lv-area:nth-child(5),
+.lv-vl-areas .lv-area:nth-child(8) { order: 3; }
+.lv-vl-areas__img {
+  display: block;
+  margin-top: calc(9 * var(--lv-u));
+  width: 100%;
+  height: calc(400 * var(--lv-u));
+  object-fit: cover;
+  border-radius: calc(8 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-vl-areas {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(54 * var(--lv-u));
+  }
+  .lv-vl-areas__copy { width: calc(877 * var(--lv-u)); }
+  .lv-vl-areas .lv-areas__title { margin-top: calc(-8 * var(--lv-u)); }
+  .lv-vl-areas .lv-area h3 { max-width: none !important; }
+  .lv-vl-areas .lv-area p { max-width: calc(245 * var(--lv-u)); }
+  .lv-vl-areas .lv-area:nth-child(8) p { max-width: calc(260 * var(--lv-u)); }
+  .lv-vl-areas__grid { margin-top: calc(64 * var(--lv-u)); grid-template-columns: repeat(3, 1fr); column-gap: calc(32 * var(--lv-u)); }
+  .lv-vl-areas .lv-area { order: 0 !important; }
+  .lv-vl-areas .lv-area h3 { padding-bottom: calc(20 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+  .lv-vl-areas .lv-area p { padding: calc(16 * var(--lv-u)) 0 calc(36 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.6; }
+  .lv-vl-areas__img { margin-top: 0; width: calc(434 * var(--lv-u)); height: calc(622 * var(--lv-u)); border-radius: calc(12 * var(--lv-u)); }
+}
+
+/* 01 intro: 48px title with hairline under it */
+main .lv-btn { font-size: calc(14 * var(--lv-u)); }
+.lv-intro__grid { gap: calc(26 * var(--lv-u)); }
+.lv-intro__title { padding-bottom: calc(24 * var(--lv-u)); border-bottom: 1px solid rgba(36, 29, 26, 0.2); line-height: 1.1; }
+.lv-intro__body { margin-top: calc(23 * var(--lv-u)); line-height: 1.5; }
+.lv-intro__copy .lv-btn { margin-top: calc(34 * var(--lv-u)); }
+
+/* 02 how it works: ringed upright numerals; mobile rail + arrows */
+.lv-vl-how { padding-bottom: calc(72 * var(--lv-u)); }
+main .lv-vl-how .lv-areas__sub { margin-top: calc(18 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.4; max-width: calc(302 * var(--lv-u)); }
+.lv-vl-how .lv-areas__plain {
+  display: flex;
+  gap: calc(12 * var(--lv-u));
+  margin: calc(34 * var(--lv-u)) calc(-16 * var(--lv-u)) 0;
+  padding: 0 calc(16 * var(--lv-u));
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-padding: 0 calc(16 * var(--lv-u));
+  scrollbar-width: none;
+}
+.lv-vl-how .lv-area {
+  flex: 0 0 calc(300 * var(--lv-u));
+  height: calc(245 * var(--lv-u));
+  scroll-snap-align: start;
+  padding: calc(28 * var(--lv-u)) calc(20 * var(--lv-u)) 0;
+  background: #F8F2EB;
+  border-radius: calc(8 * var(--lv-u));
+}
+.lv-vl-how .lv-area .lv-step {
+  width: calc(56 * var(--lv-u));
+  height: calc(56 * var(--lv-u));
+  margin: 0;
+  border: 0.75px solid var(--lv-terracotta);
+  font-style: normal;
+  font-size: calc(24 * var(--lv-u));
+  line-height: 1.1;
+}
+.lv-vl-how .lv-area h3 { margin-top: calc(28 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); line-height: 1.1; }
+.lv-vl-how .lv-area p { margin-top: calc(12 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; }
+.lv-vl-how__arrows { display: flex; justify-content: center; gap: calc(8 * var(--lv-u)); margin-top: calc(28 * var(--lv-u)); }
+.lv-vl-how__arrows button {
+  display: grid; place-items: center;
+  width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u));
+  border: 1px solid rgba(36, 29, 26, 0.4); border-radius: 50%;
+  background: none; color: var(--lv-espresso); cursor: pointer;
+}
+.lv-vl-how .lv-areas__cta-wrap { display: flex; justify-content: center; margin-top: calc(40 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-intro__grid { gap: calc(80 * var(--lv-u)); }
+  .lv-intro__img { margin-top: calc(46 * var(--lv-u)); }
+  .lv-intro__title { margin-top: calc(9 * var(--lv-u)); padding-bottom: calc(29 * var(--lv-u)); font-size: calc(48 * var(--lv-u)); }
+  .lv-intro__body { margin-top: calc(28 * var(--lv-u)); max-width: calc(680 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-intro__copy .lv-btn { margin-top: calc(50 * var(--lv-u)); }
+
+  .lv-vl-how { position: relative; padding-top: calc(100 * var(--lv-u)); padding-bottom: calc(100 * var(--lv-u)); }
+  .lv-vl-how .lv-areas__title { margin-top: calc(24 * var(--lv-u)); }
+  main .lv-vl-how .lv-areas__sub { position: absolute; left: calc(942 * var(--lv-u)); top: calc(158 * var(--lv-u)); margin: 0; max-width: calc(450 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); line-height: 1.5; }
+  .lv-vl-how .lv-areas__plain { margin: calc(40 * var(--lv-u)) 0 0; padding: 0; gap: calc(21 * var(--lv-u)); overflow: visible; }
+  .lv-vl-how .lv-area { flex: 1 1 0; height: calc(319 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(48 * var(--lv-u)) 0; border-radius: calc(12 * var(--lv-u)); }
+  .lv-vl-how .lv-area .lv-step { width: calc(74 * var(--lv-u)); height: calc(74 * var(--lv-u)); border-width: 1px; font-size: calc(28 * var(--lv-u)); }
+  .lv-vl-how .lv-area h3 { margin-top: calc(35 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); }
+  .lv-vl-how .lv-area p { margin-top: calc(17 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-vl-how__arrows { display: none; }
+  .lv-vl-how .lv-areas__cta-wrap { margin-top: calc(60 * var(--lv-u)); }
+}
+
+/* 03 team: one-line heading at 1440 */
+.lv-team--norule .lv-team__copy { padding-top: calc(29 * var(--lv-u)); }
+.lv-team--norule .lv-team__title { margin-top: calc(18 * var(--lv-u)); }
+.lv-team--norule .lv-team__body { margin-top: calc(19 * var(--lv-u)); }
+.lv-team--norule .lv-team__person { margin-top: calc(36 * var(--lv-u)); }
+.lv-team.lv-team--norule { padding-bottom: calc(68 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-team--norule .lv-team__copy { padding-top: calc(148 * var(--lv-u)); }
+  .lv-team--norule .lv-team__title { margin-top: calc(27 * var(--lv-u)); width: auto; }
+  .lv-team--norule .lv-team__body { margin-top: calc(24 * var(--lv-u)); width: calc(610 * var(--lv-u)); }
+  .lv-team--norule .lv-team__cta { margin-top: calc(42 * var(--lv-u)); }
+  .lv-team--norule .lv-team__person { margin-top: calc(48 * var(--lv-u)); }
+  .lv-team.lv-team--norule { padding-bottom: calc(100 * var(--lv-u)); }
+}
+.lv-intro { padding-bottom: calc(71 * var(--lv-u)); }
+@media (min-width: 1024px) { .lv-intro { padding-bottom: calc(100 * var(--lv-u)); } }
+
+/* 04 results: two cards centred at 1440 */
+.lv-results__title { margin-top: calc(19 * var(--lv-u)); }
+.lv-results .lv-results__grid { margin-top: calc(35 * var(--lv-u)); }
+.lv-results .lv-ba { padding-bottom: calc(13 * var(--lv-u)); }
+.lv-results .lv-ba__label { margin-top: calc(12 * var(--lv-u)); }
+.lv-results__cta-wrap { margin-top: calc(32 * var(--lv-u)); }
+main .lv-results .lv-btn { font-size: calc(12 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-results__title { margin-top: calc(26 * var(--lv-u)); }
+  .lv-results .lv-results__grid { margin-top: calc(52 * var(--lv-u)); grid-template-columns: repeat(2, calc(427 * var(--lv-u))); justify-content: center; }
+  .lv-results .lv-ba { height: calc(539 * var(--lv-u)); padding-bottom: 0; }
+  .lv-results .lv-ba__label { margin-top: calc(21 * var(--lv-u)); }
+  .lv-results__cta-wrap { margin-top: calc(40 * var(--lv-u)); }
+  main .lv-results .lv-btn { font-size: calc(14 * var(--lv-u)); }
+}
+
+/* 05 faq */
+.lv-faq .lv-acc__item:last-child { border-bottom: 0; }
+.lv-faq .lv-acc__trigger::after { background-color: var(--lv-umber); }
+.lv-faq { padding-top: calc(24 * var(--lv-u)); padding-bottom: calc(37 * var(--lv-u)); }
+.lv-faq__grid { padding-top: calc(132 * var(--lv-u)); }
+.lv-faq .lv-acc__item.is-open .lv-acc__trigger { padding-bottom: calc(26.5 * var(--lv-u)); }
+.lv-faq .lv-acc__item.is-open .lv-acc__panel { padding-bottom: calc(25 * var(--lv-u)); }
+.lv-faq .lv-acc__item.is-open .lv-acc__panel > p { padding-bottom: 0; }
+@media (min-width: 1024px) {
+  .lv-faq { padding-top: calc(52 * var(--lv-u)); padding-bottom: calc(64 * var(--lv-u)); }
+  .lv-faq__grid { padding-top: 0; }
+  .lv-faq .lv-eyebrow { margin-top: calc(-3 * var(--lv-u)); }
+  .lv-faq__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-faq .lv-acc { margin-top: calc(12 * var(--lv-u)); }
+  .lv-faq .lv-acc__item.is-open .lv-acc__trigger { padding-bottom: calc(25 * var(--lv-u)); }
+  .lv-faq .lv-acc__item.is-open .lv-acc__panel { padding-bottom: calc(41 * var(--lv-u)); }
+}
+
+/* 06 related: centred 20/28px names, fixed card height, featured card grows */
+.lv-related__sub { max-width: calc(320 * var(--lv-u)); }
+.lv-related__grid { margin-top: calc(31 * var(--lv-u)); }
+.lv-related .lv-rcard { height: calc(190 * var(--lv-u)); padding-bottom: 0; text-align: center; }
+.lv-related .lv-rcard:hover { height: calc(230 * var(--lv-u)); }
+.lv-related .lv-rcard picture { display: block; }
+.lv-related .lv-rcard h3 { margin-top: calc(17 * var(--lv-u)); padding-inline: calc(8 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); white-space: normal; }
+.lv-related .lv-rcard .lv-btn { align-self: center; margin: calc(17 * var(--lv-u)) 0 0; }
+main .lv-related__all { font-size: calc(12 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-related__title { margin-top: calc(27 * var(--lv-u)); }
+  .lv-related__sub { margin-top: calc(24 * var(--lv-u)); max-width: calc(440 * var(--lv-u)); }
+  .lv-related__grid { margin-top: calc(44 * var(--lv-u)); }
+  .lv-related .lv-rcard { height: calc(285 * var(--lv-u)); }
+  .lv-related .lv-rcard:hover { height: calc(355 * var(--lv-u)); }
+  .lv-related .lv-rcard h3 { margin-top: calc(23 * var(--lv-u)); padding-inline: 0; font-size: calc(28 * var(--lv-u)); }
+  .lv-related .lv-rcard .lv-btn { margin-top: calc(24 * var(--lv-u)); }
+  main .lv-related__all { font-size: calc(14 * var(--lv-u)); }
+}
+
+/* 07 ready */
+.lv-ready__title { position: relative; top: calc(-3 * var(--lv-u)); }
+main .lv-ready .lv-btn { font-size: calc(12 * var(--lv-u)); margin-top: calc(32 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-ready__title { top: 0; }
+  .lv-ready__sub { max-width: calc(500 * var(--lv-u)); }
+  main .lv-ready .lv-btn { font-size: calc(14 * var(--lv-u)); margin-top: calc(43 * var(--lv-u)); }
+}
+
+/* 08 instagram */
+.lv-ready + .lv-insta { padding-top: calc(62 * var(--lv-u)); }
+.lv-insta__grid { margin-top: calc(31 * var(--lv-u)); }
+.lv-insta__handle { margin-top: calc(22 * var(--lv-u)); }
+.lv-insta__cta { margin-top: calc(30 * var(--lv-u)); }
+main .lv-insta .lv-btn { font-size: calc(12 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-ready + .lv-insta { padding-top: calc(89 * var(--lv-u)); }
+  .lv-insta__grid { margin-top: calc(48 * var(--lv-u)); }
+  .lv-insta__handle { margin-top: 0; position: relative; top: calc(4 * var(--lv-u)); }
+  .lv-insta__cta { margin-top: calc(48 * var(--lv-u)); }
+  main .lv-insta .lv-btn { font-size: calc(14 * var(--lv-u)); }
+}
+
+/* vertical talking-head clip in the square, face kept in frame */
+.lv-team .lv-team__video { object-position: 50% 30%; }
+
+/* mobile review: working thin arrows, rail never scrolls vertically, cards open on tap */
+.lv-vl-how__arrows .lv-icon { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); fill: currentColor; stroke: none; }
+.lv-vl-how__arrows .lv-icon--thin-prev { transform: rotate(180deg); }
+@media (max-width: 1023px) {
+  .lv-vl-how .lv-areas__plain { overflow-y: hidden; overscroll-behavior-x: contain; }
+  .lv-related--tap .lv-rcard:hover:not(.is-active) { background: var(--lv-cream); color: var(--lv-espresso); translate: none; height: calc(190 * var(--lv-u)); }
+  .lv-related--tap .lv-rcard.is-active { background: var(--lv-terracotta); color: var(--lv-cream); translate: none; height: auto; padding-bottom: calc(24 * var(--lv-u)); }
+  .lv-related--tap .lv-rcard.is-active .lv-btn {
+    max-height: calc(60 * var(--lv-u)); margin-top: calc(20 * var(--lv-u));
+    padding-block: calc(6 * var(--lv-u)); border-block-width: 1px; opacity: 1;
+  }
+}

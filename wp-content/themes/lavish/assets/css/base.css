@@ -1,0 +1,232 @@
+/* Lavish — reset + fluid scaling model
+   -------------------------------------------------------------
+   FLUID MODEL (the single knob for the whole site: --lv-u)
+
+   Figma gives us exactly two canvases: 1440 and 360. Nothing between.
+   Rather than invent an intermediate type scale, every dimension in this
+   codebase is written in *design pixels* and multiplied by --lv-u:
+
+       font-size: calc(64 * var(--lv-u));   // 64px in the 1440 comp
+
+   --lv-u is 1px at each designed anchor, so both anchors render exactly
+   1:1. Between them the whole page scales proportionally, which keeps
+   every ratio in the comp intact and assumes no values we were not given.
+
+   Desktop (>=1024): u = min(100vw, 1440px) / 1440
+     -> 1440px viewport = 1.000  (exact comp)
+     -> 1024px viewport = 0.711  (everything 71% — including type)
+     -> >1440px         = capped at 1.0, page centred
+
+   Mobile (<1024):    u = clamp(360px, 100vw, 450px) / 360
+     -> 360px viewport = 1.000  (exact comp)
+     -> 450px and up   = capped at 1.25, column centred
+
+   ponytail: one knob, deliberately. If proportional type at 1024 reads too
+   small in review, swap the desktop --lv-u line for a clamp() floor —
+   every page inherits the change with no other edits.
+   ------------------------------------------------------------- */
+
+:root {
+  --lv-u: calc(clamp(360px, 100vw, 450px) / 360);
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --lv-u: calc(min(100vw, 1440px) / 1440);
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  /* Offset for the sticky header when jumping to #section anchors */
+  scroll-padding-top: calc(110 * var(--lv-u));
+}
+
+body {
+  margin: 0;
+  background: var(--lv-cream);
+  color: var(--lv-espresso);
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* The page column. Mobile: 360 design centred. Desktop: 1440 design centred. */
+.lv-page {
+  width: calc(360 * var(--lv-u));
+  margin-inline: auto;
+}
+
+@media (min-width: 1024px) {
+  .lv-page {
+    width: calc(1440 * var(--lv-u));
+  }
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+img,
+video {
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+h1, h2, h3, h4, h5, h6, p, figure, blockquote {
+  margin: 0;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Keyboard accessibility. The Figma file contains no components and no
+   focus states, so this is derived — see docs/STATES-DERIVED.md */
+:focus-visible {
+  outline: 2px solid var(--lv-terracotta);
+  outline-offset: 2px;
+}
+
+.lv-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Icon sprite. Icons inherit colour so hover recolouring works. */
+.lv-icon {
+  width: calc(24 * var(--lv-u));
+  height: calc(24 * var(--lv-u));
+  fill: none;
+  stroke: currentColor;
+  flex: none;
+}
+
+.lv-icon--filled {
+  fill: currentColor;
+  stroke: none;
+}
+
+/* Visibility helpers */
+.lv-hide-mobile,
+.lv-hide-mob {
+  display: inline;
+}
+.lv-hide-desktop,
+.lv-hide-desk {
+  display: inline;
+}
+.lv-br-desk {
+  display: none;
+}
+.lv-br-mob {
+  display: initial;
+}
+
+@media (max-width: 1023px) {
+  .lv-hide-mobile,
+  .lv-hide-mob {
+    display: none !important;
+  }
+  .lv-br-desk {
+    display: none !important;
+  }
+  .lv-br-mob {
+    display: initial !important;
+  }
+}
+
+@media (min-width: 1024px) {
+  .lv-hide-desktop,
+  .lv-hide-desk {
+    display: none !important;
+  }
+  .lv-br-desk {
+    display: initial !important;
+  }
+  .lv-br-mob {
+    display: none !important;
+  }
+}
+
+/* No visible scrollbars (page or carousels); scrolling still works. */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; }
+
+/* =========================================================
+   WIDE SCREENS (>1440px)
+   The design is a 1440px comp and --lv-u stops growing there. Without this,
+   sections with side padding stretch edge to edge while fixed-width layouts
+   hug the left. --lv-edge is the margin each side of a centred 1440px column
+   (0 at 1440px and below, so nothing changes there). A transparent border
+   keeps every section's background full-bleed while its content stays
+   inside the column.
+   ========================================================= */
+@media (min-width: 1441px) {
+  :root {
+    --lv-edge: calc((100vw - 1440px) / 2);
+  }
+
+  main > section:not(.lv-hero, .lv-phero, .lv-mlocband, .lv-cta, .lv-cloc),
+  main > article,
+  main > div:not(.lv-marquee, .lv-band, .lv-cbanner-wrap),
+  footer.lv-footer {
+    border-inline: var(--lv-edge) solid transparent;
+  }
+
+  /* full-bleed media/bands stay edge to edge; only their content is inset */
+  main .lv-phero .lv-phero__inner {
+    padding-inline: calc(48 * var(--lv-u) + var(--lv-edge));
+  }
+
+  /* contact locations: the photo card bleeds left, so its column grows by the
+     margin and the hours row moves in with it */
+  main .lv-cloc {
+    grid-template-columns: calc(955 * var(--lv-u) + var(--lv-edge)) 1fr;
+  }
+  main .lv-cloc .lv-cloc__hours-group {
+    left: calc(48 * var(--lv-u) + var(--lv-edge));
+  }
+}

@@ -1,0 +1,1750 @@
+/* Memberships Page CSS — Figma Parity (1440x9070) */
+
+/* =========================================================
+   01 HERO & TOP PLAN CARDS (Dark Umber #4E3725 Ground)
+   ========================================================= */
+
+.lv-mhero {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  padding: calc(112 * var(--lv-u)) calc(16 * var(--lv-u)) calc(40 * var(--lv-u));
+  overflow: hidden;
+}
+
+.lv-mhero__inner {
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-mhero__head {
+  text-align: center;
+  max-width: calc(864 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-mhero__title {
+  font-size: calc(36 * var(--lv-u));
+  line-height: 1.08;
+  font-weight: 200;
+  color: var(--lv-cream);
+}
+
+.lv-mhero__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-cream);
+}
+
+.lv-mhero__sub {
+  margin: calc(20 * var(--lv-u)) auto 0;
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.45;
+  color: #FAF8F5;
+  opacity: 0.9;
+  max-width: calc(737 * var(--lv-u));
+}
+
+.lv-mhero__grid {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  gap: calc(12 * var(--lv-u));
+  margin: calc(28 * var(--lv-u)) calc(-16 * var(--lv-u)) 0;
+  padding: 0 calc(16 * var(--lv-u)) calc(8 * var(--lv-u));
+}
+
+.lv-mhero__grid::-webkit-scrollbar {
+  display: none;
+}
+
+.lv-mhero__controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 * var(--lv-u));
+  margin-top: calc(20 * var(--lv-u));
+}
+
+.lv-mhero__track {
+  width: calc(232 * var(--lv-u));
+  height: calc(2 * var(--lv-u));
+  background: rgba(250, 248, 245, 0.2);
+  border-radius: calc(1 * var(--lv-u));
+  position: relative;
+}
+
+.lv-mhero__bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: calc(158 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(1 * var(--lv-u));
+}
+
+.lv-mhero__arrows {
+  display: flex;
+  align-items: center;
+  gap: calc(8 * var(--lv-u));
+}
+
+.lv-mhero__arrows .lv-icon-btn {
+  width: calc(36 * var(--lv-u));
+  height: calc(36 * var(--lv-u));
+  border-radius: 50%;
+  border: 1px solid rgba(250, 248, 245, 0.3);
+  background: transparent;
+  color: var(--lv-cream);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.lv-mhero__arrows .lv-icon-btn svg {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-mhero {
+    padding: calc(180 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u));
+    overflow: visible;
+  }
+
+  .lv-mhero__title {
+    font-size: calc(64 * var(--lv-u));
+  }
+
+  .lv-mhero__sub {
+    font-size: calc(16 * var(--lv-u));
+    margin-top: calc(32 * var(--lv-u));
+  }
+
+  .lv-mhero__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(24 * var(--lv-u));
+    margin: calc(64 * var(--lv-u)) 0 0;
+    padding: 0;
+    overflow: visible;
+  }
+}
+
+/* =========================================================
+   HERO PLAN CARDS (434px wide on desktop, 293px on mobile)
+   ========================================================= */
+
+.lv-mcard {
+  display: flex;
+  flex-direction: column;
+  background: var(--lv-cream);
+  color: var(--lv-espresso);
+  border-radius: calc(16 * var(--lv-u));
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  flex: 0 0 calc(293 * var(--lv-u));
+  width: calc(293 * var(--lv-u));
+  min-height: calc(533 * var(--lv-u));
+  scroll-snap-align: start;
+}
+
+@media (min-width: 1024px) {
+  .lv-mcard {
+    flex: 1;
+    width: auto;
+    min-height: auto;
+  }
+}
+
+.lv-mcard__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 293 / 209;
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+}
+
+@media (min-width: 1024px) {
+  .lv-mcard__media {
+    aspect-ratio: 434 / 280;
+  }
+}
+
+.lv-mcard__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-mcard__badge {
+  position: absolute;
+  top: calc(12 * var(--lv-u));
+  left: calc(12 * var(--lv-u));
+  display: inline-flex;
+  align-items: center;
+  gap: calc(6 * var(--lv-u));
+  padding: calc(6 * var(--lv-u)) calc(12 * var(--lv-u));
+  background: rgba(250, 248, 245, 0.92);
+  backdrop-filter: blur(8px);
+  border-radius: calc(60 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(11 * var(--lv-u));
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--lv-espresso);
+}
+
+.lv-mcard__badge .lv-icon {
+  width: calc(12 * var(--lv-u));
+  height: calc(12 * var(--lv-u));
+  color: var(--lv-terracotta);
+}
+
+.lv-mcard__body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: calc(20 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-mcard__body {
+    padding: calc(28 * var(--lv-u));
+  }
+}
+
+.lv-mcard__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: calc(12 * var(--lv-u));
+}
+
+.lv-mcard__name {
+  font-family: var(--lv-font-display);
+  font-weight: 300;
+  font-size: calc(22 * var(--lv-u));
+  line-height: 1.15;
+  color: var(--lv-espresso);
+}
+
+.lv-mcard__price {
+  display: flex;
+  align-items: baseline;
+  font-family: var(--lv-font-display);
+  color: var(--lv-espresso);
+}
+
+.lv-mcard__price strong {
+  font-size: calc(24 * var(--lv-u));
+  font-weight: 300;
+}
+
+.lv-mcard__price small {
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  opacity: 0.7;
+  margin-left: calc(2 * var(--lv-u));
+}
+
+.lv-mcard__desc {
+  margin-top: calc(12 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1.45;
+  color: var(--lv-espresso);
+  opacity: 0.85;
+}
+
+.lv-mcard__list {
+  margin-top: calc(16 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(10 * var(--lv-u));
+}
+
+.lv-mcard__list li,
+.lv-mflex__points li,
+.lv-mtier__benefits li {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1.35;
+  color: var(--lv-espresso);
+}
+
+.lv-mcard__list li .lv-icon--check,
+.lv-mflex__points li .lv-icon--check,
+.lv-mtier__benefits li .lv-icon--check {
+  flex-shrink: 0;
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  color: var(--lv-terracotta);
+  margin-top: calc(2 * var(--lv-u));
+  overflow: visible;
+}
+
+.lv-mcard__cta {
+  margin-top: calc(20 * var(--lv-u));
+  width: 100%;
+  height: calc(46 * var(--lv-u));
+  padding: 0 calc(7 * var(--lv-u)) 0 calc(20 * var(--lv-u));
+  justify-content: space-between;
+}
+
+@media (min-width: 1024px) {
+  .lv-mcard__name {
+    font-size: calc(28 * var(--lv-u));
+  }
+
+  .lv-mcard__price strong {
+    font-size: calc(28 * var(--lv-u));
+  }
+
+  .lv-mcard__price small {
+    font-size: calc(15 * var(--lv-u));
+  }
+
+  .lv-mcard__desc {
+    font-size: calc(15 * var(--lv-u));
+    margin-top: calc(16 * var(--lv-u));
+  }
+
+  .lv-mcard__list {
+    margin-top: calc(24 * var(--lv-u));
+    gap: calc(14 * var(--lv-u));
+  }
+
+  .lv-mcard__list li,
+  .lv-mflex__points li,
+  .lv-mtier__benefits li {
+    font-size: calc(15 * var(--lv-u));
+    gap: calc(10 * var(--lv-u));
+  }
+
+  .lv-mcard__list li .lv-icon--check,
+  .lv-mflex__points li .lv-icon--check,
+  .lv-mtier__benefits li .lv-icon--check {
+    width: calc(18 * var(--lv-u));
+    height: calc(18 * var(--lv-u));
+  }
+
+  .lv-mcard__cta {
+    margin-top: calc(32 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   02 —— 01 FLEX MEMBERSHIP (Split Section on Cream)
+   ========================================================= */
+
+.lv-mflex {
+  background: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u));
+}
+
+.lv-mflex__grid {
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(32 * var(--lv-u));
+}
+
+.lv-mflex__copy {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+.lv-mflex__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 328 / 385;
+  border-radius: calc(16 * var(--lv-u));
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+  order: 2;
+}
+
+.lv-mflex__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-mflex__savings-badge {
+  position: absolute;
+  left: calc(16 * var(--lv-u));
+  bottom: calc(16 * var(--lv-u));
+  width: calc(271 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(10 * var(--lv-u));
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.lv-mflex__savings-label {
+  padding: calc(10 * var(--lv-u)) calc(20 * var(--lv-u));
+  background: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(12 * var(--lv-u));
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+}
+
+.lv-mflex__savings-content {
+  padding: calc(16 * var(--lv-u)) calc(20 * var(--lv-u));
+}
+
+.lv-mflex__savings-value {
+  font-family: var(--lv-font-display);
+  font-weight: 300;
+  font-size: calc(48 * var(--lv-u));
+  line-height: 1;
+  color: var(--lv-espresso);
+}
+
+.lv-mflex__savings-note {
+  margin-top: calc(8 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1.35;
+  color: var(--lv-espresso);
+  opacity: 0.85;
+}
+
+.lv-mflex__title {
+  margin-top: calc(16 * var(--lv-u));
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.08;
+  font-weight: 200;
+  color: var(--lv-espresso);
+}
+
+.lv-mflex__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-terracotta);
+}
+
+.lv-mflex__price-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: calc(12 * var(--lv-u));
+  margin-top: calc(20 * var(--lv-u));
+}
+
+.lv-mflex__chip {
+  padding: calc(6 * var(--lv-u)) calc(14 * var(--lv-u));
+  background: #E8DFD7;
+  border-radius: calc(60 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(12 * var(--lv-u));
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-mflex__subnote {
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  color: var(--lv-espresso);
+  opacity: 0.7;
+}
+
+.lv-mflex__desc {
+  margin-top: calc(16 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(15 * var(--lv-u));
+  line-height: 1.5;
+  color: var(--lv-espresso);
+}
+
+.lv-mflex__points {
+  margin-top: calc(20 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(12 * var(--lv-u));
+}
+
+.lv-mflex__cta {
+  margin-top: calc(28 * var(--lv-u));
+  align-self: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .lv-mflex {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-mflex__grid {
+    display: grid;
+    grid-template-columns: calc(671 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+    align-items: center;
+  }
+
+  .lv-mflex__media {
+    order: 1;
+    aspect-ratio: 671 / 635;
+  }
+
+  .lv-mflex__copy {
+    order: 2;
+  }
+
+  .lv-mflex__savings-badge {
+    width: calc(300 * var(--lv-u));
+    left: calc(28 * var(--lv-u));
+    bottom: calc(28 * var(--lv-u));
+  }
+
+  .lv-mflex__savings-value {
+    font-size: calc(64 * var(--lv-u));
+  }
+
+  .lv-mflex__title {
+    font-size: calc(60 * var(--lv-u));
+    margin-top: calc(20 * var(--lv-u));
+  }
+
+  .lv-mflex__desc {
+    font-size: calc(16 * var(--lv-u));
+    margin-top: calc(20 * var(--lv-u));
+  }
+
+  .lv-mflex__points {
+    gap: calc(14 * var(--lv-u));
+    margin-top: calc(24 * var(--lv-u));
+  }
+
+  .lv-mflex__cta {
+    margin-top: calc(40 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   03 —— 02 FLEX MENU (13 Services Grid on Cream)
+   ========================================================= */
+
+.lv-mmenu {
+  background: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u)) calc(64 * var(--lv-u));
+  border-top: none;
+}
+
+.lv-mmenu__head {
+  text-align: center;
+  max-width: calc(680 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-mmenu__head .lv-eyebrow {
+  justify-content: center;
+}
+
+.lv-mmenu__title {
+  margin-top: calc(16 * var(--lv-u));
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.1;
+  font-weight: 200;
+  color: var(--lv-espresso);
+}
+
+.lv-mmenu__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-terracotta);
+}
+
+.lv-mmenu__sub {
+  margin-top: calc(16 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.45;
+  color: var(--lv-espresso);
+  opacity: 0.85;
+}
+
+.lv-mmenu__grid {
+  max-width: calc(1344 * var(--lv-u));
+  margin: calc(32 * var(--lv-u)) auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(8 * var(--lv-u)) calc(12 * var(--lv-u));
+}
+
+.lv-mmenu__col {
+  display: contents;
+}
+
+.lv-mmenu__item {
+  display: flex;
+  align-items: baseline;
+  gap: calc(8 * var(--lv-u));
+  padding: calc(12 * var(--lv-u)) 0;
+  border-bottom: 1px solid rgba(36, 29, 26, 0.12);
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  color: var(--lv-espresso);
+  line-height: 1.35;
+}
+
+.lv-mmenu__col:nth-child(2) .lv-mmenu__item:last-child {
+  grid-column: 1 / -1;
+  width: calc(160 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-mmenu__dot {
+  color: var(--lv-terracotta);
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1;
+}
+
+@media (min-width: 1024px) {
+  .lv-mmenu {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(120 * var(--lv-u));
+  }
+
+  .lv-mmenu__title {
+    font-size: calc(60 * var(--lv-u));
+    margin-top: calc(20 * var(--lv-u));
+  }
+
+  .lv-mmenu__sub {
+    font-size: calc(15 * var(--lv-u));
+    margin-top: calc(20 * var(--lv-u));
+  }
+
+  .lv-mmenu__grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: calc(48 * var(--lv-u));
+    margin-top: calc(64 * var(--lv-u));
+  }
+
+  .lv-mmenu__col {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .lv-mmenu__item {
+    font-size: calc(16 * var(--lv-u));
+    padding: calc(20 * var(--lv-u)) 0;
+    gap: calc(12 * var(--lv-u));
+  }
+
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:last-child {
+    grid-column: auto;
+    width: auto;
+    margin: 0;
+  }
+
+  .lv-mmenu__dot {
+    font-size: calc(20 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   04 —— 03 BEAUTY BANK (Terracotta 15% Ground #ECE2D9)
+   ========================================================= */
+
+.lv-mbank {
+  background: #ECE2D9;
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u));
+  color: var(--lv-espresso);
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-mbank .lv-eyebrow {
+  color: var(--lv-terracotta);
+}
+
+.lv-mbank .lv-eyebrow__num {
+  color: var(--lv-terracotta);
+}
+
+.lv-mbank .lv-eyebrow__rule {
+  background-color: var(--lv-terracotta);
+}
+
+.lv-mbank__head {
+  display: contents;
+}
+
+.lv-mbank__head-copy {
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+.lv-mbank__title {
+  margin-top: calc(16 * var(--lv-u));
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.08;
+  font-weight: 200;
+  color: var(--lv-espresso);
+}
+
+.lv-mbank__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-terracotta);
+}
+
+.lv-mbank__desc {
+  margin-top: calc(16 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.5;
+  color: var(--lv-espresso);
+  opacity: 0.9;
+  max-width: calc(440 * var(--lv-u));
+}
+
+.lv-mbank__media {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 328 / 297;
+  border-radius: calc(16 * var(--lv-u));
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+  margin-top: calc(24 * var(--lv-u));
+  order: 3;
+}
+
+.lv-mbank__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-mbank__upto-badge {
+  position: absolute;
+  right: calc(12 * var(--lv-u));
+  bottom: calc(12 * var(--lv-u));
+  width: calc(251 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(10 * var(--lv-u));
+  padding: calc(14 * var(--lv-u)) calc(16 * var(--lv-u));
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  color: var(--lv-espresso);
+}
+
+.lv-mbank__upto-tag {
+  display: inline-block;
+  padding: calc(4 * var(--lv-u)) calc(10 * var(--lv-u));
+  background: #E8DFD7;
+  border-radius: calc(40 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(11 * var(--lv-u));
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--lv-espresso);
+}
+
+.lv-mbank__upto-val {
+  margin-top: calc(6 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 300;
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.1;
+  color: var(--lv-espresso);
+}
+
+.lv-mbank__upto-note {
+  margin-top: calc(4 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.35;
+  color: var(--lv-espresso);
+  opacity: 0.85;
+}
+
+/* Group 1707479044: Beauty Bank Tiers */
+.lv-mbank__tiers {
+  max-width: calc(1344 * var(--lv-u));
+  margin: calc(28 * var(--lv-u)) auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: calc(8 * var(--lv-u));
+  align-items: stretch;
+  order: 2;
+  width: 100%;
+}
+
+.lv-mtier {
+  position: relative;
+  background: #FAF8F5;
+  border: 1px solid rgba(36, 29, 26, 0.08);
+  border-radius: calc(12 * var(--lv-u));
+  padding: calc(20 * var(--lv-u)) calc(16 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  color: var(--lv-espresso);
+}
+
+.lv-mtier--popular {
+  border-top-right-radius: 0;
+}
+
+.lv-mtier__popular-badge {
+  position: absolute;
+  top: calc(-27 * var(--lv-u));
+  right: -1px;
+  height: calc(27 * var(--lv-u));
+  width: calc(116 * var(--lv-u));
+  background: var(--lv-terracotta);
+  color: #FAF8F5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: calc(6 * var(--lv-u)) calc(6 * var(--lv-u)) 0 0;
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+.lv-mtier--both {
+  grid-column: 1 / -1;
+  padding: calc(20 * var(--lv-u)) calc(16 * var(--lv-u));
+  margin-top: calc(8 * var(--lv-u));
+}
+
+.lv-mtier__tag {
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(11 * var(--lv-u));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-mtier__price {
+  margin-top: calc(8 * var(--lv-u));
+  display: flex;
+  align-items: baseline;
+  font-family: var(--lv-font-display);
+  color: var(--lv-espresso);
+}
+
+.lv-mtier__price strong {
+  font-size: calc(32 * var(--lv-u));
+  font-weight: 300;
+  line-height: 1;
+}
+
+.lv-mtier__price small {
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  opacity: 0.7;
+  margin-left: calc(2 * var(--lv-u));
+}
+
+.lv-mtier__list {
+  margin-top: calc(16 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(10 * var(--lv-u));
+}
+
+.lv-mtier__list li {
+  display: flex;
+  align-items: baseline;
+  gap: calc(6 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.35;
+  color: var(--lv-espresso);
+}
+
+.lv-mtier__bullet {
+  color: var(--lv-terracotta);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1;
+}
+
+.lv-mtier__cta {
+  margin-top: calc(20 * var(--lv-u));
+  width: 100%;
+  height: calc(42 * var(--lv-u));
+  padding: 0 calc(6 * var(--lv-u)) 0 calc(14 * var(--lv-u));
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: calc(12 * var(--lv-u));
+}
+
+.lv-mtier__benefits {
+  margin-top: calc(16 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(14 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-mbank {
+    display: block;
+    background: #ECE2D9;
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+    color: var(--lv-espresso);
+  }
+
+  .lv-mbank__head {
+    display: grid;
+    grid-template-columns: calc(520 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+  }
+
+  .lv-mbank__head-copy {
+    order: auto;
+  }
+
+  .lv-mbank__title {
+    font-size: calc(60 * var(--lv-u));
+    margin-top: calc(20 * var(--lv-u));
+    color: var(--lv-espresso);
+  }
+
+  .lv-mbank__title em {
+    color: var(--lv-terracotta);
+  }
+
+  .lv-mbank__desc {
+    font-size: calc(16 * var(--lv-u));
+    margin-top: calc(24 * var(--lv-u));
+    color: var(--lv-espresso);
+  }
+
+  .lv-mbank__media {
+    order: auto;
+    aspect-ratio: 604 / 327;
+    margin-top: 0;
+  }
+
+  .lv-mbank__tiers {
+    order: auto;
+    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(664 * var(--lv-u));
+    gap: calc(24 * var(--lv-u));
+    margin-top: calc(72 * var(--lv-u));
+  }
+
+  .lv-mtier {
+    background: var(--lv-sand-3);
+    padding: calc(28 * var(--lv-u)) calc(24 * var(--lv-u));
+  }
+
+  .lv-mtier__popular-badge {
+    top: calc(-33 * var(--lv-u));
+    height: calc(33 * var(--lv-u));
+    width: calc(142 * var(--lv-u));
+    background: var(--lv-terracotta);
+    font-size: calc(12 * var(--lv-u));
+  }
+
+  .lv-mtier--both {
+    grid-column: auto;
+    padding: calc(28 * var(--lv-u)) calc(32 * var(--lv-u));
+    margin-top: 0;
+  }
+
+  .lv-mtier__price strong {
+    font-size: calc(40 * var(--lv-u));
+  }
+
+  .lv-mtier__price small {
+    font-size: calc(16 * var(--lv-u));
+  }
+
+  .lv-mtier__list {
+    margin-top: calc(24 * var(--lv-u));
+    gap: calc(14 * var(--lv-u));
+  }
+
+  .lv-mtier__list li {
+    font-size: calc(15 * var(--lv-u));
+    gap: calc(10 * var(--lv-u));
+  }
+
+  .lv-mtier__cta {
+    margin-top: calc(32 * var(--lv-u));
+    height: calc(46 * var(--lv-u));
+    padding: 0 calc(7 * var(--lv-u)) 0 calc(20 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+  }
+
+  .lv-mtier__benefits {
+    margin-top: calc(24 * var(--lv-u));
+    gap: calc(18 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-badge {
+    width: calc(316 * var(--lv-u));
+    min-height: calc(161 * var(--lv-u));
+    right: calc(24 * var(--lv-u));
+    bottom: calc(24 * var(--lv-u));
+    padding: calc(20 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-val {
+    font-size: calc(40 * var(--lv-u));
+    margin-top: calc(8 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-note {
+    font-size: calc(13 * var(--lv-u));
+    margin-top: calc(6 * var(--lv-u));
+  }
+}
+
+@media (min-width: 1024px) {
+  .lv-mbank {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-mbank__head {
+    grid-template-columns: calc(520 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+  }
+
+  .lv-mbank__title {
+    font-size: calc(60 * var(--lv-u));
+  }
+
+  .lv-mbank__tiers {
+    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(664 * var(--lv-u));
+    gap: calc(24 * var(--lv-u));
+    margin-top: calc(72 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-badge {
+    width: calc(316 * var(--lv-u));
+    min-height: calc(161 * var(--lv-u));
+    right: calc(24 * var(--lv-u));
+    bottom: calc(24 * var(--lv-u));
+    padding: calc(20 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-val {
+    font-size: calc(40 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   05 —— 04 SIDE BY SIDE (Comparison Table on Cream)
+   ========================================================= */
+
+.lv-mcompare {
+  background: var(--lv-cream);
+  padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u));
+  text-align: center;
+}
+
+.lv-mcompare__head {
+  max-width: calc(864 * var(--lv-u));
+  margin: 0 auto;
+}
+
+.lv-mcompare__head .lv-eyebrow {
+  justify-content: center;
+}
+
+.lv-mcompare__title {
+  margin-top: calc(20 * var(--lv-u));
+  font-size: calc(36 * var(--lv-u));
+  line-height: 1.1;
+  font-weight: 200;
+  color: var(--lv-espresso);
+}
+
+.lv-mcompare__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-terracotta);
+}
+
+.lv-mcompare__table-wrap {
+  max-width: calc(1344 * var(--lv-u));
+  margin: calc(40 * var(--lv-u)) auto 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.lv-mtable {
+  width: 100%;
+  min-width: calc(760 * var(--lv-u));
+  border-collapse: separate;
+  border-spacing: 0;
+  text-align: left;
+  border-radius: 0;
+  overflow: visible;
+  border: none;
+}
+
+.lv-mtable thead th {
+  padding: calc(20 * var(--lv-u)) calc(24 * var(--lv-u));
+  background: var(--lv-umber);
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(12 * var(--lv-u));
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+  border-top: none;
+  border-bottom: 1px solid rgba(250, 248, 245, 0.1);
+}
+
+.lv-mtable thead th.lv-mtable__th-empty {
+  background: var(--lv-umber);
+  width: 25%;
+}
+
+.lv-mtable thead th:not(:last-child),
+.lv-mtable tbody th,
+.lv-mtable tbody td:not(:last-child) {
+  border-right: 1px solid rgba(36, 29, 26, 0.08);
+}
+
+.lv-mtable thead th:last-child,
+.lv-mtable tbody td:last-child {
+  border-right: none;
+}
+
+.lv-mtable tbody th,
+.lv-mtable tbody td {
+  padding: calc(20 * var(--lv-u)) calc(24 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(15 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-espresso);
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(36, 29, 26, 0.08);
+  border-left: none;
+}
+
+.lv-mtable tbody th {
+  font-weight: 500;
+  width: 25%;
+  border-left: none;
+}
+
+.lv-mtable tbody td {
+  width: 25%;
+}
+
+.lv-mtable tbody tr:last-child th,
+.lv-mtable tbody tr:last-child td {
+  border-bottom: 1px solid rgba(36, 29, 26, 0.08);
+  border-radius: 0;
+}
+
+.lv-mtable__row {
+  background: #FAF8F5;
+}
+
+.lv-mtable__row--alt {
+  background: #F3ECE6;
+}
+
+.lv-icon--table-check {
+  width: calc(20 * var(--lv-u));
+  height: calc(20 * var(--lv-u));
+  color: var(--lv-terracotta);
+  display: block;
+  overflow: visible;
+}
+
+.lv-mcompare__cta {
+  margin-top: calc(40 * var(--lv-u));
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: calc(16 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-mcompare {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-mcompare__title {
+    font-size: calc(60 * var(--lv-u));
+  }
+
+  .lv-mcompare__table-wrap {
+    margin-top: calc(56 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   06 —— 05 TWO MIAMI LOCATIONS (Banner with Media Overlay)
+   ========================================================= */
+
+.lv-mlocband {
+  position: relative;
+  min-height: calc(450 * var(--lv-u));
+  height: calc(450 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: calc(240 * var(--lv-u)) calc(16 * var(--lv-u)) calc(32 * var(--lv-u));
+  color: var(--lv-cream);
+  overflow: hidden;
+}
+
+.lv-mlocband__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.lv-mlocband__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(36, 29, 26, 0.55);
+  z-index: 2;
+}
+
+.lv-mlocband__inner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--lv-u));
+}
+
+.lv-mlocband__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-mlocband .lv-eyebrow {
+  color: #FAF8F5;
+}
+
+.lv-mlocband .lv-eyebrow .lv-eyebrow__num {
+  color: #FAF8F5;
+  background: none;
+}
+
+.lv-mlocband .lv-eyebrow .lv-eyebrow__rule {
+  background-color: #FAF8F5;
+}
+
+.lv-mlocband__title {
+  margin-top: calc(16 * var(--lv-u));
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1.15;
+  font-weight: 200;
+  color: #FAF8F5;
+  max-width: calc(594 * var(--lv-u));
+}
+
+.lv-mlocband__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: #FAF8F5;
+}
+
+.lv-mlocband__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(13 * var(--lv-u));
+  color: #FAF8F5;
+  align-self: flex-start;
+  white-space: nowrap;
+}
+
+.lv-mlocband__badge .lv-icon--cal {
+  width: calc(18 * var(--lv-u));
+  height: calc(18 * var(--lv-u));
+  color: #FAF8F5;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .lv-mlocband {
+    height: calc(600 * var(--lv-u));
+    min-height: calc(600 * var(--lv-u));
+    padding: calc(434 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-mlocband__inner {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: calc(32 * var(--lv-u));
+  }
+
+  .lv-mlocband__title {
+    font-size: calc(40 * var(--lv-u));
+    line-height: 1.1;
+  }
+
+  .lv-mlocband__badge {
+    align-self: flex-end;
+    margin-bottom: calc(4 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   07 —— 06 FAQS SECTION (Split layout)
+   ========================================================= */
+
+.lv-faq {
+  background: var(--lv-cream);
+  padding: calc(48 * var(--lv-u)) calc(16 * var(--lv-u));
+}
+
+.lv-faq__grid {
+  max-width: calc(1344 * var(--lv-u));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(32 * var(--lv-u));
+}
+
+.lv-faq__img-wrap {
+  position: relative;
+  width: calc(179 * var(--lv-u));
+  aspect-ratio: 179 / 154;
+  margin-left: auto;
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  background: rgba(36, 29, 26, 0.05);
+}
+
+.lv-faq__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.lv-faq__perks-badge {
+  position: absolute;
+  left: calc(6 * var(--lv-u));
+  bottom: calc(6 * var(--lv-u));
+  width: calc(167 * var(--lv-u));
+  min-height: calc(51 * var(--lv-u));
+  background: #FAF8F5;
+  border-radius: calc(6 * var(--lv-u));
+  padding: calc(8 * var(--lv-u)) calc(10 * var(--lv-u));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.lv-faq__perks-tag {
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(8 * var(--lv-u));
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-terracotta);
+}
+
+.lv-faq__perks-title {
+  margin-top: calc(2 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(13 * var(--lv-u));
+  line-height: 1.1;
+  color: var(--lv-espresso);
+}
+
+.lv-faq__copy {
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-faq__title {
+  margin-top: calc(16 * var(--lv-u));
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.08;
+  font-weight: 200;
+  color: var(--lv-espresso);
+}
+
+.lv-faq__title em {
+  font-family: var(--lv-font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--lv-terracotta);
+}
+
+.lv-faq__acc {
+  margin-top: calc(24 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+}
+
+.lv-faq__item {
+  border-bottom: 1px solid rgba(36, 29, 26, 0.12);
+}
+
+.lv-faq__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: calc(16 * var(--lv-u));
+  padding: calc(24 * var(--lv-u)) 0;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  color: var(--lv-espresso);
+}
+
+.lv-faq__trigger-title {
+  font-family: var(--lv-font-display);
+  font-weight: 300;
+  font-size: calc(22 * var(--lv-u));
+  line-height: 1.25;
+}
+
+.lv-faq__icon {
+  flex-shrink: 0;
+  width: calc(36 * var(--lv-u));
+  height: calc(36 * var(--lv-u));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #4E3725;
+}
+
+.lv-faq__icon .lv-icon {
+  width: calc(32 * var(--lv-u));
+  height: calc(32 * var(--lv-u));
+  transition: transform 0.25s ease;
+}
+
+.lv-faq__icon .lv-icon--minus {
+  display: none;
+}
+
+.lv-faq__item.is-open .lv-faq__icon .lv-icon--plus {
+  display: none;
+}
+
+.lv-faq__item.is-open .lv-faq__icon .lv-icon--minus {
+  display: block;
+}
+
+.lv-faq__panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.45s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease, padding 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  opacity: 0;
+  overflow: hidden;
+  padding: 0;
+}
+
+.lv-faq__panel > p,
+.lv-faq__panel > div {
+  min-height: 0;
+  font-family: var(--lv-font-body);
+  font-size: calc(15 * var(--lv-u));
+  line-height: 1.55;
+  color: var(--lv-espresso);
+  opacity: 0.85;
+}
+
+.lv-faq__item.is-open .lv-faq__panel {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  padding: 0 0 calc(24 * var(--lv-u)) 0;
+}
+
+.lv-faq__cta {
+  margin-top: calc(40 * var(--lv-u));
+  align-self: flex-start;
+}
+
+@media (min-width: 1024px) {
+  .lv-faq {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-faq__grid {
+    grid-template-columns: calc(520 * var(--lv-u)) 1fr;
+    gap: calc(64 * var(--lv-u));
+    align-items: flex-start;
+  }
+
+  .lv-faq__title {
+    font-size: calc(60 * var(--lv-u));
+  }
+
+  .lv-faq__trigger-title {
+    font-size: calc(26 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   08 —— INSTAGRAM SECTION ENHANCEMENT
+   ========================================================= */
+
+.lv-insta .lv-insta__play {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+}
+
+.lv-insta .lv-insta__play::before {
+  content: '';
+  position: absolute;
+  width: calc(48 * var(--lv-u));
+  height: calc(48 * var(--lv-u));
+  border-radius: 50%;
+  background: var(--lv-terracotta);
+}
+
+.lv-insta .lv-insta__play svg {
+  position: relative;
+  width: calc(20 * var(--lv-u));
+  height: calc(20 * var(--lv-u));
+  color: var(--lv-cream);
+}
+
+/* =========================================================
+   REVIEW FIXES (Figma "memberships-reviews")
+   ========================================================= */
+
+/* plan-card tags: light-brown text */
+.lv-mcard__badge {
+  color: var(--lv-terracotta);
+}
+
+/* "regularly" etc. wrap like the comp, and the three buttons share one baseline */
+.lv-mcard__cta {
+  margin-top: auto;
+}
+
+.lv-mcard__list {
+  margin-bottom: calc(24 * var(--lv-u));
+}
+
+/* Beauty Bank "upto" card: light-brown pill on a 15% brown ground (Figma 1:5560) */
+.lv-mbank__upto-tag {
+  padding: calc(12 * var(--lv-u)) calc(16 * var(--lv-u));
+  background: rgba(155, 99, 63, 0.15);
+  color: var(--lv-terracotta);
+  font-size: calc(12 * var(--lv-u));
+  letter-spacing: 0.1em;
+}
+
+/* compare table: no row rules except the last; white dividers between header cells */
+.lv-mtable tbody th,
+.lv-mtable tbody td {
+  border-bottom: none;
+}
+
+.lv-mtable tbody tr:last-child th,
+.lv-mtable tbody tr:last-child td {
+  border-bottom: 1px solid rgba(36, 29, 26, 0.08);
+}
+
+/* header row has rounded top corners (comp) */
+.lv-mtable thead th:first-child {
+  border-top-left-radius: calc(12 * var(--lv-u));
+}
+
+.lv-mtable thead th:last-child {
+  border-top-right-radius: calc(12 * var(--lv-u));
+}
+
+.lv-mtable thead th:not(:last-child) {
+  border-right: 1px solid rgba(250, 248, 245, 0.25);
+}
+
+@media (min-width: 1024px) {
+  .lv-mcard__desc {
+    font-size: calc(16 * var(--lv-u));
+    line-height: 1.6;
+  }
+
+  /* Flex membership -> Flex menu: ~124px in the comp, not ~200 */
+  .lv-mmenu {
+    padding-top: calc(22 * var(--lv-u));
+  }
+
+  /* menu sub-text -> list: ~65px */
+  .lv-mmenu__grid {
+    margin-top: calc(29 * var(--lv-u));
+  }
+
+  /* Beauty Bank: image is 604x327 at the right edge */
+  .lv-mbank__head {
+    grid-template-columns: 1fr calc(604 * var(--lv-u));
+  }
+
+  .lv-mbank__title {
+    margin-top: calc(39 * var(--lv-u));
+  }
+
+  .lv-mtier__benefits {
+    gap: calc(25 * var(--lv-u));
+  }
+
+  /* upto card: 316x161, 20px inside on every side (Figma 1:5556) */
+  .lv-mbank__upto-badge {
+    padding: calc(20 * var(--lv-u));
+    border-radius: calc(6 * var(--lv-u));
+  }
+
+  .lv-mbank__upto-val {
+    margin-top: calc(14 * var(--lv-u));
+  }
+
+  /* locations band: first line "Use your membership at any of our locations" */
+  .lv-mlocband__title {
+    max-width: calc(720 * var(--lv-u));
+  }
+
+  /* FAQ: tall photo on the left, 582x789 (Figma), questions 118px apart */
+  .lv-faq__grid {
+    grid-template-columns: calc(582 * var(--lv-u)) 1fr;
+  }
+
+  .lv-faq__img-wrap {
+    width: 100%;
+    aspect-ratio: 582 / 789;
+    margin-left: 0;
+  }
+
+  .lv-faq__perks-badge {
+    left: calc(28 * var(--lv-u));
+    bottom: calc(28 * var(--lv-u));
+    width: calc(297 * var(--lv-u));
+    min-height: calc(74 * var(--lv-u));
+    padding: calc(12 * var(--lv-u)) calc(18 * var(--lv-u));
+    border-radius: calc(8 * var(--lv-u));
+  }
+
+  .lv-faq__perks-tag {
+    font-size: calc(10 * var(--lv-u));
+  }
+
+  .lv-faq__perks-title {
+    margin-top: calc(4 * var(--lv-u));
+    font-size: calc(20 * var(--lv-u));
+  }
+
+  .lv-faq__trigger-title {
+    font-size: calc(28 * var(--lv-u));
+    max-width: calc(541 * var(--lv-u));
+  }
+
+  .lv-faq__trigger {
+    padding: calc(41.5 * var(--lv-u)) 0;
+  }
+
+  .lv-faq__item:last-child {
+    border-bottom: none;
+  }
+
+  /* FAQ -> Instagram: about 100px, not 220 */
+  .lv-faq {
+    padding-bottom: calc(40 * var(--lv-u));
+  }
+
+  .lv-faq + .lv-insta {
+    padding-top: calc(40 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   Review round (Figma 2010:14 / 2010:13)
+   ========================================================= */
+.lv-icon--thin { fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: butt; stroke-linejoin: miter; }
+
+/* pointers sit on the card floor so every card's list lines up whatever its copy length */
+.lv-mcard__list { margin-top: auto; padding-top: calc(24 * var(--lv-u)); }
+
+/* tags: medium eyebrow, a touch more icon weight */
+.lv-mcard__badge { font-weight: 500; }
+.lv-mcard__badge .lv-icon { filter: drop-shadow(0 0 0.4px currentColor) drop-shadow(0 0 0.4px currentColor); }
+
+@media (min-width: 1024px) {
+  /* comp: 16px copy, 16px ticks, rows 36px apart; same line count keeps every list level */
+  .lv-mcard__desc { font-size: calc(16 * var(--lv-u)); line-height: 1.6; min-height: calc(76.8 * var(--lv-u)); }
+  .lv-mcard__list li { font-size: calc(16 * var(--lv-u)); gap: calc(12 * var(--lv-u)); }
+  .lv-mcard__list li .lv-icon--check { width: calc(16 * var(--lv-u)); height: calc(16 * var(--lv-u)); }
+  .lv-mtier__tag + .lv-mtier__price { margin-top: calc(14 * var(--lv-u)); }
+  .lv-mbank__upto-val { margin-top: calc(14 * var(--lv-u)); }
+  .lv-mmenu__title { margin-top: calc(32 * var(--lv-u)); }
+}
+
+@media (max-width: 1023.98px) {
+  .lv-mhero { padding-top: calc(152 * var(--lv-u)); }
+  .lv-mhero__grid { scroll-padding-left: calc(16 * var(--lv-u)); }
+  .lv-mcard__desc { font-size: calc(14 * var(--lv-u)); line-height: 1.5; margin-top: calc(10 * var(--lv-u)); }
+  .lv-mcard__list { gap: calc(13.5 * var(--lv-u)); margin-bottom: 0; }
+  .lv-mcard__cta { margin-top: calc(22 * var(--lv-u)); }
+  .lv-mcard__list li { font-size: calc(14 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+  .lv-mhero__arrows .lv-icon-btn .lv-icon { width: calc(18 * var(--lv-u)); height: calc(18 * var(--lv-u)); }
+
+  /* flex menu: 14px, rows ruled like the comp */
+  .lv-mmenu__grid { gap: 0 calc(8 * var(--lv-u)); }
+  .lv-mmenu__item { font-size: calc(14 * var(--lv-u)); padding: calc(25 * var(--lv-u)) 0; gap: calc(12 * var(--lv-u)); }
+  .lv-mmenu__dot { font-size: calc(14 * var(--lv-u)); }
+
+  /* UPTO tag: smaller eyebrow */
+  .lv-mbank__upto-tag { font-size: calc(10 * var(--lv-u)); padding: calc(7 * var(--lv-u)) calc(12 * var(--lv-u)); letter-spacing: 0.1em; }
+  .lv-mbank__upto-val { font-size: calc(28 * var(--lv-u)); margin-top: calc(12 * var(--lv-u)); }
+
+  /* comparison table: rounded top corners */
+  .lv-mcompare__table-wrap { border-radius: calc(20 * var(--lv-u)) calc(20 * var(--lv-u)) 0 0; }
+  .lv-mtable thead th:first-child { border-top-left-radius: calc(20 * var(--lv-u)); }
+  .lv-mtable thead th:last-child { border-top-right-radius: calc(20 * var(--lv-u)); }
+
+  /* locations band: lighter overlay */
+  .lv-mlocband__overlay { background: rgba(36, 29, 26, 0.2); }
+
+  /* FAQ: smaller toggles, no rule under the last question */
+  .lv-faq__icon, .lv-faq__icon .lv-icon { width: calc(28 * var(--lv-u)); height: calc(28 * var(--lv-u)); }
+  .lv-faq__item:last-child { border-bottom: none; }
+  .lv-faq__trigger-title { font-size: calc(20 * var(--lv-u)); line-height: 1.1; }
+}

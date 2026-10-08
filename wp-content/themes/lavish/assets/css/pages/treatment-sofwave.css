@@ -1,0 +1,108 @@
+/* Sofwave-only overrides, measured against Figma 1:1124 (1440) / 1:12249 (360). */
+
+/* 01 intro: rule under the title */
+.lv-sofwave .lv-intro__title {
+  padding-bottom: calc(17 * var(--lv-u));
+  border-bottom: 1px solid rgba(36, 29, 26, 0.2);
+}
+.lv-sofwave .lv-intro__body { margin-top: calc(21 * var(--lv-u)); }
+
+/* 02 areas */
+.lv-sofwave .lv-areas__sub { max-width: calc(328 * var(--lv-u)); }
+.lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) { min-height: calc(268 * var(--lv-u)); padding-inline: calc(14 * var(--lv-u)); }
+.lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) .lv-area__icon { margin-bottom: 0; }
+.lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) p { margin-top: calc(18 * var(--lv-u)); }
+.lv-sofwave .lv-areas__subhead {
+  margin-top: calc(35 * var(--lv-u));
+  padding-top: calc(24 * var(--lv-u));
+  border-top: 1px solid rgba(36, 29, 26, 0.3);
+}
+.lv-sofwave .lv-arealist { gap: calc(28 * var(--lv-u)); }
+.lv-sofwave .lv-areas { padding-bottom: calc(89 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-intro { padding-top: calc(100 * var(--lv-u)); }
+  .lv-sofwave .lv-intro__title { padding-bottom: calc(29 * var(--lv-u)); }
+  .lv-sofwave .lv-intro__body { margin-top: calc(29 * var(--lv-u)); max-width: calc(770 * var(--lv-u)); }
+
+  .lv-sofwave .lv-areas__sub { max-width: calc(625 * var(--lv-u)); }
+  .lv-sofwave .lv-areas__grid { margin-top: calc(55 * var(--lv-u)); }
+  .lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) { min-height: 0; padding-inline: calc(28 * var(--lv-u)); }
+  .lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) .lv-area__icon { margin-bottom: auto; }
+  .lv-sofwave .lv-areas__grid > .lv-area:nth-of-type(n+3) p { margin-top: calc(14 * var(--lv-u)); }
+  .lv-sofwave .lv-areas__subhead { margin-top: calc(48 * var(--lv-u)); padding-top: calc(41 * var(--lv-u)); }
+  .lv-sofwave .lv-arealist { gap: calc(60 * var(--lv-u)); }
+  .lv-sofwave .lv-arealist li { grid-template-rows: auto 1fr; }
+  .lv-sofwave .lv-arealist p { margin-top: calc(19 * var(--lv-u)); }
+  .lv-sofwave .lv-areas { padding-bottom: calc(96 * var(--lv-u)); }
+}
+
+/* 03 why: shared mobile rules squeeze everything to 144px; comp is full width */
+@media (max-width: 1023px) {
+  .lv-sofwave .lv-why__title { max-width: none; }
+  .lv-sofwave .lv-why__sub { max-width: calc(290 * var(--lv-u)); }
+  .lv-sofwave .lv-why__grid { max-width: none; column-gap: 0; }
+  .lv-sofwave .lv-stat__t { max-width: calc(116 * var(--lv-u)); }
+  .lv-sofwave .lv-stat__d { max-width: calc(156 * var(--lv-u)); margin-inline: auto; }
+  .lv-sofwave .lv-why__grid > .lv-stat:nth-child(5) { margin-top: calc(14 * var(--lv-u)); }
+  .lv-sofwave .lv-why__cta { margin-top: calc(36 * var(--lv-u)); }
+}
+.lv-sofwave .lv-why__title em { color: inherit; }
+.lv-sofwave .lv-why__grid > .lv-stat:nth-child(n+4) .lv-stat__k { font-style: normal; }
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-stat__t { white-space: nowrap; }
+  .lv-sofwave .lv-stat__d { margin-top: calc(23 * var(--lv-u)); }
+}
+@media (min-width: 1024px) { .lv-sofwave .lv-why__cta { margin-top: calc(53 * var(--lv-u)); } }
+@media (min-width: 1024px) { .lv-sofwave .lv-results .lv-results__grid { margin-top: calc(56 * var(--lv-u)); } }
+@media (min-width: 1024px) { .lv-sofwave .lv-results__nav { margin-top: calc(41 * var(--lv-u)); } .lv-sofwave .lv-results { padding-bottom: calc(51 * var(--lv-u)); } }
+/* 05 faq */
+.lv-sofwave .lv-acc__item:last-child { border-bottom: 0; }
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-faq .lv-acc { margin-top: calc(14 * var(--lv-u)); }
+  .lv-sofwave .lv-faq { padding-bottom: calc(62 * var(--lv-u)); }
+}
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-faq .lv-acc__item.is-open .lv-acc__panel { margin-top: calc(-17 * var(--lv-u)); }
+  .lv-sofwave .lv-faq .lv-acc__item.is-open .lv-acc__panel > p { max-width: calc(600 * var(--lv-u)); line-height: 1.6; padding-bottom: calc(41 * var(--lv-u)); }
+}
+/* 06 related: centred titles, featured card carries a Learn more pill */
+.lv-sofwave .lv-rcard { text-align: center; }
+.lv-sofwave .lv-rcard h3 { margin-top: calc(16 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); white-space: normal; }
+.lv-sofwave .lv-rcard .lv-btn { align-self: center; }
+.lv-sofwave .lv-rcard .lv-btn { margin-top: calc(18 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-rcard h3 { margin-top: calc(22 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); white-space: nowrap; }
+  .lv-sofwave .lv-rcard .lv-btn { align-self: center; margin-top: calc(26 * var(--lv-u)); }
+  .lv-sofwave .lv-rcard:hover { padding-bottom: calc(31 * var(--lv-u)); }
+  .lv-sofwave .lv-related__grid { margin-top: calc(45 * var(--lv-u)); }
+  .lv-sofwave .lv-related__all { margin-top: calc(60 * var(--lv-u)); }
+}
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-ready__sub { max-width: calc(500 * var(--lv-u)); }
+  .lv-sofwave .lv-insta { padding-bottom: calc(34 * var(--lv-u)); }
+}
+
+/* 04 results / 05 faq, mobile */
+@media (max-width: 1023px) {
+  .lv-sofwave .lv-results__title { margin-top: calc(17 * var(--lv-u)); }
+  .lv-sofwave .lv-ba { padding-bottom: calc(9 * var(--lv-u)); }
+  .lv-sofwave .lv-results__nav { margin-top: calc(32 * var(--lv-u)); }
+  .lv-sofwave .lv-results { padding-bottom: calc(58 * var(--lv-u)); }
+  .lv-sofwave .lv-acc__item:nth-child(6) { display: none; }
+  .lv-sofwave .lv-faq__copy { margin-top: calc(-3 * var(--lv-u)); }
+  .lv-sofwave .lv-faq__title { margin-top: calc(21 * var(--lv-u)); }
+  .lv-sofwave .lv-faq .lv-acc { margin-top: calc(27 * var(--lv-u)); }
+  .lv-sofwave .lv-related__sub { max-width: calc(320 * var(--lv-u)); line-height: 1.6; margin-top: calc(21 * var(--lv-u)); }
+  .lv-sofwave .lv-related__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: calc(30 * var(--lv-u)); }
+  .lv-sofwave .lv-rcard:hover { padding-bottom: calc(24 * var(--lv-u)); }
+  .lv-sofwave .lv-rcard { min-height: calc(190 * var(--lv-u)); }
+  .lv-sofwave .lv-rcard .lv-btn { font-size: calc(14 * var(--lv-u)); }
+  .lv-sofwave .lv-faq { padding-bottom: calc(34 * var(--lv-u)); }
+  .lv-sofwave .lv-faq .lv-acc__item.is-open .lv-acc__panel { margin-top: calc(-4 * var(--lv-u)); }
+  .lv-sofwave .lv-faq .lv-acc__item.is-open .lv-acc__panel > p { line-height: 1.6; padding-bottom: calc(23 * var(--lv-u)); }
+}
+.lv-sofwave .lv-ba__tag { padding: calc(6.5 * var(--lv-u)) calc(8 * var(--lv-u)); line-height: 1; }
+
+/* mobile review: the "All skin types" glyph is a filled shape; the base .lv-icon outline made it heavy */
+.lv-sofwave .lv-arealist li:nth-child(3) .lv-icon--area { fill: currentColor; stroke: none; }

@@ -1,0 +1,92 @@
+/* Lavish — design tokens
+   Every value below was read from the Figma file, not chosen.
+   Source: basic/docs/type-census.json + basic/docs/style-census.json
+   (census across all 23 desktop + 25 mobile frames) */
+
+:root {
+  /* ---- Palette (SOLID fills, by frequency in the file) ---- */
+  --lv-muted:        #D9D9D9;  /* image placeholder rects in the comps */
+  --lv-cream:        #FAF8F5;  /* primary background / light text */
+  --lv-umber:        #4E3725;  /* deep warm brown / cards */
+  --lv-terracotta:   #9B633F;  /* brand accent / buttons / announcement bar */
+  --lv-sand:         #F2E9DF;  /* secondary surface */
+  --lv-white:        #FFFFFF;
+  --lv-sand-2:       #EDE4D8;
+  --lv-sand-3:       #F8F2EB;
+  --lv-sand-4:       #ECE2D9;
+  --lv-espresso:     #241D1A;  /* headings / deep background */
+  --lv-border:       #E2DAD2;
+  --lv-ink-green:    #30362F;
+
+  /* ---- Alpha variants used as overlays in the comps ---- */
+  --lv-espresso-40:  rgba(36, 29, 26, 0.40);   /* hero media overlay */
+  --lv-espresso-20:  rgba(36, 29, 26, 0.20);
+  --lv-umber-40:     rgba(78, 55, 37, 0.40);   /* hero media overlay */
+  --lv-umber-80:     rgba(78, 55, 37, 0.80);
+  --lv-terracotta-10:rgba(155, 99, 63, 0.10);
+  --lv-terracotta-15:rgba(155, 99, 63, 0.15);
+  --lv-white-15:     rgba(255, 255, 255, 0.15);
+
+  /* ---- Typography ---- */
+  --lv-font-display: 'PP Editorial New', Georgia, 'Times New Roman', serif;
+  --lv-font-body:    'Neue Haas Grotesk Display Pro', 'Helvetica Neue', Arial, sans-serif;
+  --lv-font-ui:      'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale, exactly the 15 sizes present in the file */
+  --lv-fs-6:   6px;
+  --lv-fs-8:   8px;
+  --lv-fs-10: 10px;
+  --lv-fs-12: 12px;
+  --lv-fs-14: 14px;
+  --lv-fs-16: 16px;
+  --lv-fs-18: 18px;
+  --lv-fs-20: 20px;
+  --lv-fs-24: 24px;
+  --lv-fs-28: 28px;
+  --lv-fs-32: 32px;
+  --lv-fs-36: 36px;
+  --lv-fs-40: 40px;
+  --lv-fs-48: 48px;
+  --lv-fs-64: 64px;
+
+  /* ---- Radii, as found ---- */
+  --lv-r-4:    4px;
+  --lv-r-6:    6px;
+  --lv-r-8:    8px;
+  --lv-r-10:  10px;
+  --lv-r-12:  12px;
+  --lv-r-16:  16px;
+  --lv-r-20:  20px;
+  --lv-r-22:  22px;
+  --lv-r-32:  32px;
+  --lv-r-40:  40px;
+  --lv-r-60:  60px;   /* most common card radius */
+  --lv-r-pill: 500px; /* Figma's pill value, used literally */
+
+  /* ---- Spacing, as found (auto-layout gaps + padding) ---- */
+  --lv-sp-2:   2px;
+  --lv-sp-6:   6px;
+  --lv-sp-7:   7px;
+  --lv-sp-8:   8px;
+  --lv-sp-10: 10px;
+  --lv-sp-12: 12px;
+  --lv-sp-14: 14px;
+  --lv-sp-16: 16px;
+  --lv-sp-18: 18px;
+  --lv-sp-20: 20px;
+  --lv-sp-24: 24px;
+  --lv-sp-28: 28px;
+  --lv-sp-32: 32px;
+
+  /* ---- Layout anchors (the two designed canvases) ---- */
+  --lv-canvas-desktop: 1440px;
+  --lv-canvas-mobile:   360px;
+  --lv-bar-h-desktop:    38px;  /* announcement bar */
+  --lv-bar-h-mobile:     32px;
+
+  /* ---- Motion (derived, see docs/MOTION.md) ---- */
+  --lv-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
+  --lv-dur:        400ms;
+  --lv-dur-fast:   200ms;
+  --lv-stagger:     60ms;
+}

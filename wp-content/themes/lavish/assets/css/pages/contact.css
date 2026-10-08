@@ -1,0 +1,611 @@
+/* Contact — Figma 79:1424 (1440x4208) */
+
+.lv-body--light-alt .lv-header--alt {
+  background: var(--lv-cream);
+}
+
+/* =========================================================
+   01 INTRO SECTION (Figma 79:1537)
+   ========================================================= */
+
+.lv-cintro {
+  background: var(--lv-cream);
+  padding: calc(72 * var(--lv-u)) calc(16 * var(--lv-u)) calc(64 * var(--lv-u));
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.lv-cintro__title {
+  font-size: calc(36 * var(--lv-u));
+  color: var(--lv-espresso);
+  max-width: calc(600 * var(--lv-u));
+}
+
+.lv-cintro__sub {
+  margin-top: calc(20 * var(--lv-u));
+  max-width: calc(351 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-espresso);
+}
+
+.lv-cintro .lv-btn {
+  margin-top: calc(28 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-cintro {
+    padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(80 * var(--lv-u));
+  }
+
+  .lv-cintro__title {
+    font-size: calc(64 * var(--lv-u));
+    max-width: none;
+  }
+
+  .lv-cintro__sub {
+    margin-top: calc(24 * var(--lv-u));
+  }
+
+  .lv-cintro .lv-btn {
+    margin-top: calc(32 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   02 BANNER & MARQUEE (Figma 79:1547 / 79:1548)
+   ========================================================= */
+
+.lv-cbanner-wrap {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.lv-cbanner {
+  width: 100%;
+  height: calc(450 * var(--lv-u));
+  object-fit: cover;
+  display: block;
+}
+
+.lv-cmarquee {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  height: calc(36 * var(--lv-u));
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+
+.lv-cmarquee__track {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(24 * var(--lv-u));
+  animation: lvMarqueeScroll 28s linear infinite;
+  will-change: transform;
+}
+
+.lv-cmarquee__item {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(10 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+}
+
+.lv-cmarquee__item .lv-icon--mq {
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+  flex-shrink: 0;
+}
+
+@media (min-width: 1024px) {
+  .lv-cbanner {
+    height: auto;
+    aspect-ratio: 1440 / 560;
+  }
+  .lv-cmarquee {
+    height: calc(48 * var(--lv-u));
+  }
+  .lv-cmarquee__track {
+    gap: calc(48 * var(--lv-u));
+  }
+  .lv-cmarquee__item {
+    font-size: calc(12 * var(--lv-u));
+  }
+}
+
+@keyframes lvMarqueeScroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .lv-cmarquee__track {
+    animation: none;
+  }
+}
+
+/* =========================================================
+   03 FORM SECTION (Figma 79:1425 / 79:1538 / 79:1586)
+   ========================================================= */
+
+.lv-cform {
+  background: rgba(155, 99, 63, 0.15); /* Figma Rectangle 17: terracotta at 15% opacity */
+  padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u)) calc(72 * var(--lv-u));
+}
+
+.lv-cform__title {
+  text-align: center;
+  font-size: calc(32 * var(--lv-u));
+  color: var(--lv-espresso);
+}
+
+.lv-cform__card {
+  margin: calc(40 * var(--lv-u)) auto 0;
+  width: 100%;
+  max-width: calc(758 * var(--lv-u));
+  background: var(--lv-cream);
+  border-radius: calc(12 * var(--lv-u));
+  padding: calc(40 * var(--lv-u)) calc(24 * var(--lv-u));
+  box-sizing: border-box;
+}
+
+.lv-cform__legend {
+  font-size: calc(28 * var(--lv-u));
+  color: var(--lv-espresso);
+  font-weight: 200;
+  margin-bottom: calc(32 * var(--lv-u));
+}
+
+.lv-cform__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(20 * var(--lv-u));
+}
+
+.lv-cfield {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(36, 29, 26, 0.20);
+  padding-bottom: calc(6 * var(--lv-u));
+  margin-bottom: calc(28 * var(--lv-u));
+}
+
+.lv-cinput {
+  width: 100%;
+  border: none;
+  background: transparent;
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  color: var(--lv-espresso);
+  padding: calc(4 * var(--lv-u)) 0;
+  outline: none;
+}
+
+.lv-cinput::placeholder {
+  color: rgba(36, 29, 26, 0.5);
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+}
+
+.lv-cinput--area {
+  resize: none;
+  min-height: calc(40 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  /* Figma 79:1608 -> 79:1603: the message line sits ~100px under its label */
+  .lv-cinput--area {
+    min-height: calc(113 * var(--lv-u));
+  }
+}
+
+/* Custom Interactive Treatments Dropdown */
+.lv-cdropdown {
+  position: relative;
+  width: 100%;
+}
+
+.lv-cdropdown__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: none;
+  border: none;
+  padding: calc(4 * var(--lv-u)) 0;
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  color: rgba(36, 29, 26, 0.5);
+  cursor: pointer;
+  text-align: left;
+  outline: none;
+}
+
+.lv-cdropdown__trigger.is-selected {
+  color: var(--lv-espresso);
+}
+
+.lv-cdropdown__trigger .lv-icon--caret-down {
+  width: calc(16 * var(--lv-u));
+  height: calc(16 * var(--lv-u));
+  stroke: var(--lv-espresso);
+  stroke-width: 1.5;
+  fill: none;
+  transition: transform var(--lv-dur-fast) var(--lv-ease);
+}
+
+.lv-cdropdown.is-open .lv-icon--caret-down {
+  transform: rotate(180deg);
+}
+
+.lv-cdropdown__menu {
+  position: absolute;
+  top: calc(100% + calc(6 * var(--lv-u)));
+  left: 0;
+  right: 0;
+  background: var(--lv-cream);
+  border: 1px solid rgba(36, 29, 26, 0.15);
+  border-radius: calc(8 * var(--lv-u));
+  box-shadow: 0 12px 32px rgba(36, 29, 26, 0.12);
+  z-index: 20;
+  padding: calc(8 * var(--lv-u)) 0;
+  list-style: none;
+  margin: 0;
+  display: none;
+}
+
+.lv-cdropdown.is-open .lv-cdropdown__menu {
+  display: block;
+}
+
+.lv-cdropdown__item {
+  display: block;
+  width: 100%;
+  padding: calc(10 * var(--lv-u)) calc(16 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(15 * var(--lv-u));
+  color: var(--lv-espresso);
+  text-align: left;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: background var(--lv-dur-fast), color var(--lv-dur-fast);
+}
+
+.lv-cdropdown__item:hover,
+.lv-cdropdown__item:focus-visible {
+  background: rgba(155, 99, 63, 0.1);
+  color: var(--lv-terracotta);
+}
+
+.lv-cform__actions {
+  margin-top: calc(24 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--lv-u));
+}
+
+.lv-cform__submit {
+  align-self: flex-start;
+  border: none;
+  cursor: pointer;
+}
+
+.lv-form__success {
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  color: var(--lv-terracotta);
+  display: none;
+}
+
+@media (min-width: 1024px) {
+  .lv-cform {
+    padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) calc(120 * var(--lv-u));
+  }
+
+  .lv-cform__title {
+    font-size: calc(48 * var(--lv-u));
+  }
+
+  .lv-cform__card {
+    margin-top: calc(56 * var(--lv-u));
+    padding: calc(60 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+
+  .lv-cform__legend {
+    font-size: calc(36 * var(--lv-u));
+    margin-bottom: calc(42 * var(--lv-u));
+  }
+
+  .lv-cform__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(32 * var(--lv-u));
+  }
+
+  .lv-cfield {
+    margin-bottom: calc(36 * var(--lv-u));
+  }
+
+  .lv-cform__actions {
+    margin-top: calc(36 * var(--lv-u));
+  }
+}
+
+/* =========================================================
+   04 LOCATIONS & HOURS (Figma 79:1611 / 79:1614 / 79:1615 / 2065:2)
+   ========================================================= */
+
+.lv-cloc {
+  display: grid;
+  grid-template-columns: 1fr;
+  width: 100%;
+}
+
+/* Midtown Miami Card (Left 66%) */
+.lv-cloc__card--midtown {
+  position: relative;
+  min-height: calc(600 * var(--lv-u));
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  color: var(--lv-cream);
+  padding: calc(64 * var(--lv-u)) calc(24 * var(--lv-u)) calc(36 * var(--lv-u));
+}
+
+.lv-cloc__bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.lv-cloc__overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.40); /* Figma 79:1611 exact fill: rgba(0,0,0,0.4) */
+  z-index: 1;
+}
+
+.lv-cloc__main {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+
+.lv-cloc__title {
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(36 * var(--lv-u));
+  line-height: 1.1;
+  color: var(--lv-espresso);
+}
+
+.lv-cloc__title--light {
+  color: var(--lv-cream);
+  font-size: calc(40 * var(--lv-u));
+}
+
+.lv-cloc__addr {
+  margin-top: calc(36 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1.5;
+  color: var(--lv-espresso);
+}
+
+.lv-cloc__addr--light {
+  color: var(--lv-cream);
+}
+
+.lv-cloc__tel {
+  margin-top: calc(60 * var(--lv-u));
+  font-family: var(--lv-font-display);
+  font-weight: 200;
+  font-size: calc(28 * var(--lv-u));
+  line-height: 1.1;
+}
+
+.lv-cloc__tel--light {
+  color: var(--lv-cream);
+}
+
+.lv-cloc__tel a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Group 1707479043 Hours Row */
+.lv-cloc__hours-group {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: calc(16 * var(--lv-u));
+  margin-top: calc(48 * var(--lv-u));
+}
+
+.lv-cloc__hour-col {
+  display: flex;
+  flex-direction: column;
+  gap: calc(4 * var(--lv-u));
+}
+
+.lv-cloc__hour-days {
+  font-family: var(--lv-font-ui);
+  font-size: calc(12 * var(--lv-u));
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--lv-cream);
+}
+
+.lv-cloc__hour-time {
+  font-family: var(--lv-font-body);
+  font-size: calc(16 * var(--lv-u));
+  line-height: 1.5;
+  color: var(--lv-cream);
+}
+
+.lv-cloc__hour-divider {
+  display: none;
+  width: 1px;
+  height: calc(36 * var(--lv-u));
+  background: rgba(250, 248, 245, 0.40); /* Figma Line 521/522 */
+}
+
+/* Independent View Direction Button (Figma Frame 6 / 79:1618) */
+.lv-cloc__midtown-cta {
+  position: relative;
+  z-index: 2;
+  align-self: flex-start;
+  margin-top: calc(24 * var(--lv-u));
+}
+
+/* Coconut Grove Card (Right 34%) */
+.lv-cloc__card--cgrove {
+  position: relative;
+  background: var(--lv-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: calc(64 * var(--lv-u)) calc(24 * var(--lv-u));
+}
+
+.lv-cloc__cgrove-inner {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.lv-cloc__thumb {
+  width: calc(207 * var(--lv-u));
+  height: calc(224 * var(--lv-u));
+  object-fit: cover;
+  border-radius: calc(12 * var(--lv-u));
+  margin-top: calc(72 * var(--lv-u));
+}
+
+/* Desktop 1440 Frame Parity */
+@media (min-width: 1024px) {
+  .lv-cloc {
+    grid-template-columns: calc(955 * var(--lv-u)) 1fr;
+    min-height: calc(777 * var(--lv-u));
+    height: calc(777 * var(--lv-u));
+  }
+
+  .lv-cloc__card--midtown {
+    height: calc(777 * var(--lv-u));
+    padding: calc(120 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u));
+    box-sizing: border-box;
+  }
+
+  .lv-cloc__main {
+    margin: 0;
+  }
+
+
+  .lv-cloc__card--cgrove {
+    height: calc(777 * var(--lv-u));
+    padding: calc(120 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u));
+    box-sizing: border-box;
+  }
+
+  .lv-cloc__title {
+    font-size: calc(36 * var(--lv-u));
+    /* both cards share one grid: the address starts at the same y whatever the title size */
+    height: calc(152 * var(--lv-u));
+  }
+
+  /* Figma 79:1614: 64px on the photo card (must outrank .lv-cloc__title above) */
+  .lv-cloc__title.lv-cloc__title--light {
+    font-size: calc(64 * var(--lv-u));
+  }
+
+  .lv-cloc__addr {
+    margin-top: 0;
+  }
+
+  .lv-cloc__tel {
+    margin-top: calc(53 * var(--lv-u));
+  }
+
+  .lv-cloc__thumb {
+    margin-top: calc(125 * var(--lv-u));
+  }
+
+  /* Exact placement matching Figma Group 1707479043 (x=48, y=2839) */
+  .lv-cloc__hours-group {
+    position: absolute;
+    left: calc(48 * var(--lv-u));
+    bottom: calc(48 * var(--lv-u));
+    width: calc(521 * var(--lv-u));
+    height: calc(36 * var(--lv-u));
+    margin-top: 0;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .lv-cloc__hour-divider {
+    display: block;
+  }
+
+  /* Exact placement matching Figma Frame 6 (x=755, y=2829) */
+  .lv-cloc__midtown-cta {
+    position: absolute;
+    right: calc(48 * var(--lv-u));
+    bottom: calc(48 * var(--lv-u));
+    margin-top: 0;
+  }
+}
+
+/* =========================================================
+   Contact mobile review fixes (Figma 79:2713)
+   ========================================================= */
+.lv-cbanner-wrap picture { display: block; }
+
+@media (max-width: 1023.98px) {
+  /* form: even 65px pitch, 12px espresso labels, centred button */
+  .lv-cform__card { padding: calc(32 * var(--lv-u)) calc(24 * var(--lv-u)) calc(44 * var(--lv-u)); }
+  .lv-cform__legend { margin-bottom: calc(23 * var(--lv-u)); }
+  .lv-cform__grid { gap: 0; }
+  .lv-cfield { padding-bottom: 0; margin-bottom: calc(35 * var(--lv-u)); }
+  .lv-cinput { height: calc(29 * var(--lv-u)); padding: 0; font-size: calc(12 * var(--lv-u)); line-height: 1.5; }
+  .lv-cinput::placeholder { color: var(--lv-espresso); font-size: calc(12 * var(--lv-u)); }
+  .lv-cinput--area { height: calc(69 * var(--lv-u)); min-height: 0; }
+  .lv-cdropdown__trigger { height: calc(29 * var(--lv-u)); padding: 0; font-size: calc(12 * var(--lv-u)); line-height: 1.5; color: var(--lv-espresso); }
+  .lv-cdropdown__trigger .lv-icon--caret-down { width: calc(12 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
+  .lv-cform__actions { margin-top: 0; align-items: center; }
+  .lv-cform__submit { align-self: center; }
+
+  /* locations: centred hours split by lines, centred button */
+  .lv-cloc__card--midtown { padding: calc(72 * var(--lv-u)) calc(24 * var(--lv-u)); justify-content: flex-start; }
+  .lv-cloc__addr { margin-top: calc(28 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+  .lv-cloc__tel { margin-top: calc(36 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); }
+  .lv-cloc__hours-group { margin-top: calc(66 * var(--lv-u)); gap: 0; align-items: center; text-align: center; }
+  .lv-cloc__hour-col { align-items: center; gap: calc(12 * var(--lv-u)); }
+  .lv-cloc__hour-days { font-size: calc(10 * var(--lv-u)); }
+  .lv-cloc__hour-time { font-size: calc(14 * var(--lv-u)); line-height: 1.4; }
+  .lv-cloc__hour-divider { display: block; width: calc(193 * var(--lv-u)); height: 1px; margin: calc(20 * var(--lv-u)) 0; }
+  .lv-cloc__midtown-cta { align-self: center; margin-top: calc(80 * var(--lv-u)); }
+}

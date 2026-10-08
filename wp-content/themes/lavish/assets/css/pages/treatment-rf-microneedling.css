@@ -1,0 +1,110 @@
+/* RF Microneedling page-only overrides. Figma: desktop 1:6939, mobile 1:10788. */
+
+/* Hero (360): 14px/1.4 intro at 298 wide, 14px pill */
+.lv-page-rf .lv-phero__sub { line-height: 1.4; }
+.lv-page-rf .lv-phero .lv-btn { font-size: calc(14 * var(--lv-u)); padding-left: calc(20 * var(--lv-u)); }
+
+/* 04 — "vs" stays espresso, italic */
+.lv-page-rf .lv-diff__title em { color: inherit; }
+.lv-page-rf .lv-diff__title { margin-top: calc(20 * var(--lv-u)); }
+.lv-page-rf .lv-cmp--rf { margin-top: calc(29 * var(--lv-u)); }
+.lv-page-rf .lv-cmp--rf .lv-cmp__table tbody th,
+.lv-page-rf .lv-cmp--rf .lv-cmp__table tbody td { padding-block: calc(13.5 * var(--lv-u)); padding-right: calc(2 * var(--lv-u)); height: calc(83 * var(--lv-u)); }
+.lv-page-rf .lv-cmp--rf .lv-cmp__table tbody tr:last-child > * { height: auto; padding-bottom: calc(12.5 * var(--lv-u)); }
+
+/* Why Lavish panel (360) */
+.lv-page-rf .lv-why--panel { padding-top: calc(73 * var(--lv-u)); }
+.lv-page-rf .lv-why__list { margin-top: calc(30 * var(--lv-u)); }
+.lv-page-rf .lv-why__list span { max-width: calc(256 * var(--lv-u)); }
+.lv-page-rf .lv-why__panel .lv-why__cta { margin-top: calc(33 * var(--lv-u)); }
+
+/* 05 — Before/After (360) */
+.lv-page-rf .lv-results { padding-top: calc(72 * var(--lv-u)); padding-bottom: calc(62 * var(--lv-u)); }
+.lv-page-rf .lv-results__title { margin-top: calc(22 * var(--lv-u)); }
+.lv-page-rf .lv-results__grid { margin-top: calc(28 * var(--lv-u)); }
+.lv-page-rf .lv-results__nav { margin-top: calc(32 * var(--lv-u)); gap: calc(8 * var(--lv-u)); }
+.lv-page-rf .lv-results__nav .lv-circle { width: calc(36 * var(--lv-u)); height: calc(36 * var(--lv-u)); }
+
+/* 07 — Related (360): full-width intro, centred 20px labels; row 2 holds the open card */
+.lv-page-rf .lv-related__sub { max-width: none; }
+.lv-page-rf .lv-rcard h3 { margin-top: calc(16 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); text-align: center; }
+
+/* 06 — FAQ (360) */
+.lv-page-rf .lv-faq__grid source { display: none; }
+.lv-page-rf .lv-ba { padding-bottom: calc(9 * var(--lv-u)); }
+.lv-page-rf .lv-faq { padding-bottom: calc(37 * var(--lv-u)); }
+.lv-page-rf .lv-acc__item:last-child { border-bottom: 0; }
+.lv-page-rf .lv-faq .lv-acc__trigger { align-items: flex-start; }
+.lv-page-rf .lv-faq__title { margin-top: calc(26 * var(--lv-u)); }
+.lv-page-rf .lv-faq .lv-acc { margin-top: calc(13 * var(--lv-u)); }
+.lv-page-rf .lv-faq .lv-acc__trigger { gap: calc(8 * var(--lv-u)); }
+.lv-page-rf .lv-acc__item.is-open .lv-acc__panel { margin-top: calc(-10 * var(--lv-u)); }
+.lv-page-rf .lv-acc__item.is-open .lv-acc__panel > * { padding-bottom: calc(26 * var(--lv-u)); }
+
+@media (min-width: 1024px) {
+  .lv-page-rf .lv-phero__sub { line-height: 1.5; }
+  .lv-page-rf .lv-diff__title { margin-top: calc(36 * var(--lv-u)); }
+  .lv-page-rf .lv-cmp--rf .lv-cmp__table tbody tr:last-child > * { height: calc(74 * var(--lv-u)); padding-bottom: calc(13 * var(--lv-u)); }
+  .lv-page-rf .lv-ba { padding-bottom: calc(16 * var(--lv-u)); }
+  .lv-page-rf .lv-faq__title { margin-top: calc(23 * var(--lv-u)); }
+  .lv-page-rf .lv-acc__item:first-child .lv-acc__trigger { padding-bottom: calc(43 * var(--lv-u)); }
+  .lv-page-rf .lv-why--panel { padding-top: calc(100 * var(--lv-u)); }
+  .lv-page-rf .lv-why__list span { max-width: none; }
+  .lv-page-rf .lv-results__nav { gap: calc(12 * var(--lv-u)); }
+  .lv-page-rf .lv-results__nav .lv-circle { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); }
+  .lv-page-rf .lv-faq .lv-acc__trigger { gap: calc(16 * var(--lv-u)); align-items: center; }
+  .lv-page-rf .lv-related__sub { max-width: calc(440 * var(--lv-u)); }
+  .lv-page-rf .lv-acc__item.is-open .lv-acc__panel { margin-top: calc(-18 * var(--lv-u)); }
+  .lv-page-rf .lv-cmp--rf { margin-top: calc(39 * var(--lv-u)); }
+  .lv-page-rf .lv-cmp--rf .lv-cmp__table tbody th,
+  .lv-page-rf .lv-cmp--rf .lv-cmp__table tbody td { padding-block: calc(13 * var(--lv-u)); height: calc(74 * var(--lv-u)); }
+  .lv-page-rf .lv-cmp--rf .lv-cmp__table tbody th { padding-right: calc(28 * var(--lv-u)); }
+  .lv-page-rf .lv-cmp--rf .lv-cmp__table tbody td { padding-right: calc(34 * var(--lv-u)); }
+
+  .lv-page-rf .lv-why__panel .lv-why__title { margin-top: calc(-8 * var(--lv-u)); }
+  .lv-page-rf .lv-why__list { margin-top: calc(53 * var(--lv-u)); }
+  .lv-page-rf .lv-why__panel .lv-why__cta { margin-top: calc(53 * var(--lv-u)); }
+}
+
+/* 05 — Before/After: cards sit lower, carousel arrows below */
+@media (min-width: 1024px) {
+  .lv-page-rf .lv-results { padding-top: calc(97 * var(--lv-u)); padding-bottom: calc(50 * var(--lv-u)); }
+  .lv-page-rf .lv-results__title { margin-top: calc(23 * var(--lv-u)); }
+  .lv-page-rf .lv-results__grid { margin-top: calc(56 * var(--lv-u)); }
+  .lv-page-rf .lv-results__nav { margin-top: calc(42 * var(--lv-u)); }
+}
+.lv-page-rf .lv-rf-chev { width: calc(12 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
+.lv-page-rf .lv-acc__item.is-open .lv-acc__panel p { max-width: calc(569 * var(--lv-u)); }
+
+/* 06 — FAQ: no rule under the last row; the related band starts right after */
+@media (min-width: 1024px) {
+  .lv-page-rf .lv-faq { padding-bottom: calc(63 * var(--lv-u)); }
+  .lv-page-rf .lv-acc__item:last-child { border-bottom: 0; }
+  .lv-page-rf .lv-faq .lv-acc { margin-top: calc(14 * var(--lv-u)); }
+  .lv-page-rf .lv-acc__item.is-open .lv-acc__panel { margin-top: calc(-18 * var(--lv-u)); }
+  .lv-page-rf .lv-acc__item.is-open .lv-acc__panel > * { padding-bottom: calc(42 * var(--lv-u)); }
+}
+
+/* 07 — Related: centred 28px labels; the row holds the open card's height */
+@media (min-width: 1024px) {
+  .lv-page-rf .lv-related { padding-top: calc(120 * var(--lv-u)); }
+  .lv-page-rf .lv-related__grid { min-height: calc(355 * var(--lv-u)); align-items: start; }
+  .lv-page-rf .lv-rcard .lv-btn { margin-top: calc(24 * var(--lv-u)); }
+  .lv-page-rf .lv-rcard h3 { margin-top: calc(22 * var(--lv-u)); font-size: calc(28 * var(--lv-u)); text-align: center; }
+}
+
+/* rf-microneedling-reviews fixes */
+/* hairline chevrons on the slider handle and the rail arrows (filled glyph read too bold) */
+.lv-page-rf .lv-ba__chevrons svg,
+.lv-page-rf .lv-rf-chev { fill: none; stroke: currentColor; stroke-width: 1; stroke-linecap: round; stroke-linejoin: round; }
+.lv-page-rf .lv-ba__chevrons svg { width: calc(7 * var(--lv-u)); height: calc(10 * var(--lv-u)); }
+.lv-page-rf .lv-rf-chev { width: calc(9 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
+
+/* related cards: Learn more sits centred under the headline; equal space round the headline */
+.lv-page-rf .lv-rcard h3 { text-align: center; }
+.lv-page-rf .lv-rcard .lv-btn { align-self: center; margin-inline: auto; }
+@media (min-width: 1024px) {
+  .lv-page-rf .lv-rcard { padding-bottom: calc(28 * var(--lv-u)); }
+}
+/* team film: vertical clip in the square, caption kept in frame */
+.lv-page-rf .lv-team__video { object-position: 50% 43%; }
