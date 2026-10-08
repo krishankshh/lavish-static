@@ -2030,10 +2030,13 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 
   .lv-mega__sub {
     position: absolute;
-    top: calc(24 * var(--lv-u));
-    left: calc(240 * var(--lv-u));
+    top: 0;                          /* spans the full panel height so a short list can still be reached from any row */
+    bottom: 0;
+    padding-top: calc(24 * var(--lv-u));
+    right: 0;
+    left: calc(216 * var(--lv-u));   /* starts at the category's right edge, so the pointer never crosses a dead gap */
     display: none;
-    padding-left: calc(24 * var(--lv-u));
+    padding-left: calc(48 * var(--lv-u));
   }
 
   .lv-mega__cat:hover > .lv-mega__sub,
