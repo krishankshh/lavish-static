@@ -589,11 +589,12 @@
   .lv-cform__card { padding: calc(32 * var(--lv-u)) calc(24 * var(--lv-u)) calc(44 * var(--lv-u)); }
   .lv-cform__legend { margin-bottom: calc(23 * var(--lv-u)); }
   .lv-cform__grid { gap: 0; }
-  .lv-cfield { padding-bottom: 0; margin-bottom: calc(35 * var(--lv-u)); }
-  .lv-cinput { height: calc(29 * var(--lv-u)); padding: 0; font-size: calc(12 * var(--lv-u)); line-height: 1.5; }
+  .lv-cfield { padding-bottom: 0; margin-bottom: calc(28 * var(--lv-u)); }
+  /* line sits 7px lower under its label (36px box, text stays put) */
+  .lv-cinput { box-sizing: border-box; height: calc(36 * var(--lv-u)); padding: 0 0 calc(7 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); line-height: 1.5; }
   .lv-cinput::placeholder { color: var(--lv-espresso); font-size: calc(12 * var(--lv-u)); }
-  .lv-cinput--area { height: calc(69 * var(--lv-u)); min-height: 0; }
-  .lv-cdropdown__trigger { height: calc(29 * var(--lv-u)); padding: 0; font-size: calc(12 * var(--lv-u)); line-height: 1.5; color: var(--lv-espresso); }
+  .lv-cinput--area { height: calc(69 * var(--lv-u)); min-height: 0; padding-bottom: 0; }
+  .lv-cdropdown__trigger { box-sizing: border-box; height: calc(36 * var(--lv-u)); padding: 0 0 calc(7 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); line-height: 1.5; color: var(--lv-espresso); }
   .lv-cdropdown__trigger .lv-icon--caret-down { width: calc(12 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
   .lv-cform__actions { margin-top: 0; align-items: center; }
   .lv-cform__submit { align-self: center; }

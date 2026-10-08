@@ -839,3 +839,14 @@
   /* tour -> Instagram */
   .lv-loctour { padding-bottom: 0; }
 }
+
+/* italic numerals sit optically high in PP Editorial; nudge them to the ring's centre */
+.lv-locwhy__num { box-sizing: border-box; padding-top: calc(2 * var(--lv-u)); }
+@media (max-width: 1023.98px) {
+  .lv-locwhy__num { padding: calc(2 * var(--lv-u)) 0 0; }
+}
+
+/* Midtown mobile hero is exported from the comp with its 40% scrim already in the photo */
+@media (max-width: 1023.98px) {
+  .lv-lochero--baked .lv-lochero__overlay { display: none; }
+}

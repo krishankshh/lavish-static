@@ -1109,3 +1109,8 @@
 
 /* close glyph is an svg so it centres exactly in the circle */
 .lv-pmodal__close svg { width: calc(10 * var(--lv-u)); height: calc(10 * var(--lv-u)); display: block; }
+
+/* mobile gallery: keep a 16px margin at both ends of the strip */
+@media (max-width: 1023.98px) {
+  .lv-gallery__track { padding-inline: calc(16 * var(--lv-u)); }
+}

@@ -1505,7 +1505,7 @@
   /* cards: image 20 -> pill 22 -> 18 -> title -> 20 -> date */
   .lv-bcard .lv-bpill { margin-top: calc(20 * var(--lv-u)); }
   .lv-bcard__title { margin-top: calc(13 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); line-height: 1.1; }
-  .lv-bcard__date { margin-top: calc(6 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); line-height: 1.4; letter-spacing: 0.1em; color: rgba(36, 29, 26, 0.6); }
+  .lv-bcard__date { margin-top: calc(14 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); line-height: 1.4; letter-spacing: 0.1em; color: rgba(36, 29, 26, 0.6); }
   .lv-bcard__date--light { color: rgba(250, 248, 245, 0.6); }
   .lv-bhero__grid, .lv-blower__cards { gap: calc(36 * var(--lv-u)); }
   .lv-blower__grid { gap: calc(24 * var(--lv-u)); }
@@ -1552,12 +1552,12 @@
   .lv-post__h3 + p { opacity: 0.6; }
 
   /* recent posts close the article, after the FAQ */
-  .lv-recent--end { display: block; border-top: none; padding: calc(36 * var(--lv-u)) 0 0; }
+  .lv-recent--end { display: block; border-top: none; padding: 0; margin-top: 0; }
   .lv-recent--end .lv-recent__item { padding: calc(24 * var(--lv-u)) 0; }
   .lv-recent--end .lv-recent__item:first-of-type { padding-top: calc(16 * var(--lv-u)); }
   .lv-recent--end .lv-recent__item:last-child { padding-bottom: 0; }
   .lv-recent__item span { font-size: calc(14 * var(--lv-u)); }
-  .lv-recent__item time { font-size: calc(10 * var(--lv-u)); }
+  .lv-recent__item time { margin-top: calc(10 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); }
 
   /* FAQ: closer to its heading, smaller plus/minus */
   .lv-post__h2 + .lv-faq-acc { margin-top: calc(-8 * var(--lv-u)); }

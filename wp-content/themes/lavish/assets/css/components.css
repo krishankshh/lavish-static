@@ -550,7 +550,7 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding-block: calc(18 * var(--lv-u));
+  padding-block: calc(25 * var(--lv-u));
   font-family: var(--lv-font-display);
   font-weight: 200;
   font-size: calc(28 * var(--lv-u));
@@ -2053,4 +2053,77 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
   }
 
   .lv-dropdown--mega .lv-dropdown__all:hover { color: var(--lv-cream); }
+}
+
+
+/* Mobile drawer to the Figma "Mega menu" frames: nested Treatments accordion,
+   View-all pill, cream Book-now pill with a dark arrow disc */
+.lv-drawer__item--cta { margin-top: calc(28 * var(--lv-u)); }
+.lv-drawer__item--cta .lv-btn {
+  justify-content: space-between;
+  min-height: calc(46 * var(--lv-u));
+  padding: calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(20 * var(--lv-u));
+  background: var(--lv-cream);
+  color: var(--lv-espresso);
+  font-size: calc(12 * var(--lv-u));
+}
+.lv-drawer__item--cta .lv-btn::after {
+  content: '';
+  flex: none;
+  width: calc(32 * var(--lv-u));
+  height: calc(32 * var(--lv-u));
+  border-radius: 50%;
+  background: var(--lv-umber) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' fill='none' stroke='%23FAF8F5' stroke-width='1.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M4 10L10 4M5 4h5v5'/%3E%3C/svg%3E") center / calc(14 * var(--lv-u)) no-repeat;
+}
+
+.lv-drawer__sub--mega { padding-bottom: calc(24 * var(--lv-u)); }
+.lv-dcat__btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: calc(12 * var(--lv-u)) calc(4 * var(--lv-u)) calc(12 * var(--lv-u)) calc(12 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-cream);
+  text-align: left;
+}
+.lv-dcat.is-open > .lv-dcat__btn { color: var(--lv-terracotta); }
+.lv-dcat__chev {
+  width: calc(10 * var(--lv-u));
+  height: calc(10 * var(--lv-u));
+  fill: currentColor;
+  stroke: none;
+  rotate: -90deg;
+  transition: rotate var(--lv-dur-fast) var(--lv-ease);
+}
+.lv-dcat.is-open > .lv-dcat__btn .lv-dcat__chev { rotate: 90deg; }
+.lv-dcat__list { padding: calc(2 * var(--lv-u)) 0 calc(8 * var(--lv-u)); }
+.lv-dcat__list[hidden] { display: none; }
+.lv-drawer__sub .lv-dcat__list a {
+  padding: calc(6 * var(--lv-u)) 0 calc(6 * var(--lv-u)) calc(12 * var(--lv-u));
+  font-size: calc(12 * var(--lv-u));
+  color: rgba(250, 248, 245, 0.6);
+}
+.lv-dcat__all {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(12 * var(--lv-u));
+  margin-top: calc(16 * var(--lv-u));
+  padding: calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(20 * var(--lv-u));
+  border-radius: calc(60 * var(--lv-u));
+  background: var(--lv-terracotta);
+  color: var(--lv-cream);
+  font-family: var(--lv-font-body);
+  font-size: calc(14 * var(--lv-u));
+}
+.lv-dcat__all .lv-circle { background: var(--lv-cream); color: var(--lv-terracotta); }
+.lv-drawer__sub a.lv-dcat__all { padding: calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(5 * var(--lv-u)) calc(20 * var(--lv-u)); color: var(--lv-cream); font-size: calc(14 * var(--lv-u)); display: inline-flex; }
+
+.lv-drawer__close { font-family: var(--lv-font-ui); font-weight: 200; }
+
+/* mobile: protocol "Includes" blocks start at the same height in every card (4-line description) */
+@media (max-width: 1023.98px) {
+  .lv-proto__desc { min-height: calc(84 * var(--lv-u)); }
 }

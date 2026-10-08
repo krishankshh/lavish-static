@@ -1748,3 +1748,34 @@
   .lv-faq__item:last-child { border-bottom: none; }
   .lv-faq__trigger-title { font-size: calc(20 * var(--lv-u)); line-height: 1.1; }
 }
+
+/* check discs: the circle is filled, the inherited icon stroke only added a soft outline */
+.lv-mcard__list li .lv-icon--check,
+.lv-mflex__points li .lv-icon--check,
+.lv-mtier__benefits li .lv-icon--check { stroke: none; }
+.lv-mhero__arrows .lv-icon-btn:disabled { opacity: 0.35; cursor: default; }
+
+/* mobile Flex menu: read left-to-right in the comp's order (Dysport closes the list) */
+@media (max-width: 1023.98px) {
+  .lv-mmenu__col:nth-child(1) .lv-mmenu__item:nth-child(1) { order: 1; }
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:nth-child(4) { order: 2; }
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:nth-child(1) { order: 3; }
+  .lv-mmenu__col:nth-child(3) .lv-mmenu__item:nth-child(1) { order: 4; }
+  .lv-mmenu__col:nth-child(1) .lv-mmenu__item:nth-child(2) { order: 5; }
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:nth-child(2) { order: 6; }
+  .lv-mmenu__col:nth-child(3) .lv-mmenu__item:nth-child(2) { order: 7; }
+  .lv-mmenu__col:nth-child(1) .lv-mmenu__item:nth-child(3) { order: 8; }
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:nth-child(3) { order: 9; }
+  .lv-mmenu__col:nth-child(3) .lv-mmenu__item:nth-child(3) { order: 10; }
+  .lv-mmenu__col:nth-child(1) .lv-mmenu__item:nth-child(4) { order: 11; }
+  .lv-mmenu__col:nth-child(3) .lv-mmenu__item:nth-child(4) { order: 12; }
+  .lv-mmenu__col:nth-child(2) .lv-mmenu__item:nth-child(5) { order: 13; }
+}
+
+.lv-mlocband__pic { display: contents; }
+
+/* mobile: tighter question -> button and button -> Instagram (Figma mobile-final-reviews) */
+@media (max-width: 1023.98px) {
+  .lv-faq__cta { margin-top: calc(8 * var(--lv-u)); }
+  .lv-faq + .lv-insta { padding-top: calc(24 * var(--lv-u)); }
+}
