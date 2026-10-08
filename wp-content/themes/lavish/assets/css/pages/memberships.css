@@ -951,7 +951,7 @@
 
   .lv-mbank__tiers {
     order: auto;
-    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(664 * var(--lv-u));
+    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(672 * var(--lv-u));
     gap: calc(24 * var(--lv-u));
     margin-top: calc(72 * var(--lv-u));
   }
@@ -1039,7 +1039,7 @@
   }
 
   .lv-mbank__tiers {
-    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(664 * var(--lv-u));
+    grid-template-columns: calc(312 * var(--lv-u)) calc(312 * var(--lv-u)) calc(672 * var(--lv-u));
     gap: calc(24 * var(--lv-u));
     margin-top: calc(72 * var(--lv-u));
   }

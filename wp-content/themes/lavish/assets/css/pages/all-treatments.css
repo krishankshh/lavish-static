@@ -651,3 +651,6 @@
   .lv-cta__points li { flex: none; }
   .lv-cta__points li + li::before { left: calc(-7.5 * var(--lv-u)); margin: 0; opacity: 1; }
 }
+
+/* deep links from mega menu / "Learn more" land on the card, clear of the sticky header */
+.lv-tcard { scroll-margin-top: calc(140 * var(--lv-u)); }

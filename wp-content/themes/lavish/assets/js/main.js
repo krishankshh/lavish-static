@@ -145,7 +145,7 @@
       var li = document.createElement('li');
       li.className = 'lv-drawer__item';
 
-      var cta = item.querySelector('.lv-btn');
+      var cta = item.querySelector('.lv-btn:not(.lv-dropdown__all)');
       if (cta) {
         li.className += ' lv-drawer__item--cta';
         li.appendChild(cta.cloneNode(true));
@@ -166,7 +166,13 @@
         var sub = document.createElement('div');
         sub.className = 'lv-drawer__sub';
         sub.hidden = true;
-        sub.innerHTML = panel.innerHTML;
+        var clone = panel.cloneNode(true);
+        clone.querySelectorAll('.lv-mega__sub, .lv-icon--mega-chev').forEach(function (n) { n.remove(); });
+        clone.querySelectorAll('.lv-dropdown__all').forEach(function (a) {
+          a.className = 'lv-dropdown__all';
+          var c = a.querySelector('.lv-circle'); if (c) c.remove();
+        });
+        sub.innerHTML = clone.innerHTML;
         btn.addEventListener('click', function () {
           var openNow = !sub.hidden;
           sub.hidden = openNow;

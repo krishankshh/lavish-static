@@ -1071,7 +1071,7 @@
   height: calc(24 * var(--lv-u));
   display: grid;
   place-items: center;
-  padding: 0 0 2px;
+  padding: 0;
   border: 1px solid var(--lv-cream);
   border-radius: 50%;
   background: transparent;
@@ -1098,12 +1098,14 @@
   .lv-pmodal__body p { margin-top: calc(24 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
   .lv-pmodal__body p:first-of-type { margin-top: calc(16 * var(--lv-u)); }
   .lv-pmodal__close {
-    top: calc(28 * var(--lv-u));
-    right: calc(28 * var(--lv-u));
-    width: calc(40 * var(--lv-u));
-    height: calc(40 * var(--lv-u));
+    top: calc(24 * var(--lv-u));
+    right: calc(24 * var(--lv-u));
+    width: calc(28 * var(--lv-u));
+    height: calc(28 * var(--lv-u));
     border-color: var(--lv-espresso);
     color: var(--lv-espresso);
-    font-size: calc(22 * var(--lv-u));
   }
 }
+
+/* close glyph is an svg so it centres exactly in the circle */
+.lv-pmodal__close svg { width: calc(10 * var(--lv-u)); height: calc(10 * var(--lv-u)); display: block; }

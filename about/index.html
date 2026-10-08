@@ -21,8 +21,8 @@
 <link rel='stylesheet' id='lv-fonts-css' href='/wp-content/themes/lavish/assets/css/fonts.css?ver=1789892859' media='all' />
 <link rel='stylesheet' id='lv-tokens-css' href='/wp-content/themes/lavish/assets/css/tokens.css?ver=1789892881' media='all' />
 <link rel='stylesheet' id='lv-base-css' href='/wp-content/themes/lavish/assets/css/base.css?ver=1791199414' media='all' />
-<link rel='stylesheet' id='lv-components-css' href='/wp-content/themes/lavish/assets/css/components.css?ver=1791325649' media='all' />
-<link rel='stylesheet' id='lv-pages-about-css' href='/wp-content/themes/lavish/assets/css/pages/about.css?ver=1791325694' media='all' />
+<link rel='stylesheet' id='lv-components-css' href='/wp-content/themes/lavish/assets/css/components.css?ver=1791471011' media='all' />
+<link rel='stylesheet' id='lv-pages-about-css' href='/wp-content/themes/lavish/assets/css/pages/about.css?ver=1791470553' media='all' />
 <link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/pages/7" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="canonical" href="/about/" />
 <link rel='shortlink' href='/?p=7' />
@@ -1209,340 +1209,378 @@
 <symbol id="clock--hl" viewBox="0 0 36 36" fill="none"><path d="M18 31.5C25.4558 31.5 31.5 25.4558 31.5 18C31.5 10.5442 25.4558 4.5 18 4.5C10.5442 4.5 4.5 10.5442 4.5 18C4.5 25.4558 10.5442 31.5 18 31.5Z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18 10.125V18H25.875" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
-
-
-
-<header class="lv-header lv-header--main" data-lv-header>
-
-  <!-- Announcement ticker. Figma draws one slide plus prev/next arrows;
-       the second slide uses the Midtown number from the comped footer.
-       See docs/SECTIONS-INFERRED.md -->
-  <div class="lv-announce">
-    <button class="lv-announce__arrow" type="button" data-announce="prev" aria-label="Previous announcement">
-      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-    </button>
-    <div class="lv-announce__viewport">
-      <p class="lv-announce__item is-active">Coconut Grove: (305) 204-6288</p>
-      <p class="lv-announce__item">Midtown Miami: (305) 850-7691</p>
-    </div>
-    <button class="lv-announce__arrow lv-announce__arrow--next" type="button" data-announce="next" aria-label="Next announcement">
-      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-    </button>
-  </div>
-
-  <nav class="lv-nav" aria-label="Primary">
-
-    <!-- Mobile-only controls -->
-    <button class="lv-nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="lv-drawer" aria-label="Open menu">
-      <svg class="lv-icon lv-icon--menu" aria-hidden="true"><use href="#menu"></use></svg>
-    </button>
-
-    <a class="lv-nav__logo" href="/" aria-label="Lavish Laser MedSpa — home">
-      <img src="/wp-content/themes/lavish/assets/images/logo-umber@2x.png" alt="Lavish Laser MedSpa" width="301" height="148">
-    </a>
-
-    <a class="lv-nav__phone" href="tel:+13052046288" aria-label="Call Coconut Grove">
-      <svg class="lv-icon lv-icon--phone" aria-hidden="true"><use href="#phone"></use></svg>
-    </a>
-
-    
-    <ul class="lv-nav__group lv-nav__group--left">
-      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
-        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-treatments">
-          Treatments          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-        </button>
-        <div class="lv-dropdown" id="lv-dd-treatments" hidden>
-          <ul class="lv-dropdown__list">
-            <li><a href="/all-treatments/#skin-facials">Skin &amp; facials</a></li>
-            <li><a href="/all-treatments/#injectables">Injectables</a></li>
-            <li><a href="/all-treatments/#body">Body</a></li>
-            <li><a href="/all-treatments/#hair-scalp">Hair &amp; scalp</a></li>
-            <li><a href="/all-treatments/#wellness">Wellness</a></li>
-          </ul>
-          <a class="lv-dropdown__all" href="/all-treatments/">View all treatments</a>
-        </div>
-      </li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/signature-protocols/">Signature Protocols</a></li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/memberships/">Memberships</a></li>
-    </ul>
-
-    
-    <ul class="lv-nav__group lv-nav__group--right">
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/results/">Results</a></li>
-      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
-        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-locations">
-          Locations          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-        </button>
-        <div class="lv-dropdown" id="lv-dd-locations" hidden>
-          <ul class="lv-dropdown__list">
-            <li><a href="/location-coconut-grove/">Coconut Grove</a></li>
-            <li><a href="/location-midtown-miami/">Midtown Miami</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/client-login/">Client Login</a></li>
-      <li class="lv-nav__item lv-nav__item--cta">
-        
-        <a class="lv-btn lv-btn--pill-light" href="/booking/" data-wp-link="booking">Book now</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
-<main id="primary" class="lv-main">
-
-  <!-- ===== 01 INTRO & HERO ===== -->
-  <section class="lv-aintro">
-    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">01</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>About</p>
-    <h1 class="lv-display lv-aintro__title lv-reveal">Precision aesthetics,<br>naturally <em>beautiful results</em></h1>
-    <p class="lv-aintro__sub lv-reveal">Advanced aesthetic treatments tailored to enhance your natural beauty with confidence.</p>
-    <div class="lv-aintro__pair lv-reveal">
-      <img src="/wp-content/themes/lavish/assets/images/Rectangle%203817.png" alt="" loading="lazy">      <img src="/wp-content/themes/lavish/assets/images/Rectangle%203818.png" alt="" loading="lazy">    </div>
-    <p class="lv-display lv-aintro__statement lv-reveal">Investing in your wellness is an important decision and an intimate experience. We pride ourselves on providing a unique, personalized experience to meet your individual goals and needs. We’re glad to be a part of your inner circle <em>bringing honest, thoughtful, and caring aesthetic wellness procedures</em></p>
-    <a class="lv-btn lv-btn--umber lv-btn--arrow lv-aintro__cta lv-reveal" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
-    
-    <div class="lv-stats lv-reveal">
-      <div class="lv-stat2"><p class="lv-stat2__n">10,000+</p><p class="lv-stat2__l">Treatments performed across Miami</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">50+</p><p class="lv-stat2__l">Years of combined expertise</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">60+</p><p class="lv-stat2__l">Advanced treatment solutions</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">95%</p><p class="lv-stat2__l">Client satisfaction rate</p></div>    </div>
-  </section>
-
-  <!-- ===== 02 WHY CHOOSE US (Terracotta) ===== -->
-  <section class="lv-awhy">
-    <div class="lv-awhy__head lv-reveal">
-      <div>
-        <p class="lv-eyebrow"><span class="lv-eyebrow__num">02</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>Why Choose Us</p>
-        <h2 class="lv-display lv-awhy__title">Where expertise,<br class="lv-br-mob"> innovation,<br class="lv-br-desk"> and beauty<br class="lv-br-mob"> <em>come together</em></h2>
-      </div>
-      <a class="lv-btn lv-btn--pill-cream lv-btn--arrow lv-awhy__cta" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--umber"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
-    </div>
-
-    <div class="lv-awhy__grid">
-      <img class="lv-awhy__img lv-reveal" src="/wp-content/themes/lavish/assets/images/Rectangle%203820_8.png" alt="Why Choose Us at Lavish" loading="lazy">
-      
-      <div class="lv-awhy__list lv-reveal">
-        <article class="lv-why2">
-          <div class="lv-why2__icon">
-            <svg class="lv-icon" aria-hidden="true"><use href="#medal"></use></svg>
-          </div>
-          <div class="lv-why2__text">
-            <h3>Expert-led treatments</h3>
-            <p>Receive care from highly trained professionals committed to delivering refined, natural-looking results.</p>
-          </div>
-        </article>
-        <article class="lv-why2">
-          <div class="lv-why2__icon">
-            <svg class="lv-icon" aria-hidden="true"><use href="#facemask"></use></svg>
-          </div>
-          <div class="lv-why2__text">
-            <h3>Personalized treatment plans</h3>
-            <p>No two clients are alike. We tailor every treatment plan to your unique concerns, goals, and aesthetic vision.</p>
-          </div>
-        </article>
-        <article class="lv-why2">
-          <div class="lv-why2__icon">
-            <svg class="lv-icon" aria-hidden="true"><use href="#leaf"></use></svg>
-          </div>
-          <div class="lv-why2__text">
-            <h3>Natural-looking results</h3>
-            <p>Our approach focuses on enhancing your features with subtle, balanced results that look refreshed, never overdone.</p>
-          </div>
-        </article>
-        <article class="lv-why2">
-          <div class="lv-why2__icon">
-            <svg class="lv-icon" aria-hidden="true"><use href="#sketchlogo"></use></svg>
-          </div>
-          <div class="lv-why2__text">
-            <h3>Luxury client experience</h3>
-            <p>From your first consultation to your final follow-up, we prioritize comfort, education, and exceptional care in a welcoming, spa-like environment.</p>
-          </div>
-        </article>      </div>
-    </div>
-  </section>
-
-  <!-- ===== 03 MEET OUR EXPERTS ===== -->
-  <section class="lv-people">
-    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">03</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>MEET OUR EXPERTS</p>
-    <h2 class="lv-display lv-people__title lv-reveal">Meet the experts<br class="lv-br-desk"> guiding <em>your journey</em></h2>
-    
-    
-    <div class="lv-people__grid">
-      <article class="lv-person lv-reveal">
-        <div class="lv-person__media">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203839.png" alt="Rachel Siegrist" loading="lazy">
-          <span class="lv-person__role">owner</span>
-        </div>
-        <h3 class="lv-display lv-person__name">Rachel Siegrist</h3>
-        <p class="lv-person__bio">Rachel is dedicated to helping clients look and feel their best through thoughtful, personalized treatments designed to celebrate their unique features.</p>
-        <button type="button" class="lv-btn lv-btn--umber lv-btn--arrow" data-person-open>Read more<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></button>
-        <dialog class="lv-pmodal" aria-label="Rachel Siegrist">
-          <div class="lv-pmodal__media">
-            <img src="/wp-content/themes/lavish/assets/images/Rectangle%203839.png" alt="" loading="lazy">
-            <span class="lv-person__role">owner</span>
-          </div>
-          <div class="lv-pmodal__body">
-            <h3 class="lv-display lv-person__name">Rachel Siegrist</h3>
-            <p>Rachel is dedicated to helping clients look and feel their best through thoughtful, personalized treatments designed to celebrate their unique features.</p>
-            <p>Rachel brings a wealth of compassionate care with years of nursing experience in Pediatrics and Rehabilitation, and later transitioning to her true passion, Aesthetic Medicine. She brought her talents to well-known Med Spas in Southern California and today she has the opportunity to provide the same passionate care in her own Med Spa, Lavish Laser Med Spa.</p>
-            <p>Rachel loves to help others feel confident in their own skin by embracing each patient’s unique features and providing the best rejuvenating treatments available in the beauty industry. She has a natural approach to Aesthetics and wants patients to leave feeling like the best version of themselves.</p>
-            <p>In her free time, Rachel enjoys spending time with her husband, family, friends, and grandkids. She also enjoys Pilates and running.</p>
-                      </div>
-          <button type="button" class="lv-pmodal__close" data-person-close aria-label="Close">&times;</button>
-        </dialog>
-      </article>
-      <article class="lv-person lv-reveal lv-reveal--d1">
-        <div class="lv-person__media">
-          <img src="/wp-content/themes/lavish/assets/images/about-79-797.png" alt="Dr. Marc Epstein" loading="lazy">
-          <span class="lv-person__role">Medical Director</span>
-        </div>
-        <h3 class="lv-display lv-person__name">Dr. Marc Epstein</h3>
-        <p class="lv-person__bio">Known for his precision and artistry, Dr. Marc specializes in creating refined, natural enhancements while upholding the highest standards of patient care.</p>
-        <button type="button" class="lv-btn lv-btn--umber lv-btn--arrow" data-person-open>Read more<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></button>
-        <dialog class="lv-pmodal" aria-label="Dr. Marc Epstein">
-          <div class="lv-pmodal__media">
-            <img src="/wp-content/themes/lavish/assets/images/about-79-797.png" alt="" loading="lazy">
-            <span class="lv-person__role">Medical Director</span>
-          </div>
-          <div class="lv-pmodal__body">
-            <h3 class="lv-display lv-person__name">Dr. Marc Epstein</h3>
-            <p>Known for his precision and artistry, Dr. Marc specializes in creating refined, natural enhancements while upholding the highest standards of patient care.</p>
-            <p>Dr. Marc provides oversight at our facility and is our primary injector who puts his hands and heart to work for our client’s satisfaction. Dr. Marc approaches injectables as an art form and a craft.</p>
-            <p>With many years of experience in both New York and South Florida, Dr. Marc delivers unparalleled results focusing on delivering the best anti-aging and cosmetic procedures with the highest level of integrity and ethical standards.</p>
-                      </div>
-          <button type="button" class="lv-pmodal__close" data-person-close aria-label="Close">&times;</button>
-        </dialog>
-      </article>    </div>
-  </section>
-
-  <!-- ===== 04 OUR COMMITMENT ===== -->
-  <section class="lv-mission">
-    <img class="lv-mission__img" src="/wp-content/themes/lavish/assets/images/about-79-859.png" alt="" loading="lazy">
-    <div class="lv-mission__inner">
-      <div class="lv-mission__copy lv-reveal">
-        <p class="lv-eyebrow"><span class="lv-eyebrow__num">04</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>Our Commitment</p>
-        <h2 class="lv-display lv-mission__title">A personalized approach<br>to <em>beauty and wellness</em></h2>
-        <p class="lv-mission__body">At Lavish Laser Medspa, we combine advanced treatments, medical expertise, and personalized care to deliver natural-looking results that enhance confidence.</p>
-        <a class="lv-btn lv-btn--pill-cream lv-btn--arrow" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--umber"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
-      </div>
-      
-      <div class="lv-mission__cards lv-reveal">
-        <article class="lv-mcard">
-          <div class="lv-mcard__head">
-            <h3 class="lv-display">Our mission</h3>
-            <span class="lv-mcard__icon"><svg class="lv-icon" aria-hidden="true"><use href="#target"></use></svg></span>
-          </div>
-          <p>To empower confidence through personalized aesthetic and wellness treatments that enhance natural beauty, prioritize patient care, and deliver exceptional results with integrity and expertise.</p>
-        </article>
-        <article class="lv-mcard">
-          <div class="lv-mcard__head">
-            <h3 class="lv-display">Our vision</h3>
-            <span class="lv-mcard__icon"><svg class="lv-icon" aria-hidden="true"><use href="#flagbannerfold"></use></svg></span>
-          </div>
-          <p>To be Miami's most trusted destination for advanced aesthetic and wellness solutions, recognized for innovation, natural-looking results, and an unwavering commitment to patient satisfaction.</p>
-        </article>      </div>
-    </div>
-  </section>
-
-  <!-- ===== TICKER MARQUEE ===== -->
-  <div class="lv-marquee" aria-hidden="true">
-    <div class="lv-marquee__track"><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#wand-shine"></use></svg>Advanced Aesthetics</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#clear-day"></use></svg>Natural Results</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#electric-bolt"></use></svg>Miami Medspa Experience</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#favorite"></use></svg>Personalized Care</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#encrypted"></use></svg>Lasting Confidence</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#headphones"></use></svg>Expert helpline</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#wand-shine"></use></svg>Advanced Aesthetics</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#clear-day"></use></svg>Natural Results</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#electric-bolt"></use></svg>Miami Medspa Experience</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#favorite"></use></svg>Personalized Care</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#encrypted"></use></svg>Lasting Confidence</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#headphones"></use></svg>Expert helpline</span></div>
-  </div>
-
-  <!-- ===== 05 THE LAVISH EXPERIENCE GALLERY ===== -->
-  <section class="lv-community">
-    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">05</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>THE LAVISH EXPERIENCE</p>
-    <h2 class="lv-display lv-community__title lv-reveal">A community built<br class="lv-br-mob"> around<br class="lv-br-desk"> <em>wellness</em></h2>
-    
-    <div class="lv-gallery lv-reveal" data-carousel data-carousel-auto="true" data-carousel-gap="20" data-carousel-scroll-mobile="205">
-      <div class="lv-gallery__track" data-carousel-track>
-        <div class="lv-gallery__col lv-gallery__col--side">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203834.png" alt="" loading="lazy">
-        </div>
-        <div class="lv-gallery__col lv-gallery__col--stack">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203836.png" alt="" loading="lazy">          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203835.png" alt="" loading="lazy">        </div>
-        <div class="lv-gallery__col lv-gallery__col--hero">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203830.png" alt="Lavish Laser MedSpa building" loading="lazy">
-        </div>
-        <div class="lv-gallery__col lv-gallery__col--stack">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203832.png" alt="" loading="lazy">          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203831.png" alt="" loading="lazy">        </div>
-        <div class="lv-gallery__col lv-gallery__col--side">
-          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203833.png" alt="" loading="lazy">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 06 TESTIMONIALS ===== -->
-  <section class="lv-atestimonials" data-carousel data-carousel-auto="true" data-carousel-gap="12" data-carousel-scroll-mobile="226">
-    <div class="lv-atestimonials__head lv-reveal">
-      <div class="lv-atestimonials__head-left">
-        <p class="lv-eyebrow lv-eyebrow--terracotta"><span class="lv-eyebrow__num">06</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>testimonials</p>
-        <h2 class="lv-display lv-atestimonials__title">Hear what they are<br><em>saying about us</em></h2>
-      </div>
-
-      <div class="lv-atestimonials__right">
-        <div class="lv-atestimonials__rating">
-          <span class="lv-atestimonials__score">4.9</span>
-          <div class="lv-atestimonials__rating-info">
-            <div class="lv-stars" aria-label="5 out of 5 stars">
-              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            </div>
-            <p class="lv-atestimonials__rcount">RATED BY OVER 500 REVIEWS</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="lv-atestimonials__rail">
-      <div class="lv-atestimonials__grid" data-carousel-track>
-        <!-- Card 1 -->
-        <article class="lv-atestimonial-card lv-reveal">
-          <div class="lv-stars" aria-label="5 out of 5 stars">
-            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
-          <h3 class="lv-atestimonial-card__title">Natural looking results!</h3>
-          <p class="lv-atestimonial-card__quote">&ldquo;I wanted subtle improvements without looking overdone. The team took the time to understand exactly what I was looking for and delivered beautiful, natural-looking results. I couldn't be happier.&rdquo;</p>
-          <div class="lv-atestimonial-card__author">
-            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%203_2.png" alt="Sophia Bennet" loading="lazy">
-            <div>
-              <p class="lv-atestimonial-card__name">Sophia Bennet</p>
-              <p class="lv-atestimonial-card__role">WELLNESS ENTHUSIAST</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 2 -->
-        <article class="lv-atestimonial-card lv-reveal lv-reveal--d1">
-          <div class="lv-stars" aria-label="5 out of 5 stars">
-            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
-          <h3 class="lv-atestimonial-card__title">Amazing experience</h3>
-          <p class="lv-atestimonial-card__quote">From my very first consultation, the team took the time to understand my concerns, explain every option, and create a treatment plan tailored specifically to my goals. The results were subtle, natural, and exactly what I had hoped for.</p>
-          <div class="lv-atestimonial-card__author">
-            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%203.png" alt="Olivia Parker" loading="lazy">
-            <div>
-              <p class="lv-atestimonial-card__name">Olivia Parker</p>
-              <p class="lv-atestimonial-card__role">BEAUTY INFLUENCER</p>
-            </div>
-          </div>
-        </article>
-
-        <!-- Card 3 -->
-        <article class="lv-atestimonial-card lv-reveal lv-reveal--d2">
-          <div class="lv-stars" aria-label="5 out of 5 stars">
-            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
-          <h3 class="lv-atestimonial-card__title">Everything felt thoughtful!</h3>
-          <p class="lv-atestimonial-card__quote">&ldquo;I've visited several medspas over the years, but none have matched the level of care, expertise, and attention to detail I received here. Every recommendation felt thoughtful and personalized rather than sales-driven.&rdquo;</p>
-          <div class="lv-atestimonial-card__author">
-            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%204.png" alt="Marry James" loading="lazy">
-            <div>
-              <p class="lv-atestimonial-card__name">Marry James</p>
-              <p class="lv-atestimonial-card__role">WELLNESS ENTHUSIAST</p>
-            </div>
-          </div>
-        </article>
-
-      </div>
-    </div>
-  </section>
-
-
-</main>
+
+
+
+<header class="lv-header lv-header--main" data-lv-header>
+
+  <!-- Announcement ticker. Figma draws one slide plus prev/next arrows;
+       the second slide uses the Midtown number from the comped footer.
+       See docs/SECTIONS-INFERRED.md -->
+  <div class="lv-announce">
+    <button class="lv-announce__arrow" type="button" data-announce="prev" aria-label="Previous announcement">
+      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+    </button>
+    <div class="lv-announce__viewport">
+      <p class="lv-announce__item is-active">Coconut Grove: (305) 204-6288</p>
+      <p class="lv-announce__item">Midtown Miami: (305) 850-7691</p>
+    </div>
+    <button class="lv-announce__arrow lv-announce__arrow--next" type="button" data-announce="next" aria-label="Next announcement">
+      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+    </button>
+  </div>
+
+  <nav class="lv-nav" aria-label="Primary">
+
+    <!-- Mobile-only controls -->
+    <button class="lv-nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="lv-drawer" aria-label="Open menu">
+      <svg class="lv-icon lv-icon--menu" aria-hidden="true"><use href="#menu"></use></svg>
+    </button>
+
+    <a class="lv-nav__logo" href="/" aria-label="Lavish Laser MedSpa — home">
+      <img src="/wp-content/themes/lavish/assets/images/logo-umber@2x.png" alt="Lavish Laser MedSpa" width="301" height="148">
+    </a>
+
+    <a class="lv-nav__phone" href="tel:+13052046288" aria-label="Call Coconut Grove">
+      <svg class="lv-icon lv-icon--phone" aria-hidden="true"><use href="#phone"></use></svg>
+    </a>
+
+    
+    <ul class="lv-nav__group lv-nav__group--left">
+      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
+        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-treatments">
+          Treatments          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+        </button>
+                <div class="lv-dropdown lv-dropdown--mega" id="lv-dd-treatments" hidden>
+          <ul class="lv-dropdown__list">
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#skin-facials">Skin &amp; facials<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#hydrafacial">Hydrafacial</a></li>
+                <li><a href="/treatments/xerf/">XERF</a></li>
+                <li><a href="/treatments/bespoke/">Facials</a></li>
+                <li><a href="/treatments/laser-facials/">Laser Facials</a></li>
+                <li><a href="/treatments/rf-microneedling/">RF Microneedling</a></li>
+                <li><a href="/treatments/skinpen/">SkinPen</a></li>
+                <li><a href="/treatments/injectibles/">Injectables</a></li>
+                <li><a href="/treatments/prf-pdgf/">PRF &amp; PDGF</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#injectables">Injectables<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/treatments/injectibles/">Neurotoxins</a></li>
+                <li><a href="/treatments/injectibles/">Dermal Fillers</a></li>
+                <li><a href="/treatments/injectibles/">Biostimulators</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#body">Body<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/treatments/accufit/">Accufit</a></li>
+                <li><a href="/treatments/sofwave/">Sofwave</a></li>
+                <li><a href="/treatments/trusculpt-id/">truSculpt iD</a></li>
+                <li><a href="/treatments/venus-legacy/">Venus Legacy</a></li>
+                <li><a href="/treatments/laser-hair-removal/">Laser Hair Removal</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#hair-scalp">Hair &amp; scalp<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#hydrafacial-keravive">HydraFacial Keravive</a></li>
+                <li><a href="/all-treatments/#lutronic-ultralase-md">Lutronic UltraLase MD</a></li>
+                <li><a href="/treatments/prf-pdgf/">PRF for Hair &amp; Scalp</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#wellness">Wellness<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#iv-therapy">IV Therapy</a></li>
+                <li><a href="/all-treatments/#weight-management">Weight Management</a></li>
+                              </ul>
+            </li>
+                      </ul>
+          <a class="lv-dropdown__all lv-btn lv-btn--umber lv-btn--arrow" href="/all-treatments/">View all treatments<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+        </div>
+      </li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/signature-protocols/">Signature Protocols</a></li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/memberships/">Memberships</a></li>
+    </ul>
+
+    
+    <ul class="lv-nav__group lv-nav__group--right">
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/results/">Results</a></li>
+      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
+        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-locations">
+          Locations          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+        </button>
+        <div class="lv-dropdown" id="lv-dd-locations" hidden>
+          <ul class="lv-dropdown__list">
+            <li><a href="/location-coconut-grove/">Coconut Grove</a></li>
+            <li><a href="/location-midtown-miami/">Midtown Miami</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/client-login/">Client Login</a></li>
+      <li class="lv-nav__item lv-nav__item--cta">
+        
+        <a class="lv-btn lv-btn--pill-light" href="/booking/" data-wp-link="booking">Book now</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<main id="primary" class="lv-main">
+
+  <!-- ===== 01 INTRO & HERO ===== -->
+  <section class="lv-aintro">
+    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">01</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>About</p>
+    <h1 class="lv-display lv-aintro__title lv-reveal">Precision aesthetics,<br>naturally <em>beautiful results</em></h1>
+    <p class="lv-aintro__sub lv-reveal">Advanced aesthetic treatments tailored to enhance your natural beauty with confidence.</p>
+    <div class="lv-aintro__pair lv-reveal">
+      <img src="/wp-content/themes/lavish/assets/images/Rectangle%203817.png" alt="" loading="lazy">      <img src="/wp-content/themes/lavish/assets/images/Rectangle%203818.png" alt="" loading="lazy">    </div>
+    <p class="lv-display lv-aintro__statement lv-reveal">Investing in your wellness is an important decision and an intimate experience. We pride ourselves on providing a unique, personalized experience to meet your individual goals and needs. We’re glad to be a part of your inner circle <em>bringing honest, thoughtful, and caring aesthetic wellness procedures</em></p>
+    <a class="lv-btn lv-btn--umber lv-btn--arrow lv-aintro__cta lv-reveal" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+    
+    <div class="lv-stats lv-reveal">
+      <div class="lv-stat2"><p class="lv-stat2__n">10,000+</p><p class="lv-stat2__l">Treatments performed across Miami</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">50+</p><p class="lv-stat2__l">Years of combined expertise</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">60+</p><p class="lv-stat2__l">Advanced treatment solutions</p></div>      <div class="lv-stat2"><p class="lv-stat2__n">95%</p><p class="lv-stat2__l">Client satisfaction rate</p></div>    </div>
+  </section>
+
+  <!-- ===== 02 WHY CHOOSE US (Terracotta) ===== -->
+  <section class="lv-awhy">
+    <div class="lv-awhy__head lv-reveal">
+      <div>
+        <p class="lv-eyebrow"><span class="lv-eyebrow__num">02</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>Why Choose Us</p>
+        <h2 class="lv-display lv-awhy__title">Where expertise,<br class="lv-br-mob"> innovation,<br class="lv-br-desk"> and beauty<br class="lv-br-mob"> <em>come together</em></h2>
+      </div>
+      <a class="lv-btn lv-btn--pill-cream lv-btn--arrow lv-awhy__cta" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--umber"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+    </div>
+
+    <div class="lv-awhy__grid">
+      <img class="lv-awhy__img lv-reveal" src="/wp-content/themes/lavish/assets/images/Rectangle%203820_8.png" alt="Why Choose Us at Lavish" loading="lazy">
+      
+      <div class="lv-awhy__list lv-reveal">
+        <article class="lv-why2">
+          <div class="lv-why2__icon">
+            <svg class="lv-icon" aria-hidden="true"><use href="#medal"></use></svg>
+          </div>
+          <div class="lv-why2__text">
+            <h3>Expert-led treatments</h3>
+            <p>Receive care from highly trained professionals committed to delivering refined, natural-looking results.</p>
+          </div>
+        </article>
+        <article class="lv-why2">
+          <div class="lv-why2__icon">
+            <svg class="lv-icon" aria-hidden="true"><use href="#facemask"></use></svg>
+          </div>
+          <div class="lv-why2__text">
+            <h3>Personalized treatment plans</h3>
+            <p>No two clients are alike. We tailor every treatment plan to your unique concerns, goals, and aesthetic vision.</p>
+          </div>
+        </article>
+        <article class="lv-why2">
+          <div class="lv-why2__icon">
+            <svg class="lv-icon" aria-hidden="true"><use href="#leaf"></use></svg>
+          </div>
+          <div class="lv-why2__text">
+            <h3>Natural-looking results</h3>
+            <p>Our approach focuses on enhancing your features with subtle, balanced results that look refreshed, never overdone.</p>
+          </div>
+        </article>
+        <article class="lv-why2">
+          <div class="lv-why2__icon">
+            <svg class="lv-icon" aria-hidden="true"><use href="#sketchlogo"></use></svg>
+          </div>
+          <div class="lv-why2__text">
+            <h3>Luxury client experience</h3>
+            <p>From your first consultation to your final follow-up, we prioritize comfort, education, and exceptional care in a welcoming, spa-like environment.</p>
+          </div>
+        </article>      </div>
+    </div>
+  </section>
+
+  <!-- ===== 03 MEET OUR EXPERTS ===== -->
+  <section class="lv-people">
+    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">03</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>MEET OUR EXPERTS</p>
+    <h2 class="lv-display lv-people__title lv-reveal">Meet the experts<br class="lv-br-desk"> guiding <em>your journey</em></h2>
+    
+    
+    <div class="lv-people__grid">
+      <article class="lv-person lv-reveal">
+        <div class="lv-person__media">
+          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203839.png" alt="Rachel Siegrist" loading="lazy">
+          <span class="lv-person__role">owner</span>
+        </div>
+        <h3 class="lv-display lv-person__name">Rachel Siegrist</h3>
+        <p class="lv-person__bio">Rachel is dedicated to helping clients look and feel their best through thoughtful, personalized treatments designed to celebrate their unique features.</p>
+        <button type="button" class="lv-btn lv-btn--umber lv-btn--arrow" data-person-open>Read more<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></button>
+        <dialog class="lv-pmodal" aria-label="Rachel Siegrist">
+          <div class="lv-pmodal__media">
+            <img src="/wp-content/themes/lavish/assets/images/Rectangle%203839.png" alt="" loading="lazy">
+            <span class="lv-person__role">owner</span>
+          </div>
+          <div class="lv-pmodal__body">
+            <h3 class="lv-display lv-person__name">Rachel Siegrist</h3>
+            <p>Rachel is dedicated to helping clients look and feel their best through thoughtful, personalized treatments designed to celebrate their unique features.</p>
+            <p>Rachel brings a wealth of compassionate care with years of nursing experience in Pediatrics and Rehabilitation, and later transitioning to her true passion, Aesthetic Medicine. She brought her talents to well-known Med Spas in Southern California and today she has the opportunity to provide the same passionate care in her own Med Spa, Lavish Laser Med Spa.</p>
+            <p>Rachel loves to help others feel confident in their own skin by embracing each patient’s unique features and providing the best rejuvenating treatments available in the beauty industry. She has a natural approach to Aesthetics and wants patients to leave feeling like the best version of themselves.</p>
+            <p>In her free time, Rachel enjoys spending time with her husband, family, friends, and grandkids. She also enjoys Pilates and running.</p>
+                      </div>
+          <button type="button" class="lv-pmodal__close" data-person-close aria-label="Close"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9" fill="none" stroke="currentColor" stroke-width="1"/></svg></button>
+        </dialog>
+      </article>
+      <article class="lv-person lv-reveal lv-reveal--d1">
+        <div class="lv-person__media">
+          <img src="/wp-content/themes/lavish/assets/images/about-79-797.png" alt="Dr. Marc Epstein" loading="lazy">
+          <span class="lv-person__role">Medical Director</span>
+        </div>
+        <h3 class="lv-display lv-person__name">Dr. Marc Epstein</h3>
+        <p class="lv-person__bio">Known for his precision and artistry, Dr. Marc specializes in creating refined, natural enhancements while upholding the highest standards of patient care.</p>
+        <button type="button" class="lv-btn lv-btn--umber lv-btn--arrow" data-person-open>Read more<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></button>
+        <dialog class="lv-pmodal" aria-label="Dr. Marc Epstein">
+          <div class="lv-pmodal__media">
+            <img src="/wp-content/themes/lavish/assets/images/about-79-797.png" alt="" loading="lazy">
+            <span class="lv-person__role">Medical Director</span>
+          </div>
+          <div class="lv-pmodal__body">
+            <h3 class="lv-display lv-person__name">Dr. Marc Epstein</h3>
+            <p>Known for his precision and artistry, Dr. Marc specializes in creating refined, natural enhancements while upholding the highest standards of patient care.</p>
+            <p>Dr. Marc provides oversight at our facility and is our primary injector who puts his hands and heart to work for our client’s satisfaction. Dr. Marc approaches injectables as an art form and a craft.</p>
+            <p>With many years of experience in both New York and South Florida, Dr. Marc delivers unparalleled results focusing on delivering the best anti-aging and cosmetic procedures with the highest level of integrity and ethical standards.</p>
+                      </div>
+          <button type="button" class="lv-pmodal__close" data-person-close aria-label="Close"><svg viewBox="0 0 10 10" aria-hidden="true"><path d="M1 1l8 8M9 1L1 9" fill="none" stroke="currentColor" stroke-width="1"/></svg></button>
+        </dialog>
+      </article>    </div>
+  </section>
+
+  <!-- ===== 04 OUR COMMITMENT ===== -->
+  <section class="lv-mission">
+    <img class="lv-mission__img" src="/wp-content/themes/lavish/assets/images/about-79-859.png" alt="" loading="lazy">
+    <div class="lv-mission__inner">
+      <div class="lv-mission__copy lv-reveal">
+        <p class="lv-eyebrow"><span class="lv-eyebrow__num">04</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>Our Commitment</p>
+        <h2 class="lv-display lv-mission__title">A personalized approach<br>to <em>beauty and wellness</em></h2>
+        <p class="lv-mission__body">At Lavish Laser Medspa, we combine advanced treatments, medical expertise, and personalized care to deliver natural-looking results that enhance confidence.</p>
+        <a class="lv-btn lv-btn--pill-cream lv-btn--arrow" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--umber"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+      </div>
+      
+      <div class="lv-mission__cards lv-reveal">
+        <article class="lv-mcard">
+          <div class="lv-mcard__head">
+            <h3 class="lv-display">Our mission</h3>
+            <span class="lv-mcard__icon"><svg class="lv-icon" aria-hidden="true"><use href="#target"></use></svg></span>
+          </div>
+          <p>To empower confidence through personalized aesthetic and wellness treatments that enhance natural beauty, prioritize patient care, and deliver exceptional results with integrity and expertise.</p>
+        </article>
+        <article class="lv-mcard">
+          <div class="lv-mcard__head">
+            <h3 class="lv-display">Our vision</h3>
+            <span class="lv-mcard__icon"><svg class="lv-icon" aria-hidden="true"><use href="#flagbannerfold"></use></svg></span>
+          </div>
+          <p>To be Miami's most trusted destination for advanced aesthetic and wellness solutions, recognized for innovation, natural-looking results, and an unwavering commitment to patient satisfaction.</p>
+        </article>      </div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER MARQUEE ===== -->
+  <div class="lv-marquee" aria-hidden="true">
+    <div class="lv-marquee__track"><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#wand-shine"></use></svg>Advanced Aesthetics</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#clear-day"></use></svg>Natural Results</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#electric-bolt"></use></svg>Miami Medspa Experience</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#favorite"></use></svg>Personalized Care</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#encrypted"></use></svg>Lasting Confidence</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#headphones"></use></svg>Expert helpline</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#wand-shine"></use></svg>Advanced Aesthetics</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#clear-day"></use></svg>Natural Results</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#electric-bolt"></use></svg>Miami Medspa Experience</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#favorite"></use></svg>Personalized Care</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#encrypted"></use></svg>Lasting Confidence</span><span class="lv-marquee__item"><svg class="lv-icon lv-icon--mq"><use href="#headphones"></use></svg>Expert helpline</span></div>
+  </div>
+
+  <!-- ===== 05 THE LAVISH EXPERIENCE GALLERY ===== -->
+  <section class="lv-community">
+    <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">05</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>THE LAVISH EXPERIENCE</p>
+    <h2 class="lv-display lv-community__title lv-reveal">A community built<br class="lv-br-mob"> around<br class="lv-br-desk"> <em>wellness</em></h2>
+    
+    <div class="lv-gallery lv-reveal" data-carousel data-carousel-auto="true" data-carousel-gap="20" data-carousel-scroll-mobile="205">
+      <div class="lv-gallery__track" data-carousel-track>
+        <div class="lv-gallery__col lv-gallery__col--side">
+          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203834.png" alt="" loading="lazy">
+        </div>
+        <div class="lv-gallery__col lv-gallery__col--stack">
+          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203836.png" alt="" loading="lazy">          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203835.png" alt="" loading="lazy">        </div>
+        <div class="lv-gallery__col lv-gallery__col--hero">
+          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203830.png" alt="Lavish Laser MedSpa building" loading="lazy">
+        </div>
+        <div class="lv-gallery__col lv-gallery__col--stack">
+          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203832.png" alt="" loading="lazy">          <img src="/wp-content/themes/lavish/assets/images/Rectangle%203831.png" alt="" loading="lazy">        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 06 TESTIMONIALS ===== -->
+  <section class="lv-atestimonials" data-carousel data-carousel-auto="true" data-carousel-gap="12" data-carousel-scroll-mobile="226">
+    <div class="lv-atestimonials__head lv-reveal">
+      <div class="lv-atestimonials__head-left">
+        <p class="lv-eyebrow lv-eyebrow--terracotta"><span class="lv-eyebrow__num">06</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>testimonials</p>
+        <h2 class="lv-display lv-atestimonials__title">Hear what they are<br><em>saying about us</em></h2>
+      </div>
+
+      <div class="lv-atestimonials__right">
+        <div class="lv-atestimonials__rating">
+          <span class="lv-atestimonials__score">4.9</span>
+          <div class="lv-atestimonials__rating-info">
+            <div class="lv-stars" aria-label="5 out of 5 stars">
+              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>              <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            </div>
+            <p class="lv-atestimonials__rcount">RATED BY OVER 500 REVIEWS</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="lv-atestimonials__rail">
+      <div class="lv-atestimonials__grid" data-carousel-track>
+        <!-- Card 1 -->
+        <article class="lv-atestimonial-card lv-reveal">
+          <div class="lv-stars" aria-label="5 out of 5 stars">
+            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
+          <h3 class="lv-atestimonial-card__title">Natural looking results!</h3>
+          <p class="lv-atestimonial-card__quote">&ldquo;I wanted subtle improvements without looking overdone. The team took the time to understand exactly what I was looking for and delivered beautiful, natural-looking results. I couldn't be happier.&rdquo;</p>
+          <div class="lv-atestimonial-card__author">
+            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%203_2.png" alt="Sophia Bennet" loading="lazy">
+            <div>
+              <p class="lv-atestimonial-card__name">Sophia Bennet</p>
+              <p class="lv-atestimonial-card__role">WELLNESS ENTHUSIAST</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="lv-atestimonial-card lv-reveal lv-reveal--d1">
+          <div class="lv-stars" aria-label="5 out of 5 stars">
+            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
+          <h3 class="lv-atestimonial-card__title">Amazing experience</h3>
+          <p class="lv-atestimonial-card__quote">From my very first consultation, the team took the time to understand my concerns, explain every option, and create a treatment plan tailored specifically to my goals. The results were subtle, natural, and exactly what I had hoped for.</p>
+          <div class="lv-atestimonial-card__author">
+            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%203.png" alt="Olivia Parker" loading="lazy">
+            <div>
+              <p class="lv-atestimonial-card__name">Olivia Parker</p>
+              <p class="lv-atestimonial-card__role">BEAUTY INFLUENCER</p>
+            </div>
+          </div>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="lv-atestimonial-card lv-reveal lv-reveal--d2">
+          <div class="lv-stars" aria-label="5 out of 5 stars">
+            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>            <svg class="lv-icon lv-icon--star" aria-hidden="true"><use href="#star-rate"></use></svg>          </div>
+          <h3 class="lv-atestimonial-card__title">Everything felt thoughtful!</h3>
+          <p class="lv-atestimonial-card__quote">&ldquo;I've visited several medspas over the years, but none have matched the level of care, expertise, and attention to detail I received here. Every recommendation felt thoughtful and personalized rather than sales-driven.&rdquo;</p>
+          <div class="lv-atestimonial-card__author">
+            <img class="lv-atestimonial-card__avatar" src="/wp-content/themes/lavish/assets/images/Ellipse%204.png" alt="Marry James" loading="lazy">
+            <div>
+              <p class="lv-atestimonial-card__name">Marry James</p>
+              <p class="lv-atestimonial-card__role">WELLNESS ENTHUSIAST</p>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+</main>
 
 
 <footer class="lv-footer lv-footer--main">
@@ -1585,6 +1623,7 @@
           <li class="lv-mob-only"><a href="/memberships/">Pricing</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/client-login/">Client login</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
 
@@ -1653,10 +1692,10 @@
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/lavish/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
 <script id="lv-sprite-js-before">
-window.LV = {"theme":"http:\/\/lavish.local\/wp-content\/themes\/lavish","ajax":"http:\/\/lavish.local\/wp-admin\/admin-ajax.php","nonce":"c0b7bbaffe"};
+window.LV = {"theme":"http:\/\/lavish.local\/wp-content\/themes\/lavish","ajax":"http:\/\/lavish.local\/wp-admin\/admin-ajax.php","nonce":"f555989b73"};
 //# sourceURL=lv-sprite-js-before
 </script>
 <script id="lv-sprite-js" src="/wp-content/themes/lavish/assets/js/sprite.js?ver=1790702209"></script>
-<script id="lv-main-js" src="/wp-content/themes/lavish/assets/js/main.js?ver=1791364296"></script>
+<script id="lv-main-js" src="/wp-content/themes/lavish/assets/js/main.js?ver=1791470257"></script>
 </body>
 </html>

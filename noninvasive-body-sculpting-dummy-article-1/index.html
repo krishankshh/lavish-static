@@ -32,8 +32,8 @@
 <link rel='stylesheet' id='lv-fonts-css' href='/wp-content/themes/lavish/assets/css/fonts.css?ver=1789892859' media='all' />
 <link rel='stylesheet' id='lv-tokens-css' href='/wp-content/themes/lavish/assets/css/tokens.css?ver=1789892881' media='all' />
 <link rel='stylesheet' id='lv-base-css' href='/wp-content/themes/lavish/assets/css/base.css?ver=1791199414' media='all' />
-<link rel='stylesheet' id='lv-components-css' href='/wp-content/themes/lavish/assets/css/components.css?ver=1791325649' media='all' />
-<link rel='stylesheet' id='lv-pages-blog-css' href='/wp-content/themes/lavish/assets/css/pages/blog.css?ver=1791328077' media='all' />
+<link rel='stylesheet' id='lv-components-css' href='/wp-content/themes/lavish/assets/css/components.css?ver=1791471011' media='all' />
+<link rel='stylesheet' id='lv-pages-blog-css' href='/wp-content/themes/lavish/assets/css/pages/blog.css?ver=1791470717' media='all' />
 <link rel="https://api.w.org/" href="/wp-json/" /><link rel="alternate" title="JSON" type="application/json" href="/wp-json/wp/v2/posts/126" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="canonical" href="/noninvasive-body-sculpting-dummy-article-1/" />
 <link rel='shortlink' href='/?p=126' />
@@ -1209,86 +1209,127 @@
 <symbol id="clock--hl" viewBox="0 0 36 36" fill="none"><path d="M18 31.5C25.4558 31.5 31.5 25.4558 31.5 18C31.5 10.5442 25.4558 4.5 18 4.5C10.5442 4.5 4.5 10.5442 4.5 18C4.5 25.4558 10.5442 31.5 18 31.5Z" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/>
 <path d="M18 10.125V18H25.875" stroke="currentColor" vector-effect="non-scaling-stroke" stroke-linecap="round" stroke-linejoin="round"/></symbol>
 </svg>
-
-
-
-<header class="lv-header lv-header--main" data-lv-header>
-
-  <!-- Announcement ticker. Figma draws one slide plus prev/next arrows;
-       the second slide uses the Midtown number from the comped footer.
-       See docs/SECTIONS-INFERRED.md -->
-  <div class="lv-announce">
-    <button class="lv-announce__arrow" type="button" data-announce="prev" aria-label="Previous announcement">
-      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-    </button>
-    <div class="lv-announce__viewport">
-      <p class="lv-announce__item is-active">Coconut Grove: (305) 204-6288</p>
-      <p class="lv-announce__item">Midtown Miami: (305) 850-7691</p>
-    </div>
-    <button class="lv-announce__arrow lv-announce__arrow--next" type="button" data-announce="next" aria-label="Next announcement">
-      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-    </button>
-  </div>
-
-  <nav class="lv-nav" aria-label="Primary">
-
-    <!-- Mobile-only controls -->
-    <button class="lv-nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="lv-drawer" aria-label="Open menu">
-      <svg class="lv-icon lv-icon--menu" aria-hidden="true"><use href="#menu"></use></svg>
-    </button>
-
-    <a class="lv-nav__logo" href="/" aria-label="Lavish Laser MedSpa — home">
-      <img src="/wp-content/themes/lavish/assets/images/logo-umber@2x.png" alt="Lavish Laser MedSpa" width="301" height="148">
-    </a>
-
-    <a class="lv-nav__phone" href="tel:+13052046288" aria-label="Call Coconut Grove">
-      <svg class="lv-icon lv-icon--phone" aria-hidden="true"><use href="#phone"></use></svg>
-    </a>
-
-    
-    <ul class="lv-nav__group lv-nav__group--left">
-      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
-        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-treatments">
-          Treatments          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-        </button>
-        <div class="lv-dropdown" id="lv-dd-treatments" hidden>
-          <ul class="lv-dropdown__list">
-            <li><a href="/all-treatments/#skin-facials">Skin &amp; facials</a></li>
-            <li><a href="/all-treatments/#injectables">Injectables</a></li>
-            <li><a href="/all-treatments/#body">Body</a></li>
-            <li><a href="/all-treatments/#hair-scalp">Hair &amp; scalp</a></li>
-            <li><a href="/all-treatments/#wellness">Wellness</a></li>
-          </ul>
-          <a class="lv-dropdown__all" href="/all-treatments/">View all treatments</a>
-        </div>
-      </li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/signature-protocols/">Signature Protocols</a></li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/memberships/">Memberships</a></li>
-    </ul>
-
-    
-    <ul class="lv-nav__group lv-nav__group--right">
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/results/">Results</a></li>
-      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
-        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-locations">
-          Locations          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
-        </button>
-        <div class="lv-dropdown" id="lv-dd-locations" hidden>
-          <ul class="lv-dropdown__list">
-            <li><a href="/location-coconut-grove/">Coconut Grove</a></li>
-            <li><a href="/location-midtown-miami/">Midtown Miami</a></li>
-          </ul>
-        </div>
-      </li>
-      <li class="lv-nav__item"><a class="lv-nav__link" href="/client-login/">Client Login</a></li>
-      <li class="lv-nav__item lv-nav__item--cta">
-        
-        <a class="lv-btn lv-btn--pill-light" href="/booking/" data-wp-link="booking">Book now</a>
-      </li>
-    </ul>
-  </nav>
-</header>
-
+
+
+
+<header class="lv-header lv-header--main" data-lv-header>
+
+  <!-- Announcement ticker. Figma draws one slide plus prev/next arrows;
+       the second slide uses the Midtown number from the comped footer.
+       See docs/SECTIONS-INFERRED.md -->
+  <div class="lv-announce">
+    <button class="lv-announce__arrow" type="button" data-announce="prev" aria-label="Previous announcement">
+      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+    </button>
+    <div class="lv-announce__viewport">
+      <p class="lv-announce__item is-active">Coconut Grove: (305) 204-6288</p>
+      <p class="lv-announce__item">Midtown Miami: (305) 850-7691</p>
+    </div>
+    <button class="lv-announce__arrow lv-announce__arrow--next" type="button" data-announce="next" aria-label="Next announcement">
+      <svg class="lv-icon lv-icon--chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+    </button>
+  </div>
+
+  <nav class="lv-nav" aria-label="Primary">
+
+    <!-- Mobile-only controls -->
+    <button class="lv-nav__burger" type="button" data-menu-open aria-expanded="false" aria-controls="lv-drawer" aria-label="Open menu">
+      <svg class="lv-icon lv-icon--menu" aria-hidden="true"><use href="#menu"></use></svg>
+    </button>
+
+    <a class="lv-nav__logo" href="/" aria-label="Lavish Laser MedSpa — home">
+      <img src="/wp-content/themes/lavish/assets/images/logo-umber@2x.png" alt="Lavish Laser MedSpa" width="301" height="148">
+    </a>
+
+    <a class="lv-nav__phone" href="tel:+13052046288" aria-label="Call Coconut Grove">
+      <svg class="lv-icon lv-icon--phone" aria-hidden="true"><use href="#phone"></use></svg>
+    </a>
+
+    
+    <ul class="lv-nav__group lv-nav__group--left">
+      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
+        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-treatments">
+          Treatments          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+        </button>
+                <div class="lv-dropdown lv-dropdown--mega" id="lv-dd-treatments" hidden>
+          <ul class="lv-dropdown__list">
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#skin-facials">Skin &amp; facials<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#hydrafacial">Hydrafacial</a></li>
+                <li><a href="/treatments/xerf/">XERF</a></li>
+                <li><a href="/treatments/bespoke/">Facials</a></li>
+                <li><a href="/treatments/laser-facials/">Laser Facials</a></li>
+                <li><a href="/treatments/rf-microneedling/">RF Microneedling</a></li>
+                <li><a href="/treatments/skinpen/">SkinPen</a></li>
+                <li><a href="/treatments/injectibles/">Injectables</a></li>
+                <li><a href="/treatments/prf-pdgf/">PRF &amp; PDGF</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#injectables">Injectables<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/treatments/injectibles/">Neurotoxins</a></li>
+                <li><a href="/treatments/injectibles/">Dermal Fillers</a></li>
+                <li><a href="/treatments/injectibles/">Biostimulators</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#body">Body<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/treatments/accufit/">Accufit</a></li>
+                <li><a href="/treatments/sofwave/">Sofwave</a></li>
+                <li><a href="/treatments/trusculpt-id/">truSculpt iD</a></li>
+                <li><a href="/treatments/venus-legacy/">Venus Legacy</a></li>
+                <li><a href="/treatments/laser-hair-removal/">Laser Hair Removal</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#hair-scalp">Hair &amp; scalp<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#hydrafacial-keravive">HydraFacial Keravive</a></li>
+                <li><a href="/all-treatments/#lutronic-ultralase-md">Lutronic UltraLase MD</a></li>
+                <li><a href="/treatments/prf-pdgf/">PRF for Hair &amp; Scalp</a></li>
+                              </ul>
+            </li>
+                        <li class="lv-mega__cat">
+              <a href="/all-treatments/#wellness">Wellness<svg class="lv-icon lv-icon--mega-chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg></a>
+              <ul class="lv-mega__sub">
+                <li><a href="/all-treatments/#iv-therapy">IV Therapy</a></li>
+                <li><a href="/all-treatments/#weight-management">Weight Management</a></li>
+                              </ul>
+            </li>
+                      </ul>
+          <a class="lv-dropdown__all lv-btn lv-btn--umber lv-btn--arrow" href="/all-treatments/">View all treatments<span class="lv-circle lv-circle--cream"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+        </div>
+      </li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/signature-protocols/">Signature Protocols</a></li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/memberships/">Memberships</a></li>
+    </ul>
+
+    
+    <ul class="lv-nav__group lv-nav__group--right">
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/results/">Results</a></li>
+      <li class="lv-nav__item lv-nav__item--has-menu" data-dropdown>
+        <button class="lv-nav__link" type="button" aria-expanded="false" aria-controls="lv-dd-locations">
+          Locations          <svg class="lv-icon lv-icon--caret" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>
+        </button>
+        <div class="lv-dropdown" id="lv-dd-locations" hidden>
+          <ul class="lv-dropdown__list">
+            <li><a href="/location-coconut-grove/">Coconut Grove</a></li>
+            <li><a href="/location-midtown-miami/">Midtown Miami</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="lv-nav__item"><a class="lv-nav__link" href="/client-login/">Client Login</a></li>
+      <li class="lv-nav__item lv-nav__item--cta">
+        
+        <a class="lv-btn lv-btn--pill-light" href="/booking/" data-wp-link="booking">Book now</a>
+      </li>
+    </ul>
+  </nav>
+</header>
+
 <main class="lv-main lv-main--blog">
 
   <!-- ===== 01 BLOG DETAIL ARTICLE ===== -->
@@ -1539,6 +1580,7 @@
           <li class="lv-mob-only"><a href="/memberships/">Pricing</a></li>
           <li><a href="/blog/">Blog</a></li>
           <li><a href="/client-login/">Client login</a></li>
+          <li><a href="/contact/">Contact</a></li>
         </ul>
       </nav>
 
@@ -1607,10 +1649,10 @@
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/lavish/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
 </script>
 <script id="lv-sprite-js-before">
-window.LV = {"theme":"http:\/\/lavish.local\/wp-content\/themes\/lavish","ajax":"http:\/\/lavish.local\/wp-admin\/admin-ajax.php","nonce":"c0b7bbaffe"};
+window.LV = {"theme":"http:\/\/lavish.local\/wp-content\/themes\/lavish","ajax":"http:\/\/lavish.local\/wp-admin\/admin-ajax.php","nonce":"f555989b73"};
 //# sourceURL=lv-sprite-js-before
 </script>
 <script id="lv-sprite-js" src="/wp-content/themes/lavish/assets/js/sprite.js?ver=1790702209"></script>
-<script id="lv-main-js" src="/wp-content/themes/lavish/assets/js/main.js?ver=1791364296"></script>
+<script id="lv-main-js" src="/wp-content/themes/lavish/assets/js/main.js?ver=1791470257"></script>
 </body>
 </html>

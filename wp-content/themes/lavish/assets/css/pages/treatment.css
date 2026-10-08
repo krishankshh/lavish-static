@@ -8278,7 +8278,7 @@ img.lv-icon--area { object-fit: contain; }
 @media (min-width: 1024px) {
   /* injectibles: more air between the bio and the button; buttons line up across the three cards */
   .lv-pro__body { flex: none; min-height: calc(120 * var(--lv-u)); }
-  .lv-pro .lv-rev { margin-top: auto; }
+  .lv-pro .lv-rev { margin-top: auto; min-height: calc(237 * var(--lv-u)); }
   .lv-pro__cta { margin-bottom: calc(32 * var(--lv-u)); }
   .lv-pro__cta { margin-top: calc(44 * var(--lv-u)); }
 }
@@ -8397,3 +8397,13 @@ img.lv-icon--area { object-fit: contain; }
   /* italic numerals ride high in their ring: nudge to the centre */
   .lv-skinpen-step__num { box-sizing: border-box; padding-top: calc(6 * var(--lv-u)); }
 }
+
+/* "From the blog" (desktop-final-reviews): headline a little lower, date a little closer under it */
+@media (min-width: 1024px) {
+  .lv-post__title { margin-top: calc(24 * var(--lv-u)); }
+  .lv-post__date { margin-top: calc(16 * var(--lv-u)); }
+}
+
+/* SkinPen cards: eyebrow tag and "Great for" label are Inter Medium */
+.lv-skinpen-card__tag,
+.lv-skinpen-card__lbl { font-family: var(--lv-font-ui); font-weight: 500; }

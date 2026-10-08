@@ -533,7 +533,7 @@
   }
   /* Figma 79:1271 — Inter 600 12/140%, ls 10%, espresso @ 60% */
   .lv-main--blog .lv-bcard__date {
-    margin-top: calc(8 * var(--lv-u));
+    margin-top: calc(28 * var(--lv-u));
     font-size: calc(12 * var(--lv-u));
     line-height: 1.4;
     letter-spacing: 0.1em;

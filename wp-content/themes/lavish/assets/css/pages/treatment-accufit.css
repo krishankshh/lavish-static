@@ -252,7 +252,7 @@
   .lv-accufit .lv-intro__img { aspect-ratio: auto; height: calc(377 * var(--lv-u)); object-fit: cover; }
   .lv-accufit .lv-accu-team__media video { border-radius: calc(12 * var(--lv-u)); }
   .lv-accufit .lv-accu-exp__media video { aspect-ratio: 1200 / 550; border-radius: calc(22 * var(--lv-u)); }
-  .lv-accufit .lv-accu-rcard__btn svg { width: calc(13 * var(--lv-u)); height: calc(13 * var(--lv-u)); }
+  .lv-accufit .lv-accu-rcard__btn svg { width: calc(25 * var(--lv-u)); height: calc(25 * var(--lv-u)); } /* comp: 21px arrow box in the 48px disc */
 }
 
 /* mobile review: arrows scroll the rail, which never moves vertically; stat cells breathe;

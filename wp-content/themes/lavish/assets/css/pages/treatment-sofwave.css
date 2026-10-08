@@ -106,3 +106,22 @@
 
 /* mobile review: the "All skin types" glyph is a filled shape; the base .lv-icon outline made it heavy */
 .lv-sofwave .lv-arealist li:nth-child(3) .lv-icon--area { fill: currentColor; stroke: none; }
+
+/* before/after: four cards scroll sideways, three in view, arrows underneath (desktop review) */
+@media (min-width: 1024px) {
+  .lv-sofwave .lv-results .lv-results__grid {
+    display: flex;
+    gap: calc(32 * var(--lv-u));
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+  .lv-sofwave .lv-results .lv-results__grid::-webkit-scrollbar { display: none; }
+  .lv-sofwave .lv-results .lv-ba { flex: none; width: calc((100% - 64 * var(--lv-u)) / 3); scroll-snap-align: start; }
+}
+@media (max-width: 1023px) {
+  .lv-sofwave .lv-results__nav { display: none; }
+}
+.lv-sofwave .lv-results__nav .lv-rail__btn .lv-icon { width: calc(10 * var(--lv-u)); height: calc(10 * var(--lv-u)); fill: currentColor; stroke: none; transform: none; }
+.lv-sofwave .lv-results__nav .lv-rail__btn:not(.lv-rail__btn--prev) .lv-icon { transform: rotate(180deg); }

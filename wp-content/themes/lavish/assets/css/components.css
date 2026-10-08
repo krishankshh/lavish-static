@@ -1940,6 +1940,7 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 @media (min-width: 1024px) {
   .lv-faq__grid > .lv-faq__img-wrap,
   .lv-faq__grid > picture,
+  .lv-faq__grid > picture > .lv-faq__img,
   .lv-faq__grid > .lv-faq__img {
     position: sticky;
     top: calc(32 * var(--lv-u));
@@ -1952,7 +1953,7 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
    ========================================================================== */
 /* protocol "Includes" ticks: one centred check-circle glyph (Material check_circle) */
 .lv-proto__body li::before {
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='2 2 20 20'%3E%3Cpath d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z' fill='%239B633F'/%3E%3Cpath d='M10 17l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z' fill='%23FAF8F5'/%3E%3C/svg%3E") center / contain no-repeat;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='1.66 1.66 12.68 12.68'%3E%3Cpath d='M7.05123 9.42823L5.50256 7.8794C5.41023 7.78717 5.29417 7.73995 5.1544 7.73773C5.01473 7.73562 4.89656 7.78284 4.7999 7.8794C4.70334 7.97606 4.65506 8.09317 4.65506 8.23073C4.65506 8.36828 4.70334 8.4854 4.7999 8.58206L6.6294 10.4116C6.74995 10.532 6.89056 10.5922 7.05123 10.5922C7.2119 10.5922 7.35251 10.532 7.47306 10.4116L11.1821 6.70256C11.2743 6.61023 11.3215 6.49417 11.3237 6.3544C11.3258 6.21473 11.2786 6.09656 11.1821 5.9999C11.0854 5.90334 10.9683 5.85506 10.8307 5.85506C10.6932 5.85506 10.5761 5.90334 10.4794 5.9999L7.05123 9.42823ZM7.99856 14.3307C7.12256 14.3307 6.29917 14.1645 5.5284 13.8321C4.75762 13.4996 4.08717 13.0485 3.51706 12.4786C2.94695 11.9087 2.49556 11.2385 2.1629 10.4681C1.83034 9.69762 1.66406 8.87445 1.66406 7.99856C1.66406 7.12256 1.83028 6.29917 2.16273 5.5284C2.49517 4.75762 2.94634 4.08717 3.51623 3.51706C4.08612 2.94695 4.75628 2.49556 5.52673 2.1629C6.29717 1.83034 7.12034 1.66406 7.99623 1.66406C8.87223 1.66406 9.69562 1.83028 10.4664 2.16273C11.2372 2.49517 11.9076 2.94634 12.4777 3.51623C13.0478 4.08612 13.4992 4.75628 13.8319 5.52673C14.1645 6.29717 14.3307 7.12034 14.3307 7.99623C14.3307 8.87223 14.1645 9.69562 13.8321 10.4664C13.4996 11.2372 13.0485 11.9076 12.4786 12.4777C11.9087 13.0478 11.2385 13.4992 10.4681 13.8319C9.69762 14.1645 8.87445 14.3307 7.99856 14.3307Z' fill='%239B633F'/%3E%3C/svg%3E") center / contain no-repeat;
   border-radius: 0;
 }
 .lv-proto__body li::after { display: none; }
@@ -1980,3 +1981,73 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 
 /* light pages that used the alt bar keep its cream ground */
 .lv-body--light-alt .lv-header--main { background: var(--lv-cream); }
+
+/* =========================================================
+   MEGA MENU — desktop Treatments dropdown (Figma "Mega menu")
+   Categories left; the hovered category's treatments open as a
+   second column. Mobile keeps the drawer (main.js strips .lv-mega__sub).
+   ========================================================= */
+
+@media (min-width: 1024px) {
+  .lv-dropdown--mega {
+    left: calc(-24 * var(--lv-u));   /* panel x=24, link x=48 */
+    width: calc(240 * var(--lv-u));
+    padding: calc(24 * var(--lv-u));
+    border-radius: calc(16 * var(--lv-u));
+    transition: opacity var(--lv-dur-fast) var(--lv-ease),
+                translate var(--lv-dur-fast) var(--lv-ease),
+                width var(--lv-dur-fast) var(--lv-ease);
+  }
+
+  .lv-dropdown--mega:has(.lv-mega__cat:hover, .lv-mega__cat:focus-within) { width: calc(432 * var(--lv-u)); }
+
+  .lv-dropdown--mega .lv-dropdown__list {
+    width: calc(192 * var(--lv-u));
+    padding-bottom: calc(8 * var(--lv-u));
+    border-bottom: 1px solid rgba(36, 29, 26, 0.2);
+  }
+
+  .lv-dropdown--mega .lv-dropdown__list a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: calc(7 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+    line-height: 1.4;
+  }
+
+  .lv-mega__cat:hover > a,
+  .lv-mega__cat:focus-within > a { color: var(--lv-terracotta); }
+
+  .lv-icon--mega-chev {
+    width: calc(10 * var(--lv-u));
+    height: calc(10 * var(--lv-u));
+    fill: currentColor;
+    stroke: none;
+    rotate: 180deg;
+    flex: none;
+  }
+
+  .lv-mega__sub {
+    position: absolute;
+    top: calc(24 * var(--lv-u));
+    left: calc(240 * var(--lv-u));
+    display: none;
+    padding-left: calc(24 * var(--lv-u));
+  }
+
+  .lv-mega__cat:hover > .lv-mega__sub,
+  .lv-mega__cat:focus-within > .lv-mega__sub { display: block; }
+
+  .lv-dropdown--mega .lv-dropdown__all {
+    display: inline-flex;
+    width: auto;
+    margin-top: calc(29 * var(--lv-u));
+    padding: calc(6 * var(--lv-u)) calc(6 * var(--lv-u)) calc(6 * var(--lv-u)) calc(20 * var(--lv-u));
+    border-top: 0;
+    font-size: calc(14 * var(--lv-u));
+    color: var(--lv-cream);
+  }
+
+  .lv-dropdown--mega .lv-dropdown__all:hover { color: var(--lv-cream); }
+}

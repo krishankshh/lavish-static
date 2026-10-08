@@ -513,14 +513,9 @@
 /* fewer cards than fit (Hair & Scalp, Wellness): centre the row; a full row still scrolls from the start */
 .lv-svc__track { justify-content: safe center; }
 
-@media (min-width: 1024px) {
-  /* hover copy runs a little wider so the comp's line breaks hold */
-  .lv-svc__card p { right: calc(28 * var(--lv-u)); white-space: nowrap; }
-}
-
-/* Mobile: heading and copy stack in normal flow so a long description pushes the
-   heading up instead of overlapping it; heading-to-copy gap is a fixed 18px. */
-@media (max-width: 1023.98px) {
+/* Heading and copy stack in normal flow (all widths) so a long description pushes the
+   heading up instead of overlapping it or the arrow; heading-to-copy gap is a fixed 18px. */
+@media all {
   .lv-svc__card { display: flex; flex-direction: column; justify-content: flex-end; padding: 0 calc(16 * var(--lv-u)) calc(24 * var(--lv-u)); }
   .lv-svc__card h3 { position: static; transform: none !important; }
   .lv-svc__card p {
@@ -537,4 +532,9 @@
   .lv-svc__card:focus-visible p,
   .lv-svc__card.is-active p { max-height: calc(160 * var(--lv-u)); margin-top: calc(18 * var(--lv-u)); opacity: 1; transform: none; }
   .lv-svc__card:hover, .lv-svc__card:focus-visible, .lv-svc__card.is-active { padding-bottom: calc(20 * var(--lv-u)); }
+  .lv-svc__card p br { display: none; }
+}
+
+@media (min-width: 1024px) {
+  .lv-svc__card p { padding-right: calc(48 * var(--lv-u)); font-size: calc(12 * var(--lv-u)); }
 }

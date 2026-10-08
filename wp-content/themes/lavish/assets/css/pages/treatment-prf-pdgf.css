@@ -214,7 +214,7 @@
   .lv-prf-side__card--light .lv-prf-step:nth-child(2) p { max-width: calc(233 * var(--lv-u)); }
   .lv-prf-side__card--light .lv-prf-step:nth-child(3) p { max-width: calc(226 * var(--lv-u)); }
 }
-.lv-prf-card__list svg { transform: scale(0.82); } /* check glyph is ~80% of its Figma bounding box */
+.lv-prf-card__list svg { transform: scale(0.82); stroke: none; overflow: visible; } /* check glyph is ~80% of its Figma bounding box */
 
 /* prf-pdgf-reviews fixes */
 /* hairline icons: the --hl symbols draw a non-scaling stroke, so this is the real line width */
