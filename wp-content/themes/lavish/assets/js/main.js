@@ -978,6 +978,15 @@
           var isOpen = item.classList.contains('lv-concern--open');
           items.forEach(function (other) { other.classList.remove('lv-concern--open'); });
           if (!isOpen) item.classList.add('lv-concern--open');
+          // each concern has its own before / after pair
+          if (!isOpen && item.dataset.baBefore) {
+            var before = sec.querySelector('.lv-ba__before');
+            var after = sec.querySelector('.lv-ba__after');
+            var cap = sec.querySelector('.lv-concerns__caption');
+            if (before) before.src = item.dataset.baBefore;
+            if (after) after.src = item.dataset.baAfter;
+            if (cap && item.dataset.baCaption) cap.textContent = item.dataset.baCaption;
+          }
         });
       });
     });
