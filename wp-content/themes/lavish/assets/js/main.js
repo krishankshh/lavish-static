@@ -893,20 +893,6 @@
      --------------------------------------------------------- */
   /* Recommended tiles on small screens: first tap opens the tile and its
      button, the button (or a second tap) follows the link. */
-  /* LHR nearby clinics (mobile): tapping a clinic opens its "Get directions" button */
-  function initClinicTap(root) {
-    var mq = window.matchMedia('(max-width: 1023px)');
-    root.querySelectorAll('.lv-clinics--hover').forEach(function (sec) {
-      var cards = sec.querySelectorAll('.lv-clinic');
-      cards.forEach(function (card) {
-        card.addEventListener('click', function (e) {
-          if (!mq.matches || e.target.closest('a')) return;
-          cards.forEach(function (c) { c.classList.toggle('is-open', c === card); });
-        });
-      });
-    });
-  }
-
   function initTileTap(root) {
     var mq = window.matchMedia('(max-width: 1023px)');
     root.querySelectorAll('.lv-tiles--inj .lv-tile, .lv-related--tap .lv-rcard').forEach(function (tile) {
@@ -1098,7 +1084,6 @@
     initLocationServices(root);
     initTareas(root);
     initTileTap(root);
-    initClinicTap(root);
     initConcerns(root);
   }
 

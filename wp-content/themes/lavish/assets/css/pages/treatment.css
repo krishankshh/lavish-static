@@ -8197,11 +8197,8 @@ img.lv-icon--area { object-fit: contain; }
   .lv-clinics--hover .lv-clinics__grid:has(.lv-clinic:not(.lv-clinic--wide):focus-within) .lv-clinic--wide .lv-clinic__cta { opacity: 0; visibility: hidden; }
 }
 @media (max-width: 1023px) {
-  /* tap a clinic to open its directions button; the other one closes (same idea as the desktop hover) */
-  .lv-clinic__cta--hover,
-  .lv-clinics--hover .lv-clinic:not(.is-open) .lv-clinic__cta { display: none; }
-  .lv-clinics--hover .lv-clinic.is-open .lv-clinic__cta { display: inline-flex; }
-  .lv-clinics--hover .lv-clinic:not(.is-open) .lv-clinic__panel { padding-bottom: calc(24 * var(--lv-u)); }
+  /* mobile: both clinics always show their "Get directions" button */
+  .lv-clinic__cta--hover { display: inline-flex; }
 }
 
 /* ==========================================================================
