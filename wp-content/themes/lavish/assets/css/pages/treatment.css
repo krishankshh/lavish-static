@@ -4809,7 +4809,7 @@ img.lv-icon--area { object-fit: contain; }
 @media (min-width: 1024px) {
   .lv-join { height: calc(533 * var(--lv-u)); }
 
-  .lv-join__inner { padding-top: calc(97 * var(--lv-u)); }
+  .lv-join__inner { padding: calc(97 * var(--lv-u)) calc(48 * var(--lv-u)) 0; }   /* 16px is the phone gutter; desktop uses the page's 48px */
 
   .lv-join__title {
     margin-top: calc(35 * var(--lv-u));
@@ -8439,3 +8439,9 @@ img.lv-icon--area { object-fit: contain; }
   /* tiles with a two-line headline: the button sits a little higher */
   .lv-tiles--inj .lv-tile.is-active.is-2l .lv-tile__more { margin-top: calc(10 * var(--lv-u)); }
 }
+
+/* Results gallery: photos come in mixed ratios, so show each one whole (natural height)
+   instead of cropping it into the 395:468 comp frame. */
+.lv-results--gallery .lv-results__grid { align-items: start; }
+.lv-results--gallery .lv-ba__frame img.lv-ba__before { aspect-ratio: auto; height: auto; object-fit: contain; }
+.lv-results--gallery .lv-ba--reveal .lv-ba__frame .lv-ba__after { object-fit: cover; }

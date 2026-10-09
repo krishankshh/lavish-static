@@ -105,7 +105,7 @@
 .lv-sofwave .lv-ba__tag { padding: calc(6.5 * var(--lv-u)) calc(8 * var(--lv-u)); line-height: 1; }
 
 /* mobile review: the "All skin types" glyph is a filled shape; the base .lv-icon outline made it heavy */
-.lv-sofwave .lv-arealist li:nth-child(3) .lv-icon--area { fill: currentColor; stroke: none; }
+/* 3rd icon: the sprite's wrinkle-1 is the comp's own artwork (hairline cream strokes), drawn as-is */
 
 /* before/after: four cards scroll sideways, three in view, arrows underneath (desktop review) */
 @media (min-width: 1024px) {

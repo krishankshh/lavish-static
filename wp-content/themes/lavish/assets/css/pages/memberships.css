@@ -1703,9 +1703,9 @@
 /* pointers sit on the card floor so every card's list lines up whatever its copy length */
 .lv-mcard__list { margin-top: auto; padding-top: calc(24 * var(--lv-u)); }
 
-/* tags: medium eyebrow, a touch more icon weight */
+/* tags: medium eyebrow; icons are plain fills (the inherited stroke and a glow filter made them look outlined and soft) */
 .lv-mcard__badge { font-weight: 500; }
-.lv-mcard__badge .lv-icon { filter: drop-shadow(0 0 0.4px currentColor) drop-shadow(0 0 0.4px currentColor); }
+.lv-mcard__badge .lv-icon { stroke: none; filter: none; }
 
 @media (min-width: 1024px) {
   /* comp: 16px copy, 16px ticks, rows 36px apart; same line count keeps every list level */

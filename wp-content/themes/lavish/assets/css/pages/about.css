@@ -744,9 +744,11 @@
     max-width: calc(750 * var(--lv-u));
     margin-inline: auto;
   }
+  /* full-bleed: break out of the section's centred container so the strip runs edge to edge at any width */
   .lv-gallery {
     margin-top: calc(64 * var(--lv-u));
-    margin-inline: calc(-48 * var(--lv-u));
+    width: 100vw;
+    margin-inline: calc(50% - 50vw);
   }
   .lv-gallery__track {
     align-items: flex-end;
