@@ -4774,7 +4774,7 @@ img.lv-icon--area { object-fit: contain; }
 
 .lv-join__inner {
   position: relative;
-  padding: calc(68 * var(--lv-u)) calc(16 * var(--lv-u)) 0;
+  padding: calc(68 * var(--lv-u)) 0 0;
 }
 
 .lv-join__eyebrow { justify-content: center; color: var(--lv-cream); }
@@ -4809,7 +4809,7 @@ img.lv-icon--area { object-fit: contain; }
 @media (min-width: 1024px) {
   .lv-join { height: calc(533 * var(--lv-u)); }
 
-  .lv-join__inner { padding: calc(97 * var(--lv-u)) calc(48 * var(--lv-u)) 0; }   /* 16px is the phone gutter; desktop uses the page's 48px */
+  .lv-join__inner { padding-top: calc(97 * var(--lv-u)); }
 
   .lv-join__title {
     margin-top: calc(35 * var(--lv-u));

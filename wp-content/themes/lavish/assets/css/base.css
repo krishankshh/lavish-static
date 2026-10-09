@@ -209,7 +209,7 @@ ul, ol {
     --lv-edge: calc((100vw - 1440px) / 2);
   }
 
-  main > section:not(.lv-hero, .lv-phero, .lv-mlocband, .lv-cta, .lv-cloc),
+  main > section:not(.lv-hero, .lv-phero, .lv-mlocband, .lv-cta, .lv-cloc, .lv-join),
   main > article,
   main > div:not(.lv-marquee, .lv-band, .lv-cbanner-wrap),
   footer.lv-footer {
