@@ -893,6 +893,20 @@
      --------------------------------------------------------- */
   /* Recommended tiles on small screens: first tap opens the tile and its
      button, the button (or a second tap) follows the link. */
+  /* LHR nearby clinics (mobile): tapping a clinic opens its "Get directions" button */
+  function initClinicTap(root) {
+    var mq = window.matchMedia('(max-width: 1023px)');
+    root.querySelectorAll('.lv-clinics--hover').forEach(function (sec) {
+      var cards = sec.querySelectorAll('.lv-clinic');
+      cards.forEach(function (card) {
+        card.addEventListener('click', function (e) {
+          if (!mq.matches || e.target.closest('a')) return;
+          cards.forEach(function (c) { c.classList.toggle('is-open', c === card); });
+        });
+      });
+    });
+  }
+
   function initTileTap(root) {
     var mq = window.matchMedia('(max-width: 1023px)');
     root.querySelectorAll('.lv-tiles--inj .lv-tile, .lv-related--tap .lv-rcard').forEach(function (tile) {
@@ -901,6 +915,8 @@
         e.preventDefault();
         tile.parentElement.querySelectorAll('.is-active').forEach(function (t) { t.classList.remove('is-active'); });
         tile.classList.add('is-active');
+        var ttl = tile.querySelector('.lv-tile__title');
+        if (ttl) tile.classList.toggle('is-2l', ttl.offsetHeight > 1.6 * (parseFloat(getComputedStyle(ttl).lineHeight) || ttl.offsetHeight));
       });
     });
   }
@@ -1082,6 +1098,7 @@
     initLocationServices(root);
     initTareas(root);
     initTileTap(root);
+    initClinicTap(root);
     initConcerns(root);
   }
 

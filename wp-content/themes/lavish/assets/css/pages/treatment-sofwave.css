@@ -125,3 +125,8 @@
 }
 .lv-sofwave .lv-results__nav .lv-rail__btn .lv-icon { width: calc(10 * var(--lv-u)); height: calc(10 * var(--lv-u)); fill: currentColor; stroke: none; transform: none; }
 .lv-sofwave .lv-results__nav .lv-rail__btn:not(.lv-rail__btn--prev) .lv-icon { transform: rotate(180deg); }
+
+/* mobile: the 3rd icon is the comp's 20px glyph, not a 26px one (it read bold) */
+@media (max-width: 1023px) {
+  .lv-sofwave .lv-arealist li:nth-child(3) .lv-icon--area { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
+}

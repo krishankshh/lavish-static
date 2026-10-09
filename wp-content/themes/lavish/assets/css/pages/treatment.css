@@ -8197,7 +8197,11 @@ img.lv-icon--area { object-fit: contain; }
   .lv-clinics--hover .lv-clinics__grid:has(.lv-clinic:not(.lv-clinic--wide):focus-within) .lv-clinic--wide .lv-clinic__cta { opacity: 0; visibility: hidden; }
 }
 @media (max-width: 1023px) {
-  .lv-clinic__cta--hover { display: none; }
+  /* tap a clinic to open its directions button; the other one closes (same idea as the desktop hover) */
+  .lv-clinic__cta--hover,
+  .lv-clinics--hover .lv-clinic:not(.is-open) .lv-clinic__cta { display: none; }
+  .lv-clinics--hover .lv-clinic.is-open .lv-clinic__cta { display: inline-flex; }
+  .lv-clinics--hover .lv-clinic:not(.is-open) .lv-clinic__panel { padding-bottom: calc(24 * var(--lv-u)); }
 }
 
 /* ==========================================================================
@@ -8407,3 +8411,34 @@ img.lv-icon--area { object-fit: contain; }
 /* SkinPen cards: eyebrow tag and "Great for" label are Inter Medium */
 .lv-skinpen-card__tag,
 .lv-skinpen-card__lbl { font-family: var(--lv-font-ui); font-weight: 500; }
+
+
+/* ==========================================================================
+   Treatment pages — mobile final review
+   ========================================================================== */
+.lv-pros .lv-rail__btn { background: transparent; }
+
+@media (max-width: 1023.98px) {
+  /* XERF protocol: eyebrow -> headline 32, headline -> photo 32; arrows -> clip 80 */
+  .lv-sig__title { margin-top: calc(32 * var(--lv-u)); }
+  .lv-sig__pic img { margin-top: calc(32 * var(--lv-u)); }
+  .lv-sig__video { margin-top: calc(64 * var(--lv-u)); }
+
+  /* Laser Facials: arrows -> clip 70 */
+  .lv-offers--lf { padding-bottom: 0; }
+  .lv-team--lf .lv-team__media { margin-top: calc(54 * var(--lv-u)); }
+
+  /* related cards open on tap (first tap shows "Learn more", second follows the link) */
+  .lv-related--tap .lv-rcard:hover:not(.is-active) { background: var(--lv-cream); color: var(--lv-espresso); translate: none; }
+  .lv-related--tap .lv-rcard:not(.is-active) .lv-btn {
+    max-height: 0; margin-top: 0; margin-bottom: 0; padding-block: 0; border-block-width: 0; opacity: 0;
+  }
+  .lv-related--tap .lv-rcard.is-active { background: var(--lv-terracotta); color: var(--lv-cream); translate: none; height: auto; padding-bottom: calc(24 * var(--lv-u)); }
+  .lv-related--tap .lv-rcard.is-active .lv-btn {
+    max-height: calc(60 * var(--lv-u)); margin-top: calc(20 * var(--lv-u));
+    padding-block: calc(6 * var(--lv-u)); border-block-width: 1px; opacity: 1;
+  }
+
+  /* tiles with a two-line headline: the button sits a little higher */
+  .lv-tiles--inj .lv-tile.is-active.is-2l .lv-tile__more { margin-top: calc(10 * var(--lv-u)); }
+}
