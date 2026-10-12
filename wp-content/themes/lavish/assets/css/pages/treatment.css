@@ -8665,3 +8665,23 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
 }
 .lv-prf-vamp__video { border-radius: calc(12 * var(--lv-u)); }
 @media (min-width: 1024px) { .lv-prf-vamp__video { border-radius: calc(16 * var(--lv-u)); } }
+
+/* ---- Accufit review round ---- */
+.lv-accu-team__media { position: relative; }
+.lv-accu-team__video { display: block; width: 100%; aspect-ratio: 1 / 1; border-radius: calc(12 * var(--lv-u)); object-fit: cover; background: var(--lv-muted); }
+
+/* What it does: cards lift on hover */
+.lv-accu-card { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-accu-card:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.16); }
+}
+
+/* Related cards: the lift was snappy (fast token); slow it down and ease the photo in */
+.lv-accu-rcard { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-accu-rcard:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.18); }
+.lv-accu-rcard__pic img { transition: transform 1s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-accu-rcard:hover .lv-accu-rcard__pic img { transform: scale(1.04); }
+@media (prefers-reduced-motion: reduce) {
+  .lv-accu-card, .lv-accu-rcard, .lv-accu-rcard__pic img { transition: none; }
+  .lv-accu-card:hover, .lv-accu-rcard:hover, .lv-accu-rcard:hover .lv-accu-rcard__pic img { transform: none; }
+}
