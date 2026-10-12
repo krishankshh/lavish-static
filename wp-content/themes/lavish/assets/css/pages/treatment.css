@@ -8742,3 +8742,15 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   .lv-vl-how .lv-area, .lv-vl-how .lv-area .lv-step { transition: none; }
   .lv-vl-how .lv-area:hover, .lv-vl-how .lv-area:hover .lv-step { transform: none; }
 }
+
+/* Laser Hair Removal: treatment-area tiles lift on hover, photo eases in */
+.lv-zone { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-zone img { transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .lv-zone:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.18); }
+  .lv-zone:hover img { transform: scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-zone, .lv-zone img { transition: none; }
+  .lv-zone:hover, .lv-zone:hover img { transform: none; }
+}

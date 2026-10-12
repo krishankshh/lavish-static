@@ -2185,7 +2185,7 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 /* Marquee: seamless forever-loop. The track holds three identical groups; each group
    carries its own trailing gap, so shifting by exactly one group (-33.333%) lands on the
    same picture and the restart is invisible, at any viewport width. */
-.lv-marquee .lv-marquee__track {
+.lv-marquee .lv-marquee__track:has(> .lv-marquee__group) {
   gap: 0;
   translate: 0 0;
   animation: lv-marquee-loop 34s linear infinite;
@@ -2201,11 +2201,11 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
   to   { transform: translateX(-33.3333%); }
 }
 @media (min-width: 1024px) {
-  .lv-marquee .lv-marquee__track { animation: lv-marquee-loop 40s linear infinite; }
+  .lv-marquee .lv-marquee__track:has(> .lv-marquee__group) { animation: lv-marquee-loop 40s linear infinite; }
   .lv-marquee__group { gap: calc(76 * var(--lv-u)); padding-right: calc(76 * var(--lv-u)); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .lv-marquee .lv-marquee__track { animation: none; }
+  .lv-marquee .lv-marquee__track:has(> .lv-marquee__group) { animation: none; }
 }
 
 /* Protocol rails: keep each card (and its photo) on its own compositor layer so the photos
