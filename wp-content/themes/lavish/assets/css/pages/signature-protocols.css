@@ -21,16 +21,19 @@
 .lv-shero__img-wrap {
   order: 1;
   width: 100%;
-  aspect-ratio: 328 / 319;
+  aspect-ratio: 328 / 290;
   border-radius: calc(12 * var(--lv-u));
   overflow: hidden;
   background: rgba(36, 29, 26, 0.05);
 }
 
 .lv-shero__img {
-  width: 100%;
+  /* a touch wider than the frame and anchored left: the crop moves left (more of the device, a little less of the right eye) */
+  width: 106%;
+  max-width: none;
   height: 100%;
   object-fit: cover;
+  object-position: 0% 38%;
   display: block;
 }
 
@@ -90,7 +93,7 @@
 
   .lv-shero__img-wrap {
     order: 2;
-    aspect-ratio: 672 / 510;
+    aspect-ratio: 672 / 450;
   }
 
   .lv-shero__title {
