@@ -8519,3 +8519,13 @@ img.lv-icon--area { object-fit: contain; }
 .lv-vplay svg { width: 32%; height: 32%; fill: currentColor; margin-left: 6%; }
 .lv-vplay:hover { transform: scale(1.08); background: var(--lv-cream); }
 .lv-vplay[hidden] { display: none; }
+
+/* Laser Facials "Our offerings": cards lift on hover (desktop rail is overflow-visible) */
+.lv-offers--lf .lv-offer { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-offers--lf .lv-offer:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.18); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-offers--lf .lv-offer { transition: none; }
+  .lv-offers--lf .lv-offer:hover { transform: none; }
+}
