@@ -8529,3 +8529,21 @@ img.lv-icon--area { object-fit: contain; }
   .lv-offers--lf .lv-offer { transition: none; }
   .lv-offers--lf .lv-offer:hover { transform: none; }
 }
+
+/* RF: comparison heading, then the "Why Lavish chooses Secret RF" panel, then the table */
+.lv-diff--head { padding-bottom: 0; }
+.lv-diff--table { padding-top: 0; }
+@media (min-width: 1024px) {
+  .lv-diff--head { padding-bottom: 0; }
+  .lv-diff--table { padding-top: calc(60 * var(--lv-u)); }
+}
+
+/* How it works: cards lift on hover (desktop) */
+.lv-howto__card { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-howto__card:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-howto__card { transition: none; }
+  .lv-howto__card:hover { transform: none; }
+}

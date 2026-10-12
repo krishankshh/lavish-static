@@ -22,7 +22,7 @@
 <link rel='stylesheet' id='lv-tokens-css' href='/wp-content/themes/lavish/assets/css/tokens.css?ver=1789892881' media='all' />
 <link rel='stylesheet' id='lv-base-css' href='/wp-content/themes/lavish/assets/css/base.css?ver=1791588309' media='all' />
 <link rel='stylesheet' id='lv-components-css' href='/wp-content/themes/lavish/assets/css/components.css?ver=1791825261' media='all' />
-<link rel='stylesheet' id='lv-pages-treatment-css' href='/wp-content/themes/lavish/assets/css/pages/treatment.css?ver=1791828483' media='all' />
+<link rel='stylesheet' id='lv-pages-treatment-css' href='/wp-content/themes/lavish/assets/css/pages/treatment.css?ver=1791828636' media='all' />
 <link rel='stylesheet' id='lv-pages-treatment-rf-microneedling-css' href='/wp-content/themes/lavish/assets/css/pages/treatment-rf-microneedling.css?ver=1791363373' media='all' />
 <link rel="https://api.w.org/" href="/wp-json/" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="/xmlrpc.php?rsd" />
 <link rel="canonical" href="/treatments/rf-microneedling/" />
@@ -1384,12 +1384,10 @@
     <div class="lv-team__split">
       <div class="lv-team__media lv-reveal">
         
-        <video class="lv-team__video" poster="/wp-content/themes/lavish/assets/images/rf-team-poster.png"
-               data-poster-desktop="/wp-content/themes/lavish/assets/images/rf-team-poster.png"
-               data-poster-mobile="/wp-content/themes/lavish/assets/images/rf-m-team-poster.png"
-               autoplay muted loop playsinline preload="none">
-          <source src="/wp-content/themes/lavish/assets/video/rf-team.mp4" type="video/mp4">
-        </video>
+        <video class="lv-team__video" poster="/wp-content/themes/lavish/assets/images/rf-team-poster2.jpg" playsinline preload="metadata">
+          <source src="/wp-content/themes/lavish/assets/video/rf-team.mp4" type="video/mp4">
+        </video>
+        <button class="lv-vplay" type="button" aria-label="Play video"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5v13l11-6.5z"/></svg></button>
       </div>
 
       <div class="lv-team__copy">
@@ -1465,10 +1463,23 @@
   </section>
 
   <!-- ===== 04 Morpheus8 vs Secret RF (Figma D 1:7133 / M 1:10896) ===== -->
-  <section class="lv-diff lv-diff--rf">
+  <section class="lv-diff lv-diff--rf lv-diff--head">
     <p class="lv-eyebrow lv-eyebrow--terracotta lv-reveal"><span class="lv-eyebrow__num">04</span><span class="lv-eyebrow__rule" aria-hidden="true"></span>the difference</p>
-    <h2 class="lv-display lv-diff__title lv-reveal">Morpheus8 <em>vs</em> Secret RF</h2>
-
+    <h2 class="lv-display lv-diff__title lv-reveal">Morpheus8 <em>vs</em> Secret RF</h2>
+  </section>
+
+  <!-- ===== Why Lavish chooses Secret RF (Figma D 1:7222 / M 1:10933) ===== -->
+  <section class="lv-why lv-why--panel">
+    <div class="lv-why__panel lv-reveal">
+      <h2 class="lv-display lv-why__title">Why Lavish <br class="lv-br-mob">chooses <em>Secret RF</em></h2>
+      <!-- 1440 reads down the left column first: 1, 2 | 3, 4 -->
+      <ul class="lv-why__list">
+        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Precision depth control with multiple adjustable treatment depths, allowing providers to customize treatments to the appropriate layer of the skin.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Safe treatment for all skin types with highly customizable settings tailored to each individual.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Semi-insulated needle technology that delivers radiofrequency energy beneath the skin while protecting the surface.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Versatility across the face and body, making it an effective solution for everything from acne scars and fine lines to skin tightening and stretch marks.</span></li>      </ul>
+      <a class="lv-btn lv-btn--pill-cream lv-btn--arrow lv-why__cta" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--terracotta"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
+    </div>
+  </section>
+
+  <section class="lv-diff lv-diff--rf lv-diff--table">
     <div class="lv-cmp lv-cmp--rf lv-reveal">
       <table class="lv-cmp__table">
         <thead>
@@ -1490,21 +1501,8 @@
             <th scope="row">Comfort &amp; Downtime</th>
             <td>Comfortable, customizable treatments with minimal downtime</td>            <td>Often selected for more aggressive remodelling, which may involve increased discomfort and downtime</td>          </tr>          <tr>
             <th scope="row">Needle Design</th>
-            <td>Ultra-sharp gold-plated needles designed for precise RF delivery</td>            <td>Silicone-coated needles designed for deeper RF remodeling</td>          </tr>          <tr>
-            <th scope="row">Treatment Areas</th>
-            <td>Face, neck, chest, body, scars and stretch marks</td>            <td>Face and body</td>          </tr>        </tbody>
+            <td>Ultra-sharp gold-plated needles designed for precise RF delivery</td>            <td>Silicone-coated needles designed for deeper RF remodeling</td>          </tr>        </tbody>
       </table>
-    </div>
-  </section>
-
-  <!-- ===== Why Lavish chooses Secret RF (Figma D 1:7222 / M 1:10933) ===== -->
-  <section class="lv-why lv-why--panel">
-    <div class="lv-why__panel lv-reveal">
-      <h2 class="lv-display lv-why__title">Why Lavish <br class="lv-br-mob">chooses <em>Secret RF</em></h2>
-      <!-- 1440 reads down the left column first: 1, 2 | 3, 4 -->
-      <ul class="lv-why__list">
-        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Precision depth control with multiple adjustable treatment depths, allowing providers to customize treatments to the appropriate layer of the skin.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Safe treatment for all skin types with highly customizable settings tailored to each individual.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Semi-insulated needle technology that delivers radiofrequency energy beneath the skin while protecting the surface.</span></li>        <li><svg class="lv-icon lv-why__tick lv-hide-mobile" aria-hidden="true"><use href="#checkcircle"></use></svg><svg class="lv-icon lv-why__tick lv-hide-desktop" aria-hidden="true"><use href="#checkcircle-18x18"></use></svg><span>Versatility across the face and body, making it an effective solution for everything from acne scars and fine lines to skin tightening and stretch marks.</span></li>      </ul>
-      <a class="lv-btn lv-btn--pill-cream lv-btn--arrow lv-why__cta" href="/booking/" data-wp-link="booking">Book consultation<span class="lv-circle lv-circle--terracotta"><svg class="lv-icon lv-icon--arrow" aria-hidden="true"><use href="#arrow-insert"></use></svg></span></a>
     </div>
   </section>
 
@@ -1555,22 +1553,22 @@
         <div class="lv-acc" data-accordion data-accordion-single>
           <div class="lv-acc__item">
             <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-1">What is Secret RF?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-1"><p>Ask us at your consultation &mdash; our team will talk you through what to expect.</p></div>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-1"><p>Secret RF is an advanced RF microneedling treatment that combines tiny needles with radiofrequency energy to stimulate collagen production deep within the skin. It helps improve fine lines, acne scars, skin texture, and overall firmness for smoother, healthier-looking skin.</p></div>
           </div>          <div class="lv-acc__item">
             <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-2">How long does RF microneedling last?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-2"><p>Results can last 12–18 months or longer with proper skincare and occasional maintenance treatments.</p></div>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-2"><p>Results can last several months to a year or longer, depending on your skin, treatment plan, and natural aging process. Periodic maintenance treatments can help preserve your results over time.</p></div>
           </div>          <div class="lv-acc__item">
-            <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-3">What to expect after RF microneedling?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-3"><p>Ask us at your consultation &mdash; our team will talk you through what to expect.</p></div>
+            <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-3">What should I expect after RF microneedling?</button>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-3"><p>You may experience redness, swelling, and mild sensitivity for a few days following treatment. Some patients also notice temporary dryness or roughness as the skin heals. Most people can return to their normal activities within 24–48 hours, although full recovery varies.</p></div>
           </div>          <div class="lv-acc__item">
             <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-4">How many RF microneedling<br class="lv-br-mob"> treatments will I need?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-4"><p>Ask us at your consultation &mdash; our team will talk you through what to expect.</p></div>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-4"><p>Most patients benefit from a series of 3–4 treatments, typically spaced 4–6 weeks apart. Your provider will evaluate your skin and recommend a treatment plan based on your concerns and goals.</p></div>
           </div>          <div class="lv-acc__item">
             <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-5">What is the RF microneedling<br class="lv-br-mob"> procedure like?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-5"><p>Ask us at your consultation &mdash; our team will talk you through what to expect.</p></div>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-5"><p>We start by applying a topical numbing cream to keep you comfortable. During treatment, tiny needles deliver radiofrequency energy beneath the skin to stimulate collagen production. You may feel mild pressure or warmth, and your provider will guide you through each step.</p></div>
           </div>          <div class="lv-acc__item">
-            <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-6">Do you offer financial assistance?</button>
-            <div class="lv-acc__panel" id="rf-microneedling-faq-6"><p>Ask us at your consultation &mdash; our team will talk you through what to expect.</p></div>
+            <button class="lv-acc__trigger" type="button" data-accordion-trigger aria-expanded="false" aria-controls="rf-microneedling-faq-6">Do you offer financing?</button>
+            <div class="lv-acc__panel" id="rf-microneedling-faq-6"><p>Yes! We offer flexible financing options through Cherry and CareCredit. Ask your provider during your consultation or our front desk team at checkout to learn more.</p></div>
           </div>        </div>
       </div>
     </div>
