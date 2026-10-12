@@ -850,3 +850,78 @@
 @media (max-width: 1023.98px) {
   .lv-lochero--baked .lv-lochero__overlay { display: none; }
 }
+
+/* Intro statement: no hard breaks; balanced so it settles on three lines on desktop */
+.lv-locintro__text { text-wrap: balance; }
+@media (min-width: 1024px) {
+  .lv-locintro__text { max-width: calc(1150 * var(--lv-u)); }
+}
+
+/* "What sets us apart": each column lifts a little; its numeral fills in */
+.lv-locwhy__item { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-locwhy__num, .lv-locwhy__heading { transition: background-color 0.35s ease, color 0.35s ease, border-color 0.35s ease; }
+@media (hover: hover) {
+  .lv-locwhy__item:hover { transform: translateY(calc(-8 * var(--lv-u))); }
+  .lv-locwhy__item:hover .lv-locwhy__num { background: var(--lv-terracotta); border-color: var(--lv-terracotta); color: var(--lv-cream); }
+  .lv-locwhy__item:hover .lv-locwhy__heading { color: var(--lv-terracotta); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-locwhy__item { transition: none; }
+  .lv-locwhy__item:hover { transform: none; }
+}
+
+/* Services spotlight copy: balanced lines so the three descriptions sit evenly */
+.lv-locservices__spotlight-desc { text-wrap: balance; }
+
+/* Virtual tour: not available yet, so the frame carries a "Coming soon" veil */
+.lv-loctour__frame::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(36, 29, 26, 0.45), rgba(36, 29, 26, 0.65));
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+.lv-loctour__soon {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: calc(14 * var(--lv-u));
+  color: var(--lv-cream);
+  text-align: center;
+}
+.lv-loctour__soon-tag {
+  padding: calc(8 * var(--lv-u)) calc(18 * var(--lv-u));
+  border: 1px solid rgba(250, 248, 245, 0.5);
+  border-radius: calc(60 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-weight: 600;
+  font-size: calc(10 * var(--lv-u));
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.lv-loctour__soon-title {
+  font-family: var(--lv-font-display);
+  font-style: italic;
+  font-weight: 200;
+  font-size: calc(32 * var(--lv-u));
+  line-height: 1.1;
+}
+.lv-loctour__soon-sub {
+  max-width: calc(280 * var(--lv-u));
+  font-family: var(--lv-font-body);
+  font-size: calc(12 * var(--lv-u));
+  line-height: 1.5;
+  opacity: 0.85;
+}
+@media (min-width: 1024px) {
+  .lv-loctour__soon-tag { font-size: calc(12 * var(--lv-u)); padding: calc(10 * var(--lv-u)) calc(22 * var(--lv-u)); }
+  .lv-loctour__soon-title { font-size: calc(56 * var(--lv-u)); }
+  .lv-loctour__soon-sub { max-width: calc(440 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+}
+.lv-loctour__soon-title, .lv-loctour__soon-sub { text-wrap: balance; }
+@media (min-width: 1024px) { .lv-loctour__soon-sub { max-width: calc(520 * var(--lv-u)); } }
