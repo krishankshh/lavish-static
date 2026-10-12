@@ -701,16 +701,23 @@
      and native controls, the button returns when it ends.
      --------------------------------------------------------- */
   function initClickPlay(root) {
+    var all = [];
     root.querySelectorAll('.lv-vplay').forEach(function (btn) {
       var video = btn.parentElement.querySelector('video');
       if (!video) return;
+      all.push({ video: video, btn: btn });
       btn.addEventListener('click', function () {
+        // one clip at a time: stop any other before this one starts
+        all.forEach(function (o) {
+          if (o.video !== video && !o.video.paused) o.video.pause();
+        });
         video.muted = false;
         video.controls = true;
         btn.hidden = true;
         video.play();
       });
       video.addEventListener('ended', function () { video.controls = false; btn.hidden = false; });
+      video.addEventListener('pause', function () { if (video.ended) return; });
     });
   }
 

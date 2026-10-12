@@ -8566,3 +8566,76 @@ img.lv-icon--area { object-fit: contain; }
   .lv-skinpen-card { transition: none; }
   .lv-skinpen-card:hover { transform: none; }
 }
+
+/* ==========================================================================
+   Injectables review round
+   ========================================================================== */
+
+/* Treatment areas: slimmer photo, top edge level with the headline (desktop) */
+@media (min-width: 1024px) {
+  .lv-tareas__media { margin-top: calc(-64 * var(--lv-u)); justify-self: end; }
+  .lv-tareas__media img { width: calc(580 * var(--lv-u)); height: calc(606 * var(--lv-u)); }
+}
+
+/* Pricing */
+.lv-iprice { padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u)) calc(72 * var(--lv-u)); background: var(--lv-cream); color: var(--lv-espresso); }
+.lv-iprice .lv-eyebrow { justify-content: center; }
+.lv-iprice__title { margin-top: calc(20 * var(--lv-u)); text-align: center; font-size: calc(36 * var(--lv-u)); line-height: 1.1; }
+.lv-iprice__title em { color: var(--lv-terracotta); }
+.lv-iprice__grid { display: grid; grid-template-columns: 1fr 1fr; gap: calc(12 * var(--lv-u)); margin-top: calc(32 * var(--lv-u)); }
+.lv-iprice__card {
+  display: flex; flex-direction: column; align-items: flex-start;
+  padding: calc(20 * var(--lv-u)) calc(16 * var(--lv-u));
+  background: #F6EFE7; border: 1px solid rgba(155, 99, 63, 0.18); border-radius: calc(12 * var(--lv-u));
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+/* the brand marks are cream-on-transparent for the umber ribbon; flatten them to espresso here */
+.lv-iprice__logo { height: calc(34 * var(--lv-u)); width: auto; max-width: 100%; object-fit: contain; object-position: left center; filter: brightness(0); opacity: 0.85; }
+.lv-iprice__price { display: flex; align-items: baseline; gap: calc(8 * var(--lv-u)); margin-top: calc(18 * var(--lv-u)); font-family: var(--lv-font-display); font-weight: 300; font-size: calc(32 * var(--lv-u)); line-height: 1; }
+.lv-iprice__price small { font-family: var(--lv-font-ui); font-weight: 600; font-size: calc(9 * var(--lv-u)); letter-spacing: 0.1em; text-transform: uppercase; color: var(--lv-terracotta); }
+.lv-iprice__rule { width: 100%; height: 0; margin: calc(14 * var(--lv-u)) 0 calc(12 * var(--lv-u)); border: 0; border-top: 1px solid rgba(36, 29, 26, 0.18); }
+.lv-iprice__desc { font-size: calc(12 * var(--lv-u)); line-height: 1.5; opacity: 0.85; }
+.lv-iprice__band { display: grid; gap: calc(12 * var(--lv-u)); margin-top: calc(12 * var(--lv-u)); padding: calc(24 * var(--lv-u)) calc(20 * var(--lv-u)); background: var(--lv-terracotta); color: var(--lv-cream); border-radius: calc(12 * var(--lv-u)); }
+.lv-iprice__band-title { font-family: var(--lv-font-display); font-weight: 200; font-size: calc(24 * var(--lv-u)); line-height: 1.15; }
+.lv-iprice__band-body { font-size: calc(12 * var(--lv-u)); line-height: 1.55; opacity: 0.95; }
+.lv-iprice__foot { display: grid; gap: calc(20 * var(--lv-u)); margin-top: calc(20 * var(--lv-u)); }
+.lv-iprice__note { font-size: calc(10 * var(--lv-u)); line-height: 1.5; opacity: 0.7; }
+.lv-iprice__cta { justify-self: start; }
+@media (min-width: 1024px) {
+  .lv-iprice { padding: calc(100 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-iprice__title { font-size: calc(64 * var(--lv-u)); margin-top: calc(24 * var(--lv-u)); }
+  .lv-iprice__grid { grid-template-columns: repeat(4, 1fr); gap: calc(20 * var(--lv-u)); margin-top: calc(56 * var(--lv-u)); }
+  .lv-iprice__card { padding: calc(32 * var(--lv-u)) calc(28 * var(--lv-u)) calc(36 * var(--lv-u)); border-radius: calc(16 * var(--lv-u)); }
+  .lv-iprice__logo { height: calc(48 * var(--lv-u)); }
+  .lv-iprice__price { margin-top: calc(28 * var(--lv-u)); font-size: calc(56 * var(--lv-u)); gap: calc(10 * var(--lv-u)); }
+  .lv-iprice__price small { font-size: calc(11 * var(--lv-u)); }
+  .lv-iprice__rule { margin: calc(22 * var(--lv-u)) 0 calc(18 * var(--lv-u)); }
+  .lv-iprice__desc { font-size: calc(15 * var(--lv-u)); }
+  .lv-iprice__band { grid-template-columns: calc(380 * var(--lv-u)) 1fr; align-items: center; gap: calc(48 * var(--lv-u)); margin-top: calc(20 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(40 * var(--lv-u)); border-radius: calc(16 * var(--lv-u)); }
+  .lv-iprice__band-title { font-size: calc(32 * var(--lv-u)); }
+  .lv-iprice__band-body { font-size: calc(15 * var(--lv-u)); }
+  .lv-iprice__foot { grid-template-columns: 1fr auto; align-items: center; gap: calc(48 * var(--lv-u)); margin-top: calc(28 * var(--lv-u)); }
+  .lv-iprice__note { font-size: calc(12 * var(--lv-u)); max-width: calc(800 * var(--lv-u)); }
+}
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-iprice__card:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.14); }
+}
+
+/* Professionals: cards lift; Google-style initial avatars */
+.lv-pro { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-pro:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.14); }
+}
+span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #fff; font-family: var(--lv-font-ui); font-weight: 500; font-size: calc(18 * var(--lv-u)); line-height: 1; }
+@media (min-width: 1024px) { span.lv-rev__avatar { font-size: calc(21 * var(--lv-u)); } }
+.lv-pros__grid .lv-pro:nth-child(2) picture img { object-position: 50% 12%; }
+@media (prefers-reduced-motion: reduce) {
+  .lv-pro, .lv-iprice__card { transition: none; }
+  .lv-pro:hover, .lv-iprice__card:hover { transform: none; }
+}
+
+/* Get to know your injectors: click-to-play cards, one plays at a time, rail stays put while it plays */
+.lv-expert { position: relative; flex: none; width: calc(209 * var(--lv-u)); height: calc(372 * var(--lv-u)); border-radius: calc(8 * var(--lv-u)); overflow: hidden; background: var(--lv-muted); scroll-snap-align: start; }
+@media (min-width: 1024px) { .lv-expert { width: calc(356 * var(--lv-u)); height: calc(633 * var(--lv-u)); border-radius: calc(12 * var(--lv-u)); } }
+.lv-expert__video { display: block; width: 100%; height: 100%; object-fit: cover; }
+.lv-experts__rail { overscroll-behavior-x: contain; scroll-behavior: smooth; }
