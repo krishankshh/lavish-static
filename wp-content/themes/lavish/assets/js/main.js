@@ -697,6 +697,31 @@
   }
 
   /* ---------------------------------------------------------
+     Booking placeholder: [data-booking-popup] opens a "coming soon" dialog
+     --------------------------------------------------------- */
+  function initBookingPopup(root) {
+    var triggers = root.querySelectorAll('[data-booking-popup]');
+    if (!triggers.length) return;
+    var pop = document.createElement('div');
+    pop.className = 'lv-bkpop';
+    pop.hidden = true;
+    pop.innerHTML =
+      '<div class="lv-bkpop__box" role="dialog" aria-modal="true" aria-labelledby="lv-bkpop-t">' +
+      '  <button class="lv-bkpop__close" type="button" aria-label="Close">&times;</button>' +
+      '  <h2 class="lv-bkpop__title" id="lv-bkpop-t">Bookings <em>coming soon</em></h2>' +
+      '  <p class="lv-bkpop__text">Online booking is on its way. Thank you for your patience.</p>' +
+      '  <button class="lv-btn lv-btn--umber" type="button">Close</button>' +
+      '</div>';
+    document.body.appendChild(pop);
+    var last = null;
+    function open(e) { e.preventDefault(); last = e.currentTarget; pop.hidden = false; pop.querySelector('.lv-bkpop__close').focus(); }
+    function close() { pop.hidden = true; if (last) last.focus(); }
+    triggers.forEach(function (t) { t.addEventListener('click', open); });
+    pop.addEventListener('click', function (e) { if (e.target === pop || e.target.closest('button')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) close(); });
+  }
+
+  /* ---------------------------------------------------------
      Category tabs — filter the cards in the following carousel
      --------------------------------------------------------- */
   function initTabs(root) {
@@ -1092,6 +1117,7 @@
     initForms(root);
     initCarousels(root);
     initTabs(root);
+    initBookingPopup(root);
     initBeforeAfter(root);
     initResultsNav(root);
     initHeroPoster(root);

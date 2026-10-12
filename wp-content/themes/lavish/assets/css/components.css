@@ -2213,3 +2213,15 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 .lv-proto__track { will-change: scroll-position; overscroll-behavior-x: contain; }
 .lv-proto__card { transform: translateZ(0); backface-visibility: hidden; contain: layout paint; }
 .lv-proto__img { backface-visibility: hidden; }
+
+/* Booking placeholder popup (booking itself is handled elsewhere) */
+.lv-bkpop[hidden] { display: none; }
+.lv-bkpop { position: fixed; inset: 0; z-index: 400; display: grid; place-items: center; padding: 16px; background: rgba(36, 29, 26, 0.6); backdrop-filter: blur(4px); animation: lv-bkpop-in 0.25s ease; }
+.lv-bkpop__box { position: relative; width: min(100%, 440px); padding: 48px 32px 36px; border-radius: 16px; background: var(--lv-cream); color: var(--lv-espresso); text-align: center; box-shadow: 0 24px 60px rgba(0, 0, 0, 0.35); }
+.lv-bkpop__tag { display: inline-block; padding: 7px 16px; border: 1px solid rgba(155, 99, 63, 0.4); border-radius: 60px; font-family: var(--lv-font-ui); font-weight: 600; font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; color: var(--lv-terracotta); }
+.lv-bkpop__title { margin-top: 18px; font-family: var(--lv-font-display); font-weight: 200; font-size: 36px; line-height: 1.1; }
+.lv-bkpop__title em { color: var(--lv-terracotta); }
+.lv-bkpop__text { margin-top: 12px; font-size: 15px; line-height: 1.5; opacity: 0.85; }
+.lv-bkpop__close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; font-size: 24px; line-height: 1; color: var(--lv-espresso); }
+.lv-bkpop .lv-btn { margin-top: 24px; }
+@keyframes lv-bkpop-in { from { opacity: 0; } to { opacity: 1; } }
