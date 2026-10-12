@@ -8725,3 +8725,8 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   .lv-area, .lv-area__icon, .lv-stat__k { transition: none; }
   .lv-area:hover, .lv-area:hover .lv-area__icon, .lv-stat:hover .lv-stat__k { transform: none; }
 }
+
+/* truSculpt iD: four before/after pairs sit four across on desktop */
+@media (min-width: 1024px) {
+  .lv-results__grid:has(> .lv-ba:nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); gap: calc(20 * var(--lv-u)); }
+}
