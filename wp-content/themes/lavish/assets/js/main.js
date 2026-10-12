@@ -684,6 +684,14 @@
         });
       }
       scroller().addEventListener('scroll', sync, { passive: true });
+      // category tabs hide/show cards and reset the rail: a scroll event is not guaranteed to follow,
+      // so re-evaluate the arrows whenever the rail's size changes or a tab asks for a reset
+      el.addEventListener('lv-carousel-reset', function () { scroller().scrollLeft = 0; sync(); });
+      if (window.ResizeObserver) {
+        var ro = new ResizeObserver(sync);
+        ro.observe(track);
+        ro.observe(scroller());
+      }
       sync();
     });
   }
@@ -707,10 +715,9 @@
             scope.querySelectorAll('[data-tab-cat]').forEach(function (card) {
               card.hidden = Boolean(cat && card.dataset.tabCat !== cat);
             });
-            var sc = rail.parentElement && rail.parentElement.hasAttribute('data-carousel') ? rail.parentElement : rail;
-            sc.scrollLeft = 0;
-            var ev = new Event('scroll');
-            sc.dispatchEvent(ev);
+            var host = rail.closest('[data-carousel]');
+            if (host) host.dispatchEvent(new Event('lv-carousel-reset'));
+            else rail.scrollLeft = 0;
           }
 
           if (reduce) { swap(); return; }
