@@ -1813,3 +1813,25 @@
   .lv-mflex__savings-badge { transition: none; }
   .lv-mflex__savings-badge:hover { transform: none; }
 }
+
+/* Beauty Bank: "up to 20% off" card matches the Flex savings badge (10px radius, same hover),
+   and the photo is shorter now that the headline fits on one line. */
+.lv-mbank__upto-badge {
+  border-radius: calc(10 * var(--lv-u));
+  transform-origin: right bottom;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .lv-mbank__upto-badge:hover {
+    transform: translateY(calc(-8 * var(--lv-u))) scale(1.04);
+    box-shadow: 0 calc(18 * var(--lv-u)) calc(40 * var(--lv-u)) rgba(0, 0, 0, 0.24);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-mbank__upto-badge { transition: none; }
+  .lv-mbank__upto-badge:hover { transform: none; }
+}
+@media (min-width: 1024px) {
+  .lv-mbank__media { aspect-ratio: 604 / 270; }
+  .lv-mbank__upto-badge { border-radius: calc(10 * var(--lv-u)); }
+}
