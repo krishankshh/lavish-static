@@ -2207,3 +2207,9 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 @media (prefers-reduced-motion: reduce) {
   .lv-marquee .lv-marquee__track { animation: none; }
 }
+
+/* Protocol rails: keep each card (and its photo) on its own compositor layer so the photos
+   move with the scroll instead of re-rasterising at sub-pixel offsets (the "wave"). */
+.lv-proto__track { will-change: scroll-position; overscroll-behavior-x: contain; }
+.lv-proto__card { transform: translateZ(0); backface-visibility: hidden; contain: layout paint; }
+.lv-proto__img { backface-visibility: hidden; }
