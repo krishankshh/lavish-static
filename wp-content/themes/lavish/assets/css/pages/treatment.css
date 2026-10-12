@@ -8730,3 +8730,15 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
 @media (min-width: 1024px) {
   .lv-results__grid:has(> .lv-ba:nth-child(4):last-child) { grid-template-columns: repeat(4, 1fr); gap: calc(20 * var(--lv-u)); }
 }
+
+/* Venus Legacy "How it works": cards lift on hover (desktop) */
+.lv-vl-how .lv-area { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-vl-how .lv-area .lv-step { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-vl-how .lv-area:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.12); }
+  .lv-vl-how .lv-area:hover .lv-step { transform: scale(1.1); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-vl-how .lv-area, .lv-vl-how .lv-area .lv-step { transition: none; }
+  .lv-vl-how .lv-area:hover, .lv-vl-how .lv-area:hover .lv-step { transform: none; }
+}
