@@ -8445,3 +8445,77 @@ img.lv-icon--area { object-fit: contain; }
 .lv-results--gallery .lv-results__grid { align-items: start; }
 .lv-results--gallery .lv-ba__frame img.lv-ba__before { aspect-ratio: auto; height: auto; object-fit: contain; }
 .lv-results--gallery .lv-ba--reveal .lv-ba__frame .lv-ba__after { object-fit: cover; }
+
+/* ---- XERF / LHR / RF intro block: alignment on wide screens ----
+   Above 1440px the page already insets every section with a transparent side border (base.css);
+   this block also centred itself with max-width, so the two insets stacked and the grid
+   overflowed to the right. The border alone does the centring now. */
+@media (min-width: 1441px) {
+  .lv-xim { max-width: none; margin-inline: 0; }
+}
+
+/* ---- Concerns before/after: show each pair whole ----
+   The frame follows the photo (fixed height, width from its own ratio) instead of cropping
+   every pair into one 480x417 box. */
+.lv-concerns__frame { width: auto; max-width: 100%; height: calc(300 * var(--lv-u)); }
+.lv-concerns__frame img.lv-ba__before { width: auto; height: 100%; max-width: 100%; object-fit: contain; }
+.lv-concerns__frame .lv-ba__after { width: 100%; height: 100%; object-fit: cover; }
+@media (min-width: 1024px) {
+  .lv-concerns__frame { width: auto; height: calc(500 * var(--lv-u)); }
+}
+
+/* ---- XERF review round ---- */
+
+/* Kim Kardashian clip replaces the still: same box as the photo it stands in for */
+.lv-xal__media { position: relative; }
+.lv-xal__video {
+  display: block;
+  width: calc(328 * var(--lv-u));
+  height: calc(426 * var(--lv-u));
+  border-radius: calc(8 * var(--lv-u));
+  object-fit: cover;
+  background: var(--lv-muted);
+}
+@media (min-width: 1024px) {
+  .lv-xal__video { width: calc(412 * var(--lv-u)); height: calc(732 * var(--lv-u)); border-radius: calc(12 * var(--lv-u)); }
+}
+
+/* Lavish badge: a small turn and lift on hover */
+.lv-korea__icon { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .lv-korea__note:hover .lv-korea__icon, .lv-korea__icon:hover { transform: rotate(-8deg) scale(1.1); box-shadow: 0 calc(8 * var(--lv-u)) calc(20 * var(--lv-u)) rgba(36, 29, 26, 0.3); }
+}
+
+/* HydraFacial / XERF / Ultra cards: lift on hover (the rail clips overflow, so give it room) */
+.lv-tcards { padding-block: calc(14 * var(--lv-u)) calc(26 * var(--lv-u)); margin-block: calc(97 * var(--lv-u) - 14 * var(--lv-u)) calc(-26 * var(--lv-u)); }
+.lv-tcard { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .lv-tcard:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.22); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-tcard, .lv-korea__icon { transition: none; }
+  .lv-tcard:hover, .lv-korea__note:hover .lv-korea__icon { transform: none; }
+}
+
+/* Click-to-play videos (play button over the poster; sound on) */
+.lv-team__media { position: relative; width: fit-content; }
+.lv-vplay {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: calc(72 * var(--lv-u));
+  height: calc(72 * var(--lv-u));
+  min-width: 56px;
+  min-height: 56px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(250, 248, 245, 0.92);
+  color: var(--lv-umber);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), background 0.3s ease;
+}
+.lv-vplay svg { width: 32%; height: 32%; fill: currentColor; margin-left: 6%; }
+.lv-vplay:hover { transform: scale(1.08); background: var(--lv-cream); }
+.lv-vplay[hidden] { display: none; }

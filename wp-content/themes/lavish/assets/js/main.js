@@ -697,6 +697,24 @@
   }
 
   /* ---------------------------------------------------------
+     Click-to-play video: .lv-vplay sits over a <video>; a click starts it with sound
+     and native controls, the button returns when it ends.
+     --------------------------------------------------------- */
+  function initClickPlay(root) {
+    root.querySelectorAll('.lv-vplay').forEach(function (btn) {
+      var video = btn.parentElement.querySelector('video');
+      if (!video) return;
+      btn.addEventListener('click', function () {
+        video.muted = false;
+        video.controls = true;
+        btn.hidden = true;
+        video.play();
+      });
+      video.addEventListener('ended', function () { video.controls = false; btn.hidden = false; });
+    });
+  }
+
+  /* ---------------------------------------------------------
      Booking placeholder: [data-booking-popup] opens a "coming soon" dialog
      --------------------------------------------------------- */
   function initBookingPopup(root) {
@@ -1118,6 +1136,7 @@
     initCarousels(root);
     initTabs(root);
     initBookingPopup(root);
+    initClickPlay(root);
     initBeforeAfter(root);
     initResultsNav(root);
     initHeroPoster(root);
