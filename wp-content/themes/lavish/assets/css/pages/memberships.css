@@ -1797,3 +1797,19 @@
   .lv-mcard, .lv-mcard__media img { transition: none; }
   .lv-mcard:hover, .lv-mcard:hover .lv-mcard__media img { transform: none; }
 }
+
+/* "Average ~35%" badge: lifts and grows a touch on hover */
+.lv-mflex__savings-badge {
+  transform-origin: left bottom;
+  transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+@media (hover: hover) {
+  .lv-mflex__savings-badge:hover {
+    transform: translateY(calc(-8 * var(--lv-u))) scale(1.04);
+    box-shadow: 0 calc(18 * var(--lv-u)) calc(40 * var(--lv-u)) rgba(0, 0, 0, 0.24);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-mflex__savings-badge { transition: none; }
+  .lv-mflex__savings-badge:hover { transform: none; }
+}
