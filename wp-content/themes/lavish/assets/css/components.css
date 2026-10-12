@@ -2134,3 +2134,51 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 @media (max-width: 1023.98px) {
   .lv-proto__desc { min-height: calc(84 * var(--lv-u)); }
 }
+
+/* =========================================================
+   FULL-WIDTH STICKY NAV (client review, option A)
+   Solid cream bar across the whole viewport on every page. The announcement
+   strip scrolls away; the bar stays pinned. The header sits in the page flow
+   (no longer overlaid on the hero), so the heroes start below it.
+   ========================================================= */
+.lv-header,
+.lv-header--over,
+.lv-body--hero .lv-header {
+  position: sticky;
+  inset-inline: 0;
+  top: calc(-32 * var(--lv-u));              /* announcement strip height (mobile) */
+}
+
+.lv-body .lv-header--main {
+  --lv-nav-ink: var(--lv-espresso);
+  --lv-rule: rgba(36, 29, 26, 0.4);
+  background: var(--lv-cream) !important;
+  padding-bottom: 0 !important;
+  box-shadow: 0 1px 0 rgba(36, 29, 26, 0.12);
+}
+
+.lv-body .lv-header--main .lv-nav__burger,
+.lv-body .lv-header--main .lv-nav__phone { color: var(--lv-espresso); }
+
+.lv-body .lv-header--main .lv-nav__logo img { content: url("../images/logo-umber@2x.png"); }
+
+.lv-body .lv-header--main .lv-btn--pill-light {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+  border-color: transparent;
+}
+
+@media (min-width: 1024px) {
+  .lv-header,
+  .lv-header--over,
+  .lv-body--hero .lv-header { top: calc(-38 * var(--lv-u)); }
+
+  /* the bar is full-bleed; its content keeps the 1440 column (and the 48px gutter) */
+  .lv-body .lv-header--main .lv-nav {
+    max-width: none;
+    height: calc(84 * var(--lv-u));
+    padding-inline: calc(48 * var(--lv-u) + var(--lv-edge, 0px));
+  }
+  .lv-body .lv-header--main .lv-nav__group { height: calc(84 * var(--lv-u)); border-bottom: 0; }
+  .lv-body .lv-header--main .lv-nav__logo { top: calc(12 * var(--lv-u)); width: calc(118 * var(--lv-u)); }
+}
