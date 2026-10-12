@@ -1999,7 +1999,7 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
                 width var(--lv-dur-fast) var(--lv-ease);
   }
 
-  .lv-dropdown--mega:has(.lv-mega__cat:hover, .lv-mega__cat:focus-within) { width: calc(432 * var(--lv-u)); }
+  .lv-dropdown--mega:has(.lv-mega__cat:not(.lv-mega__cat--leaf):hover, .lv-mega__cat:not(.lv-mega__cat--leaf):focus-within) { width: calc(432 * var(--lv-u)); }
 
   .lv-dropdown--mega .lv-dropdown__list {
     width: calc(192 * var(--lv-u));
@@ -2090,6 +2090,13 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
   text-align: left;
 }
 .lv-dcat.is-open > .lv-dcat__btn { color: var(--lv-terracotta); }
+.lv-dcat-leaf > a {
+  display: block;
+  padding: calc(12 * var(--lv-u)) calc(4 * var(--lv-u)) calc(12 * var(--lv-u)) calc(12 * var(--lv-u));
+  font-size: calc(14 * var(--lv-u));
+  line-height: 1.4;
+  color: var(--lv-cream);
+}
 .lv-dcat__chev {
   width: calc(10 * var(--lv-u));
   height: calc(10 * var(--lv-u));

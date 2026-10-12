@@ -171,6 +171,13 @@
           // Treatments: nested accordion (Figma mobile "Mega menu"), first category open
           sub.classList.add('lv-drawer__sub--mega');
           cats.forEach(function (cat, ci) {
+            if (!cat.querySelector('.lv-mega__sub')) {   // direct-link category (Laser Hair Removal)
+              var leaf = document.createElement('div');
+              leaf.className = 'lv-dcat-leaf';
+              leaf.appendChild(cat.querySelector('a').cloneNode(true));
+              sub.appendChild(leaf);
+              return;
+            }
             var group = document.createElement('div');
             group.className = 'lv-dcat' + (ci === 0 ? ' is-open' : '');
             var head = document.createElement('button');
