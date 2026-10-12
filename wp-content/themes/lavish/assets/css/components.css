@@ -1905,8 +1905,7 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
 
 /* ---- Pause continuous motion on hover or focus ------------------------ */
 
-.lv-marquee:hover .lv-marquee__track,
-.lv-marquee:focus-within .lv-marquee__track { animation-play-state: paused; }
+/* (the ticker is decorative and aria-hidden: it keeps running, no hover pause) */
 
 /* Footer: newsletter consent checkbox + title/blurb offsets against the comp. */
 .lv-footer--main .lv-footer__title { position: relative; top: calc(-11 * var(--lv-u)); }
@@ -2181,4 +2180,30 @@ form[data-wp-form].is-failed .lv-form__error { display: block; }
   }
   .lv-body .lv-header--main .lv-nav__group { height: calc(84 * var(--lv-u)); border-bottom: 0; }
   .lv-body .lv-header--main .lv-nav__logo { top: calc(12 * var(--lv-u)); width: calc(118 * var(--lv-u)); }
+}
+
+/* Marquee: seamless forever-loop. The track holds three identical groups; each group
+   carries its own trailing gap, so shifting by exactly one group (-33.333%) lands on the
+   same picture and the restart is invisible, at any viewport width. */
+.lv-marquee .lv-marquee__track {
+  gap: 0;
+  translate: 0 0;
+  animation: lv-marquee-loop 34s linear infinite;
+}
+.lv-marquee__group {
+  display: flex;
+  flex: none;
+  gap: calc(26 * var(--lv-u));
+  padding-right: calc(26 * var(--lv-u));
+}
+@keyframes lv-marquee-loop {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.3333%); }
+}
+@media (min-width: 1024px) {
+  .lv-marquee .lv-marquee__track { animation: lv-marquee-loop 40s linear infinite; }
+  .lv-marquee__group { gap: calc(76 * var(--lv-u)); padding-right: calc(76 * var(--lv-u)); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-marquee .lv-marquee__track { animation: none; }
 }

@@ -89,8 +89,10 @@
 }
 
 @media (min-width: 1024px) {
-  .lv-hero { height: calc(780 * var(--lv-u)); }
-  .lv-hero__inner { padding-top: calc(409 * var(--lv-u)); }
+  /* First screen = announcement + sticky bar (122) + video + a ~170px peek of the next section.
+     Tall screens get a taller video; short ones keep a sensible minimum. */
+  .lv-hero { height: clamp(calc(700 * var(--lv-u)), calc(100svh - 292 * var(--lv-u)), calc(960 * var(--lv-u))); }
+  .lv-hero__inner { justify-content: flex-end; padding-top: 0; padding-bottom: calc(56 * var(--lv-u)); }
   .lv-rating { font-size: calc(12 * var(--lv-u)); }
   .lv-hero__title { margin-top: calc(15 * var(--lv-u)); font-size: calc(64 * var(--lv-u)); max-width: calc(864 * var(--lv-u)); }
   .lv-hero__title br { display: inline; }
@@ -146,7 +148,7 @@
 }
 
 @media (min-width: 1024px) {
-  .lv-about { padding: calc(94 * var(--lv-u)) calc(48 * var(--lv-u)) calc(98 * var(--lv-u)); }
+  .lv-about { padding: calc(64 * var(--lv-u)) calc(48 * var(--lv-u)) calc(98 * var(--lv-u)); }   /* the first screen peeks into this section, so it starts closer to the hero */
   .lv-eyebrow { font-size: calc(12 * var(--lv-u)); }
   .lv-about__shots { gap: calc(20 * var(--lv-u)); margin-top: calc(6 * var(--lv-u)); }
   .lv-about__shots picture { display: block; width: 100%; }
@@ -195,7 +197,7 @@
 }
 
 .lv-review__head { display: flex; align-items: center; gap: calc(12 * var(--lv-u)); }
-.lv-review__avatar { width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); border-radius: 50%; object-fit: cover; }
+.lv-review__avatar { display: grid; place-items: center; flex: none; width: calc(40 * var(--lv-u)); height: calc(40 * var(--lv-u)); border-radius: 50%; color: #fff; font-family: var(--lv-font-ui); font-weight: 500; font-size: calc(18 * var(--lv-u)); line-height: 1; }
 .lv-review__src { width: calc(18 * var(--lv-u)); height: calc(18 * var(--lv-u)); margin-left: auto; align-self: flex-start; }
 .lv-review__name,
 .lv-review__when { font-size: calc(10 * var(--lv-u)); line-height: 1.4; }
@@ -207,7 +209,7 @@
   .lv-reviews { margin-top: calc(62 * var(--lv-u)); }
   .lv-reviews__track { gap: calc(16 * var(--lv-u)); }
   .lv-review { width: calc(280 * var(--lv-u)); min-height: calc(237 * var(--lv-u)); padding: calc(18 * var(--lv-u)); }
-  .lv-review__avatar { width: calc(44 * var(--lv-u)); height: calc(44 * var(--lv-u)); }
+  .lv-review__avatar { width: calc(44 * var(--lv-u)); height: calc(44 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); }
   .lv-review__src { width: calc(21 * var(--lv-u)); height: calc(21 * var(--lv-u)); }
   .lv-review__name, .lv-review__when { font-size: calc(12 * var(--lv-u)); }
   .lv-review__body { font-size: calc(12 * var(--lv-u)); margin-top: calc(7 * var(--lv-u)); }
