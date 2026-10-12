@@ -1779,3 +1779,21 @@
   .lv-faq__cta { margin-top: calc(8 * var(--lv-u)); }
   .lv-faq + .lv-insta { padding-top: calc(24 * var(--lv-u)); }
 }
+
+/* Plan cards: lift on hover (pointer devices on desktop; the phone rail clips overflow) */
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-mcard {
+    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: transform;
+  }
+  .lv-mcard__media img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+  .lv-mcard:hover {
+    transform: translateY(calc(-10 * var(--lv-u)));
+    box-shadow: 0 calc(22 * var(--lv-u)) calc(44 * var(--lv-u)) rgba(0, 0, 0, 0.22);
+  }
+  .lv-mcard:hover .lv-mcard__media img { transform: scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-mcard, .lv-mcard__media img { transition: none; }
+  .lv-mcard:hover, .lv-mcard:hover .lv-mcard__media img { transform: none; }
+}
