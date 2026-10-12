@@ -503,6 +503,8 @@
 
         track.addEventListener('pointerdown', function (e) {
           if (e.pointerType === 'touch' || e.button !== 0) return;
+          // a before/after slider drags its own divider: never start a rail drag from it
+          if (e.target.closest && e.target.closest('[data-before-after]')) return;
           var sc = scroller();
           if (sc.scrollWidth <= sc.clientWidth) return;
           cancelAnimationFrame(raf);

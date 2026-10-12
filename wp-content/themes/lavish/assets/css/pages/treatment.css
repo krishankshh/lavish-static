@@ -8685,3 +8685,43 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   .lv-accu-card, .lv-accu-rcard, .lv-accu-rcard__pic img { transition: none; }
   .lv-accu-card:hover, .lv-accu-rcard:hover, .lv-accu-rcard:hover .lv-accu-rcard__pic img { transform: none; }
 }
+
+/* ---- Sofwave review round ---- */
+
+/* Lifted, smoothed, refined: cards lift on hover, icon tiles pop */
+.lv-area { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-area__icon { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-arealist li .lv-area__icon { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) {
+  .lv-area:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.12); }
+  .lv-area:hover .lv-area__icon { transform: scale(1.08) rotate(-3deg); }
+  .lv-arealist li:hover .lv-area__icon { transform: scale(1.1); box-shadow: 0 calc(8 * var(--lv-u)) calc(18 * var(--lv-u)) rgba(36, 29, 26, 0.12); }
+}
+
+/* Why Sofwave is different: each circle breathes out a slow halo, staggered so the row ripples */
+.lv-stat__k::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(250, 248, 245, 0.6);
+  opacity: 0;
+  pointer-events: none;
+  animation: lv-halo 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+}
+.lv-stat:nth-child(2) .lv-stat__k::after { animation-delay: 0.6s; }
+.lv-stat:nth-child(3) .lv-stat__k::after { animation-delay: 1.2s; }
+.lv-stat:nth-child(4) .lv-stat__k::after { animation-delay: 1.8s; }
+.lv-stat:nth-child(5) .lv-stat__k::after { animation-delay: 2.4s; }
+@keyframes lv-halo {
+  0%   { transform: scale(1);    opacity: 0.7; }
+  60%  { transform: scale(1.42); opacity: 0; }
+  100% { transform: scale(1.42); opacity: 0; }
+}
+.lv-stat__k { transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (hover: hover) { .lv-stat:hover .lv-stat__k { transform: scale(1.07); } }
+@media (prefers-reduced-motion: reduce) {
+  .lv-stat__k::after { animation: none; }
+  .lv-area, .lv-area__icon, .lv-stat__k { transition: none; }
+  .lv-area:hover, .lv-area:hover .lv-area__icon, .lv-stat:hover .lv-stat__k { transform: none; }
+}
