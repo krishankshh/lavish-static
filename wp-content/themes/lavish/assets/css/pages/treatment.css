@@ -8547,3 +8547,22 @@ img.lv-icon--area { object-fit: contain; }
   .lv-howto__card { transition: none; }
   .lv-howto__card:hover { transform: none; }
 }
+
+/* SkinPen: "How it works" moves from near-black espresso to the page's umber so it flows with
+   the umber "What to expect" band and the cream sections between them. */
+.lv-skinpen-how { background: var(--lv-umber); }
+.lv-skinpen-timecard { background: rgba(250, 248, 245, 0.08); }
+
+/* SkinPen intro reuses the RF photo-left layout */
+.lv-xim--skinpen { padding-bottom: calc(72 * var(--lv-u)); }
+@media (min-width: 1024px) { .lv-xim--skinpen { padding-bottom: calc(120 * var(--lv-u)); } }
+
+/* SkinPen "Take your treatment further": cards lift on hover */
+.lv-skinpen-card { transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1); }
+@media (min-width: 1024px) and (hover: hover) {
+  .lv-skinpen-card:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .lv-skinpen-card { transition: none; }
+  .lv-skinpen-card:hover { transform: none; }
+}
