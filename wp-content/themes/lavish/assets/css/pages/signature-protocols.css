@@ -21,7 +21,7 @@
 .lv-shero__img-wrap {
   order: 1;
   width: 100%;
-  aspect-ratio: 328 / 290;
+  aspect-ratio: 328 / 260;
   border-radius: calc(12 * var(--lv-u));
   overflow: hidden;
   background: rgba(36, 29, 26, 0.05);
@@ -33,7 +33,7 @@
   max-width: none;
   height: 100%;
   object-fit: cover;
-  object-position: 0% 38%;
+  object-position: 0% 20%;
   display: block;
 }
 
@@ -93,7 +93,7 @@
 
   .lv-shero__img-wrap {
     order: 2;
-    aspect-ratio: 672 / 450;
+    aspect-ratio: 672 / 390;
   }
 
   .lv-shero__title {
