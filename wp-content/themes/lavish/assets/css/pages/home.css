@@ -12,7 +12,8 @@
 
 .lv-hero {
   position: relative;
-  height: calc(760 * var(--lv-u));
+  /* phones: the bar now sits above the hero (announcement 32 + bar 72), so the video is 104 shorter to keep the old 760 first screen */
+  height: calc(656 * var(--lv-u));
   overflow: hidden;
 }
 
@@ -45,7 +46,7 @@
   flex-direction: column;
   align-items: center;
   padding-inline: calc(16 * var(--lv-u));
-  padding-top: calc(391 * var(--lv-u));
+  padding-top: calc(287 * var(--lv-u));
   text-align: center;
   color: var(--lv-cream);
 }
