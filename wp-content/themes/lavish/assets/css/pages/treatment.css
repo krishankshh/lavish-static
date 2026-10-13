@@ -8754,3 +8754,11 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   .lv-zone, .lv-zone img { transition: none; }
   .lv-zone:hover, .lv-zone:hover img { transform: none; }
 }
+
+/* Results hero on phones: the 1440-wide photo was cropped to a nose. A shorter band shows far more
+   of the face (cover scales by height), centred on the face. */
+@media (max-width: 1023.98px) {
+  .lv-page-results .lv-phero--baked,
+  body:has(.lv-results--gallery) .lv-phero--baked { height: calc(300 * var(--lv-u)); }
+  body:has(.lv-results--gallery) .lv-phero--baked .lv-phero__img { object-position: 62% 50%; }
+}
