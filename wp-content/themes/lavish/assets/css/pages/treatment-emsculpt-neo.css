@@ -120,3 +120,13 @@
   .lv-emn-cta__body { max-width: calc(626 * var(--lv-u)); margin-top: calc(14 * var(--lv-u)); }
 }
 @media (max-width: 1023px) { .lv-emneo .lv-intro__title { padding-bottom: calc(20 * var(--lv-u)); border-bottom: 1px solid var(--lv-border); } .lv-emn-how { padding-bottom: calc(64 * var(--lv-u)); } }
+.lv-emneo .lv-intro__title em { font-style: normal; }
+
+/* mobile: How it works cards swipe like the AccuFit cards */
+@media (max-width: 1023px) {
+  .lv-emn-how__grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: calc(12 * var(--lv-u)); padding-bottom: calc(12 * var(--lv-u)); -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+  .lv-emn-how__grid::-webkit-scrollbar { display: none; }
+  .lv-emn-card { flex: 0 0 calc(280 * var(--lv-u)); scroll-snap-align: start; }
+  .lv-emn-how__nav { display: flex; justify-content: center; gap: calc(12 * var(--lv-u)); margin-top: calc(12 * var(--lv-u)); }
+  .lv-emn-how__note { margin-top: calc(28 * var(--lv-u)); }
+}
