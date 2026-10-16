@@ -8774,3 +8774,23 @@ main .lv-results .lv-ba__frame img { width: 100%; height: 100%; aspect-ratio: au
 main .lv-results .lv-ba__label { margin-top: calc(24 * var(--lv-u)); margin-bottom: 0; line-height: 1.4; }
 main .lv-results .lv-ba__tag { top: calc(16 * var(--lv-u)); }
 main .lv-results .lv-results__grid { align-items: stretch; }
+
+/* ---- Eyebrows removed from the treatment pages: a heading that now opens its section drops the margin
+   it used to need to sit under the label, so each section's top spacing matches its bottom (about 100px). ---- */
+main > section > h2:first-child,
+main > section > .lv-display:first-child,
+main > section > div:first-child > h2:first-child,
+main > section > header:first-child > h2:first-child { margin-top: 0; }
+main .lv-tiles__title,
+main .lv-related__title,
+main .lv-accu-tech__title,
+main .lv-results__title,
+main .lv-tareas__title,
+main .lv-pros__title,
+main .lv-experts__title,
+main .lv-faqs__title,
+main .lv-posts__title { margin-top: 0; }
+main .lv-xim:not(.lv-xim--lhr) .lv-xim__split { margin-top: 0; }
+main .lv-intro > .lv-intro__grid:first-child,
+main .lv-prf-intro > .lv-prf-intro__split:first-child,
+main .lv-tareas > .lv-tareas__split:first-child { margin-top: 0; }
