@@ -8440,12 +8440,6 @@ img.lv-icon--area { object-fit: contain; }
   .lv-tiles--inj .lv-tile.is-active.is-2l .lv-tile__more { margin-top: calc(10 * var(--lv-u)); }
 }
 
-/* Results gallery: photos come in mixed ratios, so show each one whole (natural height)
-   instead of cropping it into the 395:468 comp frame. */
-.lv-results--gallery .lv-results__grid { align-items: start; }
-.lv-results--gallery .lv-ba__frame img.lv-ba__before { aspect-ratio: auto; height: auto; object-fit: contain; }
-.lv-results--gallery .lv-ba--reveal .lv-ba__frame .lv-ba__after { object-fit: cover; }
-
 /* ---- XERF / LHR / RF intro block: alignment on wide screens ----
    Above 1440px the page already insets every section with a transparent side border (base.css);
    this block also centred itself with max-width, so the two insets stacked and the grid
@@ -8762,3 +8756,19 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   body:has(.lv-results--gallery) .lv-phero--baked { height: calc(300 * var(--lv-u)); }
   body:has(.lv-results--gallery) .lv-phero--baked .lv-phero__img { object-position: 62% 50%; }
 }
+
+/* ==========================================================================
+   Before/after cards: one fixed card (Figma "results_card": 427x460, 395x389 photo)
+   Every photo is cropped to the same frame; --ba-pos (set per photo) keeps the treated area in view.
+   ========================================================================== */
+main .lv-results .lv-ba {
+  padding: calc(16 * var(--lv-u)) calc(16 * var(--lv-u)) calc(17 * var(--lv-u));
+  border-radius: calc(20 * var(--lv-u));
+  background: #EDE4D8;
+  height: auto;
+}
+main .lv-results .lv-ba__frame { aspect-ratio: 395 / 389; height: auto; border-radius: calc(12 * var(--lv-u)); }
+main .lv-results .lv-ba__frame img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; object-position: var(--ba-pos, 50% 50%); }
+main .lv-results .lv-ba__label { margin-top: calc(24 * var(--lv-u)); margin-bottom: 0; line-height: 1.4; }
+main .lv-results .lv-ba__tag { top: calc(16 * var(--lv-u)); }
+main .lv-results .lv-results__grid { align-items: stretch; }
