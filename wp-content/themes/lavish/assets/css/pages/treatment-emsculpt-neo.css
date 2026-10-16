@@ -45,9 +45,9 @@
   .lv-emn-how { padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u)); }
   .lv-emn-how__head { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(48 * var(--lv-u)); }
   .lv-emn-how__title { font-size: calc(72 * var(--lv-u)); }
-  .lv-emn-how__lead { margin: 0 0 calc(10 * var(--lv-u)); max-width: calc(380 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-how__lead { margin: 0 0 calc(10 * var(--lv-u)); max-width: calc(520 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
   .lv-emn-how__grid { margin-top: calc(40 * var(--lv-u)); grid-template-columns: repeat(3, 1fr); gap: calc(24 * var(--lv-u)); }
-  .lv-emn-card { border-radius: calc(16 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(36 * var(--lv-u)) calc(32 * var(--lv-u)); }
+  .lv-emn-card { border-radius: calc(16 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(18 * var(--lv-u)) calc(32 * var(--lv-u)); }
   .lv-emn-card__num { width: calc(60 * var(--lv-u)); height: calc(60 * var(--lv-u)); margin-bottom: calc(28 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); }
   .lv-emn-card__title { font-size: calc(32 * var(--lv-u)); }
   .lv-emn-card__body { margin-top: calc(16 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); min-height: calc(72 * var(--lv-u)); }
