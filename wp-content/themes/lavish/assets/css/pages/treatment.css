@@ -8749,13 +8749,15 @@ span.lv-rev__avatar { display: grid; place-items: center; flex: none; color: #ff
   .lv-zone:hover, .lv-zone:hover img { transform: none; }
 }
 
-/* Results hero on phones: the 1440-wide photo was cropped to a nose. A shorter band shows far more
-   of the face (cover scales by height), centred on the face. */
-@media (max-width: 1023.98px) {
-  .lv-page-results .lv-phero--baked,
-  body:has(.lv-results--gallery) .lv-phero--baked { height: calc(300 * var(--lv-u)); }
-  body:has(.lv-results--gallery) .lv-phero--baked .lv-phero__img { object-position: 62% 50%; }
+/* Results hero: its own photo (a portrait shot, cut to a wide band for desktop and a squarer one for phones),
+   with a light umber tint so the cream bar and the dark "Available at" ribbon read cleanly. */
+.lv-phero--results .lv-phero__scrim {
+  background: linear-gradient(180deg, rgba(36, 29, 26, 0.18) 0%, rgba(36, 29, 26, 0) 35%, rgba(36, 29, 26, 0.32) 100%), rgba(78, 55, 37, 0.14);
 }
+@media (max-width: 1023.98px) {
+  .lv-phero--results { height: calc(300 * var(--lv-u)); }
+}
+
 
 /* ==========================================================================
    Before/after cards: one fixed card (Figma "results_card": 427x460, 395x389 photo)
