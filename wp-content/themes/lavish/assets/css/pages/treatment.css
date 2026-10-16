@@ -8794,3 +8794,10 @@ main .lv-xim:not(.lv-xim--lhr) .lv-xim__split { margin-top: 0; }
 main .lv-intro > .lv-intro__grid:first-child,
 main .lv-prf-intro > .lv-prf-intro__split:first-child,
 main .lv-tareas > .lv-tareas__split:first-child { margin-top: 0; }
+
+/* XERF hero: looping muted clip behind the text; the usual umber tint keeps the copy readable */
+.lv-phero--video .lv-phero__vid { object-fit: cover; }
+.lv-phero--video .lv-phero__scrim {
+  background: linear-gradient(180deg, rgba(36, 29, 26, 0.35) 0%, rgba(36, 29, 26, 0.1) 40%, rgba(36, 29, 26, 0.6) 100%), rgba(78, 55, 37, 0.38);
+}
+@media (prefers-reduced-motion: reduce) { .lv-phero--video .lv-phero__vid { display: none; } .lv-phero--video .lv-phero__pic { background: url("../../images/xerf-hero-poster.jpg") center / cover; } }

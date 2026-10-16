@@ -1,0 +1,101 @@
+/* Emsculpt Neo: How it works / treatment areas / comparison table.
+   Mobile first (1 design px = --lv-u at 360), desktop at 1440. Colours come from the Figma comp. */
+
+/* ---- How it works ---- */
+.lv-emn-how { background: #EDE6DF; padding: calc(64 * var(--lv-u)) calc(16 * var(--lv-u)) calc(48 * var(--lv-u)); }
+.lv-emn-how__title { font-size: calc(36 * var(--lv-u)); color: var(--lv-espresso); }
+.lv-emn-how__title em { color: var(--lv-terracotta); }
+.lv-emn-how__lead { margin-top: calc(14 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; color: var(--lv-espresso); }
+.lv-emn-how__grid { margin-top: calc(28 * var(--lv-u)); display: grid; gap: calc(12 * var(--lv-u)); }
+.lv-emn-card { background: #F7F0E8; border-radius: calc(12 * var(--lv-u)); padding: calc(28 * var(--lv-u)) calc(24 * var(--lv-u)) calc(24 * var(--lv-u)); text-align: center; color: var(--lv-espresso); transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1); }
+.lv-emn-card__num { width: calc(48 * var(--lv-u)); height: calc(48 * var(--lv-u)); margin: 0 auto calc(20 * var(--lv-u)); border: 1px solid var(--lv-terracotta); border-radius: 50%; display: grid; place-items: center; color: var(--lv-terracotta); font-family: var(--lv-font-display); font-size: calc(20 * var(--lv-u)); }
+.lv-emn-card__title { font-family: var(--lv-font-display); font-weight: 200; font-size: calc(24 * var(--lv-u)); line-height: 1.1; }
+.lv-emn-card__body { margin-top: calc(12 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; color: rgba(36, 29, 26, 0.8); }
+.lv-emn-card__stat { margin-top: calc(24 * var(--lv-u)); padding-top: calc(20 * var(--lv-u)); border-top: 1px solid var(--lv-border); display: grid; gap: calc(6 * var(--lv-u)); }
+.lv-emn-card__stat strong { font-family: var(--lv-font-display); font-weight: 200; font-size: calc(48 * var(--lv-u)); line-height: 1; color: var(--lv-terracotta); }
+.lv-emn-card__stat span { font-size: calc(13 * var(--lv-u)); }
+.lv-emn-how__note { margin-top: calc(24 * var(--lv-u)); text-align: center; font-size: calc(12 * var(--lv-u)); color: rgba(36, 29, 26, 0.6); }
+
+/* ---- Treatment areas (dark) ---- */
+.lv-emn-areas { background: var(--lv-umber); color: var(--lv-cream); padding: calc(56 * var(--lv-u)) calc(16 * var(--lv-u)); }
+.lv-emn-areas__grid { display: grid; gap: calc(32 * var(--lv-u)); }
+.lv-emn-areas__title { font-size: calc(36 * var(--lv-u)); color: var(--lv-cream); }
+.lv-emn-areas__body { margin-top: calc(16 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; color: rgba(250, 248, 245, 0.9); }
+.lv-emn-areas__list { list-style: none; margin: calc(28 * var(--lv-u)) 0 0; padding: 0; display: grid; grid-template-columns: 1fr 1fr; column-gap: calc(16 * var(--lv-u)); grid-auto-flow: column; grid-template-rows: repeat(5, auto); }
+.lv-emn-areas__list li { display: flex; align-items: center; gap: calc(14 * var(--lv-u)); padding: calc(12 * var(--lv-u)) 0; border-bottom: 1px solid rgba(250, 248, 245, 0.18); font-family: var(--lv-font-display); font-weight: 200; font-size: calc(20 * var(--lv-u)); }
+.lv-emn-areas__list li span { font-family: var(--lv-font-ui); font-size: calc(10 * var(--lv-u)); opacity: 0.8; min-width: calc(16 * var(--lv-u)); }
+.lv-emn-areas__img { width: 100%; aspect-ratio: 4 / 4.2; object-fit: cover; border-radius: calc(12 * var(--lv-u)); }
+
+/* ---- Compare table ---- */
+.lv-emn-tech { background: #EBE1D8; padding: calc(56 * var(--lv-u)) calc(16 * var(--lv-u)); }
+.lv-emn-tech__head { text-align: center; }
+.lv-emn-tech__title { font-size: calc(32 * var(--lv-u)); color: var(--lv-espresso); }
+.lv-emn-tech__title em { color: var(--lv-terracotta); }
+.lv-emn-tech__sub { margin: calc(14 * var(--lv-u)) auto 0; font-size: calc(14 * var(--lv-u)); line-height: 1.5; max-width: 38em; color: var(--lv-espresso); }
+.lv-emn-table { margin-top: calc(32 * var(--lv-u)); border-radius: calc(16 * var(--lv-u)); overflow: hidden; background: #F7F0E8; }
+.lv-emn-table__row { display: grid; grid-template-columns: 1fr; padding: calc(16 * var(--lv-u)); gap: calc(8 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.4; color: var(--lv-espresso); border-top: 1px solid var(--lv-border); }
+.lv-emn-table__row:first-child { border-top: 0; }
+.lv-emn-table__row--head { display: none; }
+.lv-emn-table__row span[data-label]::before { content: attr(data-label); display: block; font-size: calc(10 * var(--lv-u)); letter-spacing: 0.1em; text-transform: uppercase; color: var(--lv-terracotta); margin-bottom: 2px; }
+.lv-emn-cta { margin-top: calc(16 * var(--lv-u)); background: #F7F0E8; border-radius: calc(16 * var(--lv-u)); padding: calc(24 * var(--lv-u)); display: grid; gap: calc(20 * var(--lv-u)); justify-items: start; }
+.lv-emn-cta__title { font-family: var(--lv-font-display); font-weight: 200; font-size: calc(24 * var(--lv-u)); line-height: 1.1; }
+.lv-emn-cta__body { margin-top: calc(10 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); line-height: 1.5; max-width: 34em; }
+
+@media (min-width: 1024px) {
+  .lv-emn-how { padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u)); }
+  .lv-emn-how__head { display: flex; justify-content: space-between; align-items: flex-end; gap: calc(48 * var(--lv-u)); }
+  .lv-emn-how__title { font-size: calc(72 * var(--lv-u)); }
+  .lv-emn-how__lead { margin: 0 0 calc(10 * var(--lv-u)); max-width: calc(380 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-how__grid { margin-top: calc(40 * var(--lv-u)); grid-template-columns: repeat(3, 1fr); gap: calc(24 * var(--lv-u)); }
+  .lv-emn-card { border-radius: calc(16 * var(--lv-u)); padding: calc(36 * var(--lv-u)) calc(36 * var(--lv-u)) calc(32 * var(--lv-u)); }
+  .lv-emn-card__num { width: calc(60 * var(--lv-u)); height: calc(60 * var(--lv-u)); margin-bottom: calc(28 * var(--lv-u)); font-size: calc(24 * var(--lv-u)); }
+  .lv-emn-card__title { font-size: calc(32 * var(--lv-u)); }
+  .lv-emn-card__body { margin-top: calc(16 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); min-height: calc(72 * var(--lv-u)); }
+  .lv-emn-card__stat { margin-top: calc(36 * var(--lv-u)); padding-top: calc(32 * var(--lv-u)); }
+  .lv-emn-card__stat strong { font-size: calc(72 * var(--lv-u)); }
+  .lv-emn-card__stat span { font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-how__note { margin-top: calc(40 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
+  .lv-emn-card:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.12); }
+
+  .lv-emn-areas { padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u)); }
+  .lv-emn-areas__grid { grid-template-columns: calc(662 * var(--lv-u)) calc(662 * var(--lv-u)); justify-content: space-between; align-items: stretch; gap: calc(48 * var(--lv-u)); }
+  .lv-emn-areas__title { font-size: calc(72 * var(--lv-u)); }
+  .lv-emn-areas__body { margin-top: calc(28 * var(--lv-u)); max-width: calc(500 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-areas__list { margin-top: calc(64 * var(--lv-u)); column-gap: calc(48 * var(--lv-u)); }
+  .lv-emn-areas__list li { padding: calc(14 * var(--lv-u)) 0; font-size: calc(28 * var(--lv-u)); }
+  .lv-emn-areas__list li span { font-size: calc(12 * var(--lv-u)); min-width: calc(28 * var(--lv-u)); }
+  .lv-emn-areas__img { height: 100%; aspect-ratio: auto; border-radius: calc(16 * var(--lv-u)); }
+
+  .lv-emn-tech { padding: calc(96 * var(--lv-u)) calc(120 * var(--lv-u)); }
+  .lv-emn-tech__title { font-size: calc(72 * var(--lv-u)); }
+  .lv-emn-tech__sub { max-width: calc(760 * var(--lv-u)); font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-table { margin-top: calc(56 * var(--lv-u)); border-radius: calc(24 * var(--lv-u)); }
+  .lv-emn-table__row { grid-template-columns: 1fr 1fr 1.1fr 1fr; gap: 0; padding: 0; font-size: calc(16 * var(--lv-u)); }
+  .lv-emn-table__row > span { padding: calc(36 * var(--lv-u)) calc(32 * var(--lv-u)); border-left: 1px solid var(--lv-border); display: flex; align-items: center; }
+  .lv-emn-table__row > span:first-child { border-left: 0; }
+  .lv-emn-table__row span[data-label]::before { display: none; }
+  .lv-emn-table__row--head { display: grid; background: var(--lv-umber); color: var(--lv-cream); border-top: 0; }
+  .lv-emn-table__row--head > span { padding: calc(24 * var(--lv-u)) calc(32 * var(--lv-u)); border-left-color: rgba(250, 248, 245, 0.18); font-size: calc(12 * var(--lv-u)); letter-spacing: 0.1em; text-transform: uppercase; }
+  .lv-emn-cta { margin-top: calc(24 * var(--lv-u)); grid-template-columns: 1fr auto; align-items: center; justify-items: stretch; padding: calc(40 * var(--lv-u)); border-radius: calc(24 * var(--lv-u)); }
+  .lv-emn-cta__title { font-size: calc(32 * var(--lv-u)); }
+  .lv-emn-cta__body { font-size: calc(16 * var(--lv-u)); }
+}
+
+@media (prefers-reduced-motion: reduce) { .lv-emn-card { transition: none; } .lv-emn-card:hover { transform: none; } }
+
+/* shared bits copied from AccuFit so buttons/hero/intro sit the same */
+.lv-emneo .lv-btn { font-size: calc(14 * var(--lv-u)); white-space: nowrap; }
+.lv-emneo .lv-phero__sub { line-height: 1.4; margin-top: calc(19 * var(--lv-u)); }
+.lv-emneo .lv-intro__copy .lv-btn { margin-top: calc(42 * var(--lv-u)); }
+.lv-emneo .lv-results { padding-bottom: calc(72 * var(--lv-u)); }
+.lv-emneo .lv-results__top { text-align: left; }
+.lv-emneo .lv-results__top .lv-btn { flex: none; }
+.lv-emneo .lv-ba__tag { line-height: 1.4; background: #F2E9DF; }
+.lv-emneo .lv-ba__label { line-height: 1.4; }
+@media (min-width: 1024px) {
+  .lv-emneo .lv-results { padding: calc(116 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u)); }
+  .lv-emneo .lv-results__top .lv-btn { display: inline-flex; }
+  .lv-emneo .lv-results__top { margin-bottom: calc(50 * var(--lv-u)); }
+  .lv-emneo .lv-results .lv-results__grid { margin-top: 0; }
+  .lv-emneo .lv-ba { padding-bottom: calc(20 * var(--lv-u)); }
+}
