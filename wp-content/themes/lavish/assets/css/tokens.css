@@ -88,5 +88,6 @@
   --lv-ease:       cubic-bezier(0.22, 0.61, 0.36, 1);
   --lv-dur:        400ms;
   --lv-dur-fast:   200ms;
+  --lv-dur-slow:   900ms;   /* was referenced but never defined, so slow hovers snapped */
   --lv-stagger:     60ms;
 }

@@ -44,6 +44,8 @@
 
 html {
   -webkit-text-size-adjust: 100%;
+  /* Keep the scrollbar track reserved so the header never shifts when a page's scrollbar appears/disappears between navigations */
+  scrollbar-gutter: stable;
   scroll-behavior: smooth;
   /* Offset for the sticky header when jumping to #section anchors */
   scroll-padding-top: calc(110 * var(--lv-u));

@@ -168,7 +168,7 @@
         sub.hidden = true;
         var cats = panel.querySelectorAll('.lv-mega__cat');
         if (cats.length) {
-          // Treatments: nested accordion (Figma mobile "Mega menu"), first category open
+          // Treatments: nested accordion (Figma mobile "Mega menu"), all categories collapsed
           sub.classList.add('lv-drawer__sub--mega');
           cats.forEach(function (cat, ci) {
             if (!cat.querySelector('.lv-mega__sub')) {   // direct-link category (Laser Hair Removal)
@@ -179,16 +179,16 @@
               return;
             }
             var group = document.createElement('div');
-            group.className = 'lv-dcat' + (ci === 0 ? ' is-open' : '');
+            group.className = 'lv-dcat';
             var head = document.createElement('button');
             head.type = 'button';
             head.className = 'lv-dcat__btn';
-            head.setAttribute('aria-expanded', ci === 0 ? 'true' : 'false');
+            head.setAttribute('aria-expanded', 'false');
             head.innerHTML = '<span></span><svg class="lv-icon lv-dcat__chev" aria-hidden="true"><use href="#arrow-back-ios-new"></use></svg>';
             head.firstChild.textContent = cat.querySelector('a').firstChild.textContent.trim();
             var list = document.createElement('ul');
             list.className = 'lv-dcat__list';
-            list.hidden = ci !== 0;
+            list.hidden = true;
             cat.querySelectorAll('.lv-mega__sub a').forEach(function (a) {
               var li = document.createElement('li');
               li.appendChild(a.cloneNode(true));

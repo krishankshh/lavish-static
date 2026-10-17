@@ -115,7 +115,7 @@
 
 @media (min-width: 1024px) {
   .lv-mhero {
-    padding: calc(180 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u));
+    padding: calc(124 * var(--lv-u)) calc(48 * var(--lv-u)) calc(100 * var(--lv-u));
     overflow: visible;
   }
 
@@ -1718,7 +1718,7 @@
 }
 
 @media (max-width: 1023.98px) {
-  .lv-mhero { padding-top: calc(152 * var(--lv-u)); }
+  .lv-mhero { padding-top: calc(96 * var(--lv-u)); }
   .lv-mhero__grid { scroll-padding-left: calc(16 * var(--lv-u)); }
   .lv-mcard__desc { font-size: calc(14 * var(--lv-u)); line-height: 1.5; margin-top: calc(10 * var(--lv-u)); }
   .lv-mcard__list { gap: calc(13.5 * var(--lv-u)); margin-bottom: 0; }

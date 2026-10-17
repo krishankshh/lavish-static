@@ -8801,3 +8801,41 @@ main .lv-tareas > .lv-tareas__split:first-child { margin-top: 0; }
   background: linear-gradient(180deg, rgba(36, 29, 26, 0.35) 0%, rgba(36, 29, 26, 0.1) 40%, rgba(36, 29, 26, 0.6) 100%), rgba(78, 55, 37, 0.38);
 }
 @media (prefers-reduced-motion: reduce) { .lv-phero--video .lv-phero__vid { display: none; } .lv-phero--video .lv-phero__pic { background: url("../../images/xerf-hero-poster.jpg") center / cover; } }
+
+/* ---- Feedback round: one smooth hover for every lifting card ----
+   .js .lv-reveal sets its own transition and used to replace the card's, so cards that also
+   carry lv-reveal snapped. These re-state it with the transform/shadow transitions merged in. */
+:root { --lv-card-t: 0.65s cubic-bezier(0.22, 1, 0.36, 1); }
+.js .lv-reveal:is(.lv-prf-card, .lv-prf-side__card, .lv-accu-card, .lv-area, .lv-iprice__card, .lv-pro) {
+  transition: opacity var(--lv-dur) var(--lv-ease), translate var(--lv-dur) var(--lv-ease),
+              transform var(--lv-card-t), box-shadow var(--lv-card-t);
+}
+.lv-tcard, .lv-skinpen-card, .lv-offer { transition: transform var(--lv-card-t), box-shadow var(--lv-card-t); }
+@media (hover: hover) {
+  .lv-offers .lv-offer:hover { transform: translateY(calc(-8 * var(--lv-u))); box-shadow: 0 calc(18 * var(--lv-u)) calc(36 * var(--lv-u)) rgba(36, 29, 26, 0.16); }
+}
+@media (prefers-reduced-motion: reduce) { .lv-tcard, .lv-skinpen-card, .lv-offer { transition: none; } }
+
+/* desktop: the SkinPen card row must not clip the lifted card */
+@media (min-width: 1024px) { .lv-skinpen-enhance__viewport { overflow: visible; } }
+
+/* Venus Legacy "Common treatment areas": static, no pop */
+.lv-vl-areas .lv-area, .lv-vl-areas .lv-area:hover { transform: none; box-shadow: none; }
+.lv-vl-areas .lv-area:hover .lv-area__icon { transform: none; }
+.lv-offers--lf .lv-offer { transition: transform var(--lv-card-t), box-shadow var(--lv-card-t); }
+
+/* Injectables pricing: logo is the focal point, price secondary, one-line band title */
+.lv-iprice__logo { display: block; align-self: center; height: calc(40 * var(--lv-u)); width: auto; max-width: 82%; object-position: center; filter: none; opacity: 1; }
+.lv-iprice__price { font-size: calc(24 * var(--lv-u)); }
+.lv-iprice__price small { font-size: calc(8 * var(--lv-u)); }
+.lv-iprice__band-title { white-space: nowrap; font-size: calc(19 * var(--lv-u)); }
+@media (min-width: 1024px) {
+  .lv-iprice__logo { height: calc(64 * var(--lv-u)); max-width: 86%; }
+  .lv-iprice__price { font-size: calc(36 * var(--lv-u)); }
+  .lv-iprice__price small { font-size: calc(10 * var(--lv-u)); }
+  .lv-iprice__band { grid-template-columns: calc(540 * var(--lv-u)) 1fr; }
+  .lv-iprice__band-title { font-size: calc(32 * var(--lv-u)); }
+}
+
+/* SkinPen: hairline divider between 'Why we love' and 'Take your treatment further' */
+.lv-skinpen-enhance { border-top: 1px solid rgba(78, 55, 37, 0.18); }
