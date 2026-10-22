@@ -1,0 +1,25 @@
+/*
+Theme Name: Lavish Laser MedSpa
+Theme URI: https://lavishlasermedspa.com
+Author: KMATS
+Author URI: https://kmats.in
+Description: A bespoke theme for Lavish Laser MedSpa, drawn from the Figma comps down to the pixel. Warm editorial typography, a restrained terracotta and espresso palette, and fluid layouts that scale gracefully from phone to desktop. Treatments, locations, memberships and the blog are all editable through the theme's own fields, so the team can refresh copy and imagery without touching code.
+Version: 1.0.0
+Update URI: false
+Text Domain: lavish
+*/
+
+/* Foundational Stylesheets */
+@import url("assets/css/fonts.css");
+@import url("assets/css/tokens.css");
+@import url("assets/css/base.css");
+@import url("assets/css/components.css");
+
+/*
+ * The styling architecture is modular:
+ * 1. assets/css/tokens.css     - Colors, typography scales, tokens
+ * 2. assets/css/fonts.css      - Local webfonts (PP Editorial New, Neue Haas Grotesk, Inter)
+ * 3. assets/css/base.css       - Responsive design-pixel unit (--lv-u: 1440px desktop, 360px mobile)
+ * 4. assets/css/components.css - Reusable buttons, header, footer, modals, cards, carousels
+ * 5. assets/css/pages/*.css    - Page-specific stylesheets
+ */
