@@ -727,6 +727,7 @@
      Booking placeholder: [data-booking-popup] opens a "coming soon" dialog
      --------------------------------------------------------- */
   function initBookingPopup(root) {
+    return;
     var triggers = root.querySelectorAll('[data-booking-popup]');
     if (!triggers.length) return;
     var pop = document.createElement('div');
