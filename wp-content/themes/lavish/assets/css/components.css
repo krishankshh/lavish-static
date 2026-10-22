@@ -1213,6 +1213,10 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
 .lv-footer__legal nav a:last-child { justify-self: end; }
 .lv-footer__legal a { color: inherit; transition: color var(--lv-dur-fast) var(--lv-ease), opacity var(--lv-dur-fast) var(--lv-ease); }
 .lv-footer__legal a:hover { color: var(--lv-cream); opacity: 1; }
+.lv-footer__legal p { text-align: center; }
+.lv-footer__legal p a { color: var(--lv-cream); font-weight: 500; text-decoration: none; transition: opacity var(--lv-dur-fast) var(--lv-ease); }
+.lv-footer__legal p a:hover { text-decoration: underline; opacity: 0.85; }
+.lv-footer__sep { display: inline-block; margin: 0 10px; }
 
 @media (min-width: 1024px) {
   .lv-btn { font-size: calc(14 * var(--lv-u)); }
@@ -1269,6 +1273,7 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
   }
 
   .lv-footer__legal nav { display: flex; width: auto; gap: calc(48 * var(--lv-u)); }
+  .lv-footer__legal p { text-align: left; }
   .lv-footer__locations { gap: calc(20 * var(--lv-u)); }
 }
 
