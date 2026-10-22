@@ -542,15 +542,12 @@
   }
 
   /* Non-scrolling sections on desktop (all cards fit in viewport) */
-  #injectables .lv-progress,
-  #injectables .lv-rail-nav,
   #hair-scalp .lv-progress,
   #hair-scalp .lv-rail-nav,
   #wellness .lv-progress,
   #wellness .lv-rail-nav {
     display: none;
   }
-  #injectables .lv-cat__track,
   #hair-scalp .lv-cat__track,
   #wellness .lv-cat__track {
     overflow-x: visible;

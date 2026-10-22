@@ -8451,11 +8451,11 @@ img.lv-icon--area { object-fit: contain; }
 /* ---- Concerns before/after: show each pair whole ----
    The frame follows the photo (fixed height, width from its own ratio) instead of cropping
    every pair into one 480x417 box. */
-.lv-concerns__frame { width: auto; max-width: 100%; height: calc(300 * var(--lv-u)); }
-.lv-concerns__frame img.lv-ba__before { width: auto; height: 100%; max-width: 100%; object-fit: contain; }
+.lv-concerns__frame { width: 100%; max-width: calc(480 * var(--lv-u)); aspect-ratio: 480 / 417; height: auto; }
+.lv-concerns__frame img.lv-ba__before,
 .lv-concerns__frame .lv-ba__after { width: 100%; height: 100%; object-fit: cover; }
 @media (min-width: 1024px) {
-  .lv-concerns__frame { width: auto; height: calc(500 * var(--lv-u)); }
+  .lv-concerns__frame { width: calc(480 * var(--lv-u)); height: calc(417 * var(--lv-u)); aspect-ratio: 480 / 417; }
 }
 
 /* ---- XERF review round ---- */
