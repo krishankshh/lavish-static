@@ -617,19 +617,20 @@
 @media (min-width: 1024px) {
   .lv-cloc {
     display: grid;
-    /* Default: Midtown is 955 (66%), Coconut Grove is 485 (34%) */
-    grid-template-columns: calc(955 * var(--lv-u)) calc(485 * var(--lv-u));
+    /* Default: Midtown is 66.32%, Coconut Grove is 33.68% (sums to 100% across all viewports) */
+    grid-template-columns: 66.32% 33.68%;
     height: calc(777 * var(--lv-u));
     min-height: calc(777 * var(--lv-u));
+    width: 100%;
     transition: grid-template-columns 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
   .lv-cloc[data-active="midtown"] {
-    grid-template-columns: calc(955 * var(--lv-u)) calc(485 * var(--lv-u));
+    grid-template-columns: 66.32% 33.68%;
   }
 
   .lv-cloc[data-active="cgrove"] {
-    grid-template-columns: calc(485 * var(--lv-u)) calc(955 * var(--lv-u));
+    grid-template-columns: 33.68% 66.32%;
   }
 
   .lv-cloc__card {
@@ -647,6 +648,7 @@
   .lv-cloc__title {
     font-size: calc(36 * var(--lv-u));
     line-height: 1.1;
+    height: calc(152 * var(--lv-u));
   }
 
   .lv-cloc__addr {
@@ -676,7 +678,7 @@
   .lv-cloc__card.is-active .lv-cloc__title {
     font-size: calc(64 * var(--lv-u));
     color: var(--lv-cream);
-    height: auto;
+    height: calc(152 * var(--lv-u));
   }
 
   .lv-cloc__card.is-active .lv-cloc__addr,
