@@ -1186,15 +1186,44 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
 /* the comp sets each hours line on one line; 160px is exactly its width */
 .lv-loc__hours li { white-space: nowrap; }
 
-.lv-loc__map { position: relative; margin-top: calc(19 * var(--lv-u)); }
+.lv-loc__map {
+  position: relative;
+  margin-top: calc(19 * var(--lv-u));
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  aspect-ratio: 328 / 240;
+  background: var(--lv-cream);
+}
 
-.lv-loc__map picture { display: block; width: 100%; }
+.lv-loc__map picture,
+.lv-loc__fallback {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 1;
+}
 
 .lv-loc__map img {
   width: 100%;
+  height: 100%;
   aspect-ratio: 328 / 240;
   object-fit: cover;
   border-radius: calc(12 * var(--lv-u));
+  display: block;
+}
+
+.lv-loc__iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  border-radius: calc(12 * var(--lv-u));
+  z-index: 2;
+  display: block;
+  background: transparent;
 }
 
 .lv-loc__cta {
@@ -1203,6 +1232,7 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
   top: 50%;
   translate: -50% -50%;
   padding-right: calc(7 * var(--lv-u));
+  z-index: 3;
 }
 
 /* The mark sits between two hairlines that fill the row (Figma Line 690/691) */
@@ -1284,7 +1314,7 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
   .lv-icon--pin { width: calc(20 * var(--lv-u)); height: calc(20 * var(--lv-u)); }
   .lv-loc__addr { margin-top: calc(20 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); max-width: calc(200 * var(--lv-u)); }
   .lv-loc__hours { margin-top: calc(21 * var(--lv-u)); grid-auto-flow: row; grid-template-rows: none; grid-template-columns: calc(310 * var(--lv-u)) 1fr; gap: calc(15 * var(--lv-u)) 0; font-size: calc(14 * var(--lv-u)); }
-  .lv-loc__map { margin-top: calc(23 * var(--lv-u)); }
+  .lv-loc__map { margin-top: calc(23 * var(--lv-u)); aspect-ratio: 662 / 394; }
   .lv-loc__map img { aspect-ratio: 662 / 394; }
   .lv-footer__mark { margin-top: calc(21 * var(--lv-u)); gap: calc(13.5 * var(--lv-u)); }
   .lv-footer__mark img { width: calc(205 * var(--lv-u)); }
