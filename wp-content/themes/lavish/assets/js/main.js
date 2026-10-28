@@ -1134,8 +1134,53 @@
     updateFavicon();
   }
 
+  
+  /* --------------------------------------------------------------------------
+     Locations Accordion (Contact Page)
+     -------------------------------------------------------------------------- */
+  function initLocationsAccordion(root) {
+    var container = (root || document).querySelector('[data-locations-accordion]');
+    if (!container) return;
+    var cards = Array.prototype.slice.call(container.querySelectorAll('[data-location-card]'));
+    if (!cards.length) return;
+
+    function activateCard(targetKey) {
+      container.setAttribute('data-active', targetKey);
+      cards.forEach(function (c) {
+        var isThis = c.getAttribute('data-location-card') === targetKey;
+        c.classList.toggle('is-active', isThis);
+        c.classList.toggle('is-collapsed', !isThis);
+        c.setAttribute('aria-expanded', isThis ? 'true' : 'false');
+      });
+    }
+
+    cards.forEach(function (card) {
+      var key = card.getAttribute('data-location-card');
+
+      card.addEventListener('click', function (e) {
+        if (e.target.closest('a') || e.target.closest('button')) return;
+        activateCard(key);
+      });
+
+      card.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          if (e.target.closest('a') || e.target.closest('button')) return;
+          e.preventDefault();
+          activateCard(key);
+        }
+      });
+
+      card.addEventListener('mouseenter', function () {
+        if (window.innerWidth >= 1024) {
+          activateCard(key);
+        }
+      });
+    });
+  }
+
   function boot() {
     var root = document;
+    initLocationsAccordion(root);
     initFavicon();
     initAnnounce(root);
     initDropdowns(root);

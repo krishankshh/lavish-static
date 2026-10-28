@@ -347,25 +347,21 @@
 }
 
 /* =========================================================
-   04 LOCATIONS & HOURS (Figma 79:1611 / 79:1614 / 79:1615 / 2065:2)
+   04 LOCATIONS & HOURS (Interactive Location Accordion)
    ========================================================= */
 
 .lv-cloc {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
   width: 100%;
+  overflow: hidden;
 }
 
-/* Midtown Miami Card (Left 66%) */
-.lv-cloc__card--midtown {
+.lv-cloc__card {
   position: relative;
-  min-height: calc(600 * var(--lv-u));
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   overflow: hidden;
-  color: var(--lv-cream);
-  padding: calc(64 * var(--lv-u)) calc(24 * var(--lv-u)) calc(36 * var(--lv-u));
+  box-sizing: border-box;
 }
 
 .lv-cloc__bg {
@@ -375,6 +371,7 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
+  transition: opacity 0.4s ease;
 }
 
 .lv-cloc__overlay {
@@ -382,6 +379,7 @@
   inset: 0;
   background: rgba(0, 0, 0, 0.40); /* Figma 79:1611 exact fill: rgba(0,0,0,0.4) */
   z-index: 1;
+  transition: opacity 0.4s ease;
 }
 
 .lv-cloc__main {
@@ -395,12 +393,7 @@
   font-weight: 200;
   font-size: calc(36 * var(--lv-u));
   line-height: 1.1;
-  color: var(--lv-espresso);
-}
-
-.lv-cloc__title--light {
-  color: var(--lv-cream);
-  font-size: calc(40 * var(--lv-u));
+  transition: font-size 0.4s ease, color 0.4s ease;
 }
 
 .lv-cloc__addr {
@@ -408,11 +401,18 @@
   font-family: var(--lv-font-body);
   font-size: calc(16 * var(--lv-u));
   line-height: 1.5;
-  color: var(--lv-espresso);
+  transition: color 0.4s ease;
 }
 
-.lv-cloc__addr--light {
-  color: var(--lv-cream);
+.lv-cloc__addr a {
+  color: inherit;
+  text-decoration: none;
+  transition: opacity var(--lv-dur) var(--lv-ease);
+}
+
+.lv-cloc__addr a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
 }
 
 .lv-cloc__tel {
@@ -421,18 +421,21 @@
   font-weight: 200;
   font-size: calc(28 * var(--lv-u));
   line-height: 1.1;
-}
-
-.lv-cloc__tel--light {
-  color: var(--lv-cream);
+  transition: color 0.4s ease;
 }
 
 .lv-cloc__tel a {
   color: inherit;
   text-decoration: none;
+  transition: opacity var(--lv-dur) var(--lv-ease);
 }
 
-/* Group 1707479043 Hours Row */
+.lv-cloc__tel a:hover {
+  text-decoration: underline;
+  opacity: 0.85;
+}
+
+/* Hours Row */
 .lv-cloc__hours-group {
   position: relative;
   z-index: 2;
@@ -440,6 +443,7 @@
   flex-direction: column;
   gap: calc(16 * var(--lv-u));
   margin-top: calc(48 * var(--lv-u));
+  transition: opacity 0.4s ease;
 }
 
 .lv-cloc__hour-col {
@@ -471,74 +475,178 @@
   background: rgba(250, 248, 245, 0.40); /* Figma Line 521/522 */
 }
 
-/* Independent View Direction Button (Figma Frame 6 / 79:1618) */
-.lv-cloc__midtown-cta {
+/* View Direction CTA Button (Frame 6 / 79:1618) */
+.lv-cloc__cta {
   position: relative;
   z-index: 2;
   align-self: flex-start;
   margin-top: calc(24 * var(--lv-u));
+  transition: opacity 0.4s ease;
 }
 
-/* Coconut Grove Card (Right 34%) */
-.lv-cloc__card--cgrove {
-  position: relative;
-  background: var(--lv-cream);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: calc(64 * var(--lv-u)) calc(24 * var(--lv-u));
-}
-
-.lv-cloc__cgrove-inner {
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-}
-
+/* Collapsed Thumbnail */
 .lv-cloc__thumb {
+  position: relative;
+  z-index: 2;
   width: calc(207 * var(--lv-u));
   height: calc(224 * var(--lv-u));
   object-fit: cover;
   border-radius: calc(12 * var(--lv-u));
-  margin-top: calc(72 * var(--lv-u));
+  margin: calc(72 * var(--lv-u)) auto 0;
+  display: block;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  transition: transform 0.4s var(--lv-ease);
+}
+
+/* Mobile Styling */
+@media (max-width: 1023.98px) {
+  .lv-cloc__card {
+    min-height: calc(540 * var(--lv-u));
+    padding: calc(64 * var(--lv-u)) calc(24 * var(--lv-u));
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    cursor: pointer;
+  }
+
+  .lv-cloc__card.is-active {
+    color: var(--lv-cream);
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__bg,
+  .lv-cloc__card.is-active .lv-cloc__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__title,
+  .lv-cloc__card.is-active .lv-cloc__addr,
+  .lv-cloc__card.is-active .lv-cloc__tel {
+    color: var(--lv-cream);
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__addr {
+    margin-top: calc(28 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__tel {
+    margin-top: calc(36 * var(--lv-u));
+    font-size: calc(20 * var(--lv-u));
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__hours-group {
+    display: flex;
+    margin-top: calc(66 * var(--lv-u));
+    gap: 0;
+    align-items: center;
+    text-align: center;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__hour-col {
+    align-items: center;
+    gap: calc(12 * var(--lv-u));
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__hour-days {
+    font-size: calc(10 * var(--lv-u));
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__hour-time {
+    font-size: calc(14 * var(--lv-u));
+    line-height: 1.4;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__hour-divider {
+    display: block;
+    width: calc(193 * var(--lv-u));
+    height: 1px;
+    margin: calc(20 * var(--lv-u)) 0;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__cta {
+    display: inline-flex;
+    align-self: center;
+    margin-top: calc(48 * var(--lv-u));
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__thumb {
+    display: none;
+  }
+
+  .lv-cloc__card:not(.is-active) {
+    background: var(--lv-cream);
+    color: var(--lv-espresso);
+    padding: calc(48 * var(--lv-u)) calc(24 * var(--lv-u));
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__bg,
+  .lv-cloc__card:not(.is-active) .lv-cloc__overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__title,
+  .lv-cloc__card:not(.is-active) .lv-cloc__addr,
+  .lv-cloc__card:not(.is-active) .lv-cloc__tel {
+    color: var(--lv-espresso);
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__addr {
+    margin-top: calc(24 * var(--lv-u));
+    font-size: calc(14 * var(--lv-u));
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__tel {
+    margin-top: calc(32 * var(--lv-u));
+    font-size: calc(20 * var(--lv-u));
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__hours-group,
+  .lv-cloc__card:not(.is-active) .lv-cloc__cta {
+    display: none;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__thumb {
+    display: block;
+    margin-top: calc(40 * var(--lv-u));
+  }
 }
 
 /* Desktop 1440 Frame Parity */
 @media (min-width: 1024px) {
   .lv-cloc {
-    grid-template-columns: calc(955 * var(--lv-u)) 1fr;
-    min-height: calc(777 * var(--lv-u));
+    display: grid;
+    /* Default: Midtown is 955 (66%), Coconut Grove is 485 (34%) */
+    grid-template-columns: calc(955 * var(--lv-u)) calc(485 * var(--lv-u));
     height: calc(777 * var(--lv-u));
+    min-height: calc(777 * var(--lv-u));
+    transition: grid-template-columns 0.6s cubic-bezier(0.25, 1, 0.5, 1);
   }
 
-  .lv-cloc__card--midtown {
+  .lv-cloc[data-active="midtown"] {
+    grid-template-columns: calc(955 * var(--lv-u)) calc(485 * var(--lv-u));
+  }
+
+  .lv-cloc[data-active="cgrove"] {
+    grid-template-columns: calc(485 * var(--lv-u)) calc(955 * var(--lv-u));
+  }
+
+  .lv-cloc__card {
     height: calc(777 * var(--lv-u));
     padding: calc(120 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u));
     box-sizing: border-box;
+    display: block;
+    position: relative;
   }
 
   .lv-cloc__main {
     margin: 0;
   }
 
-
-  .lv-cloc__card--cgrove {
-    height: calc(777 * var(--lv-u));
-    padding: calc(120 * var(--lv-u)) calc(48 * var(--lv-u)) calc(48 * var(--lv-u));
-    box-sizing: border-box;
-  }
-
   .lv-cloc__title {
     font-size: calc(36 * var(--lv-u));
-    /* both cards share one grid: the address starts at the same y whatever the title size */
-    height: calc(152 * var(--lv-u));
-  }
-
-  /* Figma 79:1614: 64px on the photo card (must outrank .lv-cloc__title above) */
-  .lv-cloc__title.lv-cloc__title--light {
-    font-size: calc(64 * var(--lv-u));
+    line-height: 1.1;
   }
 
   .lv-cloc__addr {
@@ -549,12 +657,40 @@
     margin-top: calc(53 * var(--lv-u));
   }
 
-  .lv-cloc__thumb {
-    margin-top: calc(125 * var(--lv-u));
+  /* When card is expanded (.is-active): 66% width */
+  .lv-cloc__card.is-active {
+    color: var(--lv-cream);
+    cursor: default;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__bg {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__overlay {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__title {
+    font-size: calc(64 * var(--lv-u));
+    color: var(--lv-cream);
+    height: auto;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__addr,
+  .lv-cloc__card.is-active .lv-cloc__addr a,
+  .lv-cloc__card.is-active .lv-cloc__tel,
+  .lv-cloc__card.is-active .lv-cloc__tel a {
+    color: var(--lv-cream);
   }
 
   /* Exact placement matching Figma Group 1707479043 (x=48, y=2839) */
-  .lv-cloc__hours-group {
+  .lv-cloc__card.is-active .lv-cloc__hours-group {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
     position: absolute;
     left: calc(48 * var(--lv-u));
     bottom: calc(48 * var(--lv-u));
@@ -566,16 +702,70 @@
     justify-content: space-between;
   }
 
-  .lv-cloc__hour-divider {
+  .lv-cloc__card.is-active .lv-cloc__hour-divider {
     display: block;
   }
 
   /* Exact placement matching Figma Frame 6 (x=755, y=2829) */
-  .lv-cloc__midtown-cta {
+  .lv-cloc__card.is-active .lv-cloc__cta {
+    display: inline-flex;
+    opacity: 1;
+    visibility: visible;
     position: absolute;
     right: calc(48 * var(--lv-u));
     bottom: calc(48 * var(--lv-u));
     margin-top: 0;
+  }
+
+  .lv-cloc__card.is-active .lv-cloc__thumb {
+    display: none;
+  }
+
+  /* When card is collapsed (.is-collapsed or :not(.is-active)): 34% width */
+  .lv-cloc__card:not(.is-active) {
+    background: var(--lv-cream);
+    color: var(--lv-espresso);
+    cursor: pointer;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__bg {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__overlay {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__title {
+    font-size: calc(36 * var(--lv-u));
+    height: calc(152 * var(--lv-u));
+    color: var(--lv-espresso);
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__addr,
+  .lv-cloc__card:not(.is-active) .lv-cloc__addr a,
+  .lv-cloc__card:not(.is-active) .lv-cloc__tel,
+  .lv-cloc__card:not(.is-active) .lv-cloc__tel a {
+    color: var(--lv-espresso);
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__hours-group {
+    display: none;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__cta {
+    display: none;
+  }
+
+  .lv-cloc__card:not(.is-active) .lv-cloc__thumb {
+    display: block;
+    margin-top: calc(125 * var(--lv-u));
+  }
+
+  .lv-cloc__card:not(.is-active):hover .lv-cloc__thumb {
+    transform: translateY(-4px);
   }
 }
 
@@ -598,15 +788,4 @@
   .lv-cdropdown__trigger .lv-icon--caret-down { width: calc(12 * var(--lv-u)); height: calc(12 * var(--lv-u)); }
   .lv-cform__actions { margin-top: 0; align-items: center; }
   .lv-cform__submit { align-self: center; }
-
-  /* locations: centred hours split by lines, centred button */
-  .lv-cloc__card--midtown { padding: calc(72 * var(--lv-u)) calc(24 * var(--lv-u)); justify-content: flex-start; }
-  .lv-cloc__addr { margin-top: calc(28 * var(--lv-u)); font-size: calc(14 * var(--lv-u)); }
-  .lv-cloc__tel { margin-top: calc(36 * var(--lv-u)); font-size: calc(20 * var(--lv-u)); }
-  .lv-cloc__hours-group { margin-top: calc(66 * var(--lv-u)); gap: 0; align-items: center; text-align: center; }
-  .lv-cloc__hour-col { align-items: center; gap: calc(12 * var(--lv-u)); }
-  .lv-cloc__hour-days { font-size: calc(10 * var(--lv-u)); }
-  .lv-cloc__hour-time { font-size: calc(14 * var(--lv-u)); line-height: 1.4; }
-  .lv-cloc__hour-divider { display: block; width: calc(193 * var(--lv-u)); height: 1px; margin: calc(20 * var(--lv-u)) 0; }
-  .lv-cloc__midtown-cta { align-self: center; margin-top: calc(80 * var(--lv-u)); }
 }
