@@ -1224,6 +1224,13 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
   z-index: 2;
   display: block;
   background: transparent;
+  /* Option 1: Warm palette filter matching Lavish cream/sepia tone */
+  filter: grayscale(85%) sepia(20%) contrast(1.05) brightness(0.98);
+  transition: filter 0.4s var(--lv-ease);
+}
+
+.lv-loc__map:hover .lv-loc__iframe {
+  filter: grayscale(40%) sepia(12%) contrast(1.02);
 }
 
 .lv-loc__cta {
