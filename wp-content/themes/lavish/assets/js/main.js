@@ -724,10 +724,29 @@
   }
 
   /* ---------------------------------------------------------
-     Booking placeholder: disabled so all buttons navigate directly
+     Booking placeholder: [data-booking-popup] opens a "coming soon" dialog
      --------------------------------------------------------- */
   function initBookingPopup(root) {
     return;
+    var triggers = root.querySelectorAll('[data-booking-popup]');
+    if (!triggers.length) return;
+    var pop = document.createElement('div');
+    pop.className = 'lv-bkpop';
+    pop.hidden = true;
+    pop.innerHTML =
+      '<div class="lv-bkpop__box" role="dialog" aria-modal="true" aria-labelledby="lv-bkpop-t">' +
+      '  <button class="lv-bkpop__close" type="button" aria-label="Close">&times;</button>' +
+      '  <h2 class="lv-bkpop__title" id="lv-bkpop-t">Bookings <em>coming soon</em></h2>' +
+      '  <p class="lv-bkpop__text">Online booking is on its way. Thank you for your patience.</p>' +
+      '  <button class="lv-btn lv-btn--umber" type="button">Close</button>' +
+      '</div>';
+    document.body.appendChild(pop);
+    var last = null;
+    function open(e) { e.preventDefault(); last = e.currentTarget; pop.hidden = false; pop.querySelector('.lv-bkpop__close').focus(); }
+    function close() { pop.hidden = true; if (last) last.focus(); }
+    triggers.forEach(function (t) { t.addEventListener('click', open); });
+    pop.addEventListener('click', function (e) { if (e.target === pop || e.target.closest('button')) close(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && !pop.hidden) close(); });
   }
 
   /* ---------------------------------------------------------
@@ -1115,49 +1134,8 @@
     updateFavicon();
   }
 
-  
-  /* --------------------------------------------------------------------------
-     Locations Accordion (Contact Page)
-     -------------------------------------------------------------------------- */
-  function initLocationsAccordion(root) {
-    var container = (root || document).querySelector('[data-locations-accordion]');
-    if (!container) return;
-    var cards = Array.prototype.slice.call(container.querySelectorAll('[data-location-card]'));
-    if (!cards.length) return;
-
-    function activateCard(cardToActivate) {
-      cards.forEach(function (c) {
-        var isActive = c === cardToActivate;
-        c.classList.toggle('is-active', isActive);
-        c.setAttribute('aria-expanded', isActive ? 'true' : 'false');
-      });
-    }
-
-    cards.forEach(function (card) {
-      card.addEventListener('click', function (e) {
-        if (e.target.closest('a') || e.target.closest('button')) return;
-        activateCard(card);
-      });
-
-      card.addEventListener('keydown', function (e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-          if (e.target.closest('a') || e.target.closest('button')) return;
-          e.preventDefault();
-          activateCard(card);
-        }
-      });
-
-      card.addEventListener('mouseenter', function () {
-        if (window.innerWidth >= 1024) {
-          activateCard(card);
-        }
-      });
-    });
-  }
-
   function boot() {
     var root = document;
-    initLocationsAccordion(root);
     initFavicon();
     initAnnounce(root);
     initDropdowns(root);
