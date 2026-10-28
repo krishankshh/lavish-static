@@ -237,6 +237,20 @@
   visibility: visible;
 }
 
+.lv-announce__link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: opacity var(--lv-dur) var(--lv-ease);
+}
+
+.lv-announce__link:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
+
 .lv-announce__arrow {
   position: absolute;
   top: 50%;
@@ -1142,6 +1156,19 @@ form[data-wp-form].is-sent .lv-form__success { display: block; }
 /* the comps keep the venue name at full strength and drop the street and
    telephone to 60% */
 .lv-loc__addr span { color: var(--lv-cream); }
+
+.lv-loc__addr a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  transition: opacity var(--lv-dur) var(--lv-ease);
+}
+
+.lv-loc__addr a:hover {
+  opacity: 0.85;
+  text-decoration: underline;
+}
+
 
 .lv-loc__addr { color: rgba(250, 248, 245, 0.6); margin-top: calc(18 * var(--lv-u)); font-size: calc(10 * var(--lv-u)); line-height: 1.5; max-width: calc(160 * var(--lv-u)); }
 

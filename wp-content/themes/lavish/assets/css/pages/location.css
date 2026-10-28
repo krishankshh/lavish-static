@@ -925,3 +925,203 @@
 }
 .lv-loctour__soon-title, .lv-loctour__soon-sub { text-wrap: balance; }
 @media (min-width: 1024px) { .lv-loctour__soon-sub { max-width: calc(520 * var(--lv-u)); } }
+
+
+/* Intro Actions Group & Click-to-Call CTA */
+.lv-locintro__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: calc(16 * var(--lv-u));
+  margin-top: calc(32 * var(--lv-u));
+}
+
+.lv-locintro__actions .lv-locintro__cta {
+  margin-top: 0;
+}
+
+.lv-btn--call {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: calc(8 * var(--lv-u));
+  padding: calc(12 * var(--lv-u)) calc(24 * var(--lv-u));
+  font-family: var(--lv-font-ui);
+  font-size: calc(12 * var(--lv-u));
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--lv-umber);
+  border: 1px solid var(--lv-umber);
+  border-radius: 9999px;
+  background: transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all var(--lv-dur) var(--lv-ease);
+}
+
+.lv-btn--call:hover {
+  background: var(--lv-umber);
+  color: var(--lv-cream);
+}
+
+.lv-btn--call .lv-icon--phone {
+  width: calc(14 * var(--lv-u));
+  height: calc(14 * var(--lv-u));
+}
+
+/* Location Map Section */
+.lv-locmap {
+  padding: calc(60 * var(--lv-u)) calc(16 * var(--lv-u));
+  background: var(--lv-cream);
+}
+
+.lv-locmap__inner {
+  max-width: 1344px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: calc(32 * var(--lv-u));
+  background: #f4eee6;
+  border-radius: calc(16 * var(--lv-u));
+  padding: calc(32 * var(--lv-u));
+  box-shadow: 0 4px 24px rgba(36, 29, 26, 0.04);
+}
+
+@media (min-width: 1024px) {
+  .lv-locmap {
+    padding: calc(96 * var(--lv-u)) calc(48 * var(--lv-u));
+  }
+  .lv-locmap__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: calc(48 * var(--lv-u));
+    padding: calc(48 * var(--lv-u));
+    align-items: stretch;
+  }
+}
+
+.lv-locmap__eyebrow {
+  display: inline-flex;
+  align-items: baseline;
+  gap: calc(8 * var(--lv-u));
+  color: var(--lv-terracotta);
+  font-family: var(--lv-font-ui);
+  font-size: calc(10 * var(--lv-u));
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.lv-locmap__eyebrow .lv-eyebrow__rule {
+  width: calc(28 * var(--lv-u));
+  height: 1px;
+  background: currentColor;
+  align-self: baseline;
+}
+
+.lv-locmap__title {
+  font-family: var(--lv-font-display);
+  font-size: calc(32 * var(--lv-u));
+  font-weight: 300;
+  line-height: 1.15;
+  color: var(--lv-espresso);
+  margin-top: calc(16 * var(--lv-u));
+  margin-bottom: calc(24 * var(--lv-u));
+}
+
+@media (min-width: 1024px) {
+  .lv-locmap__title {
+    font-size: calc(42 * var(--lv-u));
+  }
+}
+
+.lv-locmap__details {
+  display: flex;
+  flex-direction: column;
+  gap: calc(20 * var(--lv-u));
+  margin-bottom: calc(32 * var(--lv-u));
+}
+
+.lv-locmap__detail-item {
+  display: flex;
+  align-items: flex-start;
+  gap: calc(14 * var(--lv-u));
+}
+
+.lv-locmap__detail-item .lv-icon {
+  width: calc(20 * var(--lv-u));
+  height: calc(20 * var(--lv-u));
+  color: var(--lv-terracotta);
+  flex-shrink: 0;
+  margin-top: calc(2 * var(--lv-u));
+}
+
+.lv-locmap__label {
+  font-family: var(--lv-font-ui);
+  font-size: calc(11 * var(--lv-u));
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--lv-terracotta);
+  margin-bottom: calc(4 * var(--lv-u));
+}
+
+.lv-locmap__val {
+  font-family: var(--lv-font-ui);
+  font-size: calc(15 * var(--lv-u));
+  color: var(--lv-espresso);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.lv-locmap__link {
+  color: var(--lv-espresso);
+  text-decoration: none;
+  cursor: pointer;
+  transition: color var(--lv-dur) var(--lv-ease);
+}
+
+.lv-locmap__link:hover {
+  color: var(--lv-terracotta);
+  text-decoration: underline;
+}
+
+.lv-locmap__hours {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-family: var(--lv-font-ui);
+  font-size: calc(14 * var(--lv-u));
+  color: var(--lv-espresso);
+  line-height: 1.5;
+}
+
+.lv-locmap__hours li span {
+  font-weight: 500;
+  color: rgba(36, 29, 26, 0.75);
+}
+
+.lv-locmap__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: calc(16 * var(--lv-u));
+  align-items: center;
+}
+
+.lv-locmap__frame {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  border-radius: calc(12 * var(--lv-u));
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(36, 29, 26, 0.08);
+}
+
+.lv-locmap__frame iframe {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: block;
+  border: 0;
+}
